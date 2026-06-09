@@ -33,6 +33,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'accounts',
     'bootcamps',
+    'category',
     'certifications',
     'community',
     'competitions',
