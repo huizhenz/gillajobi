@@ -7,15 +7,18 @@ class Company(models.Model):
     location = models.CharField(max_length=100, blank=True, null=True)
     homepage = models.URLField(blank=True, null=True)
 
+    def __str__(self):
+        return self.name
+
 class Recruitment(models.Model):
     company = models.ForeignKey(
-        'Company',
+        Company,
         on_delete=models.CASCADE,
         related_name='recruitments',
     )
 
     category = models.ForeignKey(
-        'Category',
+        'category.Category',
         on_delete=models.SET_NULL,
         related_name='recruitments',
         blank=True,
@@ -69,18 +72,7 @@ class Recruitment(models.Model):
         null=True,
     )
 
-    basic_address = models.TextField(
-        blank=True,
-        null=True,
-    )
-
     employment_type = models.CharField(
-        max_length=255,
-        blank=True,
-        null=True,
-    )
-
-    jobs_code = models.CharField(
         max_length=255,
         blank=True,
         null=True,
@@ -91,13 +83,13 @@ class Recruitment(models.Model):
         null=True,
     )
 
-    ai_recommend_score = models.FloatField(
+    recruitment_url = models.URLField(
         blank=True,
         null=True,
-        default=0,
     )
 
-    recruitment_url = models.URLField(
+    ai_recommend_score = models.FloatField(
+        default=0,
         blank=True,
         null=True,
     )
@@ -109,3 +101,60 @@ class Recruitment(models.Model):
     updated_at = models.DateTimeField(
         auto_now=True,
     )
+
+    def __str__(self):
+        return self.title
+
+
+class RecruitmentDetail(models.Model):
+    recruitment = models.OneToOneField(
+        Recruitment,
+        on_delete=models.CASCADE,
+        related_name='detail',
+    )
+
+    job_description = models.TextField(
+        blank=True,
+        null=True,
+    )
+
+    qualification = models.TextField(
+        blank=True,
+        null=True,
+    )
+
+    preferred_qualification = models.TextField(
+        blank=True,
+        null=True,
+    )
+
+    benefits = models.TextField(
+        blank=True,
+        null=True,
+    )
+
+    hiring_process = models.TextField(
+        blank=True,
+        null=True,
+    )
+
+    basic_address = models.TextField(
+        blank=True,
+        null=True,
+    )
+
+    company_intro = models.TextField(
+        blank=True,
+        null=True,
+    )
+
+    created_at = models.DateTimeField(
+        auto_now_add=True,
+    )
+
+    updated_at = models.DateTimeField(
+        auto_now=True,
+    )
+
+    def __str__(self):
+        return f'{self.recruitment.title} 상세정보'
