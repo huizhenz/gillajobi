@@ -1,13 +1,33 @@
+import os
+
 import requests
+from dotenv import load_dotenv
+
+from .models import Certification
+
+
+load_dotenv()
 
 def get_certification_data():
-    params = {
-        'serviceKey': 'i7C/aq24edYlsN/Zw4CIflOYRYwGhO9HCiNCAXfuNfc7r0grSQHUDHH7ZtAFYfk1oxI0ouqYvqV1I82cHcfqYA==',
-        'page': 1,
-        'perPage': 100,
-    }
-    response = requests.get("https://api.odcloud.kr/api/15082998/v1/uddi:24329307-c706-489a-a9a3-a7c43c3508e5", params=params)
-    print(response.json())
-    return response.json()
+    API_URL = os.getenv('API_URL')
+    SERVICE_KEY = os.getenv('SERVICE_KEY')
 
-get_certification_data()
+    params ={'serviceKey' : SERVICE_KEY, '_type': 'json'}
+    response = requests.get(API_URL, params=params) 
+    response.raise_for_status()
+
+    items = response.json().get('response', {}).get('body', {}).get('items', {}).get('item', [])
+    if isinstance(items, dict): # 결과가 1건일 때 dict로 오는 경우 처리
+        items = [items]
+
+    for item in items:
+        Certification.objects.update_or_create(
+            jm_cd=item.get('jmcd', ''),
+            defaults={
+                'name': item.get('jmfldnm', ''),
+                'qualification_cl': item.get('qualgbnm', ''),
+                'series_name': item.get('seriesnm', ''),
+                'major_job_field': item.get('obligfldnm', ''),
+                'minor_job_field': item.get('mdobligfldnm', ''),
+            }
+        )

@@ -15,7 +15,7 @@ class Recruitment(models.Model):
     )
 
     category = models.ForeignKey(
-        'Category',
+        'category.Category',
         on_delete=models.SET_NULL,
         related_name='recruitments',
         blank=True,
