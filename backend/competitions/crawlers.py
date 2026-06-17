@@ -1,21 +1,43 @@
 import re
+import time
+from datetime import datetime
 
 import requests
 from bs4 import BeautifulSoup
 
-
-BASE_URL = "https://thinkyou.co.kr" # 기본 도메인
-LIST_URL = f"{BASE_URL}/contest/ajax_contestList.asp" # 목록 데이터 받아오는 URL
+BASE_URL = "https://thinkyou.co.kr"
+LIST_URL = f"{BASE_URL}/contest/ajax_contestList.asp"
 
 HEADERS = {
-    "Referer": "https://thinkyou.co.kr/contest/", # "나 씽유 사이트에서 온 요청이야" 라고 서버에 알려주는 것
-    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36" # "나 봇 아니고 일반 브라우저야" 라고 속이는 것
+    "Referer": "https://thinkyou.co.kr/contest/",
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
 }
 
+ACTIVE_STATUSES = {"접수중", "접수예정", "마감임박"}
 
-def crawl_thinkyou(page=1):
+
+def parse_period(period_str):
+    """'26-06-17 ~ 26-08-26' → (date, date)"""
+    try:
+        parts = period_str.split("~")
+        start = datetime.strptime(parts[0].strip(), "%y-%m-%d").date()
+        end = datetime.strptime(parts[1].strip(), "%y-%m-%d").date()
+        return start, end
+    except Exception:
+        return None, None
+
+
+def parse_status(raw):
+    """'접수중D-69' → '접수중'"""
+    for s in ACTIVE_STATUSES | {"마감"}:
+        if raw.startswith(s):
+            return s
+    return raw
+
+
+def crawl_page(page):
     data = {
-        "pageSize": "30",
+        "pageSize": "40",
         "page": str(page),
         "serstatus": "",
         "serfield": "",
@@ -26,57 +48,83 @@ def crawl_thinkyou(page=1):
         "searchstr": ""
     }
 
-    response = requests.post(LIST_URL, headers=HEADERS, data=data)
-    response.encoding = "utf-8"
+    try:
+        response = requests.post(LIST_URL, headers=HEADERS, data=data, timeout=10)
+        response.encoding = "utf-8"
+    except requests.exceptions.Timeout:
+        print(f"[page {page}] 요청 타임아웃. 건너뜀.")
+        return []
+    except requests.exceptions.RequestException as e:
+        print(f"[page {page}] 네트워크 오류: {e}. 건너뜀.")
+        return []
 
     soup = BeautifulSoup(response.text, "html.parser")
     items = soup.select("div.tr")
-
     results = []
 
     for item in items:
-        # 제목
-        title_tag = item.select_one("div.title h3")
-        if not title_tag:
+        try:
+            title_tag = item.select_one("div.title h3")
+            if not title_tag:
+                continue
+            title = title_tag.get_text(strip=True)
+
+            host_tag = item.select_one("div.title dd")
+            host = host_tag.get_text(strip=True).replace("주최 :", "").strip() if host_tag else ""
+
+            etc_tags = item.select("div.etc")
+            period_raw = etc_tags[0].get_text(strip=True) if etc_tags else ""
+            start_date, end_date = parse_period(period_raw)
+
+            status_tag = item.select_one("div.statNew p.icon")
+            status_raw = status_tag.get_text(strip=True) if status_tag else ""
+            status = parse_status(status_raw)
+
+            link_tag = item.select_one("div.title a")
+            detail_url = ""
+            external_id = None
+            if link_tag and link_tag.get("href"):
+                href = link_tag["href"]
+                detail_url = BASE_URL + href if href.startswith("/") else href
+                match = re.search(r"/contest/(\d+)/", href)
+                external_id = int(match.group(1)) if match else None
+
+            results.append({
+                "external_id": external_id,
+                "title": title,
+                "host": host,
+                "start_date": start_date,
+                "end_date": end_date,
+                "status": status,
+                "detail_url": detail_url,
+            })
+
+        except Exception as e:
+            print(f"[page {page}] 항목 파싱 오류: {e}. 건너뜀.")
             continue
-        title = title_tag.get_text(strip=True)
 
-        # 주최
-        host_tag = item.select_one("div.title dd")
-        host = host_tag.get_text(strip=True).replace("주최 :", "").strip() if host_tag else ""
-
-        # 기간
-        etc_tags = item.select("div.etc")
-        period = etc_tags[0].get_text(strip=True) if etc_tags else ""
-
-        # 상태
-        status_tag = item.select_one("div.statNew p.icon")
-        status = status_tag.get_text(strip=True) if status_tag else ""
-
-        # 상세 URL + external_id
-        link_tag = item.select_one("div.title a")
-        detail_url = ""
-        external_id = None
-        if link_tag and link_tag.get("href"):
-            href = link_tag["href"]
-            detail_url = BASE_URL + href if href.startswith("/") else href
-            match = re.search(r"/contest/(\d+)/", href)
-            external_id = int(match.group(1)) if match else None
-
-        result = {
-            "external_id": external_id,
-            "title": title,
-            "host": host,
-            "period": period,
-            "status": status,
-            "detail_url": detail_url,
-        }
-        results.append(result)
-        print(result)
-
-    print(f"\n총 {len(results)}개 추출 완료")
     return results
 
 
-if __name__ == "__main__":
-    crawl_thinkyou(page=1)
+def crawl_all() -> list[dict]:
+    page = 1
+    all_results = []
+
+    while True:
+        print(f"[page {page}] 크롤링 중...")
+        results = crawl_page(page)
+
+        if not results:
+            print("결과 없음. 종료.")
+            break
+
+        active = [r for r in results if r["status"] in ACTIVE_STATUSES]
+        if not active:
+            print(f"[page {page}] 활성 공모전 없음. 종료.")
+            break
+
+        all_results.extend(active)
+        page += 1
+        time.sleep(0.5)
+
+    return all_results
