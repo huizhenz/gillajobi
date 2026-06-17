@@ -10,6 +10,7 @@ class CertificationSerializer(serializers.ModelSerializer):
 class ExaminationSerializer(serializers.ModelSerializer):
     class Meta:
         model = Examination
+        # fields = '__all__'
         exclude = ['certification']
 
 

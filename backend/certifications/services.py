@@ -59,10 +59,12 @@ def get_examination_data(jm_cd):
     response = requests.get(EXAM_API_URL, params=params)
     response.raise_for_status()
 
-    items_raw = response.json().get('response', {}).get('body', {}).get('items') or {}
+    body = response.json().get('response', {}).get('body') or {}
+    if not isinstance(body, dict):
+        return
+    items_raw = body.get('items') or {}
     if not isinstance(items_raw, dict):
         return
-    
     items = items_raw.get('item', [])
     if isinstance(items, dict):
         items = [items]
