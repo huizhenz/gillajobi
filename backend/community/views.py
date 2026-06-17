@@ -40,18 +40,16 @@ def article_detail(request, article_pk):
         return Response(message, status = status.HTTP_200_OK)
     
 
-@api_view(['GET'])
-def comment_list(request):
+@api_view(['GET', 'POST'])
+def comment_list_create(request, article_pk):
+    article = Article.objects.get(pk=article_pk)
+
     if request.method == 'GET':
-        comments = Comment.objects.all()
+        comments = article.comments.all()
         serializer = CommentListSerializer(comments, many=True)
         return Response(serializer.data)
     
-
-@api_view(['POST'])
-def comment_create(request, article_pk):
-    article = Article.objects.get(pk=article_pk)
-    if request.method == 'POST':
+    elif request.method == 'POST':
         serializer = CommentDetailSerializer(data=request.data)
         if serializer.is_valid(raise_exception=True):
             serializer.save(article=article)
