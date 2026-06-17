@@ -27,9 +27,11 @@ def parse_period(period_str):
         return None, None
 
 
+STATUS_KEYWORDS = ["마감임박", "접수중", "접수예정", "마감"]
+
 def parse_status(raw):
     """'접수중D-69' → '접수중'"""
-    for s in ACTIVE_STATUSES | {"마감"}:
+    for s in STATUS_KEYWORDS:
         if raw.startswith(s):
             return s
     return raw
@@ -106,7 +108,7 @@ def crawl_page(page):
     return results
 
 
-def crawl_all() -> list[dict]:
+def crawl_all():
     page = 1
     all_results = []
 

@@ -1,7 +1,7 @@
-from competitions.crawlers import crawl_all
-from competitions.models import Competition
+from .crawlers import crawl_all
+from .models import Competition
 
-def sync_competitions():
+def run_sync():
     results = crawl_all()
     total_saved = 0
 

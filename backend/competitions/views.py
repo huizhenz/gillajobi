@@ -4,16 +4,17 @@ from rest_framework import status
 
 from .models import Competition
 from .serializers import CompetitionSerializer
-from .services import sync_competitions
+from .services import run_sync
 
 # Create your views here.
 @api_view(['GET'])
 def fetch_competitions(request):
-    sync_competitions()
     competitions = Competition.objects.all()
     serializer = CompetitionSerializer(competitions, many=True)
     return Response(serializer.data, status=status.HTTP_200_OK)
 
 
-# def sync_competitions(request):
-#     pass
+@api_view(['POST'])
+def sync_competitions(request):
+    total_saved = run_sync()
+    return Response({"saved": total_saved}, status=status.HTTP_200_OK)
