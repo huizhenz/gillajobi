@@ -140,7 +140,9 @@ def crawl_detail(detail_url: str) -> dict:
         dt = dl.select_one("dt")
         dd = dl.select_one("dd")
         if dt and dd:
-            description[dt.get_text(strip=True)] = dd.get_text(separator="\n", strip=True)
+            text = dd.get_text(separator="\n", strip=True)
+            text = text.replace("\xa0", " ").strip()
+            description[dt.get_text(strip=True)] = text
 
     return {
         "thumbnail": thumbnail,
