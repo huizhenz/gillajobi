@@ -108,6 +108,48 @@ def crawl_page(page):
     return results
 
 
+def crawl_detail(detail_url: str) -> dict:
+    try:
+        response = requests.get(detail_url, headers=HEADERS, timeout=10)
+        response.encoding = "utf-8"
+    except requests.exceptions.RequestException as e:
+        print(f"[detail] 네트워크 오류: {e}. 건너뜀.")
+        return {}
+
+    soup = BeautifulSoup(response.text, "html.parser")
+
+    thumb_tag = soup.select_one("div.detail div.thumb img")
+    thumbnail = BASE_URL + thumb_tag["src"] if thumb_tag and thumb_tag.get("src") else ""
+
+    category = ""
+    homepage = ""
+    for row in soup.select("div.detail table tr"):
+        th = row.select_one("th")
+        td = row.select_one("td")
+        if not th or not td:
+            continue
+        label = th.get_text(strip=True)
+        if label == "응모분야":
+            category = td.get_text(strip=True)
+        elif label == "홈페이지":
+            a_tag = td.select_one("a")
+            homepage = a_tag["href"] if a_tag and a_tag.get("href") else ""
+
+    description = {}
+    for dl in soup.select("div.contest_outline dl"):
+        dt = dl.select_one("dt")
+        dd = dl.select_one("dd")
+        if dt and dd:
+            description[dt.get_text(strip=True)] = dd.get_text(separator="\n", strip=True)
+
+    return {
+        "thumbnail": thumbnail,
+        "category": category,
+        "homepage": homepage,
+        "description": description,
+    }
+
+
 def crawl_all():
     page = 1
     all_results = []
@@ -124,6 +166,12 @@ def crawl_all():
         if not active:
             print(f"[page {page}] 활성 공모전 없음. 종료.")
             break
+
+        for r in active:
+            if r["detail_url"]:
+                detail = crawl_detail(r["detail_url"])
+                r.update(detail)
+                time.sleep(0.3)
 
         all_results.extend(active)
         page += 1

@@ -16,8 +16,11 @@ def run_sync():
                     "host": r["host"],
                     "start_date": r["start_date"],
                     "end_date": r["end_date"],
-                    "status": r["status"],
                     "detail_url": r["detail_url"],
+                    "thumbnail": r.get("thumbnail", ""),
+                    "category": r.get("category", ""),
+                    "homepage": r.get("homepage", ""),
+                    "description": r.get("description", {}),
                 }
             )
             total_saved += 1

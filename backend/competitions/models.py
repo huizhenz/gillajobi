@@ -7,7 +7,6 @@ class Competition(models.Model):
     host = models.CharField(max_length=255) # 주최사
     start_date = models.DateField(null=True, blank=True) # 접수 시작일
     end_date = models.DateField(null=True, blank=True) # 접수 종료일
-    status = models.CharField(max_length=50) # 진행 상태 (접수중 / 접수예정 / 마감임박)
     category = models.CharField(max_length=100, blank=True) # 응모 분야 (아이디어/마케팅 등)
     homepage = models.URLField(blank=True) # 공모전 공식 홈페이지 URL
     thumbnail = models.URLField(blank=True) # 썸네일 이미지 URL
