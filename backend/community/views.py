@@ -23,7 +23,7 @@ def article_list(request):
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         
 
-@api_view(['GET', 'DELETE'])
+@api_view(['GET', 'PUT', 'DELETE'])
 def article_detail(request, article_pk):
     # article = Article.objects.get(pk = article_pk)
     article = Article.objects.annotate(comment_count=Count('article')).get(pk=article_pk)
@@ -32,6 +32,12 @@ def article_detail(request, article_pk):
         serializer = ArticleDetailSerializer(article)
         return Response(serializer.data)
     
+    elif request.method =='PUT':
+        serializer = ArticleDetailSerializer(article, data=request.data)
+        if serializer.is_valid(raise_exception=True):
+            serializer.save()
+            return Response(serializer.data)
+
     elif request.method == 'DELETE':
         article.delete()
         message = {
