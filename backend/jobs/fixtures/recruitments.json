@@ -1,0 +1,70 @@
+[
+    {
+        "model": "jobs.company",
+        "pk": 1,
+        "fields": {
+            "name": "삼성전자",
+            "industry": "반도체",
+            "location": "수원",
+            "homepage": "https://www.samsung.com"
+        }
+    },
+    {
+        "model": "jobs.company",
+        "pk": 2,
+        "fields": {
+            "name": "네이버",
+            "industry": "IT",
+            "location": "성남",
+            "homepage": "https://www.naver.com"
+        }
+    },
+    {
+        "model": "jobs.recruitment",
+        "pk": 1,
+        "fields": {
+            "company": 1,
+            "category": null,
+            "title": "백엔드 개발자",
+            "industry_type": "IT",
+            "salary": "5000만원",
+            "region": "경기도 수원시",
+            "working_hours": "09:00~18:00",
+            "personal_history": "신입",
+            "education": "학사",
+            "close_date": "2026-06-30",
+            "basic_address": "경기도 수원시 영통구",
+            "employment_type": "정규직",
+            "jobs_code": "BE001",
+            "personnel": 3,
+            "ai_recommend_score": 85.5,
+            "recruitment_url": "https://example.com/job/1",
+            "created_at": "2026-06-09T00:00:00Z",
+            "updated_at": "2026-06-09T00:00:00Z"
+        }
+    },
+    {
+        "model": "jobs.recruitment",
+        "pk": 2,
+        "fields": {
+            "company": 2,
+            "category": null,
+            "title": "서버 개발자",
+            "industry_type": "플랫폼",
+            "salary": "6000만원",
+            "region": "경기도 성남시",
+            "working_hours": "09:00~18:00",
+            "personal_history": "경력 3년 이상",
+            "education": "학사",
+            "close_date": "2026-07-15",
+            "basic_address": "경기도 성남시 분당구",
+            "employment_type": "정규직",
+            "jobs_code": "SV001",
+            "personnel": 2,
+            "ai_recommend_score": 92.0,
+            "recruitment_url": "https://example.com/job/2",
+            "created_at": "2026-06-09T00:00:00Z",
+            "updated_at": "2026-06-09T00:00:00Z"
+        }
+    }
+]
