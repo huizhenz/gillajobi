@@ -26,7 +26,13 @@ def bootcamps_list(request):
 
 @api_view(['GET'])
 def fetch_bootcamps(request):
-
-    result = fetch_bootcamps_service()
-
+    page_param = request.query_params.get('page')
+    if page_param is not None:
+        try:
+            page = int(page_param)
+        except (ValueError, TypeError):
+            page = 1
+    else:
+        page = None
+    result = fetch_bootcamps_service(page=page)
     return Response(result)

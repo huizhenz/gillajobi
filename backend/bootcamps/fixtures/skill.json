@@ -1,0 +1,16 @@
+[
+  {
+    "model": "bootcamps.skill",
+    "pk": 1,
+    "fields": {
+      "name": "Python"
+    }
+  },
+  {
+    "model": "bootcamps.skill",
+    "pk": 2,
+    "fields": {
+      "name": "Embedded"
+    }
+  }
+]

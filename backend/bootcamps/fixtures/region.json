@@ -1,0 +1,16 @@
+[
+  {
+    "model": "bootcamps.region",
+    "pk": 1,
+    "fields": {
+      "name": "서울"
+    }
+  },
+  {
+    "model": "bootcamps.region",
+    "pk": 2,
+    "fields": {
+      "name": "부산"
+    }
+  }
+]
