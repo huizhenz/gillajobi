@@ -2,9 +2,6 @@ from rest_framework.response import Response
 from rest_framework.decorators import api_view
 from rest_framework import status
 
-from django.shortcuts import render
-from django.db.models import Count
-
 from .models import Article, Comment
 from .serializers import ArticleListSerializer, ArticleDetailSerializer, CommentListSerializer, CommentDetailSerializer
 
@@ -19,14 +16,13 @@ def article_list(request):
     elif request.method == 'POST':
         serializer = ArticleDetailSerializer(data=request.data)
         if serializer.is_valid(raise_exception = True):
-            serializer.save()
+            serializer.save(user=request.user)
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         
 
 @api_view(['GET', 'PUT', 'DELETE'])
 def article_detail(request, article_pk):
-    # article = Article.objects.get(pk = article_pk)
-    article = Article.objects.annotate(comment_count=Count('article')).get(pk=article_pk)
+    article = Article.objects.get(pk=article_pk)
 
     if request.method == 'GET':
         serializer = ArticleDetailSerializer(article)
@@ -58,7 +54,7 @@ def comment_list_create(request, article_pk):
     elif request.method == 'POST':
         serializer = CommentDetailSerializer(data=request.data)
         if serializer.is_valid(raise_exception=True):
-            serializer.save(article=article)
+            serializer.save(article=article, user=request.user)
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         
 
