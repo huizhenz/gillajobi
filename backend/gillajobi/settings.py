@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'competitions',
     'jobs',
     'todos',
+    'ai_score',
     'rest_framework',
     'rest_framework.authtoken',
     'dj_rest_auth',
@@ -155,5 +156,5 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
 REST_AUTH = {
-    'REGISTER_SERIALIZER': 'accounts.serializers.CustomRegisterSerializer',
+    'REGISTER_SERIALIZER': 'accounts.serializers.UserSerializer',
 }
