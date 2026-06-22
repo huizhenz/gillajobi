@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'competitions',
     'jobs',
     'todos',
+    'ai_score',
     'rest_framework',
     'rest_framework.authtoken',
     'dj_rest_auth',
