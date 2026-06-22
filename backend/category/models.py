@@ -1,8 +1,15 @@
 from django.db import models
 
 # Create your models here.
-class Category(models.Model): #21개 - it, marketing
+class Category(models.Model):
     name = models.CharField(max_length=100)
 
-class Label(models.Model): #4개 - job, bootcamp
+    def __str__(self):
+        return self.name
+    
+
+class Label(models.Model):
     name = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.name
