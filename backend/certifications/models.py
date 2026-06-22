@@ -7,10 +7,8 @@ class Certification(models.Model):
     series_name = models.CharField(max_length=100, blank=True) # 계열명 (기사, 산업기사, 기능사 등)
     major_job_field = models.CharField(max_length=100, blank=True) # 직무분야 대분류
     minor_job_field = models.CharField(max_length=100, blank=True) # 직무분야 중분류
-    ai_score = models.IntegerField(blank=True, null=True) # AI 분석 점수
+    ai_fit_score = models.IntegerField(blank=True, null=True) # AI 분석 점수
 
-    # def __str__(self):
-    #     return f"{self.name} ({self.qualification_cl})"
 
 class Examination(models.Model):
     certification = models.ForeignKey(Certification, on_delete=models.CASCADE, related_name='examinations', to_field='jm_cd')

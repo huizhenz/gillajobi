@@ -18,3 +18,10 @@ def fetch_competitions(request):
 def sync_competitions(request):
     total_saved = run_sync()
     return Response({"saved": total_saved}, status=status.HTTP_200_OK)
+
+
+@api_view(['GET'])
+def fetch_competition_detail(request, pk):
+    competitions = Competition.objects.get(pk=pk)
+    serializer = CompetitionSerializer(competitions)
+    return Response(serializer.data, status=status.HTTP_200_OK)

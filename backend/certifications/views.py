@@ -3,7 +3,7 @@ from rest_framework.response import Response
 from rest_framework import status
 
 from .models import Certification, Examination
-from .serializers import CertificationSerializer, ExaminationSerializer
+from .serializers import CertificationSerializer, ExaminationSerializer, CertificationDetailSerializer
 from .services import get_certification_data, get_examination_data, sync_all_examinations
 
 # Create your views here.
@@ -39,3 +39,10 @@ def sync_examinations(request):
         return Response({'message': '동기화 완료'}, status=status.HTTP_200_OK)
     except Exception as error:
         return Response({'message': f'동기화 실패: {str(error)}'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+
+@api_view(['GET'])
+def fetch_certification_detail(request, jm_cd):
+    certification = Certification.objects.get(jm_cd=jm_cd)
+    serializer = CertificationDetailSerializer(certification)
+    return Response(serializer.data, status=status.HTTP_200_OK)

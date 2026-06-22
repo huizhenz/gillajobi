@@ -1,51 +1,44 @@
-from rest_framework.decorators import api_view
+from rest_framework.decorators import (
+    api_view,
+    permission_classes,
+)
+from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
-from rest_framework import status
 
-from .models import Profile
-from .serializers import UserSerializer, ProfileSerializer
-
-
-@api_view(['POST'])
-def signup(request):
-    serializer = UserSerializer(data=request.data)
-
-    if serializer.is_valid(raise_exception=True):
-        serializer.save()
-        return Response(serializer.data, status=status.HTTP_201_CREATED)
+from .serializers import (
+    UserDetailSerializer,
+    ProfileSerializer,
+)
 
 
-@api_view(['POST'])
-def create_profile(request):
-    serializer = ProfileSerializer(data=request.data)
-
-    if serializer.is_valid(raise_exception=True):
-        serializer.save(user=request.user)
-        return Response(serializer.data, status=status.HTTP_201_CREATED)
-
-
-@api_view(['GET'])
+@api_view(['GET', 'PATCH'])
+@permission_classes([IsAuthenticated])
 def profile(request):
-    user_serializer = UserSerializer(request.user)
 
-    profile = Profile.objects.get(user=request.user)
-    profile_serializer = ProfileSerializer(profile)
+    if request.method == 'GET':
 
-    return Response({
-        'user': user_serializer.data,
-        'profile': profile_serializer.data,
-    })
+        user_serializer = UserDetailSerializer(
+            request.user
+        )
 
+        profile_serializer = ProfileSerializer(
+            request.user.profile
+        )
 
-@api_view(['PUT'])
-def update_profile(request):
-    profile = Profile.objects.get(user=request.user)
+        return Response({
+            'user': user_serializer.data,
+            'profile': profile_serializer.data,
+        })
 
-    serializer = ProfileSerializer(
-        profile,
-        data=request.data
-    )
+    elif request.method == 'PATCH':
 
-    if serializer.is_valid(raise_exception=True):
+        serializer = ProfileSerializer(
+            request.user.profile,
+            data=request.data,
+            partial=True,
+        )
+
+        serializer.is_valid(raise_exception=True)
         serializer.save()
+
         return Response(serializer.data)
