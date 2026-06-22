@@ -55,36 +55,42 @@ class Bootcamp(models.Model):
     program_process = models.CharField(
         max_length=100,
         blank=True,
+        null=True,
     )
 
     expense = models.CharField(
         max_length=50,
         blank=True,
+        null=True,
     )
 
     period = models.CharField(
         max_length=100,
         blank=True,
+        null=True,
     )
 
     participation_time = models.CharField(
         max_length=100,
         blank=True,
+        null=True,
     )
 
     recruitment_linkage = models.CharField(
         max_length=100,
         blank=True,
+        null=True,
     )
 
     close_date = models.DateField(
         blank=True,
-
+        null=True,
     )
 
     close_date_text = models.CharField(
         max_length=100,
         blank=True,
+        null=True,
     )
 
     recruitment_url = models.URLField(
