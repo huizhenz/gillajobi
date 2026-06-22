@@ -1,0 +1,42 @@
+[
+    {
+        "model": "accounts.user",
+        "pk": 1,
+        "fields": {
+            "password": "pbkdf2_sha256$1000000$dummy$dummy",
+            "last_login": null,
+            "is_superuser": false,
+            "username": "jjang gu",
+            "first_name": "",
+            "last_name": "",
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2026-06-17T00:00:00Z",
+            "email": "jjanggu@example.com",
+            "nickname": "짱구",
+            "gender": "M",
+            "birth": "1999-09-19",
+            "profile_image": ""
+        }
+    },
+    {
+        "model": "accounts.user",
+        "pk": 2,
+        "fields": {
+            "password": "pbkdf2_sha256$1000000$dummy$dummy",
+            "last_login": null,
+            "is_superuser": false,
+            "username": "jjang aa",
+            "first_name": "",
+            "last_name": "",
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2026-06-17T00:00:00Z",
+            "email": "jjangaa@example.com",
+            "nickname": "짱아",
+            "gender": "F",
+            "birth": "2001-05-15",
+            "profile_image": ""
+        }
+    }
+]
