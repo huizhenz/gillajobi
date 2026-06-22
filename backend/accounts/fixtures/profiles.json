@@ -1,0 +1,30 @@
+[
+    {
+        "model": "accounts.profile",
+        "pk": 1,
+        "fields": {
+            "user": 1,
+            "education": "싸피대학교 정치외교학과",
+            "certification": "정보처리기사",
+            "experience": "SSAFY",
+            "language": "영어",
+            "preferred_location": "서울",
+            "preferred_position": "풀스택 개발자",
+            "desired_salary": "4000만원"
+        }
+    },
+    {
+        "model": "accounts.profile",
+        "pk": 2,
+        "fields": {
+            "user": 2,
+            "education": "서울대학교 컴퓨터공학과",
+            "certification": "SQLD",
+            "experience": "인턴 6개월",
+            "language": "영어, 일본어",
+            "preferred_location": "판교",
+            "preferred_position": "데이터 엔지니어",
+            "desired_salary": "4500만원"
+        }
+    }
+]

@@ -1,0 +1,12714 @@
+[
+{
+    "model": "bootcamps.skill",
+    "pk": 1,
+    "fields": {
+        "name": "RNN"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 2,
+    "fields": {
+        "name": "LSTM"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 3,
+    "fields": {
+        "name": "Attention"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 4,
+    "fields": {
+        "name": "PyTorch"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 5,
+    "fields": {
+        "name": "HuggingFaceHub"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 6,
+    "fields": {
+        "name": "WandB"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 7,
+    "fields": {
+        "name": "Pandas/NumPy"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 8,
+    "fields": {
+        "name": "Matplotlib/Seaborn"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 9,
+    "fields": {
+        "name": "Gradio/Streamlit"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 10,
+    "fields": {
+        "name": "LangChain"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 11,
+    "fields": {
+        "name": "Excel"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 12,
+    "fields": {
+        "name": "ChatGPT"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 13,
+    "fields": {
+        "name": "VBA"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 14,
+    "fields": {
+        "name": "엑셀 자동화"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 15,
+    "fields": {
+        "name": "데이터 정리"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 16,
+    "fields": {
+        "name": "보고서 작성"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 17,
+    "fields": {
+        "name": "함수"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 18,
+    "fields": {
+        "name": "피벗테이블"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 19,
+    "fields": {
+        "name": "차트"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 20,
+    "fields": {
+        "name": "AI"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 21,
+    "fields": {
+        "name": "영상제작"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 22,
+    "fields": {
+        "name": "Canva"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 23,
+    "fields": {
+        "name": "CapCut"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 24,
+    "fields": {
+        "name": "Runway"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 25,
+    "fields": {
+        "name": "Vrew"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 26,
+    "fields": {
+        "name": "유튜브"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 27,
+    "fields": {
+        "name": "콘텐츠기획"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 28,
+    "fields": {
+        "name": "CGT"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 29,
+    "fields": {
+        "name": "GMP"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 30,
+    "fields": {
+        "name": "공정개발"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 31,
+    "fields": {
+        "name": "품질관리"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 32,
+    "fields": {
+        "name": "바이오"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 33,
+    "fields": {
+        "name": "바이오웰스"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 34,
+    "fields": {
+        "name": "기업프로젝트"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 35,
+    "fields": {
+        "name": "커리어설계"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 36,
+    "fields": {
+        "name": "좋아하는것"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 37,
+    "fields": {
+        "name": "해결하고싶은문제"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 38,
+    "fields": {
+        "name": "강점찾기"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 39,
+    "fields": {
+        "name": "꿈"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 40,
+    "fields": {
+        "name": "직무탐색"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 41,
+    "fields": {
+        "name": "목표설정"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 42,
+    "fields": {
+        "name": "자기이해"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 43,
+    "fields": {
+        "name": "가치판단"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 44,
+    "fields": {
+        "name": "우선순위"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 45,
+    "fields": {
+        "name": "Python"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 46,
+    "fields": {
+        "name": "DT"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 47,
+    "fields": {
+        "name": "Pandas"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 48,
+    "fields": {
+        "name": "Seaborn"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 49,
+    "fields": {
+        "name": "웹크롤링"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 50,
+    "fields": {
+        "name": "SQL"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 51,
+    "fields": {
+        "name": "데이터시각화"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 52,
+    "fields": {
+        "name": "PM기초"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 53,
+    "fields": {
+        "name": "문제정의"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 54,
+    "fields": {
+        "name": "5whys"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 55,
+    "fields": {
+        "name": "시장분석"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 56,
+    "fields": {
+        "name": "데이터분석"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 57,
+    "fields": {
+        "name": "사용자분석"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 58,
+    "fields": {
+        "name": "AARRR퍼널"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 59,
+    "fields": {
+        "name": "제품전략"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 60,
+    "fields": {
+        "name": "린캔버스"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 61,
+    "fields": {
+        "name": "MVP"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 62,
+    "fields": {
+        "name": "프롬프트"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 63,
+    "fields": {
+        "name": "문서작성"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 64,
+    "fields": {
+        "name": "업무자동화"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 65,
+    "fields": {
+        "name": "DALL-E"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 66,
+    "fields": {
+        "name": "Sora"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 67,
+    "fields": {
+        "name": "영어회화"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 68,
+    "fields": {
+        "name": "PLC"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 69,
+    "fields": {
+        "name": "로봇"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 70,
+    "fields": {
+        "name": "ROS"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 71,
+    "fields": {
+        "name": "C/C++"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 72,
+    "fields": {
+        "name": "SolidWorks"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 73,
+    "fields": {
+        "name": "ABB"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 74,
+    "fields": {
+        "name": "OMRON"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 75,
+    "fields": {
+        "name": "AMR"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 76,
+    "fields": {
+        "name": "자동화"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 77,
+    "fields": {
+        "name": "센서"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 78,
+    "fields": {
+        "name": "통신"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 79,
+    "fields": {
+        "name": "MPS"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 80,
+    "fields": {
+        "name": "공정제어"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 81,
+    "fields": {
+        "name": "LlamaIndex"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 82,
+    "fields": {
+        "name": "VectorDB"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 83,
+    "fields": {
+        "name": "FastAPI"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 84,
+    "fields": {
+        "name": "Streamlit"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 85,
+    "fields": {
+        "name": "Docker"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 86,
+    "fields": {
+        "name": "AWS"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 87,
+    "fields": {
+        "name": "ReActAgent"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 88,
+    "fields": {
+        "name": "AI활용"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 89,
+    "fields": {
+        "name": "AI이미지"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 90,
+    "fields": {
+        "name": "AI영상편집"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 91,
+    "fields": {
+        "name": "AI엑셀"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 92,
+    "fields": {
+        "name": "AI데이터분석"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 93,
+    "fields": {
+        "name": "PPT"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 94,
+    "fields": {
+        "name": "AI활용사례"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 95,
+    "fields": {
+        "name": "pandas"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 96,
+    "fields": {
+        "name": "scikit-learn"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 97,
+    "fields": {
+        "name": "matplotlib"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 98,
+    "fields": {
+        "name": "통계"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 99,
+    "fields": {
+        "name": "머신러닝"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 100,
+    "fields": {
+        "name": "회귀모델"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 101,
+    "fields": {
+        "name": "분류모델"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 102,
+    "fields": {
+        "name": "서비스기획"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 103,
+    "fields": {
+        "name": "PM"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 104,
+    "fields": {
+        "name": "사업화"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 105,
+    "fields": {
+        "name": "DataBase"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 106,
+    "fields": {
+        "name": "Linux"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 107,
+    "fields": {
+        "name": "Shell프로그래밍"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 108,
+    "fields": {
+        "name": "OracleDB어드민"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 109,
+    "fields": {
+        "name": "SQL튜닝"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 110,
+    "fields": {
+        "name": "데이터핸들링"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 111,
+    "fields": {
+        "name": "데이터전처리"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 112,
+    "fields": {
+        "name": "인공지능"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 113,
+    "fields": {
+        "name": "반도체"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 114,
+    "fields": {
+        "name": "RISC-V"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 115,
+    "fields": {
+        "name": "GPU"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 116,
+    "fields": {
+        "name": "DNN"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 117,
+    "fields": {
+        "name": "파이프라인"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 118,
+    "fields": {
+        "name": "메모리 계층구조"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 119,
+    "fields": {
+        "name": "병렬처리"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 120,
+    "fields": {
+        "name": "디지털 논리회로"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 121,
+    "fields": {
+        "name": "생성형AI"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 122,
+    "fields": {
+        "name": "RGA"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 123,
+    "fields": {
+        "name": "LLM"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 124,
+    "fields": {
+        "name": "MCP"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 125,
+    "fields": {
+        "name": "MLOps"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 126,
+    "fields": {
+        "name": "React"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 127,
+    "fields": {
+        "name": "실무프로젝트"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 128,
+    "fields": {
+        "name": "숏폼영상"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 129,
+    "fields": {
+        "name": "영상편집"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 130,
+    "fields": {
+        "name": "콘텐츠제작"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 131,
+    "fields": {
+        "name": "SNS마케팅"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 132,
+    "fields": {
+        "name": "Midjourney"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 133,
+    "fields": {
+        "name": "Figma"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 134,
+    "fields": {
+        "name": "Photoshop"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 135,
+    "fields": {
+        "name": "Illustrator"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 136,
+    "fields": {
+        "name": "랜딩페이지"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 137,
+    "fields": {
+        "name": "상세페이지"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 138,
+    "fields": {
+        "name": "영상"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 139,
+    "fields": {
+        "name": "기업연계프로젝트"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 140,
+    "fields": {
+        "name": "HTML"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 141,
+    "fields": {
+        "name": "CSS"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 142,
+    "fields": {
+        "name": "JavaScript"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 143,
+    "fields": {
+        "name": "jQuery"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 144,
+    "fields": {
+        "name": "SCSS"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 145,
+    "fields": {
+        "name": "TailwindCSS"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 146,
+    "fields": {
+        "name": "웹툰"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 147,
+    "fields": {
+        "name": "IP기획"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 148,
+    "fields": {
+        "name": "IP비즈니스"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 149,
+    "fields": {
+        "name": "콘텐츠비즈니스"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 150,
+    "fields": {
+        "name": "K-콘텐츠"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 151,
+    "fields": {
+        "name": "웹툰PD"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 152,
+    "fields": {
+        "name": "마케팅"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 153,
+    "fields": {
+        "name": "엑셀VBA"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 154,
+    "fields": {
+        "name": "파이썬업무자동화"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 155,
+    "fields": {
+        "name": "Selenium"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 156,
+    "fields": {
+        "name": "웹브라우저자동화"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 157,
+    "fields": {
+        "name": "Requests"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 158,
+    "fields": {
+        "name": "웹통신자동화"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 159,
+    "fields": {
+        "name": "바이브코딩"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 160,
+    "fields": {
+        "name": "JAVA"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 161,
+    "fields": {
+        "name": "REACT"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 162,
+    "fields": {
+        "name": "자바스크립트"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 163,
+    "fields": {
+        "name": "SPRING"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 164,
+    "fields": {
+        "name": "BOOT"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 165,
+    "fields": {
+        "name": "파이썬"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 166,
+    "fields": {
+        "name": "openCV"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 167,
+    "fields": {
+        "name": "CNN"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 168,
+    "fields": {
+        "name": "EV시스템"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 169,
+    "fields": {
+        "name": "전기차"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 170,
+    "fields": {
+        "name": "배터리"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 171,
+    "fields": {
+        "name": "2차전지"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 172,
+    "fields": {
+        "name": "모빌리티"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 173,
+    "fields": {
+        "name": "ai"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 174,
+    "fields": {
+        "name": "seo"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 175,
+    "fields": {
+        "name": "META"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 176,
+    "fields": {
+        "name": "퍼포먼스마케팅"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 177,
+    "fields": {
+        "name": "numpy"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 178,
+    "fields": {
+        "name": "수입검사"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 179,
+    "fields": {
+        "name": "공정검사"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 180,
+    "fields": {
+        "name": "출하검사"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 181,
+    "fields": {
+        "name": "기계설비유지"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 182,
+    "fields": {
+        "name": "C/S품질관리"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 183,
+    "fields": {
+        "name": "TQM"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 184,
+    "fields": {
+        "name": "바이오헬스"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 185,
+    "fields": {
+        "name": "사업계획서작성"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 186,
+    "fields": {
+        "name": "의료데이터분석"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 187,
+    "fields": {
+        "name": "디지털치료기기프로그램제작계획"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 188,
+    "fields": {
+        "name": "전자약설계"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 189,
+    "fields": {
+        "name": "의료기기인허가실습"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 190,
+    "fields": {
+        "name": "반도체물성"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 191,
+    "fields": {
+        "name": "반도체소자"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 192,
+    "fields": {
+        "name": "포토공정"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 193,
+    "fields": {
+        "name": "식각공정"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 194,
+    "fields": {
+        "name": "진공및플라즈마기술"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 195,
+    "fields": {
+        "name": "박막증착"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 196,
+    "fields": {
+        "name": "기상증착"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 197,
+    "fields": {
+        "name": "ALD"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 198,
+    "fields": {
+        "name": "디스플레이"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 199,
+    "fields": {
+        "name": "LCD"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 200,
+    "fields": {
+        "name": "OLED"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 201,
+    "fields": {
+        "name": "Micro-LED"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 202,
+    "fields": {
+        "name": "AR/VR"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 203,
+    "fields": {
+        "name": "3D"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 204,
+    "fields": {
+        "name": "투명디스플레이"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 205,
+    "fields": {
+        "name": "특수디스플레이"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 206,
+    "fields": {
+        "name": "powerBI"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 207,
+    "fields": {
+        "name": "파워BI"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 208,
+    "fields": {
+        "name": "경영정보시각화"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 209,
+    "fields": {
+        "name": "재무재표"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 210,
+    "fields": {
+        "name": "제약"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 211,
+    "fields": {
+        "name": "품질보증"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 212,
+    "fields": {
+        "name": "밸리데이션"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 213,
+    "fields": {
+        "name": "QA"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 214,
+    "fields": {
+        "name": "QC"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 215,
+    "fields": {
+        "name": "나노바나나"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 216,
+    "fields": {
+        "name": "AI 이미지 생성"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 217,
+    "fields": {
+        "name": "브랜드 디자인"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 218,
+    "fields": {
+        "name": "뷰티 비주얼"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 219,
+    "fields": {
+        "name": "패션 룩북"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 220,
+    "fields": {
+        "name": "콘텐츠 제작"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 221,
+    "fields": {
+        "name": "Google AI Studio"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 222,
+    "fields": {
+        "name": "딥러닝"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 223,
+    "fields": {
+        "name": "데이터 전처리"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 224,
+    "fields": {
+        "name": "EDA"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 225,
+    "fields": {
+        "name": "Google Colab"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 226,
+    "fields": {
+        "name": "AICE"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 227,
+    "fields": {
+        "name": "데이터 분석"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 228,
+    "fields": {
+        "name": "Javascript"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 229,
+    "fields": {
+        "name": "지도API"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 230,
+    "fields": {
+        "name": "OpenAPI"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 231,
+    "fields": {
+        "name": "Springboot"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 232,
+    "fields": {
+        "name": "AI네이티브개발"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 233,
+    "fields": {
+        "name": "Claude"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 234,
+    "fields": {
+        "name": "백엔드개발"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 235,
+    "fields": {
+        "name": "python"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 236,
+    "fields": {
+        "name": "Gemini"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 237,
+    "fields": {
+        "name": "Notebook LM"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 238,
+    "fields": {
+        "name": "Perplexity"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 239,
+    "fields": {
+        "name": "Genspark"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 240,
+    "fields": {
+        "name": "Gamma"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 241,
+    "fields": {
+        "name": "Suno"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 242,
+    "fields": {
+        "name": "Flowith"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 243,
+    "fields": {
+        "name": "생성형 AI"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 244,
+    "fields": {
+        "name": "AI 활용"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 245,
+    "fields": {
+        "name": "콘텐츠 생성"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 246,
+    "fields": {
+        "name": "데이터처리"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 247,
+    "fields": {
+        "name": "데이터자동화"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 248,
+    "fields": {
+        "name": "데이터가공및전처리"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 249,
+    "fields": {
+        "name": "GPT"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 250,
+    "fields": {
+        "name": "프롬프트 엔지니어링"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 251,
+    "fields": {
+        "name": "RAG"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 252,
+    "fields": {
+        "name": "StreamLit"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 253,
+    "fields": {
+        "name": "챗봇"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 254,
+    "fields": {
+        "name": "보안솔루션"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 255,
+    "fields": {
+        "name": "방화벽"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 256,
+    "fields": {
+        "name": "IPS"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 257,
+    "fields": {
+        "name": "DDoS"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 258,
+    "fields": {
+        "name": "취약점 분석"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 259,
+    "fields": {
+        "name": "보안관제"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 260,
+    "fields": {
+        "name": "악성코드 분석"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 261,
+    "fields": {
+        "name": "침해사고 대응"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 262,
+    "fields": {
+        "name": "클라우드 보안"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 263,
+    "fields": {
+        "name": "클라우드 Native"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 264,
+    "fields": {
+        "name": "디지털포렌식"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 265,
+    "fields": {
+        "name": "CVE"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 266,
+    "fields": {
+        "name": "모의해킹"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 267,
+    "fields": {
+        "name": "MSA"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 268,
+    "fields": {
+        "name": "CI/CD"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 269,
+    "fields": {
+        "name": "Spring"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 270,
+    "fields": {
+        "name": "Kubernetes"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 271,
+    "fields": {
+        "name": "GithubActions"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 272,
+    "fields": {
+        "name": "AI Agent"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 273,
+    "fields": {
+        "name": "웹 개발"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 274,
+    "fields": {
+        "name": "프로젝트 기획"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 275,
+    "fields": {
+        "name": "프로토타입"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 276,
+    "fields": {
+        "name": "배포"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 277,
+    "fields": {
+        "name": "Indesign"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 278,
+    "fields": {
+        "name": "편집디자인"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 279,
+    "fields": {
+        "name": "StableDiffusion"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 280,
+    "fields": {
+        "name": "딥러닝기초"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 281,
+    "fields": {
+        "name": "숫자인식AI"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 282,
+    "fields": {
+        "name": "컬러이미지분류AI"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 283,
+    "fields": {
+        "name": "의류분류AI"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 284,
+    "fields": {
+        "name": "리액트"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 285,
+    "fields": {
+        "name": "타입스크립트"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 286,
+    "fields": {
+        "name": "자연어처리"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 287,
+    "fields": {
+        "name": "NLP"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 288,
+    "fields": {
+        "name": "트랜스포머"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 289,
+    "fields": {
+        "name": "BERT"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 290,
+    "fields": {
+        "name": "KoBART"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 291,
+    "fields": {
+        "name": "Hugging Face"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 292,
+    "fields": {
+        "name": "Word2Vec"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 293,
+    "fields": {
+        "name": "Seq2Seq"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 294,
+    "fields": {
+        "name": "KoNLPy"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 295,
+    "fields": {
+        "name": "형태소 분석"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 296,
+    "fields": {
+        "name": "감성 분석"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 297,
+    "fields": {
+        "name": "개체명 인식"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 298,
+    "fields": {
+        "name": "기계 번역"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 299,
+    "fields": {
+        "name": "LLaMa"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 300,
+    "fields": {
+        "name": "LoRA"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 301,
+    "fields": {
+        "name": "Altino"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 302,
+    "fields": {
+        "name": "Python제어"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 303,
+    "fields": {
+        "name": "센서데이터처리"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 304,
+    "fields": {
+        "name": "DotMatrix"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 305,
+    "fields": {
+        "name": "GUI프로그래밍"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 306,
+    "fields": {
+        "name": "음성인식제어"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 307,
+    "fields": {
+        "name": "자율주행알고리즘"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 308,
+    "fields": {
+        "name": "Firebase"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 309,
+    "fields": {
+        "name": "통신프로토콜"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 310,
+    "fields": {
+        "name": "Robotics융합"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 311,
+    "fields": {
+        "name": "Unreal Engine"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 312,
+    "fields": {
+        "name": "XR"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 313,
+    "fields": {
+        "name": "VR"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 314,
+    "fields": {
+        "name": "메타버스"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 315,
+    "fields": {
+        "name": "가상현실"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 316,
+    "fields": {
+        "name": "Looker Studio"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 317,
+    "fields": {
+        "name": "Metabase"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 318,
+    "fields": {
+        "name": "GA4"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 319,
+    "fields": {
+        "name": "업무 자동화"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 320,
+    "fields": {
+        "name": "BI 대시보드"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 321,
+    "fields": {
+        "name": "시스템반도체"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 322,
+    "fields": {
+        "name": "반도체설계"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 323,
+    "fields": {
+        "name": "VerilogHDL"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 324,
+    "fields": {
+        "name": "SoC"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 325,
+    "fields": {
+        "name": "FPGA"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 326,
+    "fields": {
+        "name": "CPU"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 327,
+    "fields": {
+        "name": "마이크로아키텍처"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 328,
+    "fields": {
+        "name": "AI가속기"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 329,
+    "fields": {
+        "name": "SystemVerilog"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 330,
+    "fields": {
+        "name": "UVM"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 331,
+    "fields": {
+        "name": "AMBA"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 332,
+    "fields": {
+        "name": "영상처리"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 333,
+    "fields": {
+        "name": "코랩"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 334,
+    "fields": {
+        "name": "kaggle"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 335,
+    "fields": {
+        "name": "DDD설계"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 336,
+    "fields": {
+        "name": "정산시스템및대용량데이터처리"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 337,
+    "fields": {
+        "name": "비동기"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 338,
+    "fields": {
+        "name": "검색"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 339,
+    "fields": {
+        "name": "쿠버네티스"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 340,
+    "fields": {
+        "name": "스프링AI및LLM"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 341,
+    "fields": {
+        "name": "마이크로LED"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 342,
+    "fields": {
+        "name": "소재부품"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 343,
+    "fields": {
+        "name": "평가분석"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 344,
+    "fields": {
+        "name": "FE-SEM"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 345,
+    "fields": {
+        "name": "AFM"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 346,
+    "fields": {
+        "name": "PL Mapper"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 347,
+    "fields": {
+        "name": "레이저 현미경"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 348,
+    "fields": {
+        "name": "자연어"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 349,
+    "fields": {
+        "name": "AI챗봇"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 350,
+    "fields": {
+        "name": "프로그래밍"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 351,
+    "fields": {
+        "name": "백터DB"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 352,
+    "fields": {
+        "name": "Spring Boot"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 353,
+    "fields": {
+        "name": "RESTful API"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 354,
+    "fields": {
+        "name": "JPA"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 355,
+    "fields": {
+        "name": "JWT"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 356,
+    "fields": {
+        "name": "Swagger"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 357,
+    "fields": {
+        "name": "프로덕트"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 358,
+    "fields": {
+        "name": "UX"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 359,
+    "fields": {
+        "name": "UI"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 360,
+    "fields": {
+        "name": "피그마"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 361,
+    "fields": {
+        "name": "디자인"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 362,
+    "fields": {
+        "name": "기획"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 363,
+    "fields": {
+        "name": "figma"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 364,
+    "fields": {
+        "name": "언리얼엔진"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 365,
+    "fields": {
+        "name": "블루프린트"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 366,
+    "fields": {
+        "name": "3D레벨디자인"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 367,
+    "fields": {
+        "name": "캐릭터컨트롤"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 368,
+    "fields": {
+        "name": "AI적추적"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 369,
+    "fields": {
+        "name": "충돌처리"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 370,
+    "fields": {
+        "name": "UI시스템"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 371,
+    "fields": {
+        "name": "전투로직"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 372,
+    "fields": {
+        "name": "이펙트사운드"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 373,
+    "fields": {
+        "name": "패키징"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 374,
+    "fields": {
+        "name": "프로덕트 매니저"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 375,
+    "fields": {
+        "name": "글로벌"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 376,
+    "fields": {
+        "name": "OracleDB"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 377,
+    "fields": {
+        "name": "RDBMS"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 378,
+    "fields": {
+        "name": "NotebookLM"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 379,
+    "fields": {
+        "name": "프롬프트엔지니어링"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 380,
+    "fields": {
+        "name": "커스텀GPT"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 381,
+    "fields": {
+        "name": "AI비서"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 382,
+    "fields": {
+        "name": "멀티모달"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 383,
+    "fields": {
+        "name": "에이전트설계"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 384,
+    "fields": {
+        "name": "시장조사"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 385,
+    "fields": {
+        "name": "NumPy"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 386,
+    "fields": {
+        "name": "Matplotlib"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 387,
+    "fields": {
+        "name": "OpenCV"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 388,
+    "fields": {
+        "name": "선형회귀"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 389,
+    "fields": {
+        "name": "로지스틱회귀"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 390,
+    "fields": {
+        "name": "kNN"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 391,
+    "fields": {
+        "name": "K-means"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 392,
+    "fields": {
+        "name": "신경망"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 393,
+    "fields": {
+        "name": "의료데이터"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 394,
+    "fields": {
+        "name": "스프링부트"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 395,
+    "fields": {
+        "name": "오라클데이터베이스"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 396,
+    "fields": {
+        "name": "JSP-servlet"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 397,
+    "fields": {
+        "name": "드론제어"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 398,
+    "fields": {
+        "name": "파이썬기초"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 399,
+    "fields": {
+        "name": "자율비행"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 400,
+    "fields": {
+        "name": "블록프로그래밍"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 401,
+    "fields": {
+        "name": "센서입력"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 402,
+    "fields": {
+        "name": "얼굴인식"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 403,
+    "fields": {
+        "name": "CNN객체탐지"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 404,
+    "fields": {
+        "name": "딥러닝영상분석"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 405,
+    "fields": {
+        "name": "SAM모델"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 406,
+    "fields": {
+        "name": "해커톤"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 407,
+    "fields": {
+        "name": "팀 프로젝트"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 408,
+    "fields": {
+        "name": "실전 데이터"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 409,
+    "fields": {
+        "name": "Oracle"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 410,
+    "fields": {
+        "name": "데이터모델링"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 411,
+    "fields": {
+        "name": "SELECT문"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 412,
+    "fields": {
+        "name": "JOIN"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 413,
+    "fields": {
+        "name": "서브쿼리"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 414,
+    "fields": {
+        "name": "단일행함수"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 415,
+    "fields": {
+        "name": "그룹함수"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 416,
+    "fields": {
+        "name": "제약조건"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 417,
+    "fields": {
+        "name": "정규화/반정규화"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 418,
+    "fields": {
+        "name": "문제인식및시장분석"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 419,
+    "fields": {
+        "name": "해결방안및혁신성"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 420,
+    "fields": {
+        "name": "핵심기술역량및실현가능성"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 421,
+    "fields": {
+        "name": "시장진입및성장전략"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 422,
+    "fields": {
+        "name": "사회적가치및파급력"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 423,
+    "fields": {
+        "name": "사업수행역량"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 424,
+    "fields": {
+        "name": "GPU컴퓨팅"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 425,
+    "fields": {
+        "name": "CUDA최적화"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 426,
+    "fields": {
+        "name": "로보틱시뮬레이션"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 427,
+    "fields": {
+        "name": "Omniverse"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 428,
+    "fields": {
+        "name": "AI비전컴퓨팅"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 429,
+    "fields": {
+        "name": "GPU엑셀레이팅"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 430,
+    "fields": {
+        "name": "AIAgent"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 431,
+    "fields": {
+        "name": "NetworkProgramming"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 432,
+    "fields": {
+        "name": "JSP/Spring"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 433,
+    "fields": {
+        "name": "HTML5/JavaScript/React"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 434,
+    "fields": {
+        "name": "데이터베이스/SQL"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 435,
+    "fields": {
+        "name": "Unreal"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 436,
+    "fields": {
+        "name": "화이트해커"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 437,
+    "fields": {
+        "name": "정보보호"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 438,
+    "fields": {
+        "name": "디지털 포렌식"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 439,
+    "fields": {
+        "name": "인턴십"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 440,
+    "fields": {
+        "name": "보안"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 441,
+    "fields": {
+        "name": "Kubeflow"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 442,
+    "fields": {
+        "name": "MachineLearning"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 443,
+    "fields": {
+        "name": "DeepLearning"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 444,
+    "fields": {
+        "name": "DataProcessing"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 445,
+    "fields": {
+        "name": "DataPipeline"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 446,
+    "fields": {
+        "name": "시각화"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 447,
+    "fields": {
+        "name": "금융데이터분석"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 448,
+    "fields": {
+        "name": "데이터리터러시"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 449,
+    "fields": {
+        "name": "C"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 450,
+    "fields": {
+        "name": "C++"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 451,
+    "fields": {
+        "name": "국산 AI"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 452,
+    "fields": {
+        "name": "프로젝트"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 453,
+    "fields": {
+        "name": "자료형"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 454,
+    "fields": {
+        "name": "변수"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 455,
+    "fields": {
+        "name": "정수론"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 456,
+    "fields": {
+        "name": "문자열"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 457,
+    "fields": {
+        "name": "반복문"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 458,
+    "fields": {
+        "name": "배열"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 459,
+    "fields": {
+        "name": "정렬"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 460,
+    "fields": {
+        "name": "시간복잡도"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 461,
+    "fields": {
+        "name": "포인터"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 462,
+    "fields": {
+        "name": "서비스 기획"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 463,
+    "fields": {
+        "name": "PRD"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 464,
+    "fields": {
+        "name": "Vibe Coding"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 465,
+    "fields": {
+        "name": "A/B 테스트"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 466,
+    "fields": {
+        "name": "페르소나"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 467,
+    "fields": {
+        "name": "저니맵"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 468,
+    "fields": {
+        "name": "KPI"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 469,
+    "fields": {
+        "name": "태블로"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 470,
+    "fields": {
+        "name": "웹스크래핑"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 471,
+    "fields": {
+        "name": "AIDU ez"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 472,
+    "fields": {
+        "name": "AICE BASIC"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 473,
+    "fields": {
+        "name": "드론"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 474,
+    "fields": {
+        "name": "드론 조종"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 475,
+    "fields": {
+        "name": "드론 엔지니어"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 476,
+    "fields": {
+        "name": "드론 이론"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 477,
+    "fields": {
+        "name": "모의 비행"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 478,
+    "fields": {
+        "name": "드론 실기 비행"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 479,
+    "fields": {
+        "name": "드론 정비"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 480,
+    "fields": {
+        "name": "기체조립"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 481,
+    "fields": {
+        "name": "드론 촬영"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 482,
+    "fields": {
+        "name": "Verilog"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 483,
+    "fields": {
+        "name": "CPU설계"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 484,
+    "fields": {
+        "name": "AI반도체"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 485,
+    "fields": {
+        "name": "회로설계"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 486,
+    "fields": {
+        "name": "Testbench"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 487,
+    "fields": {
+        "name": "Logic시뮬레이션"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 488,
+    "fields": {
+        "name": "Low-passFilter"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 489,
+    "fields": {
+        "name": "연료전지"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 490,
+    "fields": {
+        "name": "리튬이온전지"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 491,
+    "fields": {
+        "name": "전기화학"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 492,
+    "fields": {
+        "name": "전지시뮬레이션"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 493,
+    "fields": {
+        "name": "전지모델링"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 494,
+    "fields": {
+        "name": "PyBaMM"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 495,
+    "fields": {
+        "name": "전지소재"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 496,
+    "fields": {
+        "name": "전극제조공정"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 497,
+    "fields": {
+        "name": "전지성능평가"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 498,
+    "fields": {
+        "name": "배터리물리모델"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 499,
+    "fields": {
+        "name": "AI리터러시"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 500,
+    "fields": {
+        "name": "멀티모달AI"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 501,
+    "fields": {
+        "name": "AI실무활용"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 502,
+    "fields": {
+        "name": "엑셀자동화"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 503,
+    "fields": {
+        "name": "VBA자동화"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 504,
+    "fields": {
+        "name": "오피스스크립트"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 505,
+    "fields": {
+        "name": "맞춤형AI챗봇"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 506,
+    "fields": {
+        "name": "반도체수율"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 507,
+    "fields": {
+        "name": "공정엔지니어"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 508,
+    "fields": {
+        "name": "계측엔지니어"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 509,
+    "fields": {
+        "name": "공정마진"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 510,
+    "fields": {
+        "name": "스마트팩토리"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 511,
+    "fields": {
+        "name": "전기,계장제어(PLC,HMI)"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 512,
+    "fields": {
+        "name": "Langchain"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 513,
+    "fields": {
+        "name": "Java"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 514,
+    "fields": {
+        "name": "ObjectOrientedProgramming"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 515,
+    "fields": {
+        "name": "Polymorphism"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 516,
+    "fields": {
+        "name": "AbstractClass"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 517,
+    "fields": {
+        "name": "Interface"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 518,
+    "fields": {
+        "name": "Thread"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 519,
+    "fields": {
+        "name": "MethodOverriding"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 520,
+    "fields": {
+        "name": "Database"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 521,
+    "fields": {
+        "name": "BigData"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 522,
+    "fields": {
+        "name": "DataAnalysis"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 523,
+    "fields": {
+        "name": "DataVisualization"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 524,
+    "fields": {
+        "name": "HTML5"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 525,
+    "fields": {
+        "name": "CSS3"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 526,
+    "fields": {
+        "name": "ResponsiveWeb"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 527,
+    "fields": {
+        "name": "Servlet"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 528,
+    "fields": {
+        "name": "JSP"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 529,
+    "fields": {
+        "name": "MVC"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 530,
+    "fields": {
+        "name": "Ajax"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 531,
+    "fields": {
+        "name": "Session"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 532,
+    "fields": {
+        "name": "K-POP"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 533,
+    "fields": {
+        "name": "공연기획"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 534,
+    "fields": {
+        "name": "AR"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 535,
+    "fields": {
+        "name": "미드저니"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 536,
+    "fields": {
+        "name": "Higgsfield"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 537,
+    "fields": {
+        "name": "인터랙티브"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 538,
+    "fields": {
+        "name": "미디어아트"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 539,
+    "fields": {
+        "name": "비주얼콘텐츠"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 540,
+    "fields": {
+        "name": "프로토타이핑"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 541,
+    "fields": {
+        "name": "K-컬처"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 542,
+    "fields": {
+        "name": "굿즈"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 543,
+    "fields": {
+        "name": "굿즈비즈니스"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 544,
+    "fields": {
+        "name": "굿즈기획"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 545,
+    "fields": {
+        "name": "굿즈유통"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 546,
+    "fields": {
+        "name": "굿즈마케팅"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 547,
+    "fields": {
+        "name": "MD"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 548,
+    "fields": {
+        "name": "굿즈MD"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 549,
+    "fields": {
+        "name": "AI융합"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 550,
+    "fields": {
+        "name": "AI에이전트"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 551,
+    "fields": {
+        "name": "팬덤마케팅"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 552,
+    "fields": {
+        "name": "커머스MD"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 553,
+    "fields": {
+        "name": "반도체공정기술"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 554,
+    "fields": {
+        "name": "DATA"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 555,
+    "fields": {
+        "name": "수율이슈해결"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 556,
+    "fields": {
+        "name": "Photo공정엔지니어"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 557,
+    "fields": {
+        "name": "UXUI"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 558,
+    "fields": {
+        "name": "포트폴리오"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 559,
+    "fields": {
+        "name": "e스포츠"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 560,
+    "fields": {
+        "name": "게임산업"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 561,
+    "fields": {
+        "name": "방송중계"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 562,
+    "fields": {
+        "name": "경기운영"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 563,
+    "fields": {
+        "name": "데이터 시각화"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 564,
+    "fields": {
+        "name": "데이터 수집"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 565,
+    "fields": {
+        "name": "데이터 정제"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 566,
+    "fields": {
+        "name": "기술통계량"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 567,
+    "fields": {
+        "name": "확률분포"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 568,
+    "fields": {
+        "name": "가설검정"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 569,
+    "fields": {
+        "name": "ROS2"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 570,
+    "fields": {
+        "name": "자율미션"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 571,
+    "fields": {
+        "name": "PX4"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 572,
+    "fields": {
+        "name": "ArduPilot"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 573,
+    "fields": {
+        "name": "경로계획"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 574,
+    "fields": {
+        "name": "GIS"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 575,
+    "fields": {
+        "name": "컴퓨터비전"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 576,
+    "fields": {
+        "name": "음성인식"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 577,
+    "fields": {
+        "name": "음성합성"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 578,
+    "fields": {
+        "name": "클로닝"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 579,
+    "fields": {
+        "name": "에이전트"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 580,
+    "fields": {
+        "name": "핀테크"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 581,
+    "fields": {
+        "name": "금융"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 582,
+    "fields": {
+        "name": "결제"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 583,
+    "fields": {
+        "name": "정산"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 584,
+    "fields": {
+        "name": "송금"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 585,
+    "fields": {
+        "name": "마이데이터"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 586,
+    "fields": {
+        "name": "AML"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 587,
+    "fields": {
+        "name": "KYC"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 588,
+    "fields": {
+        "name": "와이어프레임"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 589,
+    "fields": {
+        "name": "백로그"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 590,
+    "fields": {
+        "name": "Scikit-learn"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 591,
+    "fields": {
+        "name": "VFX"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 592,
+    "fields": {
+        "name": "프리미어프로"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 593,
+    "fields": {
+        "name": "애프터이펙트"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 594,
+    "fields": {
+        "name": "블렌더"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 595,
+    "fields": {
+        "name": "프로듀서"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 596,
+    "fields": {
+        "name": "수학"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 597,
+    "fields": {
+        "name": "벡터"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 598,
+    "fields": {
+        "name": "행렬"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 599,
+    "fields": {
+        "name": "Linear Layer"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 600,
+    "fields": {
+        "name": "활성화 함수"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 601,
+    "fields": {
+        "name": "자소서"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 602,
+    "fields": {
+        "name": "면접"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 603,
+    "fields": {
+        "name": "취업"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 604,
+    "fields": {
+        "name": "COFFEE프레임워크"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 605,
+    "fields": {
+        "name": "이미지편집"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 606,
+    "fields": {
+        "name": "카드뉴스작성"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 607,
+    "fields": {
+        "name": "숏폼제작"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 608,
+    "fields": {
+        "name": "이벤트랜딩페이지제작"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 609,
+    "fields": {
+        "name": "차트적용"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 610,
+    "fields": {
+        "name": "DAX"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 611,
+    "fields": {
+        "name": "드릴스루"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 612,
+    "fields": {
+        "name": "고객분석"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 613,
+    "fields": {
+        "name": "대시보드"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 614,
+    "fields": {
+        "name": "ADsP"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 615,
+    "fields": {
+        "name": "데이터분석기사"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 616,
+    "fields": {
+        "name": "AI 에이전트"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 617,
+    "fields": {
+        "name": "Ubuntu"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 618,
+    "fields": {
+        "name": "TensorFlow"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 619,
+    "fields": {
+        "name": "아두이노"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 620,
+    "fields": {
+        "name": "IOT보드"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 621,
+    "fields": {
+        "name": "MySQL"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 622,
+    "fields": {
+        "name": "Qt(GUI)"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 623,
+    "fields": {
+        "name": "ros"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 624,
+    "fields": {
+        "name": "Gemini API"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 625,
+    "fields": {
+        "name": "AI 서비스 개발"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 626,
+    "fields": {
+        "name": "Bootstrap5"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 627,
+    "fields": {
+        "name": "Jsp&Servlet"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 628,
+    "fields": {
+        "name": "LLM&RAG"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 629,
+    "fields": {
+        "name": "Cloud"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 630,
+    "fields": {
+        "name": "AutoCAD"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 631,
+    "fields": {
+        "name": "SkectchUP"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 632,
+    "fields": {
+        "name": "BIM"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 633,
+    "fields": {
+        "name": "Revit"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 634,
+    "fields": {
+        "name": "Enscape"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 635,
+    "fields": {
+        "name": "스테이블디퓨전"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 636,
+    "fields": {
+        "name": "PromeAI"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 637,
+    "fields": {
+        "name": "Blueprint"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 638,
+    "fields": {
+        "name": "OpenXR"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 639,
+    "fields": {
+        "name": "ARKit/ARCore"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 640,
+    "fields": {
+        "name": "OculusSDK"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 641,
+    "fields": {
+        "name": "SteamVR"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 642,
+    "fields": {
+        "name": "OnlineSubsystem"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 643,
+    "fields": {
+        "name": "EOS"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 644,
+    "fields": {
+        "name": "Photon"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 645,
+    "fields": {
+        "name": "반도체 설계"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 646,
+    "fields": {
+        "name": "RTL 설계"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 647,
+    "fields": {
+        "name": "Verilog HDL"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 648,
+    "fields": {
+        "name": "ASIC"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 649,
+    "fields": {
+        "name": "Physical Design"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 650,
+    "fields": {
+        "name": "Synopsys"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 651,
+    "fields": {
+        "name": "CISC CPU"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 652,
+    "fields": {
+        "name": "논리 합성"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 653,
+    "fields": {
+        "name": "Sign-off"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 654,
+    "fields": {
+        "name": "GDSII"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 655,
+    "fields": {
+        "name": "32nm 공정"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 656,
+    "fields": {
+        "name": "Cadence"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 657,
+    "fields": {
+        "name": "Xilinx"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 658,
+    "fields": {
+        "name": "TCAD"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 659,
+    "fields": {
+        "name": "뉴로모픽"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 660,
+    "fields": {
+        "name": "AI 반도체"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 661,
+    "fields": {
+        "name": "암세포"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 662,
+    "fields": {
+        "name": "약물 반응"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 663,
+    "fields": {
+        "name": "의료 AI"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 664,
+    "fields": {
+        "name": "클라우드"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 665,
+    "fields": {
+        "name": "바이브 코딩"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 666,
+    "fields": {
+        "name": "자율제어"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 667,
+    "fields": {
+        "name": "ESG"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 668,
+    "fields": {
+        "name": "디지털"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 669,
+    "fields": {
+        "name": "퍼스널 마케팅"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 670,
+    "fields": {
+        "name": "VibeCoding"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 671,
+    "fields": {
+        "name": "일경험"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 672,
+    "fields": {
+        "name": "ORM"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 673,
+    "fields": {
+        "name": "WebServer"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 674,
+    "fields": {
+        "name": "GIT"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 675,
+    "fields": {
+        "name": "ML"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 676,
+    "fields": {
+        "name": "CV"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 677,
+    "fields": {
+        "name": "GenAI"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 678,
+    "fields": {
+        "name": "Multimodal"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 679,
+    "fields": {
+        "name": "Tensorflow"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 680,
+    "fields": {
+        "name": "전력반도체"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 681,
+    "fields": {
+        "name": "소자공정"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 682,
+    "fields": {
+        "name": "패키지 구조해석"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 683,
+    "fields": {
+        "name": "열해석"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 684,
+    "fields": {
+        "name": "반도체 패키지"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 685,
+    "fields": {
+        "name": "ETCD"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 686,
+    "fields": {
+        "name": "Prometheus"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 687,
+    "fields": {
+        "name": "Grafana"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 688,
+    "fields": {
+        "name": "백업및복구"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 689,
+    "fields": {
+        "name": "모니터링과장애재현및복구"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 690,
+    "fields": {
+        "name": "Full Stack"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 691,
+    "fields": {
+        "name": "Frontend"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 692,
+    "fields": {
+        "name": "Backend"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 693,
+    "fields": {
+        "name": "Django"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 694,
+    "fields": {
+        "name": "Node.js"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 695,
+    "fields": {
+        "name": "Flask"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 696,
+    "fields": {
+        "name": "Redis"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 697,
+    "fields": {
+        "name": "API"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 698,
+    "fields": {
+        "name": "DatabaseDesign"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 699,
+    "fields": {
+        "name": "DataModeling"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 700,
+    "fields": {
+        "name": "CATIA"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 701,
+    "fields": {
+        "name": "ANSYS"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 702,
+    "fields": {
+        "name": "SolidModeling"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 703,
+    "fields": {
+        "name": "SurfaceModeling"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 704,
+    "fields": {
+        "name": "Drafting"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 705,
+    "fields": {
+        "name": "Assembly"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 706,
+    "fields": {
+        "name": "Simulation"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 707,
+    "fields": {
+        "name": "Kinematics"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 708,
+    "fields": {
+        "name": "FiniteElementAnalysis"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 709,
+    "fields": {
+        "name": "StructuralAnalysis"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 710,
+    "fields": {
+        "name": "SatelliteDesign"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 711,
+    "fields": {
+        "name": "LaunchVehicleDesign"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 712,
+    "fields": {
+        "name": "LaunchPadDesign"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 713,
+    "fields": {
+        "name": "AutomationLineDesign"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 714,
+    "fields": {
+        "name": "AerospaceEngineering"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 715,
+    "fields": {
+        "name": "디자인싱킹"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 716,
+    "fields": {
+        "name": "프로덕트 개발"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 717,
+    "fields": {
+        "name": "기획서만들기"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 718,
+    "fields": {
+        "name": "제안서만들기"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 719,
+    "fields": {
+        "name": "ChatGPT활용기획업무"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 720,
+    "fields": {
+        "name": "C#"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 721,
+    "fields": {
+        "name": "임베디드 시스템"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 722,
+    "fields": {
+        "name": "머신비전"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 723,
+    "fields": {
+        "name": "텐서플로"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 724,
+    "fields": {
+        "name": "파이토치"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 725,
+    "fields": {
+        "name": "라즈베리파이"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 726,
+    "fields": {
+        "name": "센서 제어"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 727,
+    "fields": {
+        "name": "모터 제어"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 728,
+    "fields": {
+        "name": "Unity"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 729,
+    "fields": {
+        "name": "DAO"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 730,
+    "fields": {
+        "name": "콘텐츠개발"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 731,
+    "fields": {
+        "name": "APOC"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 732,
+    "fields": {
+        "name": "UGC"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 733,
+    "fields": {
+        "name": "DCX"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 734,
+    "fields": {
+        "name": "ML/DL"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 735,
+    "fields": {
+        "name": "Flutter"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 736,
+    "fields": {
+        "name": "AI마케팅"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 737,
+    "fields": {
+        "name": "디지털마케팅"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 738,
+    "fields": {
+        "name": "콘텐츠마케팅"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 739,
+    "fields": {
+        "name": "포토샵"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 740,
+    "fields": {
+        "name": "인스타그램"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 741,
+    "fields": {
+        "name": "Firefly"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 742,
+    "fields": {
+        "name": "Veo3"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 743,
+    "fields": {
+        "name": "캔바"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 744,
+    "fields": {
+        "name": "바이오헬스케어"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 745,
+    "fields": {
+        "name": "Ilustrator"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 746,
+    "fields": {
+        "name": "PremierePro"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 747,
+    "fields": {
+        "name": "AfterEffects"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 748,
+    "fields": {
+        "name": "Blender"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 749,
+    "fields": {
+        "name": "음악 제작"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 750,
+    "fields": {
+        "name": "작곡"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 751,
+    "fields": {
+        "name": "보컬 생성"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 752,
+    "fields": {
+        "name": "믹싱"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 753,
+    "fields": {
+        "name": "마스터링"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 754,
+    "fields": {
+        "name": "컨텍스트 관리"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 755,
+    "fields": {
+        "name": "Google Opal"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 756,
+    "fields": {
+        "name": "Google Stitch"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 757,
+    "fields": {
+        "name": "Antigravity"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 758,
+    "fields": {
+        "name": "n8n"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 759,
+    "fields": {
+        "name": "Zapier"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 760,
+    "fields": {
+        "name": "Vercel"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 761,
+    "fields": {
+        "name": "Multi-Agent"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 762,
+    "fields": {
+        "name": "LangGraph"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 763,
+    "fields": {
+        "name": "Embedding"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 764,
+    "fields": {
+        "name": "MCPServer"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 765,
+    "fields": {
+        "name": "ToolCalling"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 766,
+    "fields": {
+        "name": "No-code"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 767,
+    "fields": {
+        "name": "AI 앱 개발"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 768,
+    "fields": {
+        "name": "Upstage AI"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 769,
+    "fields": {
+        "name": "Google Cloud Platform"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 770,
+    "fields": {
+        "name": "GCP"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 771,
+    "fields": {
+        "name": "Vertex AI"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 772,
+    "fields": {
+        "name": "Vector DB"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 773,
+    "fields": {
+        "name": "BigQuery"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 774,
+    "fields": {
+        "name": "Cloud Run"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 775,
+    "fields": {
+        "name": "Transformer"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 776,
+    "fields": {
+        "name": "sportfire"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 777,
+    "fields": {
+        "name": "필터링스키마"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 778,
+    "fields": {
+        "name": "드릴다운"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 779,
+    "fields": {
+        "name": "Boxplot"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 780,
+    "fields": {
+        "name": "피벗언피벗"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 781,
+    "fields": {
+        "name": "데이터상관성분석"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 782,
+    "fields": {
+        "name": "Clustering"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 783,
+    "fields": {
+        "name": "Microsoft Copilot"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 784,
+    "fields": {
+        "name": "오피스 연동"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 785,
+    "fields": {
+        "name": "Git"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 786,
+    "fields": {
+        "name": "GitHub"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 787,
+    "fields": {
+        "name": "RESTAPI"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 788,
+    "fields": {
+        "name": "AIAPI"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 789,
+    "fields": {
+        "name": "GenerativeAI"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 790,
+    "fields": {
+        "name": "Orchestration"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 791,
+    "fields": {
+        "name": "DataPreprocessing"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 792,
+    "fields": {
+        "name": "WebScraping"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 793,
+    "fields": {
+        "name": "ServiceArchitecture"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 794,
+    "fields": {
+        "name": "AIGovernance"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 795,
+    "fields": {
+        "name": "GrowthMarketing"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 796,
+    "fields": {
+        "name": "DataAnalytics"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 797,
+    "fields": {
+        "name": "SystemSecurity"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 798,
+    "fields": {
+        "name": "PerformanceOptimization"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 799,
+    "fields": {
+        "name": "PyTorch·Ollama·OpenCV·TorchVision"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 800,
+    "fields": {
+        "name": "Metasploit·Wazuh"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 801,
+    "fields": {
+        "name": "Docker·Ubuntu·ELK"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 802,
+    "fields": {
+        "name": "자연어처리(NLP)"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 803,
+    "fields": {
+        "name": "컴퓨터비전(CV)"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 804,
+    "fields": {
+        "name": "LoRA/QLoRA"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 805,
+    "fields": {
+        "name": "LiDAR"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 806,
+    "fields": {
+        "name": "RaspberryPi·AiHAT·ROS"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 807,
+    "fields": {
+        "name": "PyTorch·YOLO"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 808,
+    "fields": {
+        "name": "EmbeddedC·STM32·AURIX"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 809,
+    "fields": {
+        "name": "MATLAB·Simulink·Stateflow"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 810,
+    "fields": {
+        "name": "제스처추적"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 811,
+    "fields": {
+        "name": "인터랙션파이프라인"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 812,
+    "fields": {
+        "name": "AI음악"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 813,
+    "fields": {
+        "name": "편곡"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 814,
+    "fields": {
+        "name": "Cubase"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 815,
+    "fields": {
+        "name": "음악제작"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 816,
+    "fields": {
+        "name": "음원유통"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 817,
+    "fields": {
+        "name": "Make"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 818,
+    "fields": {
+        "name": "Tableau"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 819,
+    "fields": {
+        "name": "AI개발자"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 820,
+    "fields": {
+        "name": "AI엔지니어"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 821,
+    "fields": {
+        "name": "인공지능개발자"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 822,
+    "fields": {
+        "name": "AI애플리케이션"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 823,
+    "fields": {
+        "name": "판다스"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 824,
+    "fields": {
+        "name": "음원발매"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 825,
+    "fields": {
+        "name": "프로듀싱"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 826,
+    "fields": {
+        "name": "레코딩"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 827,
+    "fields": {
+        "name": "저작권"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 828,
+    "fields": {
+        "name": "Cursor"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 829,
+    "fields": {
+        "name": "ClaudeDesign"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 830,
+    "fields": {
+        "name": "VScode"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 831,
+    "fields": {
+        "name": "Kling"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 832,
+    "fields": {
+        "name": "TensorFlow.js"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 833,
+    "fields": {
+        "name": "MediaPipe"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 834,
+    "fields": {
+        "name": "생성형AI파이프라인"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 835,
+    "fields": {
+        "name": "FigmaMake"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 836,
+    "fields": {
+        "name": "비즈니스"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 837,
+    "fields": {
+        "name": "기획력"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 838,
+    "fields": {
+        "name": "UX/UI 디자인"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 839,
+    "fields": {
+        "name": "Framer"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 840,
+    "fields": {
+        "name": "MVP 배포"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 841,
+    "fields": {
+        "name": "GoogleAIstudio"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 842,
+    "fields": {
+        "name": "GoogleStich"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 843,
+    "fields": {
+        "name": "DataDesign"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 844,
+    "fields": {
+        "name": "RESTfulAPI"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 845,
+    "fields": {
+        "name": "CloudDeployment"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 846,
+    "fields": {
+        "name": "CICD"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 847,
+    "fields": {
+        "name": "SaaS"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 848,
+    "fields": {
+        "name": "AIService"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 849,
+    "fields": {
+        "name": "DataDriven"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 850,
+    "fields": {
+        "name": "게임잼"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 851,
+    "fields": {
+        "name": "게임제작"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 852,
+    "fields": {
+        "name": "팀프로젝트"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 853,
+    "fields": {
+        "name": "퍼블릭클라우드"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 854,
+    "fields": {
+        "name": "클라우드보안"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 855,
+    "fields": {
+        "name": "네트워크보안"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 856,
+    "fields": {
+        "name": "위협관리"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 857,
+    "fields": {
+        "name": "보안관리자동화"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 858,
+    "fields": {
+        "name": "애플리케이션보안"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 859,
+    "fields": {
+        "name": "클라우드엔지니어"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 860,
+    "fields": {
+        "name": "클라우드인프라"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 861,
+    "fields": {
+        "name": "Podman"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 862,
+    "fields": {
+        "name": "LocalLLM"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 863,
+    "fields": {
+        "name": "Ansible"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 864,
+    "fields": {
+        "name": "IaC"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 865,
+    "fields": {
+        "name": "서버자동화"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 866,
+    "fields": {
+        "name": "반복작업관리"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 867,
+    "fields": {
+        "name": "운영자동화및인프라관리"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 868,
+    "fields": {
+        "name": "글로벌커머스"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 869,
+    "fields": {
+        "name": "이커머스마케터"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 870,
+    "fields": {
+        "name": "Canva AI"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 871,
+    "fields": {
+        "name": "메타광고"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 872,
+    "fields": {
+        "name": "빅데이터"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 873,
+    "fields": {
+        "name": "바이오 데이터"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 874,
+    "fields": {
+        "name": "환자 정보 분석"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 875,
+    "fields": {
+        "name": "UX/UI"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 876,
+    "fields": {
+        "name": "디자이너"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 877,
+    "fields": {
+        "name": "일러스트레이터"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 878,
+    "fields": {
+        "name": "웹퍼블리셔"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 879,
+    "fields": {
+        "name": "웹디자인"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 880,
+    "fields": {
+        "name": "임베딩"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 881,
+    "fields": {
+        "name": "API 설계"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 882,
+    "fields": {
+        "name": "토큰"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 883,
+    "fields": {
+        "name": "Softmax"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 884,
+    "fields": {
+        "name": "엔트로피"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 885,
+    "fields": {
+        "name": "Loss"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 886,
+    "fields": {
+        "name": "Gradient Descent"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 887,
+    "fields": {
+        "name": "Kotlin"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 888,
+    "fields": {
+        "name": "백엔드"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 889,
+    "fields": {
+        "name": "솔로프리너"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 890,
+    "fields": {
+        "name": "창업"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 891,
+    "fields": {
+        "name": "Claude Code"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 892,
+    "fields": {
+        "name": "Lovable"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 893,
+    "fields": {
+        "name": "Openclaw"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 894,
+    "fields": {
+        "name": "AI PM"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 895,
+    "fields": {
+        "name": "AI 마케터"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 896,
+    "fields": {
+        "name": "운영 자동화"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 897,
+    "fields": {
+        "name": "PMF"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 898,
+    "fields": {
+        "name": "일본어문법"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 899,
+    "fields": {
+        "name": "일본어회화"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 900,
+    "fields": {
+        "name": "정보처리산업기사취득"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 901,
+    "fields": {
+        "name": "한글"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 902,
+    "fields": {
+        "name": "SpringFramework"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 903,
+    "fields": {
+        "name": "SpringBoot"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 904,
+    "fields": {
+        "name": "MyBatis"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 905,
+    "fields": {
+        "name": "Maven"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 906,
+    "fields": {
+        "name": "Nodejs"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 907,
+    "fields": {
+        "name": "Express"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 908,
+    "fields": {
+        "name": "MongoDB"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 909,
+    "fields": {
+        "name": "JDBC"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 910,
+    "fields": {
+        "name": "Elasticsearch"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 911,
+    "fields": {
+        "name": "Front-end"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 912,
+    "fields": {
+        "name": "Back-end"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 913,
+    "fields": {
+        "name": "DBMS"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 914,
+    "fields": {
+        "name": "JQuery"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 915,
+    "fields": {
+        "name": "Kafka"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 916,
+    "fields": {
+        "name": "PostgreSQL"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 917,
+    "fields": {
+        "name": "Spring Cloud"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 918,
+    "fields": {
+        "name": "일러스트"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 919,
+    "fields": {
+        "name": "Ms"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 920,
+    "fields": {
+        "name": "Azure"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 921,
+    "fields": {
+        "name": "Network"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 922,
+    "fields": {
+        "name": "Terraform"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 923,
+    "fields": {
+        "name": "QA소프트웨어"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 924,
+    "fields": {
+        "name": "데이터수집"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 925,
+    "fields": {
+        "name": "IT"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 926,
+    "fields": {
+        "name": "SpringBatch"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 927,
+    "fields": {
+        "name": "대용량트래픽처리"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 928,
+    "fields": {
+        "name": "반응형"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 929,
+    "fields": {
+        "name": "Cinema4D"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 930,
+    "fields": {
+        "name": "RunwayML"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 931,
+    "fields": {
+        "name": "창직"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 932,
+    "fields": {
+        "name": "시니어"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 933,
+    "fields": {
+        "name": "트러블슈팅"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 934,
+    "fields": {
+        "name": "공정별이슈"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 935,
+    "fields": {
+        "name": "공정실습"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 936,
+    "fields": {
+        "name": "IoT"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 937,
+    "fields": {
+        "name": "스마트홈"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 938,
+    "fields": {
+        "name": "틴커캐드"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 939,
+    "fields": {
+        "name": "자율주행"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 940,
+    "fields": {
+        "name": "임베디드"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 941,
+    "fields": {
+        "name": "VLA"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 942,
+    "fields": {
+        "name": "모방학습"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 943,
+    "fields": {
+        "name": "통신제어"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 944,
+    "fields": {
+        "name": "Bedrock"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 945,
+    "fields": {
+        "name": "Engineer"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 946,
+    "fields": {
+        "name": "PlatformEngineering"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 947,
+    "fields": {
+        "name": "DevOps"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 948,
+    "fields": {
+        "name": "Architecture"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 949,
+    "fields": {
+        "name": "Operations+AI"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 950,
+    "fields": {
+        "name": "JAVAV"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 951,
+    "fields": {
+        "name": "크롤링"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 952,
+    "fields": {
+        "name": "텍스트마이닝"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 953,
+    "fields": {
+        "name": "생성형AI서비스구축"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 954,
+    "fields": {
+        "name": "Claude AI"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 955,
+    "fields": {
+        "name": "메신저 봇"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 956,
+    "fields": {
+        "name": "인공지능 에이전트"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 957,
+    "fields": {
+        "name": "피지컬AI"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 958,
+    "fields": {
+        "name": "로봇프로그래밍"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 959,
+    "fields": {
+        "name": "비전"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 960,
+    "fields": {
+        "name": "전이학습"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 961,
+    "fields": {
+        "name": "시뮬레이션"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 962,
+    "fields": {
+        "name": "캡스톤"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 963,
+    "fields": {
+        "name": "언리얼엔진5"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 964,
+    "fields": {
+        "name": "게임개발"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 965,
+    "fields": {
+        "name": "멀티플레이"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 966,
+    "fields": {
+        "name": "싱글플레이"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 967,
+    "fields": {
+        "name": "네트워크프로그래밍"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 968,
+    "fields": {
+        "name": "자료구조"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 969,
+    "fields": {
+        "name": "알고리즘"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 970,
+    "fields": {
+        "name": "개발자취업상담"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 971,
+    "fields": {
+        "name": "개발자취업준비"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 972,
+    "fields": {
+        "name": "AI역량"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 973,
+    "fields": {
+        "name": "이력서/면접대비"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 974,
+    "fields": {
+        "name": "취업피드백"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 975,
+    "fields": {
+        "name": "AI시대개발자"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 976,
+    "fields": {
+        "name": "NVIDIADLI"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 977,
+    "fields": {
+        "name": "네트워크"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 978,
+    "fields": {
+        "name": "리눅스"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 979,
+    "fields": {
+        "name": "인프라"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 980,
+    "fields": {
+        "name": "국비지원"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 981,
+    "fields": {
+        "name": "IT보안"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 982,
+    "fields": {
+        "name": "데이터베이스"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 983,
+    "fields": {
+        "name": "AI영상생성"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 984,
+    "fields": {
+        "name": "AI음성합성"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 985,
+    "fields": {
+        "name": "게임영상"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 986,
+    "fields": {
+        "name": "광고영상"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 987,
+    "fields": {
+        "name": "숏폼"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 988,
+    "fields": {
+        "name": "Security"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 989,
+    "fields": {
+        "name": "CloudInfra"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 990,
+    "fields": {
+        "name": "취업준비"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 991,
+    "fields": {
+        "name": "비즈니스설계"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 992,
+    "fields": {
+        "name": "수요검증"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 993,
+    "fields": {
+        "name": "프로덕트기획"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 994,
+    "fields": {
+        "name": "프로덕트디자인"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 995,
+    "fields": {
+        "name": "웹개발"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 996,
+    "fields": {
+        "name": "MVP제작"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 997,
+    "fields": {
+        "name": "프리미어"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 998,
+    "fields": {
+        "name": "에프터이펙트"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 999,
+    "fields": {
+        "name": "영상CG"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1000,
+    "fields": {
+        "name": "3DMAX"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1001,
+    "fields": {
+        "name": "애니메이션"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1002,
+    "fields": {
+        "name": "영상그래픽"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1003,
+    "fields": {
+        "name": "영상디자인"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1004,
+    "fields": {
+        "name": "RA"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1005,
+    "fields": {
+        "name": "의료기기"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1006,
+    "fields": {
+        "name": "의료산업"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1007,
+    "fields": {
+        "name": "인증"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1008,
+    "fields": {
+        "name": "실무"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1009,
+    "fields": {
+        "name": "첨단의료제품"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1010,
+    "fields": {
+        "name": "Pythong"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1011,
+    "fields": {
+        "name": "WebCrawling"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1012,
+    "fields": {
+        "name": "Numpy"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1013,
+    "fields": {
+        "name": "EDA기법"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1014,
+    "fields": {
+        "name": "데이터엔지니어링"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1015,
+    "fields": {
+        "name": "AI기초"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1016,
+    "fields": {
+        "name": "AI윤리"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1017,
+    "fields": {
+        "name": "Next.js"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1018,
+    "fields": {
+        "name": "PrismaORM"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1019,
+    "fields": {
+        "name": "TypeScript"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1020,
+    "fields": {
+        "name": "UI디자인"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1021,
+    "fields": {
+        "name": "UXUI설계"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1022,
+    "fields": {
+        "name": "포트폴리오전략"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1023,
+    "fields": {
+        "name": "프로덕트매니징"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1024,
+    "fields": {
+        "name": "ECS"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1025,
+    "fields": {
+        "name": "S3"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1026,
+    "fields": {
+        "name": "RDS"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1027,
+    "fields": {
+        "name": "NumPy/Pandas/Matplotlib"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1028,
+    "fields": {
+        "name": "TensorFlow/TensorFlowLite/TensorRT"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1029,
+    "fields": {
+        "name": "HuggingFace(Transformers)"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1030,
+    "fields": {
+        "name": "Docker/DockerCompose"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1031,
+    "fields": {
+        "name": "NVIDIATriton"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1032,
+    "fields": {
+        "name": "DB"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1033,
+    "fields": {
+        "name": "Docker&Kubernetes"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1034,
+    "fields": {
+        "name": "실무강의"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1035,
+    "fields": {
+        "name": "웹서비스"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1036,
+    "fields": {
+        "name": "아이디어 기획"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1037,
+    "fields": {
+        "name": "정보보안"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1038,
+    "fields": {
+        "name": "사이버보안"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1039,
+    "fields": {
+        "name": "OSI 7 Layer"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1040,
+    "fields": {
+        "name": "악성코드 탐지"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1041,
+    "fields": {
+        "name": "암호학"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1042,
+    "fields": {
+        "name": "모의 침투"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1043,
+    "fields": {
+        "name": "보안 관제"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1044,
+    "fields": {
+        "name": "CAD"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1045,
+    "fields": {
+        "name": "SketchUp"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1046,
+    "fields": {
+        "name": "V-ray"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1047,
+    "fields": {
+        "name": "도면"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1048,
+    "fields": {
+        "name": "실내인테리어"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1049,
+    "fields": {
+        "name": "건축"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1050,
+    "fields": {
+        "name": "과정평가형"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1051,
+    "fields": {
+        "name": "실내건축산업기사"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1052,
+    "fields": {
+        "name": "피지컬 AI"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1053,
+    "fields": {
+        "name": "스포츠 데이터"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1054,
+    "fields": {
+        "name": "AI 서비스"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1055,
+    "fields": {
+        "name": "바이오코딩"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1056,
+    "fields": {
+        "name": "Embeddings"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1057,
+    "fields": {
+        "name": "Pinecone"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1058,
+    "fields": {
+        "name": "GraphRAG"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1059,
+    "fields": {
+        "name": "할루시네이션"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1060,
+    "fields": {
+        "name": "프론트엔드"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1061,
+    "fields": {
+        "name": "API연동"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1062,
+    "fields": {
+        "name": "웹풀스택개발"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1063,
+    "fields": {
+        "name": "Lambda"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1064,
+    "fields": {
+        "name": "Gateway"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1065,
+    "fields": {
+        "name": "Android"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1066,
+    "fields": {
+        "name": "전기공사"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1067,
+    "fields": {
+        "name": "전기기능사"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1068,
+    "fields": {
+        "name": "내선공사"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1069,
+    "fields": {
+        "name": "배관배선"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1070,
+    "fields": {
+        "name": "동력설비"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1071,
+    "fields": {
+        "name": "방재설비"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1072,
+    "fields": {
+        "name": "조명공사"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1073,
+    "fields": {
+        "name": "전열공사"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1074,
+    "fields": {
+        "name": "시퀀스제어"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1075,
+    "fields": {
+        "name": "소방설비"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1076,
+    "fields": {
+        "name": "Vue.js"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1077,
+    "fields": {
+        "name": "IC설계"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1078,
+    "fields": {
+        "name": "Digital IC"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1079,
+    "fields": {
+        "name": "Analog IC"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1080,
+    "fields": {
+        "name": "Quartus"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1081,
+    "fields": {
+        "name": "PSpice"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1082,
+    "fields": {
+        "name": "OrCAD"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1083,
+    "fields": {
+        "name": "SPICE"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1084,
+    "fields": {
+        "name": "레이아웃"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1085,
+    "fields": {
+        "name": "공정"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1086,
+    "fields": {
+        "name": "소자"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1087,
+    "fields": {
+        "name": "AI영상"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1088,
+    "fields": {
+        "name": "UI/UX"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1089,
+    "fields": {
+        "name": "홍보영상"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1090,
+    "fields": {
+        "name": "CloudSecurity"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1091,
+    "fields": {
+        "name": "취약점진단"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1092,
+    "fields": {
+        "name": "기상 데이터"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1093,
+    "fields": {
+        "name": "기후 데이터"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1094,
+    "fields": {
+        "name": "교육 콘텐츠"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1095,
+    "fields": {
+        "name": "시뮬레이터"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1096,
+    "fields": {
+        "name": "UX리서치"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1097,
+    "fields": {
+        "name": "chatGPT"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1098,
+    "fields": {
+        "name": "BM분석"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1099,
+    "fields": {
+        "name": "데이터스크래핑"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1100,
+    "fields": {
+        "name": "UI기획"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1101,
+    "fields": {
+        "name": "UX개선"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1102,
+    "fields": {
+        "name": "앱개발"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1103,
+    "fields": {
+        "name": "풀스택"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1104,
+    "fields": {
+        "name": "온디바이스"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1105,
+    "fields": {
+        "name": "모델 경량화"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1106,
+    "fields": {
+        "name": "HDL"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1107,
+    "fields": {
+        "name": "펌웨어"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1108,
+    "fields": {
+        "name": "하드웨어"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1109,
+    "fields": {
+        "name": "센서 데이터 처리"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1110,
+    "fields": {
+        "name": "CAM"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1111,
+    "fields": {
+        "name": "CNC"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1112,
+    "fields": {
+        "name": "기계설계"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1113,
+    "fields": {
+        "name": "AI융합설계"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1114,
+    "fields": {
+        "name": "3D프린터"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1115,
+    "fields": {
+        "name": "MasterCAM"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1116,
+    "fields": {
+        "name": "머시닝센터"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1117,
+    "fields": {
+        "name": "진료기록요약(NLP)"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1118,
+    "fields": {
+        "name": "Looker"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1119,
+    "fields": {
+        "name": "C프로그래밍"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1120,
+    "fields": {
+        "name": "Matlab"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1121,
+    "fields": {
+        "name": "Simulink"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1122,
+    "fields": {
+        "name": "임베디드시스템"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1123,
+    "fields": {
+        "name": "MCU프로그래밍"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1124,
+    "fields": {
+        "name": "임베디드리눅스시스템"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1125,
+    "fields": {
+        "name": "실시간운영체제"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1126,
+    "fields": {
+        "name": "SW보안"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1127,
+    "fields": {
+        "name": "OTA"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1128,
+    "fields": {
+        "name": "영상인식"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1129,
+    "fields": {
+        "name": "임베디드AI"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1130,
+    "fields": {
+        "name": "MBD"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1131,
+    "fields": {
+        "name": "모델기반제어"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1132,
+    "fields": {
+        "name": "자동차전장시스템"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1133,
+    "fields": {
+        "name": "자동차통신시스템"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1134,
+    "fields": {
+        "name": "임베디드시스템인터페이스회로"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1135,
+    "fields": {
+        "name": "SW테스팅"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1136,
+    "fields": {
+        "name": "예측유지보수"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1137,
+    "fields": {
+        "name": "LookerStudio"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1138,
+    "fields": {
+        "name": "데이터대시보드"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1139,
+    "fields": {
+        "name": "대시보드자동화"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1140,
+    "fields": {
+        "name": "시계열 분석"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1141,
+    "fields": {
+        "name": "웹 스크래핑"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1142,
+    "fields": {
+        "name": "데이터 파이프라인"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1143,
+    "fields": {
+        "name": "인과 추론"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1144,
+    "fields": {
+        "name": "베이지안"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1145,
+    "fields": {
+        "name": "TFT"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1146,
+    "fields": {
+        "name": "자연어 처리"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1147,
+    "fields": {
+        "name": "sql"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1148,
+    "fields": {
+        "name": "R"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1149,
+    "fields": {
+        "name": "금융데이터"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1150,
+    "fields": {
+        "name": "디지털금융"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1151,
+    "fields": {
+        "name": "예측분석"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1152,
+    "fields": {
+        "name": "AIoT"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1153,
+    "fields": {
+        "name": "비즈니스 인사이트"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1154,
+    "fields": {
+        "name": "게임개발기초"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1155,
+    "fields": {
+        "name": "게임구조이해"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1156,
+    "fields": {
+        "name": "게임로직"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1157,
+    "fields": {
+        "name": "태양광발전"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1158,
+    "fields": {
+        "name": "모니터링"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1159,
+    "fields": {
+        "name": "통신네트워크"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1160,
+    "fields": {
+        "name": "모듈설치및전기회로실습"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1161,
+    "fields": {
+        "name": "Codex"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1162,
+    "fields": {
+        "name": "네트워크 운영"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1163,
+    "fields": {
+        "name": "칩설계"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1164,
+    "fields": {
+        "name": "디지털 트랙"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1165,
+    "fields": {
+        "name": "PowerPoint"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1166,
+    "fields": {
+        "name": "MobileBanking"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1167,
+    "fields": {
+        "name": "Notion"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1168,
+    "fields": {
+        "name": "컴플라이언스"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1169,
+    "fields": {
+        "name": "금소법"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1170,
+    "fields": {
+        "name": "디지털전환"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1171,
+    "fields": {
+        "name": "자산관리"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1172,
+    "fields": {
+        "name": "대출"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1173,
+    "fields": {
+        "name": "예적금"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1174,
+    "fields": {
+        "name": "외환"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1175,
+    "fields": {
+        "name": "수신"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1176,
+    "fields": {
+        "name": "여신"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1177,
+    "fields": {
+        "name": "건설기계"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1178,
+    "fields": {
+        "name": "굴착기"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1179,
+    "fields": {
+        "name": "지게차"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1180,
+    "fields": {
+        "name": "산업용로봇"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1181,
+    "fields": {
+        "name": "ISO 14001"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1182,
+    "fields": {
+        "name": "ISO 45001"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1183,
+    "fields": {
+        "name": "3D모델링"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1184,
+    "fields": {
+        "name": "직무체험"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1185,
+    "fields": {
+        "name": "자격증"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1186,
+    "fields": {
+        "name": "테스팅"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1187,
+    "fields": {
+        "name": "테스트케이스"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1188,
+    "fields": {
+        "name": "테스트전략"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1189,
+    "fields": {
+        "name": "메트릭수립"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1190,
+    "fields": {
+        "name": "테스트설계"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1191,
+    "fields": {
+        "name": "테스트모니터링"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1192,
+    "fields": {
+        "name": "DL"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1193,
+    "fields": {
+        "name": "LVM"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1194,
+    "fields": {
+        "name": "Google"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1195,
+    "fields": {
+        "name": "SRE"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1196,
+    "fields": {
+        "name": "bash(shell)"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1197,
+    "fields": {
+        "name": "OS"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1198,
+    "fields": {
+        "name": "CDN"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1199,
+    "fields": {
+        "name": "AutoScaling"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1200,
+    "fields": {
+        "name": "서버모니터링"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1201,
+    "fields": {
+        "name": "IAM"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1202,
+    "fields": {
+        "name": "UI프로토타이핑"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1203,
+    "fields": {
+        "name": "인포그래픽"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1204,
+    "fields": {
+        "name": "웹앱기획"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1205,
+    "fields": {
+        "name": "앱디자인"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1206,
+    "fields": {
+        "name": "실시간협업"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1207,
+    "fields": {
+        "name": "NestJS"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1208,
+    "fields": {
+        "name": "Axios"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1209,
+    "fields": {
+        "name": "RAG아키텍처"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1210,
+    "fields": {
+        "name": "OpenAI"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1211,
+    "fields": {
+        "name": "Copilot"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1212,
+    "fields": {
+        "name": "Nest.js"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1213,
+    "fields": {
+        "name": "VisualStudioCode"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1214,
+    "fields": {
+        "name": "Postman"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1215,
+    "fields": {
+        "name": "A/Btest"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1216,
+    "fields": {
+        "name": "React.js"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1217,
+    "fields": {
+        "name": "Syntax"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1218,
+    "fields": {
+        "name": "Structure"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1219,
+    "fields": {
+        "name": "Vite"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1220,
+    "fields": {
+        "name": "fetch"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1221,
+    "fields": {
+        "name": "라우팅"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1222,
+    "fields": {
+        "name": "RFM고객세분화"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1223,
+    "fields": {
+        "name": "매출분석"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1224,
+    "fields": {
+        "name": "코호트분석(Cohort)"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1225,
+    "fields": {
+        "name": "코딩테스트"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1226,
+    "fields": {
+        "name": "ETL"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1227,
+    "fields": {
+        "name": "BI"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1228,
+    "fields": {
+        "name": "컴퓨터구조"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1229,
+    "fields": {
+        "name": "시스템프로그래밍"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1230,
+    "fields": {
+        "name": "C언어"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1231,
+    "fields": {
+        "name": "이력서"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1232,
+    "fields": {
+        "name": "시스템디자인"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1233,
+    "fields": {
+        "name": "빌드제작"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1234,
+    "fields": {
+        "name": "콘텐츠디자인"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1235,
+    "fields": {
+        "name": "밸런싱"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1236,
+    "fields": {
+        "name": "팀빌딩"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1237,
+    "fields": {
+        "name": "PoC"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1238,
+    "fields": {
+        "name": "프로덕션"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1239,
+    "fields": {
+        "name": "폴리싱"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1240,
+    "fields": {
+        "name": "에셋파이프라인"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1241,
+    "fields": {
+        "name": "퍼블리싱"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1242,
+    "fields": {
+        "name": "엔진제작"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1243,
+    "fields": {
+        "name": "에픽프로젝트"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1244,
+    "fields": {
+        "name": "구글애널리틱스"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1245,
+    "fields": {
+        "name": "퍼널분석"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1246,
+    "fields": {
+        "name": "리텐션분석"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1247,
+    "fields": {
+        "name": "GTM"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1248,
+    "fields": {
+        "name": "마케팅성과분석"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1249,
+    "fields": {
+        "name": "그로스해킹"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1250,
+    "fields": {
+        "name": "Tidyverse"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1251,
+    "fields": {
+        "name": "인터렉티브시각화"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1252,
+    "fields": {
+        "name": "ggplot"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1253,
+    "fields": {
+        "name": "드라이에치"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1254,
+    "fields": {
+        "name": "스퍼터공정"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1255,
+    "fields": {
+        "name": "Quarto"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1256,
+    "fields": {
+        "name": "CRUD"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1257,
+    "fields": {
+        "name": "EC2"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1258,
+    "fields": {
+        "name": "Amazon Bedrock"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1259,
+    "fields": {
+        "name": "벡터 데이터베이스"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1260,
+    "fields": {
+        "name": "서버리스"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1261,
+    "fields": {
+        "name": "성능최적화"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1262,
+    "fields": {
+        "name": "Bigquery"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1263,
+    "fields": {
+        "name": "LTV"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1264,
+    "fields": {
+        "name": "LTR"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1265,
+    "fields": {
+        "name": "ABC분석"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1266,
+    "fields": {
+        "name": "퍼널분석(Funnel)"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1267,
+    "fields": {
+        "name": "리텐션분석(Retention)"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1268,
+    "fields": {
+        "name": "SAS"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1269,
+    "fields": {
+        "name": "통계분석"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1270,
+    "fields": {
+        "name": "비전공자"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1271,
+    "fields": {
+        "name": "예측모델링"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1272,
+    "fields": {
+        "name": "비즈니스분석"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1273,
+    "fields": {
+        "name": "패션디자인"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1274,
+    "fields": {
+        "name": "브랜드기획"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1275,
+    "fields": {
+        "name": "커머스"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1276,
+    "fields": {
+        "name": "스마트스토어"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1277,
+    "fields": {
+        "name": "룩북제작"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1278,
+    "fields": {
+        "name": "SEO"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1279,
+    "fields": {
+        "name": "마인드셋"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1280,
+    "fields": {
+        "name": "질문"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1281,
+    "fields": {
+        "name": "실행"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1282,
+    "fields": {
+        "name": "리뷰봇"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1283,
+    "fields": {
+        "name": "AI스타트업"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1284,
+    "fields": {
+        "name": "업무효율화"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1285,
+    "fields": {
+        "name": "생활문제해결"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1286,
+    "fields": {
+        "name": "마이크로서비스"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1287,
+    "fields": {
+        "name": "컨테이너"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1288,
+    "fields": {
+        "name": "Flowise"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1289,
+    "fields": {
+        "name": "Dart"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1290,
+    "fields": {
+        "name": "CAPCUT"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1291,
+    "fields": {
+        "name": "Bing"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1292,
+    "fields": {
+        "name": "캡컷"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1293,
+    "fields": {
+        "name": "영상콘텐츠제작"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1294,
+    "fields": {
+        "name": "특수합성"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1295,
+    "fields": {
+        "name": "CG"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1296,
+    "fields": {
+        "name": "illustrator"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1297,
+    "fields": {
+        "name": "전산세무"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1298,
+    "fields": {
+        "name": "전산회계"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1299,
+    "fields": {
+        "name": "물류관리"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1300,
+    "fields": {
+        "name": "ERP"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1301,
+    "fields": {
+        "name": "풀스택개발"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1302,
+    "fields": {
+        "name": "시퀀스"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1303,
+    "fields": {
+        "name": "전장설계"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1304,
+    "fields": {
+        "name": "sLLM"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1305,
+    "fields": {
+        "name": "인프라구축"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1306,
+    "fields": {
+        "name": "VsCode"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1307,
+    "fields": {
+        "name": "html5"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1308,
+    "fields": {
+        "name": "css3"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1309,
+    "fields": {
+        "name": "RestAPI"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1310,
+    "fields": {
+        "name": "멀티 에이전트"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1311,
+    "fields": {
+        "name": "오케스트레이션"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1312,
+    "fields": {
+        "name": "노코드 워크플로우"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1313,
+    "fields": {
+        "name": "Function Calling"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1314,
+    "fields": {
+        "name": "AutoHealing"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1315,
+    "fields": {
+        "name": "LLM API"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1316,
+    "fields": {
+        "name": "JupyterLab"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1317,
+    "fields": {
+        "name": "콘텐츠"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1318,
+    "fields": {
+        "name": "릴스"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1319,
+    "fields": {
+        "name": "취업특강"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1320,
+    "fields": {
+        "name": "게임그래픽"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1321,
+    "fields": {
+        "name": "2D그래픽"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1322,
+    "fields": {
+        "name": "3D그래픽"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1323,
+    "fields": {
+        "name": "게임캐릭터"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1324,
+    "fields": {
+        "name": "게임배경"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1325,
+    "fields": {
+        "name": "원화"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1326,
+    "fields": {
+        "name": "이펙트"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1327,
+    "fields": {
+        "name": "워크플로우"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1328,
+    "fields": {
+        "name": "자동화시스템"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1329,
+    "fields": {
+        "name": "벤치마크시스템"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1330,
+    "fields": {
+        "name": "병목분석및최적화"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1331,
+    "fields": {
+        "name": "업무자동화도구"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1332,
+    "fields": {
+        "name": "HuggingFaceSpaces"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1333,
+    "fields": {
+        "name": "Neo4j"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1334,
+    "fields": {
+        "name": "Obsidian"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1335,
+    "fields": {
+        "name": "Chroma"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1336,
+    "fields": {
+        "name": "SentenceTransformers"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1337,
+    "fields": {
+        "name": "Agent"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1338,
+    "fields": {
+        "name": "StructuredOutput"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1339,
+    "fields": {
+        "name": "스토리"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1340,
+    "fields": {
+        "name": "각색"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1341,
+    "fields": {
+        "name": "콘티"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1342,
+    "fields": {
+        "name": "배경"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1343,
+    "fields": {
+        "name": "작화"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1344,
+    "fields": {
+        "name": "선화"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1345,
+    "fields": {
+        "name": "채색"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1346,
+    "fields": {
+        "name": "편집"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1347,
+    "fields": {
+        "name": "AISecurity"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1348,
+    "fields": {
+        "name": "AI해커톤"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1349,
+    "fields": {
+        "name": "스타트업해커톤"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1350,
+    "fields": {
+        "name": "대외활동"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1351,
+    "fields": {
+        "name": "IT공모전"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1352,
+    "fields": {
+        "name": "AI공모전"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1353,
+    "fields": {
+        "name": "MVP개발"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1354,
+    "fields": {
+        "name": "프롬포트 엔지니어링"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1355,
+    "fields": {
+        "name": "GAS"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1356,
+    "fields": {
+        "name": "멀티플레이어"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1357,
+    "fields": {
+        "name": "데디케이트 서버"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1358,
+    "fields": {
+        "name": "게임 개발"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1359,
+    "fields": {
+        "name": "디지털 콘텐츠"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1360,
+    "fields": {
+        "name": "과학문화"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1361,
+    "fields": {
+        "name": "콘텐츠 창작"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1362,
+    "fields": {
+        "name": "크리에이터"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1363,
+    "fields": {
+        "name": "Pytorch"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1364,
+    "fields": {
+        "name": "시계열 데이터"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1365,
+    "fields": {
+        "name": "제조분야"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1366,
+    "fields": {
+        "name": "캡스톤 프로젝트"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1367,
+    "fields": {
+        "name": "GoogleAnalytics"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1368,
+    "fields": {
+        "name": "어도비"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1369,
+    "fields": {
+        "name": "CrewAI"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1370,
+    "fields": {
+        "name": "AutoGen"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1371,
+    "fields": {
+        "name": "Agentic AI"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1372,
+    "fields": {
+        "name": "벡터 DB"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1373,
+    "fields": {
+        "name": "Milvus"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1374,
+    "fields": {
+        "name": "Airflow"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1375,
+    "fields": {
+        "name": "NER"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1376,
+    "fields": {
+        "name": "Deep Learning"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1377,
+    "fields": {
+        "name": "Spotfire"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1378,
+    "fields": {
+        "name": "STT"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1379,
+    "fields": {
+        "name": "AI에셋파이프라인"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1380,
+    "fields": {
+        "name": "VR/AR"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1381,
+    "fields": {
+        "name": "AIVision"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1382,
+    "fields": {
+        "name": "AI글래스"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1383,
+    "fields": {
+        "name": "VoiceAIAssistant"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1384,
+    "fields": {
+        "name": "론칭"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1385,
+    "fields": {
+        "name": "사용자 경험 설계"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1386,
+    "fields": {
+        "name": "비용 최적화"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1387,
+    "fields": {
+        "name": "REST API"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1388,
+    "fields": {
+        "name": "Spring AI"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1389,
+    "fields": {
+        "name": "벡터DB"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1390,
+    "fields": {
+        "name": "제조데이터"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1391,
+    "fields": {
+        "name": "자율제조"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1392,
+    "fields": {
+        "name": "공정자동화"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1393,
+    "fields": {
+        "name": "협동로봇"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1394,
+    "fields": {
+        "name": "AI Vision"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1395,
+    "fields": {
+        "name": "3D Camera"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1396,
+    "fields": {
+        "name": "VLM"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1397,
+    "fields": {
+        "name": "Imitation Learning"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1398,
+    "fields": {
+        "name": "Modbus"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1399,
+    "fields": {
+        "name": "Socket"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1400,
+    "fields": {
+        "name": "카메라"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1401,
+    "fields": {
+        "name": "라이다"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1402,
+    "fields": {
+        "name": "레이더"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1403,
+    "fields": {
+        "name": "ui/ux"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1404,
+    "fields": {
+        "name": "디자인시스템"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1405,
+    "fields": {
+        "name": "ux전략"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1406,
+    "fields": {
+        "name": "하이파이UI"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1407,
+    "fields": {
+        "name": "HTML·CSS·JS"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1408,
+    "fields": {
+        "name": "SEO전략"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1409,
+    "fields": {
+        "name": "A/B테스트"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1410,
+    "fields": {
+        "name": "ML-Agents"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1411,
+    "fields": {
+        "name": "Supabase"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1412,
+    "fields": {
+        "name": "게임 클라이언트"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1413,
+    "fields": {
+        "name": "강화학습"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1414,
+    "fields": {
+        "name": "2D 게임"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1415,
+    "fields": {
+        "name": "3D 게임"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1416,
+    "fields": {
+        "name": "자율주행로봇"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1417,
+    "fields": {
+        "name": "AGV"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1418,
+    "fields": {
+        "name": "로봇제어"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1419,
+    "fields": {
+        "name": "모터제어"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1420,
+    "fields": {
+        "name": "Servlet/JSP"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1421,
+    "fields": {
+        "name": "AIagent"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1422,
+    "fields": {
+        "name": "Agile"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1423,
+    "fields": {
+        "name": "AM"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1424,
+    "fields": {
+        "name": "DevOpsTools"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1425,
+    "fields": {
+        "name": "SNS브랜딩"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1426,
+    "fields": {
+        "name": "뷰티마케팅"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1427,
+    "fields": {
+        "name": "Premiere Pro"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1428,
+    "fields": {
+        "name": "After Effects"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1429,
+    "fields": {
+        "name": "영상 제작"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1430,
+    "fields": {
+        "name": "음원 제작"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1431,
+    "fields": {
+        "name": "sora"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1432,
+    "fields": {
+        "name": "runway"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1433,
+    "fields": {
+        "name": "hailuo"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1434,
+    "fields": {
+        "name": "hedra"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1435,
+    "fields": {
+        "name": "suno AI"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1436,
+    "fields": {
+        "name": "elevenlabs"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1437,
+    "fields": {
+        "name": "AX"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1438,
+    "fields": {
+        "name": "XAI"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1439,
+    "fields": {
+        "name": "서비스모형기획"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1440,
+    "fields": {
+        "name": "디바이스기획"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1441,
+    "fields": {
+        "name": "응용소프트웨어기획"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1442,
+    "fields": {
+        "name": "서버프로그램"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1443,
+    "fields": {
+        "name": "자료구조·알고리즘"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1444,
+    "fields": {
+        "name": "PBL"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1445,
+    "fields": {
+        "name": "공공데이터"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1446,
+    "fields": {
+        "name": "서비스개발"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1447,
+    "fields": {
+        "name": "공모전"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1448,
+    "fields": {
+        "name": "아이디어기획"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1449,
+    "fields": {
+        "name": "카티아"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1450,
+    "fields": {
+        "name": "OracleSQL"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1451,
+    "fields": {
+        "name": "Ollama"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1452,
+    "fields": {
+        "name": "HARO"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1453,
+    "fields": {
+        "name": "자바프로그래밍"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1454,
+    "fields": {
+        "name": "웹표준"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1455,
+    "fields": {
+        "name": "스프링"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1456,
+    "fields": {
+        "name": "데이터분석및시각화"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1457,
+    "fields": {
+        "name": "도커와쿠버네티스"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1458,
+    "fields": {
+        "name": "MS애플리케이션개발"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1459,
+    "fields": {
+        "name": "AI Ready Data"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1460,
+    "fields": {
+        "name": "데이터 엔지니어링"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1461,
+    "fields": {
+        "name": "데이터 표준화"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1462,
+    "fields": {
+        "name": "데이터 모델링"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1463,
+    "fields": {
+        "name": "CI/CD/CT"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1464,
+    "fields": {
+        "name": "OpenShift"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1465,
+    "fields": {
+        "name": "AI보안"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1466,
+    "fields": {
+        "name": "ArgoCD"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1467,
+    "fields": {
+        "name": "Athena"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1468,
+    "fields": {
+        "name": "Mybatis"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1469,
+    "fields": {
+        "name": "MES"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1470,
+    "fields": {
+        "name": "SCM"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1471,
+    "fields": {
+        "name": "NPU"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1472,
+    "fields": {
+        "name": "컴퓨터활용능력"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1473,
+    "fields": {
+        "name": "정보처리능력"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1474,
+    "fields": {
+        "name": "사진편집"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1475,
+    "fields": {
+        "name": "시안제작"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1476,
+    "fields": {
+        "name": "자료관리"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1477,
+    "fields": {
+        "name": "출판법규"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1478,
+    "fields": {
+        "name": "컨셉설정"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1479,
+    "fields": {
+        "name": "전자출판"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1480,
+    "fields": {
+        "name": "영상기법"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1481,
+    "fields": {
+        "name": "뎁스카메라"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1482,
+    "fields": {
+        "name": "Feature Store"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1483,
+    "fields": {
+        "name": "Data Lakehouse"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1484,
+    "fields": {
+        "name": "Spark Streaming"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1485,
+    "fields": {
+        "name": "dbt"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1486,
+    "fields": {
+        "name": "DataOps"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1487,
+    "fields": {
+        "name": "AIOps"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1488,
+    "fields": {
+        "name": "GitHubActions"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1489,
+    "fields": {
+        "name": "AI 보안"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1490,
+    "fields": {
+        "name": "LLM 보안"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1491,
+    "fields": {
+        "name": "프롬프트 인젝션"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1492,
+    "fields": {
+        "name": "DevSecOps"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1493,
+    "fields": {
+        "name": "레드팀"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1494,
+    "fields": {
+        "name": "가드레일"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1495,
+    "fields": {
+        "name": "RAG보안"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1496,
+    "fields": {
+        "name": "생성모델"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1497,
+    "fields": {
+        "name": "AI서비스"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1498,
+    "fields": {
+        "name": "웹어플리케이션"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1499,
+    "fields": {
+        "name": "정보플랫폼"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1500,
+    "fields": {
+        "name": "자동분류"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1501,
+    "fields": {
+        "name": "CAE 해석"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1502,
+    "fields": {
+        "name": "Physical AI"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1503,
+    "fields": {
+        "name": "Ansys"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1504,
+    "fields": {
+        "name": "전자기장 해석"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1505,
+    "fields": {
+        "name": "구조해석"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1506,
+    "fields": {
+        "name": "유동해석"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1507,
+    "fields": {
+        "name": "설계 최적화"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1508,
+    "fields": {
+        "name": "의약품 제조"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1509,
+    "fields": {
+        "name": "제약바이오"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1510,
+    "fields": {
+        "name": "Validation"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1511,
+    "fields": {
+        "name": "AI서비스아키텍처설계·운영"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1512,
+    "fields": {
+        "name": "클라우드인프라구성"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1513,
+    "fields": {
+        "name": "운영"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1514,
+    "fields": {
+        "name": "이차전지"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1515,
+    "fields": {
+        "name": "셀 설계"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1516,
+    "fields": {
+        "name": "셀 제조"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1517,
+    "fields": {
+        "name": "셀 평가"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1518,
+    "fields": {
+        "name": "양극활물질"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1519,
+    "fields": {
+        "name": "음극활물질"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1520,
+    "fields": {
+        "name": "전해질"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1521,
+    "fields": {
+        "name": "파우치셀"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1522,
+    "fields": {
+        "name": "코인셀"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1523,
+    "fields": {
+        "name": "VP시스템"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1524,
+    "fields": {
+        "name": "모션캡쳐"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1525,
+    "fields": {
+        "name": "Gems"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1526,
+    "fields": {
+        "name": "AI 자동화"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1527,
+    "fields": {
+        "name": "고객 행동 분석"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1528,
+    "fields": {
+        "name": "RTL"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1529,
+    "fields": {
+        "name": "ARM Cortex-M"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1530,
+    "fields": {
+        "name": "Machine Learning"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1531,
+    "fields": {
+        "name": "하네스엔지니어링"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1532,
+    "fields": {
+        "name": "Next"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1533,
+    "fields": {
+        "name": "vercel"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1534,
+    "fields": {
+        "name": "git/github"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1535,
+    "fields": {
+        "name": "클로드코드"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1536,
+    "fields": {
+        "name": "코덱스"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1537,
+    "fields": {
+        "name": "아키텍쳐"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1538,
+    "fields": {
+        "name": "로봇팔"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1539,
+    "fields": {
+        "name": "비전처리"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1540,
+    "fields": {
+        "name": "MoveIt"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1541,
+    "fields": {
+        "name": "Gazebo"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1542,
+    "fields": {
+        "name": "매니퓰레이터"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1543,
+    "fields": {
+        "name": "고급애니메이션"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1544,
+    "fields": {
+        "name": "시네마틱콘텐츠"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1545,
+    "fields": {
+        "name": "AI에이전트개발"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1546,
+    "fields": {
+        "name": "언리얼"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1547,
+    "fields": {
+        "name": "UnrealEngine"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1548,
+    "fields": {
+        "name": "물리엔진"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1549,
+    "fields": {
+        "name": "그로스마케팅"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1550,
+    "fields": {
+        "name": "AAARRR"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1551,
+    "fields": {
+        "name": "시계열모델"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1552,
+    "fields": {
+        "name": "추천시스템"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1553,
+    "fields": {
+        "name": "SQLD"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1554,
+    "fields": {
+        "name": "SQLP"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1555,
+    "fields": {
+        "name": "신용분석사"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1556,
+    "fields": {
+        "name": "FP"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1557,
+    "fields": {
+        "name": "외환전문역"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1558,
+    "fields": {
+        "name": "2D모션그래픽"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1559,
+    "fields": {
+        "name": "인디자인"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1560,
+    "fields": {
+        "name": "VHDL"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1561,
+    "fields": {
+        "name": "Cadence Virtuoso"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1562,
+    "fields": {
+        "name": "레이아웃 설계"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1563,
+    "fields": {
+        "name": "P&R"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1564,
+    "fields": {
+        "name": "GDSⅡ"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1565,
+    "fields": {
+        "name": "ARM"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1566,
+    "fields": {
+        "name": "RTOS"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1567,
+    "fields": {
+        "name": "드라이버"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1568,
+    "fields": {
+        "name": "STM32"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1569,
+    "fields": {
+        "name": "MCU"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1570,
+    "fields": {
+        "name": "SLAM"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1571,
+    "fields": {
+        "name": "LiDAR/IMU"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1572,
+    "fields": {
+        "name": "OpenCV/YOLO"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1573,
+    "fields": {
+        "name": "AI/ML"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1574,
+    "fields": {
+        "name": "PathPlanning"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1575,
+    "fields": {
+        "name": "Navigation"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1576,
+    "fields": {
+        "name": "AI서버프로그래밍"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1577,
+    "fields": {
+        "name": "LLM활용및서비스개발"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1578,
+    "fields": {
+        "name": "에이전트개발"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1579,
+    "fields": {
+        "name": "클라우드배포"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1580,
+    "fields": {
+        "name": "FW"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1581,
+    "fields": {
+        "name": "IDS"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1582,
+    "fields": {
+        "name": "패킷분석"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1583,
+    "fields": {
+        "name": "WEB"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1584,
+    "fields": {
+        "name": "DNS"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1585,
+    "fields": {
+        "name": "DHCP"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1586,
+    "fields": {
+        "name": "Mail"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1587,
+    "fields": {
+        "name": "FTP"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1588,
+    "fields": {
+        "name": "IT GRC"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1589,
+    "fields": {
+        "name": "ISMS"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1590,
+    "fields": {
+        "name": "윈도우"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1591,
+    "fields": {
+        "name": "침해대응"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1592,
+    "fields": {
+        "name": "Splunk"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1593,
+    "fields": {
+        "name": "Logstash"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1594,
+    "fields": {
+        "name": "Kibana"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1595,
+    "fields": {
+        "name": "MariaDB"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1596,
+    "fields": {
+        "name": "멀티에이전트"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1597,
+    "fields": {
+        "name": "카티아모델링"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1598,
+    "fields": {
+        "name": "로보틱스모델링"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1599,
+    "fields": {
+        "name": "자동화설비구조해석"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1600,
+    "fields": {
+        "name": "PLC프로그래밍"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1601,
+    "fields": {
+        "name": "버추얼트윈"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1602,
+    "fields": {
+        "name": "유니티"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1603,
+    "fields": {
+        "name": "데이터시각화로보틱스"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1604,
+    "fields": {
+        "name": "CPS연동"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1605,
+    "fields": {
+        "name": "MAX"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1606,
+    "fields": {
+        "name": "개발"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1607,
+    "fields": {
+        "name": "react"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1608,
+    "fields": {
+        "name": "머신런닝"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1609,
+    "fields": {
+        "name": "SpringSecurity"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1610,
+    "fields": {
+        "name": "임상시험"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1611,
+    "fields": {
+        "name": "기업현장프로젝트"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1612,
+    "fields": {
+        "name": "클라우드 컴퓨팅"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1613,
+    "fields": {
+        "name": "리소스 관리"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1614,
+    "fields": {
+        "name": "MidJourney"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1615,
+    "fields": {
+        "name": "RPG개발"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1616,
+    "fields": {
+        "name": "충돌판정"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1617,
+    "fields": {
+        "name": "게임AI"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1618,
+    "fields": {
+        "name": "네크워크"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1619,
+    "fields": {
+        "name": "패션"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1620,
+    "fields": {
+        "name": "이커머스"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1621,
+    "fields": {
+        "name": "브랜딩"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1622,
+    "fields": {
+        "name": "온라인셀러"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1623,
+    "fields": {
+        "name": "상품기획"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1624,
+    "fields": {
+        "name": "소싱"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1625,
+    "fields": {
+        "name": "조선"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1626,
+    "fields": {
+        "name": "설계"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1627,
+    "fields": {
+        "name": "QM"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1628,
+    "fields": {
+        "name": "DX"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1629,
+    "fields": {
+        "name": "오픈소스LLM"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1630,
+    "fields": {
+        "name": "클라우드기반LLM인프라"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1631,
+    "fields": {
+        "name": "모델최적화"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1632,
+    "fields": {
+        "name": "프라이빗LLM통합서비스"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1633,
+    "fields": {
+        "name": "파인튜닝"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1634,
+    "fields": {
+        "name": "취업지원"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1635,
+    "fields": {
+        "name": "AI/LLM"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1636,
+    "fields": {
+        "name": "VLM/VLA"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1637,
+    "fields": {
+        "name": "SLAM/Nav2"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1638,
+    "fields": {
+        "name": "Sim2Real"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1639,
+    "fields": {
+        "name": "에지컴퓨팅/배포"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1640,
+    "fields": {
+        "name": "자율주행물류프로젝트"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1641,
+    "fields": {
+        "name": "2D/3D비전AI"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1642,
+    "fields": {
+        "name": "RobotOps"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1643,
+    "fields": {
+        "name": "엣지디바이스"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1644,
+    "fields": {
+        "name": "시계열예측모델"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1645,
+    "fields": {
+        "name": "CV결합탐지모델"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1646,
+    "fields": {
+        "name": "온디바이스AI모델설계"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1647,
+    "fields": {
+        "name": "자연어기반스마트컨트롤러"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1648,
+    "fields": {
+        "name": "온디바이스AI시스템운영"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1649,
+    "fields": {
+        "name": "모바일기반멀티모달AI"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1650,
+    "fields": {
+        "name": "로컬챗봇"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1651,
+    "fields": {
+        "name": "LLM기초"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1652,
+    "fields": {
+        "name": "Agent프레임워크"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1653,
+    "fields": {
+        "name": "워크플로우구축"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1654,
+    "fields": {
+        "name": "AI시스템고도화"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1655,
+    "fields": {
+        "name": "AX서비스론칭프로젝트"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1656,
+    "fields": {
+        "name": "CV기반데이터분석"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1657,
+    "fields": {
+        "name": "AI서비스구축"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1658,
+    "fields": {
+        "name": "온프레미스"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1659,
+    "fields": {
+        "name": "AI서비스개발"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1660,
+    "fields": {
+        "name": "ScikitLearn"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1661,
+    "fields": {
+        "name": "Keras"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1662,
+    "fields": {
+        "name": "YOLO"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1663,
+    "fields": {
+        "name": "KMeans"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1664,
+    "fields": {
+        "name": "TFIDF"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1665,
+    "fields": {
+        "name": "스케치업"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1666,
+    "fields": {
+        "name": "3DSMax"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1667,
+    "fields": {
+        "name": "레빗"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1668,
+    "fields": {
+        "name": "건축설계"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1669,
+    "fields": {
+        "name": "실내건축"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1670,
+    "fields": {
+        "name": "blender"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1671,
+    "fields": {
+        "name": "Mixamo"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1672,
+    "fields": {
+        "name": "3d"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1673,
+    "fields": {
+        "name": "모델링"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1674,
+    "fields": {
+        "name": "SketchUP"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1675,
+    "fields": {
+        "name": "인테리어"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1676,
+    "fields": {
+        "name": "시각디자인"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1677,
+    "fields": {
+        "name": "서브스텐스"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1678,
+    "fields": {
+        "name": "런웨이"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1679,
+    "fields": {
+        "name": "ICVFX"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1680,
+    "fields": {
+        "name": "버추얼아티스트"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1681,
+    "fields": {
+        "name": "디지털휴먼"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1682,
+    "fields": {
+        "name": "Full-Stack"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1683,
+    "fields": {
+        "name": "3D프린팅"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1684,
+    "fields": {
+        "name": "DFAM"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1685,
+    "fields": {
+        "name": "자동차"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1686,
+    "fields": {
+        "name": "건설"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1687,
+    "fields": {
+        "name": "방송"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1688,
+    "fields": {
+        "name": "의료"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1689,
+    "fields": {
+        "name": "구조최적화"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1690,
+    "fields": {
+        "name": "경량화"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1691,
+    "fields": {
+        "name": "부품통합"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1692,
+    "fields": {
+        "name": "문화유산"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1693,
+    "fields": {
+        "name": "관광"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1694,
+    "fields": {
+        "name": "기념품"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1695,
+    "fields": {
+        "name": "생활용품"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1696,
+    "fields": {
+        "name": "실용제품"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1697,
+    "fields": {
+        "name": "문제해결"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1698,
+    "fields": {
+        "name": "ModernJavaScript"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1699,
+    "fields": {
+        "name": "Springsecurity"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1700,
+    "fields": {
+        "name": "ERD"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1701,
+    "fields": {
+        "name": "RDB"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1702,
+    "fields": {
+        "name": "모놀리틱아키텍처"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1703,
+    "fields": {
+        "name": "MA시스템"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1704,
+    "fields": {
+        "name": "MSA전환"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1705,
+    "fields": {
+        "name": "이미지 분석"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1706,
+    "fields": {
+        "name": "ANN"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1707,
+    "fields": {
+        "name": "멀티모달 AI"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1708,
+    "fields": {
+        "name": "HTML/CSS"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1709,
+    "fields": {
+        "name": "portfolio"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1710,
+    "fields": {
+        "name": "임베디드SW"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1711,
+    "fields": {
+        "name": "Shell"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1712,
+    "fields": {
+        "name": "OSI 7계층"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1713,
+    "fields": {
+        "name": "객체지향"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1714,
+    "fields": {
+        "name": "시스템 프로그래밍"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1715,
+    "fields": {
+        "name": "웹 풀스택"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1716,
+    "fields": {
+        "name": "메디컬"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1717,
+    "fields": {
+        "name": "헬스케어"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1718,
+    "fields": {
+        "name": "스마트웰니스"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1719,
+    "fields": {
+        "name": "CLOUD"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1720,
+    "fields": {
+        "name": "docker"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1721,
+    "fields": {
+        "name": "자바"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1722,
+    "fields": {
+        "name": "아이디어"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1723,
+    "fields": {
+        "name": "정책개선"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1724,
+    "fields": {
+        "name": "소방정책"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1725,
+    "fields": {
+        "name": "현장적용"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1726,
+    "fields": {
+        "name": "3DsMAX"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1727,
+    "fields": {
+        "name": "TDD"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1728,
+    "fields": {
+        "name": "OOP"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1729,
+    "fields": {
+        "name": "ISTQB"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1730,
+    "fields": {
+        "name": "애자일"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1731,
+    "fields": {
+        "name": "결함관리"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1732,
+    "fields": {
+        "name": "spring"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1733,
+    "fields": {
+        "name": "모델훈련"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1734,
+    "fields": {
+        "name": "프라이빗AI"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1735,
+    "fields": {
+        "name": "광고기획"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1736,
+    "fields": {
+        "name": "광고콘텐츠제작"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1737,
+    "fields": {
+        "name": "성과측정"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1738,
+    "fields": {
+        "name": "CRM"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1739,
+    "fields": {
+        "name": "베트남어"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1740,
+    "fields": {
+        "name": "오픽"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1741,
+    "fields": {
+        "name": "실무교육"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1742,
+    "fields": {
+        "name": "물류"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1743,
+    "fields": {
+        "name": "무역"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1744,
+    "fields": {
+        "name": "생산관리"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1745,
+    "fields": {
+        "name": "베트남"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1746,
+    "fields": {
+        "name": "시스템보안"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1747,
+    "fields": {
+        "name": "데이터베이스보안"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1748,
+    "fields": {
+        "name": "Microsoft Defender"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1749,
+    "fields": {
+        "name": "Microsoft Sentinel"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1750,
+    "fields": {
+        "name": "CSAP"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1751,
+    "fields": {
+        "name": "시큐어코딩"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1752,
+    "fields": {
+        "name": "전기제어"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1753,
+    "fields": {
+        "name": "자동화설비"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1754,
+    "fields": {
+        "name": "HMI"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1755,
+    "fields": {
+        "name": "공압"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1756,
+    "fields": {
+        "name": "유압"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1757,
+    "fields": {
+        "name": "배전반"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1758,
+    "fields": {
+        "name": "광학분석"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1759,
+    "fields": {
+        "name": "전기적특성"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1760,
+    "fields": {
+        "name": "표면분석"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1761,
+    "fields": {
+        "name": "장비실습"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1762,
+    "fields": {
+        "name": "라만분광"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1763,
+    "fields": {
+        "name": "엘립스미터"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1764,
+    "fields": {
+        "name": "Upscayl"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1765,
+    "fields": {
+        "name": "TTSMAKER"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1766,
+    "fields": {
+        "name": "GoogleAIStudio"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1767,
+    "fields": {
+        "name": "AI이미지생성"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1768,
+    "fields": {
+        "name": "전자책"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1769,
+    "fields": {
+        "name": "미리캔버스"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1770,
+    "fields": {
+        "name": "Python라이브러리"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1771,
+    "fields": {
+        "name": "데이터시각화Tableau"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1772,
+    "fields": {
+        "name": "데이터모델링&분석"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1773,
+    "fields": {
+        "name": "머신러닝&딥러닝"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1774,
+    "fields": {
+        "name": "통계기초수학"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1775,
+    "fields": {
+        "name": "프로젝트구현"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1776,
+    "fields": {
+        "name": "시스코"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1777,
+    "fields": {
+        "name": "LAN설계"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1778,
+    "fields": {
+        "name": "스위치장비구축"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1779,
+    "fields": {
+        "name": "가상화"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1780,
+    "fields": {
+        "name": "laC자동화"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1781,
+    "fields": {
+        "name": "AWS실무"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1782,
+    "fields": {
+        "name": "rust"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1783,
+    "fields": {
+        "name": "HR"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1784,
+    "fields": {
+        "name": "채용업무수행"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1785,
+    "fields": {
+        "name": "직원온보딩"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1786,
+    "fields": {
+        "name": "인사기획"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1787,
+    "fields": {
+        "name": "게임원화"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1788,
+    "fields": {
+        "name": "게임알고리즘"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1789,
+    "fields": {
+        "name": "2D애니메이션"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1790,
+    "fields": {
+        "name": "UIUX"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1791,
+    "fields": {
+        "name": "AI영상제작"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1792,
+    "fields": {
+        "name": "모션그래픽"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1793,
+    "fields": {
+        "name": "전기설비"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1794,
+    "fields": {
+        "name": "신재생"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1795,
+    "fields": {
+        "name": "발전설비기능사"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1796,
+    "fields": {
+        "name": "서비스"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1797,
+    "fields": {
+        "name": "공항지상직"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1798,
+    "fields": {
+        "name": "외국어"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1799,
+    "fields": {
+        "name": "전기내선"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1800,
+    "fields": {
+        "name": "기능사"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1801,
+    "fields": {
+        "name": "조명설비"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1802,
+    "fields": {
+        "name": "RPA"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1803,
+    "fields": {
+        "name": "품질관리기초"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1804,
+    "fields": {
+        "name": "대시보드구축"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1805,
+    "fields": {
+        "name": "실시간모니터링"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1806,
+    "fields": {
+        "name": "머신러닝활용품질관리"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1807,
+    "fields": {
+        "name": "모바일앱"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1808,
+    "fields": {
+        "name": "논문"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1809,
+    "fields": {
+        "name": "특허출원"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1810,
+    "fields": {
+        "name": "지식재산"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1811,
+    "fields": {
+        "name": "동력제어/동력설비"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1812,
+    "fields": {
+        "name": "태양광발전설비"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1813,
+    "fields": {
+        "name": "llustrator"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1814,
+    "fields": {
+        "name": "servlet"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1815,
+    "fields": {
+        "name": "jsp"
+    }
+},
+{
+    "model": "bootcamps.skill",
+    "pk": 1816,
+    "fields": {
+        "name": "session"
+    }
+}
+]
