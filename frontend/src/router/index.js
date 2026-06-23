@@ -1,5 +1,5 @@
 import BootcampView from '@/views/BootcampView.vue'
-import CalenderView from '@/views/CalenderView.vue'
+import CalendarView from '@/views/CalendarView.vue'
 import CertificationView from '@/views/CertificationView.vue'
 import CommunityView from '@/views/CommunityView.vue'
 import CompetitionView from '@/views/CompetitionView.vue'
@@ -35,6 +35,16 @@ const router = createRouter({
       component: LoginView,
     },
     {
+      path: '/calendar',
+      name: 'CalendarView',
+      component: CalendarView,
+    },
+    {
+      path: '/community',
+      name: 'CommunityView',
+      component: CommunityView,
+    },
+    {
       path: '/jobs',
       name: 'JobView',
       component: JobView,
@@ -44,20 +54,11 @@ const router = createRouter({
       name: 'CompetitionView',
       component: CompetitionView,
     },
-    {
-      path: '/community',
-      name: 'CommunityView',
-      component: CommunityView,
-    },
+    
     {
       path: '/certification',
       name: 'CertificationView',
       component: CertificationView,
-    },
-    {
-      path: '/calender',
-      name: 'CalenderView',
-      component: CalenderView,
     },
     {
       path: '/bootcamp',
