@@ -6107,7 +6107,8 @@
             "close_date": "2026-07-07",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "KEC0902606230003"
+            "wanted_auth_no": "KEC0902606230003",
+            "label": 1
         }
     },
     {
@@ -6128,7 +6129,8 @@
             "close_date": "2026-07-10",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K150012606230035"
+            "wanted_auth_no": "K150012606230035",
+            "label": 1
         }
     },
     {
@@ -6149,7 +6151,8 @@
             "close_date": "2026-07-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "KJK6002606230009"
+            "wanted_auth_no": "KJK6002606230009",
+            "label": 1
         }
     },
     {
@@ -6170,7 +6173,8 @@
             "close_date": "2026-07-23",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K151222606230034"
+            "wanted_auth_no": "K151222606230034",
+            "label": 1
         }
     },
     {
@@ -6191,7 +6195,8 @@
             "close_date": "2026-07-02",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K141462606230002"
+            "wanted_auth_no": "K141462606230002",
+            "label": 1
         }
     },
     {
@@ -6212,7 +6217,8 @@
             "close_date": "2026-07-03",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K131312606230031"
+            "wanted_auth_no": "K131312606230031",
+            "label": 1
         }
     },
     {
@@ -6233,7 +6239,8 @@
             "close_date": "2026-07-31",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K180132606230034"
+            "wanted_auth_no": "K180132606230034",
+            "label": 1
         }
     },
     {
@@ -6254,7 +6261,8 @@
             "close_date": "2026-07-07",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K180112606230020"
+            "wanted_auth_no": "K180112606230020",
+            "label": 1
         }
     },
     {
@@ -6275,7 +6283,8 @@
             "close_date": "2026-07-10",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K131312606230030"
+            "wanted_auth_no": "K131312606230030",
+            "label": 1
         }
     },
     {
@@ -6296,7 +6305,8 @@
             "close_date": "2026-07-07",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K140132606230015"
+            "wanted_auth_no": "K140132606230015",
+            "label": 1
         }
     },
     {
@@ -6317,7 +6327,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K180212606230024"
+            "wanted_auth_no": "K180212606230024",
+            "label": 1
         }
     },
     {
@@ -6338,7 +6349,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K131332606230010"
+            "wanted_auth_no": "K131332606230010",
+            "label": 1
         }
     },
     {
@@ -6359,7 +6371,8 @@
             "close_date": "2026-07-31",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K130112606230033"
+            "wanted_auth_no": "K130112606230033",
+            "label": 1
         }
     },
     {
@@ -6380,7 +6393,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K171112606230030"
+            "wanted_auth_no": "K171112606230030",
+            "label": 1
         }
     },
     {
@@ -6401,7 +6415,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K131332606230009"
+            "wanted_auth_no": "K131332606230009",
+            "label": 1
         }
     },
     {
@@ -6422,7 +6437,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K160092606230008"
+            "wanted_auth_no": "K160092606230008",
+            "label": 1
         }
     },
     {
@@ -6443,7 +6459,8 @@
             "close_date": "2026-07-07",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K180112606230019"
+            "wanted_auth_no": "K180112606230019",
+            "label": 1
         }
     },
     {
@@ -6464,7 +6481,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K152312606230003"
+            "wanted_auth_no": "K152312606230003",
+            "label": 1
         }
     },
     {
@@ -6485,7 +6503,8 @@
             "close_date": "2026-07-03",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K131312606230029"
+            "wanted_auth_no": "K131312606230029",
+            "label": 1
         }
     },
     {
@@ -6506,7 +6525,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K131112606230032"
+            "wanted_auth_no": "K131112606230032",
+            "label": 1
         }
     },
     {
@@ -6527,7 +6547,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K180142606230004"
+            "wanted_auth_no": "K180142606230004",
+            "label": 1
         }
     },
     {
@@ -6548,7 +6569,8 @@
             "close_date": "2026-07-31",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "KJ20542606230005"
+            "wanted_auth_no": "KJ20542606230005",
+            "label": 1
         }
     },
     {
@@ -6569,7 +6591,8 @@
             "close_date": "2026-07-15",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K163012606230013"
+            "wanted_auth_no": "K163012606230013",
+            "label": 1
         }
     },
     {
@@ -6590,7 +6613,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "KEC0252606230005"
+            "wanted_auth_no": "KEC0252606230005",
+            "label": 1
         }
     },
     {
@@ -6611,7 +6635,8 @@
             "close_date": "2026-07-08",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K140022606230025"
+            "wanted_auth_no": "K140022606230025",
+            "label": 1
         }
     },
     {
@@ -6632,7 +6657,8 @@
             "close_date": "2026-07-19",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K151222606230033"
+            "wanted_auth_no": "K151222606230033",
+            "label": 1
         }
     },
     {
@@ -6653,7 +6679,8 @@
             "close_date": "2026-07-31",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K172122606230012"
+            "wanted_auth_no": "K172122606230012",
+            "label": 1
         }
     },
     {
@@ -6674,7 +6701,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K120252606230005"
+            "wanted_auth_no": "K120252606230005",
+            "label": 1
         }
     },
     {
@@ -6695,7 +6723,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K141212606230013"
+            "wanted_auth_no": "K141212606230013",
+            "label": 1
         }
     },
     {
@@ -6716,7 +6745,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "KEC0952606230002"
+            "wanted_auth_no": "KEC0952606230002",
+            "label": 1
         }
     },
     {
@@ -6737,7 +6767,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "KJDE002606230012"
+            "wanted_auth_no": "KJDE002606230012",
+            "label": 1
         }
     },
     {
@@ -6758,7 +6789,8 @@
             "close_date": "2026-07-31",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K171112606230029"
+            "wanted_auth_no": "K171112606230029",
+            "label": 1
         }
     },
     {
@@ -6779,7 +6811,8 @@
             "close_date": "2026-07-17",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K150012606230034"
+            "wanted_auth_no": "K150012606230034",
+            "label": 1
         }
     },
     {
@@ -6800,7 +6833,8 @@
             "close_date": "2026-07-07",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K151222606230032"
+            "wanted_auth_no": "K151222606230032",
+            "label": 1
         }
     },
     {
@@ -6821,7 +6855,8 @@
             "close_date": "2026-07-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "KF10442606230001"
+            "wanted_auth_no": "KF10442606230001",
+            "label": 1
         }
     },
     {
@@ -6842,7 +6877,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K151222606230031"
+            "wanted_auth_no": "K151222606230031",
+            "label": 1
         }
     },
     {
@@ -6863,7 +6899,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K180212606230023"
+            "wanted_auth_no": "K180212606230023",
+            "label": 1
         }
     },
     {
@@ -6884,7 +6921,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K140022606230024"
+            "wanted_auth_no": "K140022606230024",
+            "label": 1
         }
     },
     {
@@ -6905,7 +6943,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K120612606230020"
+            "wanted_auth_no": "K120612606230020",
+            "label": 1
         }
     },
     {
@@ -6926,7 +6965,8 @@
             "close_date": "2026-07-07",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K141212606230012"
+            "wanted_auth_no": "K141212606230012",
+            "label": 1
         }
     },
     {
@@ -6947,7 +6987,8 @@
             "close_date": "2026-07-01",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K180612606230022"
+            "wanted_auth_no": "K180612606230022",
+            "label": 1
         }
     },
     {
@@ -6968,7 +7009,8 @@
             "close_date": "2026-07-03",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K161232606230011"
+            "wanted_auth_no": "K161232606230011",
+            "label": 1
         }
     },
     {
@@ -6989,7 +7031,8 @@
             "close_date": "2026-08-21",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K170082606230006"
+            "wanted_auth_no": "K170082606230006",
+            "label": 1
         }
     },
     {
@@ -7010,7 +7053,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K140132606230014"
+            "wanted_auth_no": "K140132606230014",
+            "label": 1
         }
     },
     {
@@ -7031,7 +7075,8 @@
             "close_date": "2026-07-07",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K141212606230011"
+            "wanted_auth_no": "K141212606230011",
+            "label": 1
         }
     },
     {
@@ -7052,7 +7097,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K131312606230028"
+            "wanted_auth_no": "K131312606230028",
+            "label": 1
         }
     },
     {
@@ -7073,7 +7119,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K180512606230022"
+            "wanted_auth_no": "K180512606230022",
+            "label": 1
         }
     },
     {
@@ -7094,7 +7141,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K172122606230011"
+            "wanted_auth_no": "K172122606230011",
+            "label": 1
         }
     },
     {
@@ -7115,7 +7163,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "KF11162606230003"
+            "wanted_auth_no": "KF11162606230003",
+            "label": 1
         }
     },
     {
@@ -7136,7 +7185,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K140132606230013"
+            "wanted_auth_no": "K140132606230013",
+            "label": 1
         }
     },
     {
@@ -7157,7 +7207,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K130232606230016"
+            "wanted_auth_no": "K130232606230016",
+            "label": 1
         }
     },
     {
@@ -7178,7 +7229,8 @@
             "close_date": "2026-07-07",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "KJKX002606230009"
+            "wanted_auth_no": "KJKX002606230009",
+            "label": 1
         }
     },
     {
@@ -7199,7 +7251,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K120122606230015"
+            "wanted_auth_no": "K120122606230015",
+            "label": 1
         }
     },
     {
@@ -7220,7 +7273,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K160092606230007"
+            "wanted_auth_no": "K160092606230007",
+            "label": 1
         }
     },
     {
@@ -7241,7 +7295,8 @@
             "close_date": "2026-07-19",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K180612606230021"
+            "wanted_auth_no": "K180612606230021",
+            "label": 1
         }
     },
     {
@@ -7262,7 +7317,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K150012606230033"
+            "wanted_auth_no": "K150012606230033",
+            "label": 1
         }
     },
     {
@@ -7283,7 +7339,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "KJKT002606230005"
+            "wanted_auth_no": "KJKT002606230005",
+            "label": 1
         }
     },
     {
@@ -7304,7 +7361,8 @@
             "close_date": "2026-07-07",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K141212606230010"
+            "wanted_auth_no": "K141212606230010",
+            "label": 1
         }
     },
     {
@@ -7325,7 +7383,8 @@
             "close_date": "2026-07-31",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K151222606230030"
+            "wanted_auth_no": "K151222606230030",
+            "label": 1
         }
     },
     {
@@ -7346,7 +7405,8 @@
             "close_date": "2026-07-01",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K172122606230010"
+            "wanted_auth_no": "K172122606230010",
+            "label": 1
         }
     },
     {
@@ -7367,7 +7427,8 @@
             "close_date": "2026-07-07",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K120142606230011"
+            "wanted_auth_no": "K120142606230011",
+            "label": 1
         }
     },
     {
@@ -7388,7 +7449,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K131412606230016"
+            "wanted_auth_no": "K131412606230016",
+            "label": 1
         }
     },
     {
@@ -7409,7 +7471,8 @@
             "close_date": "2026-07-07",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K171252606230010"
+            "wanted_auth_no": "K171252606230010",
+            "label": 1
         }
     },
     {
@@ -7430,7 +7493,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K172122606230009"
+            "wanted_auth_no": "K172122606230009",
+            "label": 1
         }
     },
     {
@@ -7451,7 +7515,8 @@
             "close_date": "2026-07-08",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K140022606230023"
+            "wanted_auth_no": "K140022606230023",
+            "label": 1
         }
     },
     {
@@ -7472,7 +7537,8 @@
             "close_date": "2026-06-29",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K140022606230022"
+            "wanted_auth_no": "K140022606230022",
+            "label": 1
         }
     },
     {
@@ -7493,7 +7559,8 @@
             "close_date": "2026-07-07",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "KJ21022606230010"
+            "wanted_auth_no": "KJ21022606230010",
+            "label": 1
         }
     },
     {
@@ -7514,7 +7581,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "KJAP002606230011"
+            "wanted_auth_no": "KJAP002606230011",
+            "label": 1
         }
     },
     {
@@ -7535,7 +7603,8 @@
             "close_date": "2026-07-07",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K141212606230009"
+            "wanted_auth_no": "K141212606230009",
+            "label": 1
         }
     },
     {
@@ -7556,7 +7625,8 @@
             "close_date": "2026-07-07",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "KJSE002606230001"
+            "wanted_auth_no": "KJSE002606230001",
+            "label": 1
         }
     },
     {
@@ -7577,7 +7647,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "KJAM002606230007"
+            "wanted_auth_no": "KJAM002606230007",
+            "label": 1
         }
     },
     {
@@ -7598,7 +7669,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K151222606230029"
+            "wanted_auth_no": "K151222606230029",
+            "label": 1
         }
     },
     {
@@ -7619,7 +7691,8 @@
             "close_date": "2026-07-07",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "KF10872606230004"
+            "wanted_auth_no": "KF10872606230004",
+            "label": 1
         }
     },
     {
@@ -7640,7 +7713,8 @@
             "close_date": "2026-07-07",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K131132606230036"
+            "wanted_auth_no": "K131132606230036",
+            "label": 1
         }
     },
     {
@@ -7661,7 +7735,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K170062606230006"
+            "wanted_auth_no": "K170062606230006",
+            "label": 1
         }
     },
     {
@@ -7682,7 +7757,8 @@
             "close_date": "2026-07-06",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K130232606230015"
+            "wanted_auth_no": "K130232606230015",
+            "label": 1
         }
     },
     {
@@ -7703,7 +7779,8 @@
             "close_date": "2026-07-06",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "KEC0992606230001"
+            "wanted_auth_no": "KEC0992606230001",
+            "label": 1
         }
     },
     {
@@ -7724,7 +7801,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "KF11032606230002"
+            "wanted_auth_no": "KF11032606230002",
+            "label": 1
         }
     },
     {
@@ -7745,7 +7823,8 @@
             "close_date": "2026-07-02",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "KF10822606230005"
+            "wanted_auth_no": "KF10822606230005",
+            "label": 1
         }
     },
     {
@@ -7766,7 +7845,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K172122606230008"
+            "wanted_auth_no": "K172122606230008",
+            "label": 1
         }
     },
     {
@@ -7787,7 +7867,8 @@
             "close_date": "2026-07-10",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "KF10802606230006"
+            "wanted_auth_no": "KF10802606230006",
+            "label": 1
         }
     },
     {
@@ -7808,7 +7889,8 @@
             "close_date": "2026-07-12",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K180412606230017"
+            "wanted_auth_no": "K180412606230017",
+            "label": 1
         }
     },
     {
@@ -7829,7 +7911,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K171222606230009"
+            "wanted_auth_no": "K171222606230009",
+            "label": 1
         }
     },
     {
@@ -7850,7 +7933,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "KJAL002606230003"
+            "wanted_auth_no": "KJAL002606230003",
+            "label": 1
         }
     },
     {
@@ -7871,7 +7955,8 @@
             "close_date": "2026-07-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "KF11842606230001"
+            "wanted_auth_no": "KF11842606230001",
+            "label": 1
         }
     },
     {
@@ -7892,7 +7977,8 @@
             "close_date": "2026-07-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "KJNJ002606230003"
+            "wanted_auth_no": "KJNJ002606230003",
+            "label": 1
         }
     },
     {
@@ -7913,7 +7999,8 @@
             "close_date": "2026-08-07",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "KJKO002606230003"
+            "wanted_auth_no": "KJKO002606230003",
+            "label": 1
         }
     },
     {
@@ -7934,7 +8021,8 @@
             "close_date": "2026-07-08",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K120232606230011"
+            "wanted_auth_no": "K120232606230011",
+            "label": 1
         }
     },
     {
@@ -7955,7 +8043,8 @@
             "close_date": "2026-07-07",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "KJ20912606230016"
+            "wanted_auth_no": "KJ20912606230016",
+            "label": 1
         }
     },
     {
@@ -7976,7 +8065,8 @@
             "close_date": "2026-07-15",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "KJAE002606230003"
+            "wanted_auth_no": "KJAE002606230003",
+            "label": 1
         }
     },
     {
@@ -7997,7 +8087,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "KF10202606230007"
+            "wanted_auth_no": "KF10202606230007",
+            "label": 1
         }
     },
     {
@@ -8018,7 +8109,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K180522606230026"
+            "wanted_auth_no": "K180522606230026",
+            "label": 1
         }
     },
     {
@@ -8039,7 +8131,8 @@
             "close_date": "2026-07-15",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K171222606230008"
+            "wanted_auth_no": "K171222606230008",
+            "label": 1
         }
     },
     {
@@ -8060,7 +8153,8 @@
             "close_date": "2026-07-08",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K180342606230010"
+            "wanted_auth_no": "K180342606230010",
+            "label": 1
         }
     },
     {
@@ -8081,7 +8175,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K171112606230028"
+            "wanted_auth_no": "K171112606230028",
+            "label": 1
         }
     },
     {
@@ -8102,7 +8197,8 @@
             "close_date": "2026-06-26",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K140022606230021"
+            "wanted_auth_no": "K140022606230021",
+            "label": 1
         }
     },
     {
@@ -8123,7 +8219,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K171212606230006"
+            "wanted_auth_no": "K171212606230006",
+            "label": 1
         }
     },
     {
@@ -8144,7 +8241,8 @@
             "close_date": "2026-07-07",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K180132606230033"
+            "wanted_auth_no": "K180132606230033",
+            "label": 1
         }
     },
     {
@@ -8165,7 +8263,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K180412606230016"
+            "wanted_auth_no": "K180412606230016",
+            "label": 1
         }
     },
     {
@@ -8186,7 +8285,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K162212606230010"
+            "wanted_auth_no": "K162212606230010",
+            "label": 1
         }
     },
     {
@@ -8207,7 +8307,8 @@
             "close_date": "2026-08-21",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K131522606230008"
+            "wanted_auth_no": "K131522606230008",
+            "label": 1
         }
     },
     {
@@ -8228,7 +8329,8 @@
             "close_date": "2026-07-15",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K150012606230032"
+            "wanted_auth_no": "K150012606230032",
+            "label": 1
         }
     },
     {
@@ -8249,7 +8351,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K180112606230018"
+            "wanted_auth_no": "K180112606230018",
+            "label": 1
         }
     },
     {
@@ -8270,7 +8373,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "KF10802606230005"
+            "wanted_auth_no": "KF10802606230005",
+            "label": 1
         }
     },
     {
@@ -8291,7 +8395,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K180412606230015"
+            "wanted_auth_no": "K180412606230015",
+            "label": 1
         }
     },
     {
@@ -8312,7 +8417,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K171222606230007"
+            "wanted_auth_no": "K171222606230007",
+            "label": 1
         }
     },
     {
@@ -8333,7 +8439,8 @@
             "close_date": "2026-08-21",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K120252606230004"
+            "wanted_auth_no": "K120252606230004",
+            "label": 1
         }
     },
     {
@@ -8354,7 +8461,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "KF10792606230005"
+            "wanted_auth_no": "KF10792606230005",
+            "label": 1
         }
     },
     {
@@ -8375,7 +8483,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K180512606230021"
+            "wanted_auth_no": "K180512606230021",
+            "label": 1
         }
     },
     {
@@ -8396,7 +8505,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K120612606230019"
+            "wanted_auth_no": "K120612606230019",
+            "label": 1
         }
     },
     {
@@ -8417,7 +8527,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "KJAF002606230006"
+            "wanted_auth_no": "KJAF002606230006",
+            "label": 1
         }
     },
     {
@@ -8438,7 +8549,8 @@
             "close_date": "2026-08-21",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K120232606230010"
+            "wanted_auth_no": "K120232606230010",
+            "label": 1
         }
     },
     {
@@ -8459,7 +8571,8 @@
             "close_date": "2026-07-07",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "KJ21012606230011"
+            "wanted_auth_no": "KJ21012606230011",
+            "label": 1
         }
     },
     {
@@ -8480,7 +8593,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "KJDA002606230008"
+            "wanted_auth_no": "KJDA002606230008",
+            "label": 1
         }
     },
     {
@@ -8501,7 +8615,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "KF10132606230003"
+            "wanted_auth_no": "KF10132606230003",
+            "label": 1
         }
     },
     {
@@ -8522,7 +8637,8 @@
             "close_date": "2026-07-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "KJBB002606230001"
+            "wanted_auth_no": "KJBB002606230001",
+            "label": 1
         }
     },
     {
@@ -8543,7 +8659,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K141332606230004"
+            "wanted_auth_no": "K141332606230004",
+            "label": 1
         }
     },
     {
@@ -8564,7 +8681,8 @@
             "close_date": "2026-07-07",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K130112606230032"
+            "wanted_auth_no": "K130112606230032",
+            "label": 1
         }
     },
     {
@@ -8585,7 +8703,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K180342606230009"
+            "wanted_auth_no": "K180342606230009",
+            "label": 1
         }
     },
     {
@@ -8606,7 +8725,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K180132606230032"
+            "wanted_auth_no": "K180132606230032",
+            "label": 1
         }
     },
     {
@@ -8627,7 +8747,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K120422606230018"
+            "wanted_auth_no": "K120422606230018",
+            "label": 1
         }
     },
     {
@@ -8648,7 +8769,8 @@
             "close_date": "2026-07-31",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K180032606230058"
+            "wanted_auth_no": "K180032606230058",
+            "label": 1
         }
     },
     {
@@ -8669,7 +8791,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "KF10202606230006"
+            "wanted_auth_no": "KF10202606230006",
+            "label": 1
         }
     },
     {
@@ -8690,7 +8813,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K120412606230017"
+            "wanted_auth_no": "K120412606230017",
+            "label": 1
         }
     },
     {
@@ -8711,7 +8835,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "KF11182606230001"
+            "wanted_auth_no": "KF11182606230001",
+            "label": 1
         }
     },
     {
@@ -8732,7 +8857,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K162122606230017"
+            "wanted_auth_no": "K162122606230017",
+            "label": 1
         }
     },
     {
@@ -8753,7 +8879,8 @@
             "close_date": "2026-08-21",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K131312606230027"
+            "wanted_auth_no": "K131312606230027",
+            "label": 1
         }
     },
     {
@@ -8774,7 +8901,8 @@
             "close_date": "2026-08-21",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K120122606230014"
+            "wanted_auth_no": "K120122606230014",
+            "label": 1
         }
     },
     {
@@ -8795,7 +8923,8 @@
             "close_date": "2026-08-21",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K152312606230002"
+            "wanted_auth_no": "K152312606230002",
+            "label": 1
         }
     },
     {
@@ -8816,7 +8945,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K141212606230008"
+            "wanted_auth_no": "K141212606230008",
+            "label": 1
         }
     },
     {
@@ -8837,7 +8967,8 @@
             "close_date": "2026-08-20",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K180032606230057"
+            "wanted_auth_no": "K180032606230057",
+            "label": 1
         }
     },
     {
@@ -8858,7 +8989,8 @@
             "close_date": "2026-07-07",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K131312606230026"
+            "wanted_auth_no": "K131312606230026",
+            "label": 1
         }
     },
     {
@@ -8879,7 +9011,8 @@
             "close_date": "2026-06-26",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K172122606230007"
+            "wanted_auth_no": "K172122606230007",
+            "label": 1
         }
     },
     {
@@ -8900,7 +9033,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "KF10792606230004"
+            "wanted_auth_no": "KF10792606230004",
+            "label": 1
         }
     },
     {
@@ -8921,7 +9055,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "KJAD002606230006"
+            "wanted_auth_no": "KJAD002606230006",
+            "label": 1
         }
     },
     {
@@ -8942,7 +9077,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K180112606230017"
+            "wanted_auth_no": "K180112606230017",
+            "label": 1
         }
     },
     {
@@ -8963,7 +9099,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K170062606230005"
+            "wanted_auth_no": "K170062606230005",
+            "label": 1
         }
     },
     {
@@ -8984,7 +9121,8 @@
             "close_date": "2026-07-25",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K131612606230019"
+            "wanted_auth_no": "K131612606230019",
+            "label": 1
         }
     },
     {
@@ -9005,7 +9143,8 @@
             "close_date": "2026-07-07",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "KJ21012606230010"
+            "wanted_auth_no": "KJ21012606230010",
+            "label": 1
         }
     },
     {
@@ -9026,7 +9165,8 @@
             "close_date": "2026-07-04",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "KEC1102606230003"
+            "wanted_auth_no": "KEC1102606230003",
+            "label": 1
         }
     },
     {
@@ -9047,7 +9187,8 @@
             "close_date": "2026-08-21",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K130232606230014"
+            "wanted_auth_no": "K130232606230014",
+            "label": 1
         }
     },
     {
@@ -9068,7 +9209,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "KJDA002606230007"
+            "wanted_auth_no": "KJDA002606230007",
+            "label": 1
         }
     },
     {
@@ -9089,7 +9231,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "KJQE002606230001"
+            "wanted_auth_no": "KJQE002606230001",
+            "label": 1
         }
     },
     {
@@ -9110,7 +9253,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K162212606230009"
+            "wanted_auth_no": "K162212606230009",
+            "label": 1
         }
     },
     {
@@ -9131,7 +9275,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K180522606230025"
+            "wanted_auth_no": "K180522606230025",
+            "label": 1
         }
     },
     {
@@ -9152,7 +9297,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "KJSS002606230001"
+            "wanted_auth_no": "KJSS002606230001",
+            "label": 1
         }
     },
     {
@@ -9173,7 +9319,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K180132606230031"
+            "wanted_auth_no": "K180132606230031",
+            "label": 1
         }
     },
     {
@@ -9194,7 +9341,8 @@
             "close_date": "2026-07-12",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "KJBD002606230002"
+            "wanted_auth_no": "KJBD002606230002",
+            "label": 1
         }
     },
     {
@@ -9215,7 +9363,8 @@
             "close_date": "2026-07-11",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K131412606230015"
+            "wanted_auth_no": "K131412606230015",
+            "label": 1
         }
     },
     {
@@ -9236,7 +9385,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "KF10452606230002"
+            "wanted_auth_no": "KF10452606230002",
+            "label": 1
         }
     },
     {
@@ -9257,7 +9407,8 @@
             "close_date": "2026-07-07",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K180222606230024"
+            "wanted_auth_no": "K180222606230024",
+            "label": 1
         }
     },
     {
@@ -9278,7 +9429,8 @@
             "close_date": "2026-07-04",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K131612606230018"
+            "wanted_auth_no": "K131612606230018",
+            "label": 1
         }
     },
     {
@@ -9299,7 +9451,8 @@
             "close_date": "2026-07-07",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "KJ21062606230009"
+            "wanted_auth_no": "KJ21062606230009",
+            "label": 1
         }
     },
     {
@@ -9320,7 +9473,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K180312606230016"
+            "wanted_auth_no": "K180312606230016",
+            "label": 1
         }
     },
     {
@@ -9341,7 +9495,8 @@
             "close_date": "2026-07-07",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K180032606230056"
+            "wanted_auth_no": "K180032606230056",
+            "label": 1
         }
     },
     {
@@ -9362,7 +9517,8 @@
             "close_date": "2026-07-18",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K151222606230028"
+            "wanted_auth_no": "K151222606230028",
+            "label": 1
         }
     },
     {
@@ -9383,7 +9539,8 @@
             "close_date": "2026-07-07",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K180132606230030"
+            "wanted_auth_no": "K180132606230030",
+            "label": 1
         }
     },
     {
@@ -9404,7 +9561,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K162212606230008"
+            "wanted_auth_no": "K162212606230008",
+            "label": 1
         }
     },
     {
@@ -9425,7 +9583,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K150112606230009"
+            "wanted_auth_no": "K150112606230009",
+            "label": 1
         }
     },
     {
@@ -9446,7 +9605,8 @@
             "close_date": "2026-07-05",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K130232606230013"
+            "wanted_auth_no": "K130232606230013",
+            "label": 1
         }
     },
     {
@@ -9467,7 +9627,8 @@
             "close_date": "2026-07-18",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K180212606230022"
+            "wanted_auth_no": "K180212606230022",
+            "label": 1
         }
     },
     {
@@ -9488,7 +9649,8 @@
             "close_date": "2026-07-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "KF11022606230001"
+            "wanted_auth_no": "KF11022606230001",
+            "label": 1
         }
     },
     {
@@ -9509,7 +9671,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K140132606230012"
+            "wanted_auth_no": "K140132606230012",
+            "label": 1
         }
     },
     {
@@ -9530,7 +9693,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "KJ22142606230002"
+            "wanted_auth_no": "KJ22142606230002",
+            "label": 1
         }
     },
     {
@@ -9551,7 +9715,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K130112606230031"
+            "wanted_auth_no": "K130112606230031",
+            "label": 1
         }
     },
     {
@@ -9572,7 +9737,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "KJDC002606230002"
+            "wanted_auth_no": "KJDC002606230002",
+            "label": 1
         }
     },
     {
@@ -9593,7 +9759,8 @@
             "close_date": "2026-07-31",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K180132606230029"
+            "wanted_auth_no": "K180132606230029",
+            "label": 1
         }
     },
     {
@@ -9614,7 +9781,8 @@
             "close_date": "2026-07-07",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "KJKE002606230009"
+            "wanted_auth_no": "KJKE002606230009",
+            "label": 1
         }
     },
     {
@@ -9635,7 +9803,8 @@
             "close_date": "2026-07-07",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K180132606230028"
+            "wanted_auth_no": "K180132606230028",
+            "label": 1
         }
     },
     {
@@ -9656,7 +9825,8 @@
             "close_date": "2026-08-21",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K131132606230035"
+            "wanted_auth_no": "K131132606230035",
+            "label": 1
         }
     },
     {
@@ -9677,7 +9847,8 @@
             "close_date": "2026-07-10",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K130112606230030"
+            "wanted_auth_no": "K130112606230030",
+            "label": 1
         }
     },
     {
@@ -9698,7 +9869,8 @@
             "close_date": "2026-07-16",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "KF11892606230001"
+            "wanted_auth_no": "KF11892606230001",
+            "label": 1
         }
     },
     {
@@ -9719,7 +9891,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "KF11982606230001"
+            "wanted_auth_no": "KF11982606230001",
+            "label": 1
         }
     },
     {
@@ -9740,7 +9913,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K180342606230008"
+            "wanted_auth_no": "K180342606230008",
+            "label": 1
         }
     },
     {
@@ -9761,7 +9935,8 @@
             "close_date": "2026-07-08",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K180342606230007"
+            "wanted_auth_no": "K180342606230007",
+            "label": 1
         }
     },
     {
@@ -9782,7 +9957,8 @@
             "close_date": "2026-07-16",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K151222606230027"
+            "wanted_auth_no": "K151222606230027",
+            "label": 1
         }
     },
     {
@@ -9803,7 +9979,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K130112606230029"
+            "wanted_auth_no": "K130112606230029",
+            "label": 1
         }
     },
     {
@@ -9824,7 +10001,8 @@
             "close_date": "2026-07-07",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "KEC0092606230001"
+            "wanted_auth_no": "KEC0092606230001",
+            "label": 1
         }
     },
     {
@@ -9845,7 +10023,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K120512606230006"
+            "wanted_auth_no": "K120512606230006",
+            "label": 1
         }
     },
     {
@@ -9866,7 +10045,8 @@
             "close_date": "2026-07-07",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K131112606230031"
+            "wanted_auth_no": "K131112606230031",
+            "label": 1
         }
     },
     {
@@ -9887,7 +10067,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K141212606230007"
+            "wanted_auth_no": "K141212606230007",
+            "label": 1
         }
     },
     {
@@ -9908,7 +10089,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K131212606230021"
+            "wanted_auth_no": "K131212606230021",
+            "label": 1
         }
     },
     {
@@ -9929,7 +10111,8 @@
             "close_date": "2026-07-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "KJKX002606230008"
+            "wanted_auth_no": "KJKX002606230008",
+            "label": 1
         }
     },
     {
@@ -9950,7 +10133,8 @@
             "close_date": "2026-08-09",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "KF10792606230003"
+            "wanted_auth_no": "KF10792606230003",
+            "label": 1
         }
     },
     {
@@ -9971,7 +10155,8 @@
             "close_date": "2026-07-07",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "KJKQ002606230006"
+            "wanted_auth_no": "KJKQ002606230006",
+            "label": 1
         }
     },
     {
@@ -9992,7 +10177,8 @@
             "close_date": "2026-07-07",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "KJCF002606230002"
+            "wanted_auth_no": "KJCF002606230002",
+            "label": 1
         }
     },
     {
@@ -10013,7 +10199,8 @@
             "close_date": "2026-07-07",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "KJKQ002606230005"
+            "wanted_auth_no": "KJKQ002606230005",
+            "label": 1
         }
     },
     {
@@ -10034,7 +10221,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "KJ21062606230008"
+            "wanted_auth_no": "KJ21062606230008",
+            "label": 1
         }
     },
     {
@@ -10055,7 +10243,8 @@
             "close_date": "2026-06-28",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K180132606230027"
+            "wanted_auth_no": "K180132606230027",
+            "label": 1
         }
     },
     {
@@ -10076,7 +10265,8 @@
             "close_date": "2026-07-20",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K161322606230007"
+            "wanted_auth_no": "K161322606230007",
+            "label": 1
         }
     },
     {
@@ -10097,7 +10287,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K140132606230011"
+            "wanted_auth_no": "K140132606230011",
+            "label": 1
         }
     },
     {
@@ -10118,7 +10309,8 @@
             "close_date": "2026-07-07",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "KJKQ002606230004"
+            "wanted_auth_no": "KJKQ002606230004",
+            "label": 1
         }
     },
     {
@@ -10139,7 +10331,8 @@
             "close_date": "2026-07-07",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "KJKQ002606230003"
+            "wanted_auth_no": "KJKQ002606230003",
+            "label": 1
         }
     },
     {
@@ -10160,7 +10353,8 @@
             "close_date": "2026-07-31",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K151222606230026"
+            "wanted_auth_no": "K151222606230026",
+            "label": 1
         }
     },
     {
@@ -10181,7 +10375,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K180012606230031"
+            "wanted_auth_no": "K180012606230031",
+            "label": 1
         }
     },
     {
@@ -10202,7 +10397,8 @@
             "close_date": "2026-07-20",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K161322606230006"
+            "wanted_auth_no": "K161322606230006",
+            "label": 1
         }
     },
     {
@@ -10223,7 +10419,8 @@
             "close_date": "2026-07-07",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "KJKQ002606230002"
+            "wanted_auth_no": "KJKQ002606230002",
+            "label": 1
         }
     },
     {
@@ -10244,7 +10441,8 @@
             "close_date": "2026-07-07",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K131212606230020"
+            "wanted_auth_no": "K131212606230020",
+            "label": 1
         }
     },
     {
@@ -10265,7 +10463,8 @@
             "close_date": "2026-07-07",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K131112606230030"
+            "wanted_auth_no": "K131112606230030",
+            "label": 1
         }
     },
     {
@@ -10286,7 +10485,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "KEC0312606230001"
+            "wanted_auth_no": "KEC0312606230001",
+            "label": 1
         }
     },
     {
@@ -10307,7 +10507,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "KJK5002606230004"
+            "wanted_auth_no": "KJK5002606230004",
+            "label": 1
         }
     },
     {
@@ -10328,7 +10529,8 @@
             "close_date": "2026-07-06",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K120312606230031"
+            "wanted_auth_no": "K120312606230031",
+            "label": 1
         }
     },
     {
@@ -10349,7 +10551,8 @@
             "close_date": "2026-07-07",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K161232606230010"
+            "wanted_auth_no": "K161232606230010",
+            "label": 1
         }
     },
     {
@@ -10370,7 +10573,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "KF10132606230002"
+            "wanted_auth_no": "KF10132606230002",
+            "label": 1
         }
     },
     {
@@ -10391,7 +10595,8 @@
             "close_date": "2026-08-18",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K120032606230019"
+            "wanted_auth_no": "K120032606230019",
+            "label": 1
         }
     },
     {
@@ -10412,7 +10617,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "KJDA002606230006"
+            "wanted_auth_no": "KJDA002606230006",
+            "label": 1
         }
     },
     {
@@ -10433,7 +10639,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K131132606230034"
+            "wanted_auth_no": "K131132606230034",
+            "label": 1
         }
     },
     {
@@ -10454,7 +10661,8 @@
             "close_date": "2026-07-17",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K130042606230024"
+            "wanted_auth_no": "K130042606230024",
+            "label": 1
         }
     },
     {
@@ -10475,7 +10683,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "KF10232606230003"
+            "wanted_auth_no": "KF10232606230003",
+            "label": 1
         }
     },
     {
@@ -10496,7 +10705,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "KJAZ002606230006"
+            "wanted_auth_no": "KJAZ002606230006",
+            "label": 1
         }
     },
     {
@@ -10517,7 +10727,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K180132606230026"
+            "wanted_auth_no": "K180132606230026",
+            "label": 1
         }
     },
     {
@@ -10538,7 +10749,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "KJ21002606230018"
+            "wanted_auth_no": "KJ21002606230018",
+            "label": 1
         }
     },
     {
@@ -10559,7 +10771,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K180342606230006"
+            "wanted_auth_no": "K180342606230006",
+            "label": 1
         }
     },
     {
@@ -10580,7 +10793,8 @@
             "close_date": "2026-07-07",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "KF10912606230011"
+            "wanted_auth_no": "KF10912606230011",
+            "label": 1
         }
     },
     {
@@ -10601,7 +10815,8 @@
             "close_date": "2026-08-21",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K130232606230012"
+            "wanted_auth_no": "K130232606230012",
+            "label": 1
         }
     },
     {
@@ -10622,7 +10837,8 @@
             "close_date": "2026-07-07",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "KJ20972606230006"
+            "wanted_auth_no": "KJ20972606230006",
+            "label": 1
         }
     },
     {
@@ -10643,7 +10859,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K120572606230007"
+            "wanted_auth_no": "K120572606230007",
+            "label": 1
         }
     },
     {
@@ -10664,7 +10881,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K150112606230008"
+            "wanted_auth_no": "K150112606230008",
+            "label": 1
         }
     },
     {
@@ -10685,7 +10903,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K131312606230025"
+            "wanted_auth_no": "K131312606230025",
+            "label": 1
         }
     },
     {
@@ -10706,7 +10925,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K170062606230004"
+            "wanted_auth_no": "K170062606230004",
+            "label": 1
         }
     },
     {
@@ -10727,7 +10947,8 @@
             "close_date": "2026-07-08",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K180012606230030"
+            "wanted_auth_no": "K180012606230030",
+            "label": 1
         }
     },
     {
@@ -10748,7 +10969,8 @@
             "close_date": "2026-07-07",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "KJKF002606230004"
+            "wanted_auth_no": "KJKF002606230004",
+            "label": 1
         }
     },
     {
@@ -10769,7 +10991,8 @@
             "close_date": "2026-07-20",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K151222606230025"
+            "wanted_auth_no": "K151222606230025",
+            "label": 1
         }
     },
     {
@@ -10790,7 +11013,8 @@
             "close_date": "2026-07-10",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K140132606230010"
+            "wanted_auth_no": "K140132606230010",
+            "label": 1
         }
     },
     {
@@ -10811,7 +11035,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K120612606230018"
+            "wanted_auth_no": "K120612606230018",
+            "label": 1
         }
     },
     {
@@ -10832,7 +11057,8 @@
             "close_date": "2026-07-07",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K180012606230029"
+            "wanted_auth_no": "K180012606230029",
+            "label": 1
         }
     },
     {
@@ -10853,7 +11079,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "KEC0202606230006"
+            "wanted_auth_no": "KEC0202606230006",
+            "label": 1
         }
     },
     {
@@ -10874,7 +11101,8 @@
             "close_date": "2026-06-30",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K120512606230005"
+            "wanted_auth_no": "K120512606230005",
+            "label": 1
         }
     },
     {
@@ -10895,7 +11123,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K140022606230020"
+            "wanted_auth_no": "K140022606230020",
+            "label": 1
         }
     },
     {
@@ -10916,7 +11145,8 @@
             "close_date": "2026-07-01",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K131412606230014"
+            "wanted_auth_no": "K131412606230014",
+            "label": 1
         }
     },
     {
@@ -10937,7 +11167,8 @@
             "close_date": "2026-07-08",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K180132606230025"
+            "wanted_auth_no": "K180132606230025",
+            "label": 1
         }
     },
     {
@@ -10958,7 +11189,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K120412606230016"
+            "wanted_auth_no": "K120412606230016",
+            "label": 1
         }
     },
     {
@@ -10979,7 +11211,8 @@
             "close_date": "2026-06-25",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "Dd03992606230032"
+            "wanted_auth_no": "Dd03992606230032",
+            "label": 1
         }
     },
     {
@@ -11000,7 +11233,8 @@
             "close_date": "2026-07-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "KJDD002606230001"
+            "wanted_auth_no": "KJDD002606230001",
+            "label": 1
         }
     },
     {
@@ -11021,7 +11255,8 @@
             "close_date": "2026-07-07",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "KF10822606230004"
+            "wanted_auth_no": "KF10822606230004",
+            "label": 1
         }
     },
     {
@@ -11042,7 +11277,8 @@
             "close_date": "2026-07-31",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K151222606230024"
+            "wanted_auth_no": "K151222606230024",
+            "label": 1
         }
     },
     {
@@ -11063,7 +11299,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "KJ20972606230005"
+            "wanted_auth_no": "KJ20972606230005",
+            "label": 1
         }
     },
     {
@@ -11084,7 +11321,8 @@
             "close_date": "2026-07-06",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K171112606230027"
+            "wanted_auth_no": "K171112606230027",
+            "label": 1
         }
     },
     {
@@ -11105,7 +11343,8 @@
             "close_date": "2026-07-08",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K180312606230015"
+            "wanted_auth_no": "K180312606230015",
+            "label": 1
         }
     },
     {
@@ -11126,7 +11365,8 @@
             "close_date": "2026-07-31",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K180222606230023"
+            "wanted_auth_no": "K180222606230023",
+            "label": 1
         }
     },
     {
@@ -11147,7 +11387,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K131612606230017"
+            "wanted_auth_no": "K131612606230017",
+            "label": 1
         }
     },
     {
@@ -11168,7 +11409,8 @@
             "close_date": "2026-07-06",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K140022606230019"
+            "wanted_auth_no": "K140022606230019",
+            "label": 1
         }
     },
     {
@@ -11189,7 +11431,8 @@
             "close_date": "2026-07-31",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K161132606230026"
+            "wanted_auth_no": "K161132606230026",
+            "label": 1
         }
     },
     {
@@ -11210,7 +11453,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K120422606230017"
+            "wanted_auth_no": "K120422606230017",
+            "label": 1
         }
     },
     {
@@ -11231,7 +11475,8 @@
             "close_date": "2026-07-07",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K180012606230028"
+            "wanted_auth_no": "K180012606230028",
+            "label": 1
         }
     },
     {
@@ -11252,7 +11497,8 @@
             "close_date": "2026-07-07",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "KJ20282606230003"
+            "wanted_auth_no": "KJ20282606230003",
+            "label": 1
         }
     },
     {
@@ -11273,7 +11519,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K180032606230055"
+            "wanted_auth_no": "K180032606230055",
+            "label": 1
         }
     },
     {
@@ -11294,7 +11541,8 @@
             "close_date": "2026-07-07",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K171112606230026"
+            "wanted_auth_no": "K171112606230026",
+            "label": 1
         }
     },
     {
@@ -11315,7 +11563,8 @@
             "close_date": "2026-08-21",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K180522606230024"
+            "wanted_auth_no": "K180522606230024",
+            "label": 1
         }
     },
     {
@@ -11336,7 +11585,8 @@
             "close_date": "2026-07-23",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K131312606230024"
+            "wanted_auth_no": "K131312606230024",
+            "label": 1
         }
     },
     {
@@ -11357,7 +11607,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K120312606230030"
+            "wanted_auth_no": "K120312606230030",
+            "label": 1
         }
     },
     {
@@ -11378,7 +11629,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "KF11162606230002"
+            "wanted_auth_no": "KF11162606230002",
+            "label": 1
         }
     },
     {
@@ -11399,7 +11651,8 @@
             "close_date": "2026-07-07",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K180512606230020"
+            "wanted_auth_no": "K180512606230020",
+            "label": 1
         }
     },
     {
@@ -11420,7 +11673,8 @@
             "close_date": "2026-07-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "KJ21632606230004"
+            "wanted_auth_no": "KJ21632606230004",
+            "label": 1
         }
     },
     {
@@ -11441,7 +11695,8 @@
             "close_date": "2026-07-23",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K131312606230023"
+            "wanted_auth_no": "K131312606230023",
+            "label": 1
         }
     },
     {
@@ -11462,7 +11717,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K180132606230024"
+            "wanted_auth_no": "K180132606230024",
+            "label": 1
         }
     },
     {
@@ -11483,7 +11739,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K180032606230054"
+            "wanted_auth_no": "K180032606230054",
+            "label": 1
         }
     },
     {
@@ -11504,7 +11761,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "KF10362606230001"
+            "wanted_auth_no": "KF10362606230001",
+            "label": 1
         }
     },
     {
@@ -11525,7 +11783,8 @@
             "close_date": "2026-07-31",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K130232606230011"
+            "wanted_auth_no": "K130232606230011",
+            "label": 1
         }
     },
     {
@@ -11546,7 +11805,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K120412606230015"
+            "wanted_auth_no": "K120412606230015",
+            "label": 1
         }
     },
     {
@@ -11567,7 +11827,8 @@
             "close_date": "2026-07-07",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K151222606230023"
+            "wanted_auth_no": "K151222606230023",
+            "label": 1
         }
     },
     {
@@ -11588,7 +11849,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "KJKO002606230002"
+            "wanted_auth_no": "KJKO002606230002",
+            "label": 1
         }
     },
     {
@@ -11609,7 +11871,8 @@
             "close_date": "2026-08-21",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K140132606230009"
+            "wanted_auth_no": "K140132606230009",
+            "label": 1
         }
     },
     {
@@ -11630,7 +11893,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K131112606230029"
+            "wanted_auth_no": "K131112606230029",
+            "label": 1
         }
     },
     {
@@ -11651,7 +11915,8 @@
             "close_date": "2026-07-07",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K171112606230024"
+            "wanted_auth_no": "K171112606230024",
+            "label": 1
         }
     },
     {
@@ -11672,7 +11937,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K171112606230025"
+            "wanted_auth_no": "K171112606230025",
+            "label": 1
         }
     },
     {
@@ -11693,7 +11959,8 @@
             "close_date": "2026-08-21",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K152122606230005"
+            "wanted_auth_no": "K152122606230005",
+            "label": 1
         }
     },
     {
@@ -11714,7 +11981,8 @@
             "close_date": "2026-08-21",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K161132606230025"
+            "wanted_auth_no": "K161132606230025",
+            "label": 1
         }
     },
     {
@@ -11735,7 +12003,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "KF10202606230005"
+            "wanted_auth_no": "KF10202606230005",
+            "label": 1
         }
     },
     {
@@ -11756,7 +12025,8 @@
             "close_date": "2026-07-07",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K120412606230014"
+            "wanted_auth_no": "K120412606230014",
+            "label": 1
         }
     },
     {
@@ -11777,7 +12047,8 @@
             "close_date": "2026-08-21",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K180132606230023"
+            "wanted_auth_no": "K180132606230023",
+            "label": 1
         }
     },
     {
@@ -11798,7 +12069,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K120142606230010"
+            "wanted_auth_no": "K120142606230010",
+            "label": 1
         }
     },
     {
@@ -11819,7 +12091,8 @@
             "close_date": "2026-06-26",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K140022606230018"
+            "wanted_auth_no": "K140022606230018",
+            "label": 1
         }
     },
     {
@@ -11840,7 +12113,8 @@
             "close_date": "2026-07-07",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K131312606230022"
+            "wanted_auth_no": "K131312606230022",
+            "label": 1
         }
     },
     {
@@ -11861,7 +12135,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K180032606230053"
+            "wanted_auth_no": "K180032606230053",
+            "label": 1
         }
     },
     {
@@ -11882,7 +12157,8 @@
             "close_date": "2026-07-19",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K172112606230029"
+            "wanted_auth_no": "K172112606230029",
+            "label": 1
         }
     },
     {
@@ -11903,7 +12179,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "KJAC002606230008"
+            "wanted_auth_no": "KJAC002606230008",
+            "label": 1
         }
     },
     {
@@ -11924,7 +12201,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K131322606230015"
+            "wanted_auth_no": "K131322606230015",
+            "label": 1
         }
     },
     {
@@ -11945,7 +12223,8 @@
             "close_date": "2026-07-07",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "KEC0052606230009"
+            "wanted_auth_no": "KEC0052606230009",
+            "label": 1
         }
     },
     {
@@ -11966,7 +12245,8 @@
             "close_date": "2026-07-11",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K140052606230008"
+            "wanted_auth_no": "K140052606230008",
+            "label": 1
         }
     },
     {
@@ -11987,7 +12267,8 @@
             "close_date": "2026-07-31",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K140022606230017"
+            "wanted_auth_no": "K140022606230017",
+            "label": 1
         }
     },
     {
@@ -12008,7 +12289,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K131312606230021"
+            "wanted_auth_no": "K131312606230021",
+            "label": 1
         }
     },
     {
@@ -12029,7 +12311,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K162142606230004"
+            "wanted_auth_no": "K162142606230004",
+            "label": 1
         }
     },
     {
@@ -12050,7 +12333,8 @@
             "close_date": "2026-07-07",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K171112606230023"
+            "wanted_auth_no": "K171112606230023",
+            "label": 1
         }
     },
     {
@@ -12071,7 +12355,8 @@
             "close_date": "2026-08-21",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K180342606230005"
+            "wanted_auth_no": "K180342606230005",
+            "label": 1
         }
     },
     {
@@ -12092,7 +12377,8 @@
             "close_date": "2026-08-21",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K180132606230022"
+            "wanted_auth_no": "K180132606230022",
+            "label": 1
         }
     },
     {
@@ -12113,7 +12399,8 @@
             "close_date": "2026-07-19",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K131322606230014"
+            "wanted_auth_no": "K131322606230014",
+            "label": 1
         }
     },
     {
@@ -12134,7 +12421,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K171212606230005"
+            "wanted_auth_no": "K171212606230005",
+            "label": 1
         }
     },
     {
@@ -12155,7 +12443,8 @@
             "close_date": "2026-07-11",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K150012606230031"
+            "wanted_auth_no": "K150012606230031",
+            "label": 1
         }
     },
     {
@@ -12176,7 +12465,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "KEC0202606230005"
+            "wanted_auth_no": "KEC0202606230005",
+            "label": 1
         }
     },
     {
@@ -12197,7 +12487,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K180032606230052"
+            "wanted_auth_no": "K180032606230052",
+            "label": 1
         }
     },
     {
@@ -12218,7 +12509,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K140142606230013"
+            "wanted_auth_no": "K140142606230013",
+            "label": 1
         }
     },
     {
@@ -12239,7 +12531,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "KJ21002606230017"
+            "wanted_auth_no": "KJ21002606230017",
+            "label": 1
         }
     },
     {
@@ -12260,7 +12553,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "KJ22142606230001"
+            "wanted_auth_no": "KJ22142606230001",
+            "label": 1
         }
     },
     {
@@ -12281,7 +12575,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K180152606230007"
+            "wanted_auth_no": "K180152606230007",
+            "label": 1
         }
     },
     {
@@ -12302,7 +12597,8 @@
             "close_date": "2026-07-07",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K131312606230020"
+            "wanted_auth_no": "K131312606230020",
+            "label": 1
         }
     },
     {
@@ -12323,7 +12619,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "KF10332606230001"
+            "wanted_auth_no": "KF10332606230001",
+            "label": 1
         }
     },
     {
@@ -12344,7 +12641,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "KJMB002606230001"
+            "wanted_auth_no": "KJMB002606230001",
+            "label": 1
         }
     },
     {
@@ -12365,7 +12663,8 @@
             "close_date": "2026-08-21",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K130232606230010"
+            "wanted_auth_no": "K130232606230010",
+            "label": 1
         }
     },
     {
@@ -12386,7 +12685,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "KJKF002606230003"
+            "wanted_auth_no": "KJKF002606230003",
+            "label": 1
         }
     },
     {
@@ -12407,7 +12707,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K150012606230030"
+            "wanted_auth_no": "K150012606230030",
+            "label": 1
         }
     },
     {
@@ -12428,7 +12729,8 @@
             "close_date": "2026-07-17",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K131212606230019"
+            "wanted_auth_no": "K131212606230019",
+            "label": 1
         }
     },
     {
@@ -12449,7 +12751,8 @@
             "close_date": "2026-07-07",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K180032606230051"
+            "wanted_auth_no": "K180032606230051",
+            "label": 1
         }
     },
     {
@@ -12470,7 +12773,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "KF10782606230002"
+            "wanted_auth_no": "KF10782606230002",
+            "label": 1
         }
     },
     {
@@ -12491,7 +12795,8 @@
             "close_date": "2026-07-07",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K131112606230028"
+            "wanted_auth_no": "K131112606230028",
+            "label": 1
         }
     },
     {
@@ -12512,7 +12817,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K120612606230017"
+            "wanted_auth_no": "K120612606230017",
+            "label": 1
         }
     },
     {
@@ -12533,7 +12839,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "KJKZ002606230005"
+            "wanted_auth_no": "KJKZ002606230005",
+            "label": 1
         }
     },
     {
@@ -12554,7 +12861,8 @@
             "close_date": "2026-07-08",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K140132606230008"
+            "wanted_auth_no": "K140132606230008",
+            "label": 1
         }
     },
     {
@@ -12575,7 +12883,8 @@
             "close_date": "2026-08-21",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K180212606230021"
+            "wanted_auth_no": "K180212606230021",
+            "label": 1
         }
     },
     {
@@ -12596,7 +12905,8 @@
             "close_date": "2026-07-10",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K180622606230003"
+            "wanted_auth_no": "K180622606230003",
+            "label": 1
         }
     },
     {
@@ -12617,7 +12927,8 @@
             "close_date": "2026-07-06",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K141122606230008"
+            "wanted_auth_no": "K141122606230008",
+            "label": 1
         }
     },
     {
@@ -12638,7 +12949,8 @@
             "close_date": "2026-07-07",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "KJ20912606230015"
+            "wanted_auth_no": "KJ20912606230015",
+            "label": 1
         }
     },
     {
@@ -12659,7 +12971,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K131412606230013"
+            "wanted_auth_no": "K131412606230013",
+            "label": 1
         }
     },
     {
@@ -12680,7 +12993,8 @@
             "close_date": "2026-07-07",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K140142606230012"
+            "wanted_auth_no": "K140142606230012",
+            "label": 1
         }
     },
     {
@@ -12701,7 +13015,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "KF11012606230001"
+            "wanted_auth_no": "KF11012606230001",
+            "label": 1
         }
     },
     {
@@ -12722,7 +13037,8 @@
             "close_date": "2026-07-07",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K170042606230011"
+            "wanted_auth_no": "K170042606230011",
+            "label": 1
         }
     },
     {
@@ -12743,7 +13059,8 @@
             "close_date": "2026-07-07",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "KF10872606230003"
+            "wanted_auth_no": "KF10872606230003",
+            "label": 1
         }
     },
     {
@@ -12764,7 +13081,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K180032606230050"
+            "wanted_auth_no": "K180032606230050",
+            "label": 1
         }
     },
     {
@@ -12785,7 +13103,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "KF10802606230004"
+            "wanted_auth_no": "KF10802606230004",
+            "label": 1
         }
     },
     {
@@ -12806,7 +13125,8 @@
             "close_date": "2026-07-10",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K140022606230016"
+            "wanted_auth_no": "K140022606230016",
+            "label": 1
         }
     },
     {
@@ -12827,7 +13147,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K180212606230020"
+            "wanted_auth_no": "K180212606230020",
+            "label": 1
         }
     },
     {
@@ -12848,7 +13169,8 @@
             "close_date": "2026-08-21",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K150122606230012"
+            "wanted_auth_no": "K150122606230012",
+            "label": 1
         }
     },
     {
@@ -12869,7 +13191,8 @@
             "close_date": "2026-07-19",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K131322606230013"
+            "wanted_auth_no": "K131322606230013",
+            "label": 1
         }
     },
     {
@@ -12890,7 +13213,8 @@
             "close_date": "2026-07-07",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "KF10822606230003"
+            "wanted_auth_no": "KF10822606230003",
+            "label": 1
         }
     },
     {
@@ -12911,7 +13235,8 @@
             "close_date": "2026-06-30",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K140022606230015"
+            "wanted_auth_no": "K140022606230015",
+            "label": 1
         }
     },
     {
@@ -12932,7 +13257,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "KJKE002606230008"
+            "wanted_auth_no": "KJKE002606230008",
+            "label": 1
         }
     },
     {
@@ -12953,7 +13279,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K140022606230014"
+            "wanted_auth_no": "K140022606230014",
+            "label": 1
         }
     },
     {
@@ -12974,7 +13301,8 @@
             "close_date": "2026-07-12",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K130232606230009"
+            "wanted_auth_no": "K130232606230009",
+            "label": 1
         }
     },
     {
@@ -12995,7 +13323,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "KJAX002606230003"
+            "wanted_auth_no": "KJAX002606230003",
+            "label": 1
         }
     },
     {
@@ -13016,7 +13345,8 @@
             "close_date": "2026-08-14",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "KF10912606230010"
+            "wanted_auth_no": "KF10912606230010",
+            "label": 1
         }
     },
     {
@@ -13037,7 +13367,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K131412606230012"
+            "wanted_auth_no": "K131412606230012",
+            "label": 1
         }
     },
     {
@@ -13058,7 +13389,8 @@
             "close_date": "2026-07-07",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "KJ20912606230014"
+            "wanted_auth_no": "KJ20912606230014",
+            "label": 1
         }
     },
     {
@@ -13079,7 +13411,8 @@
             "close_date": "2026-07-24",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K170082606230005"
+            "wanted_auth_no": "K170082606230005",
+            "label": 1
         }
     },
     {
@@ -13100,7 +13433,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K140142606230011"
+            "wanted_auth_no": "K140142606230011",
+            "label": 1
         }
     },
     {
@@ -13121,7 +13455,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "KJ21002606230016"
+            "wanted_auth_no": "KJ21002606230016",
+            "label": 1
         }
     },
     {
@@ -13142,7 +13477,8 @@
             "close_date": "2026-07-01",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K163012606230012"
+            "wanted_auth_no": "K163012606230012",
+            "label": 1
         }
     },
     {
@@ -13163,7 +13499,8 @@
             "close_date": "2026-07-07",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K140132606230007"
+            "wanted_auth_no": "K140132606230007",
+            "label": 1
         }
     },
     {
@@ -13184,7 +13521,8 @@
             "close_date": "2026-07-07",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K180012606230027"
+            "wanted_auth_no": "K180012606230027",
+            "label": 1
         }
     },
     {
@@ -13205,7 +13543,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K161132606230024"
+            "wanted_auth_no": "K161132606230024",
+            "label": 1
         }
     },
     {
@@ -13226,7 +13565,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K131312606230019"
+            "wanted_auth_no": "K131312606230019",
+            "label": 1
         }
     },
     {
@@ -13247,7 +13587,8 @@
             "close_date": "2026-07-23",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K130232606230008"
+            "wanted_auth_no": "K130232606230008",
+            "label": 1
         }
     },
     {
@@ -13268,7 +13609,8 @@
             "close_date": "2026-07-03",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K120312606230029"
+            "wanted_auth_no": "K120312606230029",
+            "label": 1
         }
     },
     {
@@ -13289,7 +13631,8 @@
             "close_date": "2026-06-30",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K180032606230049"
+            "wanted_auth_no": "K180032606230049",
+            "label": 1
         }
     },
     {
@@ -13310,7 +13653,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "KF10992606230003"
+            "wanted_auth_no": "KF10992606230003",
+            "label": 1
         }
     },
     {
@@ -13331,7 +13675,8 @@
             "close_date": "2026-08-21",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "KEC0802606230001"
+            "wanted_auth_no": "KEC0802606230001",
+            "label": 1
         }
     },
     {
@@ -13352,7 +13697,8 @@
             "close_date": "2026-07-04",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K140142606230010"
+            "wanted_auth_no": "K140142606230010",
+            "label": 1
         }
     },
     {
@@ -13373,7 +13719,8 @@
             "close_date": "2026-07-07",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "KJBQ002606230003"
+            "wanted_auth_no": "KJBQ002606230003",
+            "label": 1
         }
     },
     {
@@ -13394,7 +13741,8 @@
             "close_date": "2026-07-13",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K161232606230009"
+            "wanted_auth_no": "K161232606230009",
+            "label": 1
         }
     },
     {
@@ -13415,7 +13763,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "KF11762606230002"
+            "wanted_auth_no": "KF11762606230002",
+            "label": 1
         }
     },
     {
@@ -13436,7 +13785,8 @@
             "close_date": "2026-07-07",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K140022606230013"
+            "wanted_auth_no": "K140022606230013",
+            "label": 1
         }
     },
     {
@@ -13457,7 +13807,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K131322606230012"
+            "wanted_auth_no": "K131322606230012",
+            "label": 1
         }
     },
     {
@@ -13478,7 +13829,8 @@
             "close_date": "2026-07-07",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K150122606230011"
+            "wanted_auth_no": "K150122606230011",
+            "label": 1
         }
     },
     {
@@ -13499,7 +13851,8 @@
             "close_date": "2026-07-10",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K180032606230048"
+            "wanted_auth_no": "K180032606230048",
+            "label": 1
         }
     },
     {
@@ -13520,7 +13873,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K180422606230005"
+            "wanted_auth_no": "K180422606230005",
+            "label": 1
         }
     },
     {
@@ -13541,7 +13895,8 @@
             "close_date": "2026-07-07",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K140022606230012"
+            "wanted_auth_no": "K140022606230012",
+            "label": 1
         }
     },
     {
@@ -13562,7 +13917,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "KJ21022606230009"
+            "wanted_auth_no": "KJ21022606230009",
+            "label": 1
         }
     },
     {
@@ -13583,7 +13939,8 @@
             "close_date": "2026-07-08",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K140142606230009"
+            "wanted_auth_no": "K140142606230009",
+            "label": 1
         }
     },
     {
@@ -13604,7 +13961,8 @@
             "close_date": "2026-07-08",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K150122606230010"
+            "wanted_auth_no": "K150122606230010",
+            "label": 1
         }
     },
     {
@@ -13625,7 +13983,8 @@
             "close_date": "2026-07-06",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K141122606230007"
+            "wanted_auth_no": "K141122606230007",
+            "label": 1
         }
     },
     {
@@ -13646,7 +14005,8 @@
             "close_date": "2026-07-10",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K131212606230018"
+            "wanted_auth_no": "K131212606230018",
+            "label": 1
         }
     },
     {
@@ -13667,7 +14027,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "KJAH002606230011"
+            "wanted_auth_no": "KJAH002606230011",
+            "label": 1
         }
     },
     {
@@ -13688,7 +14049,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "KJ20542606230004"
+            "wanted_auth_no": "KJ20542606230004",
+            "label": 1
         }
     },
     {
@@ -13709,7 +14071,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "KF11802606230002"
+            "wanted_auth_no": "KF11802606230002",
+            "label": 1
         }
     },
     {
@@ -13730,7 +14093,8 @@
             "close_date": "2026-08-21",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K140022606230011"
+            "wanted_auth_no": "K140022606230011",
+            "label": 1
         }
     },
     {
@@ -13751,7 +14115,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K131312606230018"
+            "wanted_auth_no": "K131312606230018",
+            "label": 1
         }
     },
     {
@@ -13772,7 +14137,8 @@
             "close_date": "2026-08-09",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K180032606230047"
+            "wanted_auth_no": "K180032606230047",
+            "label": 1
         }
     },
     {
@@ -13793,7 +14159,8 @@
             "close_date": "2026-07-19",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K180612606230020"
+            "wanted_auth_no": "K180612606230020",
+            "label": 1
         }
     },
     {
@@ -13814,7 +14181,8 @@
             "close_date": "2026-07-07",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K150122606230009"
+            "wanted_auth_no": "K150122606230009",
+            "label": 1
         }
     },
     {
@@ -13835,7 +14203,8 @@
             "close_date": "2026-07-31",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K172112606230028"
+            "wanted_auth_no": "K172112606230028",
+            "label": 1
         }
     },
     {
@@ -13856,7 +14225,8 @@
             "close_date": "2026-08-21",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K131132606230033"
+            "wanted_auth_no": "K131132606230033",
+            "label": 1
         }
     },
     {
@@ -13877,7 +14247,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K131312606230017"
+            "wanted_auth_no": "K131312606230017",
+            "label": 1
         }
     },
     {
@@ -13898,7 +14269,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K162122606230016"
+            "wanted_auth_no": "K162122606230016",
+            "label": 1
         }
     },
     {
@@ -13919,7 +14291,8 @@
             "close_date": "2026-07-18",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K180132606230021"
+            "wanted_auth_no": "K180132606230021",
+            "label": 1
         }
     },
     {
@@ -13940,7 +14313,8 @@
             "close_date": "2026-07-07",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "KJ20912606230013"
+            "wanted_auth_no": "KJ20912606230013",
+            "label": 1
         }
     },
     {
@@ -13961,7 +14335,8 @@
             "close_date": "2026-07-24",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K140022606230010"
+            "wanted_auth_no": "K140022606230010",
+            "label": 1
         }
     },
     {
@@ -13982,7 +14357,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "KJ21022606230008"
+            "wanted_auth_no": "KJ21022606230008",
+            "label": 1
         }
     },
     {
@@ -14003,7 +14379,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "KJAE002606230002"
+            "wanted_auth_no": "KJAE002606230002",
+            "label": 1
         }
     },
     {
@@ -14024,7 +14401,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "KJAU002606230007"
+            "wanted_auth_no": "KJAU002606230007",
+            "label": 1
         }
     },
     {
@@ -14045,7 +14423,8 @@
             "close_date": "2026-07-19",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K180612606230019"
+            "wanted_auth_no": "K180612606230019",
+            "label": 1
         }
     },
     {
@@ -14066,7 +14445,8 @@
             "close_date": "2026-07-18",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "KJAK002606230002"
+            "wanted_auth_no": "KJAK002606230002",
+            "label": 1
         }
     },
     {
@@ -14087,7 +14467,8 @@
             "close_date": "2026-08-21",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K150122606230008"
+            "wanted_auth_no": "K150122606230008",
+            "label": 1
         }
     },
     {
@@ -14108,7 +14489,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K131312606230016"
+            "wanted_auth_no": "K131312606230016",
+            "label": 1
         }
     },
     {
@@ -14129,7 +14511,8 @@
             "close_date": "2026-07-14",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K170052606230011"
+            "wanted_auth_no": "K170052606230011",
+            "label": 1
         }
     },
     {
@@ -14150,7 +14533,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "KJDE002606230011"
+            "wanted_auth_no": "KJDE002606230011",
+            "label": 1
         }
     },
     {
@@ -14171,7 +14555,8 @@
             "close_date": "2026-07-07",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "KJKZ002606230004"
+            "wanted_auth_no": "KJKZ002606230004",
+            "label": 1
         }
     },
     {
@@ -14192,7 +14577,8 @@
             "close_date": "2026-07-17",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K140022606230009"
+            "wanted_auth_no": "K140022606230009",
+            "label": 1
         }
     },
     {
@@ -14213,7 +14599,8 @@
             "close_date": "2026-08-18",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K120232606230009"
+            "wanted_auth_no": "K120232606230009",
+            "label": 1
         }
     },
     {
@@ -14234,7 +14621,8 @@
             "close_date": "2026-07-07",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "KF10602606230006"
+            "wanted_auth_no": "KF10602606230006",
+            "label": 1
         }
     },
     {
@@ -14255,7 +14643,8 @@
             "close_date": "2026-08-21",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K140022606230008"
+            "wanted_auth_no": "K140022606230008",
+            "label": 1
         }
     },
     {
@@ -14276,7 +14665,8 @@
             "close_date": "2026-07-07",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K180022606230017"
+            "wanted_auth_no": "K180022606230017",
+            "label": 1
         }
     },
     {
@@ -14297,7 +14687,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "KJDI002606230002"
+            "wanted_auth_no": "KJDI002606230002",
+            "label": 1
         }
     },
     {
@@ -14318,7 +14709,8 @@
             "close_date": "2026-07-12",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "KF11332606230001"
+            "wanted_auth_no": "KF11332606230001",
+            "label": 1
         }
     },
     {
@@ -14339,7 +14731,8 @@
             "close_date": "2026-06-27",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K170082606230004"
+            "wanted_auth_no": "K170082606230004",
+            "label": 1
         }
     },
     {
@@ -14360,7 +14753,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K170042606230010"
+            "wanted_auth_no": "K170042606230010",
+            "label": 1
         }
     },
     {
@@ -14381,7 +14775,8 @@
             "close_date": "2026-08-21",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K150122606230007"
+            "wanted_auth_no": "K150122606230007",
+            "label": 1
         }
     },
     {
@@ -14402,7 +14797,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K171212606230004"
+            "wanted_auth_no": "K171212606230004",
+            "label": 1
         }
     },
     {
@@ -14423,7 +14819,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "KF10462606230001"
+            "wanted_auth_no": "KF10462606230001",
+            "label": 1
         }
     },
     {
@@ -14444,7 +14841,8 @@
             "close_date": "2026-07-07",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "KJ20912606230012"
+            "wanted_auth_no": "KJ20912606230012",
+            "label": 1
         }
     },
     {
@@ -14465,7 +14863,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K120252606230003"
+            "wanted_auth_no": "K120252606230003",
+            "label": 1
         }
     },
     {
@@ -14486,7 +14885,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K161132606230023"
+            "wanted_auth_no": "K161132606230023",
+            "label": 1
         }
     },
     {
@@ -14507,7 +14907,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "KJAQ002606230003"
+            "wanted_auth_no": "KJAQ002606230003",
+            "label": 1
         }
     },
     {
@@ -14528,7 +14929,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K170052606230010"
+            "wanted_auth_no": "K170052606230010",
+            "label": 1
         }
     },
     {
@@ -14549,7 +14951,8 @@
             "close_date": "2026-07-08",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "KJAR002606230004"
+            "wanted_auth_no": "KJAR002606230004",
+            "label": 1
         }
     },
     {
@@ -14570,7 +14973,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "KJDA002606230005"
+            "wanted_auth_no": "KJDA002606230005",
+            "label": 1
         }
     },
     {
@@ -14591,7 +14995,8 @@
             "close_date": "2026-08-21",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "KJAS002606230004"
+            "wanted_auth_no": "KJAS002606230004",
+            "label": 1
         }
     },
     {
@@ -14612,7 +15017,8 @@
             "close_date": "2026-08-15",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K130052606230005"
+            "wanted_auth_no": "K130052606230005",
+            "label": 1
         }
     },
     {
@@ -14633,7 +15039,8 @@
             "close_date": "2026-07-07",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "KEC0052606230008"
+            "wanted_auth_no": "KEC0052606230008",
+            "label": 1
         }
     },
     {
@@ -14654,7 +15061,8 @@
             "close_date": "2026-07-07",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "KJ21062606230007"
+            "wanted_auth_no": "KJ21062606230007",
+            "label": 1
         }
     },
     {
@@ -14675,7 +15083,8 @@
             "close_date": "2026-08-21",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K140022606230007"
+            "wanted_auth_no": "K140022606230007",
+            "label": 1
         }
     },
     {
@@ -14696,7 +15105,8 @@
             "close_date": "2026-06-30",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K180012606230026"
+            "wanted_auth_no": "K180012606230026",
+            "label": 1
         }
     },
     {
@@ -14717,7 +15127,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "KF10752606230001"
+            "wanted_auth_no": "KF10752606230001",
+            "label": 1
         }
     },
     {
@@ -14738,7 +15149,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "KJKE002606230007"
+            "wanted_auth_no": "KJKE002606230007",
+            "label": 1
         }
     },
     {
@@ -14759,7 +15171,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K180022606230016"
+            "wanted_auth_no": "K180022606230016",
+            "label": 1
         }
     },
     {
@@ -14780,7 +15193,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "KJBG002606230003"
+            "wanted_auth_no": "KJBG002606230003",
+            "label": 1
         }
     },
     {
@@ -14801,7 +15215,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K180522606230023"
+            "wanted_auth_no": "K180522606230023",
+            "label": 1
         }
     },
     {
@@ -14822,7 +15237,8 @@
             "close_date": "2026-07-07",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "KJ20522606230004"
+            "wanted_auth_no": "KJ20522606230004",
+            "label": 1
         }
     },
     {
@@ -14843,7 +15259,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "KJDG002606230001"
+            "wanted_auth_no": "KJDG002606230001",
+            "label": 1
         }
     },
     {
@@ -14864,7 +15281,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K180112606230016"
+            "wanted_auth_no": "K180112606230016",
+            "label": 1
         }
     },
     {
@@ -14885,7 +15303,8 @@
             "close_date": "2026-07-08",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K162122606230015"
+            "wanted_auth_no": "K162122606230015",
+            "label": 1
         }
     },
     {
@@ -14906,7 +15325,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K160012606230008"
+            "wanted_auth_no": "K160012606230008",
+            "label": 1
         }
     },
     {
@@ -14927,7 +15347,8 @@
             "close_date": "2026-07-07",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K131112606230027"
+            "wanted_auth_no": "K131112606230027",
+            "label": 1
         }
     },
     {
@@ -14948,7 +15369,8 @@
             "close_date": "2026-08-21",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K140022606230006"
+            "wanted_auth_no": "K140022606230006",
+            "label": 1
         }
     },
     {
@@ -14969,7 +15391,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K170052606230009"
+            "wanted_auth_no": "K170052606230009",
+            "label": 1
         }
     },
     {
@@ -14990,7 +15413,8 @@
             "close_date": "2026-07-07",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K140022606230005"
+            "wanted_auth_no": "K140022606230005",
+            "label": 1
         }
     },
     {
@@ -15011,7 +15435,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "KJ21002606230015"
+            "wanted_auth_no": "KJ21002606230015",
+            "label": 1
         }
     },
     {
@@ -15032,7 +15457,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "KJDE002606230010"
+            "wanted_auth_no": "KJDE002606230010",
+            "label": 1
         }
     },
     {
@@ -15053,7 +15479,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K120422606230016"
+            "wanted_auth_no": "K120422606230016",
+            "label": 1
         }
     },
     {
@@ -15074,7 +15501,8 @@
             "close_date": "2026-07-07",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "KEC0052606230007"
+            "wanted_auth_no": "KEC0052606230007",
+            "label": 1
         }
     },
     {
@@ -15095,7 +15523,8 @@
             "close_date": "2026-07-07",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "KJKO002606230001"
+            "wanted_auth_no": "KJKO002606230001",
+            "label": 1
         }
     },
     {
@@ -15116,7 +15545,8 @@
             "close_date": "2026-08-14",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K120122606230013"
+            "wanted_auth_no": "K120122606230013",
+            "label": 1
         }
     },
     {
@@ -15137,7 +15567,8 @@
             "close_date": "2026-07-07",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K120142606230009"
+            "wanted_auth_no": "K120142606230009",
+            "label": 1
         }
     },
     {
@@ -15158,7 +15589,8 @@
             "close_date": "2026-07-07",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K131132606230032"
+            "wanted_auth_no": "K131132606230032",
+            "label": 1
         }
     },
     {
@@ -15179,7 +15611,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K120032606230018"
+            "wanted_auth_no": "K120032606230018",
+            "label": 1
         }
     },
     {
@@ -15200,7 +15633,8 @@
             "close_date": "2026-07-10",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K141122606230006"
+            "wanted_auth_no": "K141122606230006",
+            "label": 1
         }
     },
     {
@@ -15221,7 +15655,8 @@
             "close_date": "2026-07-08",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K120572606230006"
+            "wanted_auth_no": "K120572606230006",
+            "label": 1
         }
     },
     {
@@ -15242,7 +15677,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K130112606230028"
+            "wanted_auth_no": "K130112606230028",
+            "label": 1
         }
     },
     {
@@ -15263,7 +15699,8 @@
             "close_date": "2026-07-31",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K170042606230009"
+            "wanted_auth_no": "K170042606230009",
+            "label": 1
         }
     },
     {
@@ -15284,7 +15721,8 @@
             "close_date": "2026-07-13",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K170082606230003"
+            "wanted_auth_no": "K170082606230003",
+            "label": 1
         }
     },
     {
@@ -15305,7 +15743,8 @@
             "close_date": "2026-08-17",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K120512606230004"
+            "wanted_auth_no": "K120512606230004",
+            "label": 1
         }
     },
     {
@@ -15326,7 +15765,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "KJAB002606230002"
+            "wanted_auth_no": "KJAB002606230002",
+            "label": 1
         }
     },
     {
@@ -15347,7 +15787,8 @@
             "close_date": "2026-07-31",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K172222606230009"
+            "wanted_auth_no": "K172222606230009",
+            "label": 1
         }
     },
     {
@@ -15368,7 +15809,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "KJAQ002606230002"
+            "wanted_auth_no": "KJAQ002606230002",
+            "label": 1
         }
     },
     {
@@ -15389,7 +15831,8 @@
             "close_date": "2026-08-21",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "KEC0912606230001"
+            "wanted_auth_no": "KEC0912606230001",
+            "label": 1
         }
     },
     {
@@ -15410,7 +15853,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "KF11102606230004"
+            "wanted_auth_no": "KF11102606230004",
+            "label": 1
         }
     },
     {
@@ -15431,7 +15875,8 @@
             "close_date": "2026-07-07",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K172112606230027"
+            "wanted_auth_no": "K172112606230027",
+            "label": 1
         }
     },
     {
@@ -15452,7 +15897,8 @@
             "close_date": "2026-07-07",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "KF10242606230004"
+            "wanted_auth_no": "KF10242606230004",
+            "label": 1
         }
     },
     {
@@ -15473,7 +15919,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K150012606230029"
+            "wanted_auth_no": "K150012606230029",
+            "label": 1
         }
     },
     {
@@ -15494,7 +15941,8 @@
             "close_date": "2026-08-21",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K141122606230005"
+            "wanted_auth_no": "K141122606230005",
+            "label": 1
         }
     },
     {
@@ -15515,7 +15963,8 @@
             "close_date": "2026-07-07",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K130112606230027"
+            "wanted_auth_no": "K130112606230027",
+            "label": 1
         }
     },
     {
@@ -15536,7 +15985,8 @@
             "close_date": "2026-07-06",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K180322606230016"
+            "wanted_auth_no": "K180322606230016",
+            "label": 1
         }
     },
     {
@@ -15557,7 +16007,8 @@
             "close_date": "2026-07-07",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "KJKJ002606230008"
+            "wanted_auth_no": "KJKJ002606230008",
+            "label": 1
         }
     },
     {
@@ -15578,7 +16029,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K163012606230011"
+            "wanted_auth_no": "K163012606230011",
+            "label": 1
         }
     },
     {
@@ -15599,7 +16051,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "KF10232606230002"
+            "wanted_auth_no": "KF10232606230002",
+            "label": 1
         }
     },
     {
@@ -15620,7 +16073,8 @@
             "close_date": "2026-07-07",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "KJ20522606230003"
+            "wanted_auth_no": "KJ20522606230003",
+            "label": 1
         }
     },
     {
@@ -15641,7 +16095,8 @@
             "close_date": "2026-07-07",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K130112606230026"
+            "wanted_auth_no": "K130112606230026",
+            "label": 1
         }
     },
     {
@@ -15662,7 +16117,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K131322606230011"
+            "wanted_auth_no": "K131322606230011",
+            "label": 1
         }
     },
     {
@@ -15683,7 +16139,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "KJ21062606230006"
+            "wanted_auth_no": "KJ21062606230006",
+            "label": 1
         }
     },
     {
@@ -15704,7 +16161,8 @@
             "close_date": "2026-08-21",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K140022606230004"
+            "wanted_auth_no": "K140022606230004",
+            "label": 1
         }
     },
     {
@@ -15725,7 +16183,8 @@
             "close_date": "2026-07-07",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K180512606230019"
+            "wanted_auth_no": "K180512606230019",
+            "label": 1
         }
     },
     {
@@ -15746,7 +16205,8 @@
             "close_date": "2026-07-07",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K140132606230006"
+            "wanted_auth_no": "K140132606230006",
+            "label": 1
         }
     },
     {
@@ -15767,7 +16227,8 @@
             "close_date": "2026-07-15",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K131312606230015"
+            "wanted_auth_no": "K131312606230015",
+            "label": 1
         }
     },
     {
@@ -15788,7 +16249,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "KJAM002606230006"
+            "wanted_auth_no": "KJAM002606230006",
+            "label": 1
         }
     },
     {
@@ -15809,7 +16271,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K171112606230022"
+            "wanted_auth_no": "K171112606230022",
+            "label": 1
         }
     },
     {
@@ -15830,7 +16293,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K120032606230017"
+            "wanted_auth_no": "K120032606230017",
+            "label": 1
         }
     },
     {
@@ -15851,7 +16315,8 @@
             "close_date": "2026-06-26",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "KJKK002606230002"
+            "wanted_auth_no": "KJKK002606230002",
+            "label": 1
         }
     },
     {
@@ -15872,7 +16337,8 @@
             "close_date": "2026-07-10",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K150122606230006"
+            "wanted_auth_no": "K150122606230006",
+            "label": 1
         }
     },
     {
@@ -15893,7 +16359,8 @@
             "close_date": "2026-08-16",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K141122606230004"
+            "wanted_auth_no": "K141122606230004",
+            "label": 1
         }
     },
     {
@@ -15914,7 +16381,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "KF10062606230008"
+            "wanted_auth_no": "KF10062606230008",
+            "label": 1
         }
     },
     {
@@ -15935,7 +16403,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K131312606230014"
+            "wanted_auth_no": "K131312606230014",
+            "label": 1
         }
     },
     {
@@ -15956,7 +16425,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K140162606230004"
+            "wanted_auth_no": "K140162606230004",
+            "label": 1
         }
     },
     {
@@ -15977,7 +16447,8 @@
             "close_date": "2026-07-07",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K150122606230005"
+            "wanted_auth_no": "K150122606230005",
+            "label": 1
         }
     },
     {
@@ -15998,7 +16469,8 @@
             "close_date": "2026-07-07",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "KF10872606230002"
+            "wanted_auth_no": "KF10872606230002",
+            "label": 1
         }
     },
     {
@@ -16019,7 +16491,8 @@
             "close_date": "2026-07-30",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K120412606230013"
+            "wanted_auth_no": "K120412606230013",
+            "label": 1
         }
     },
     {
@@ -16040,7 +16513,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "KJGB002606230004"
+            "wanted_auth_no": "KJGB002606230004",
+            "label": 1
         }
     },
     {
@@ -16061,7 +16535,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K150012606230028"
+            "wanted_auth_no": "K150012606230028",
+            "label": 1
         }
     },
     {
@@ -16082,7 +16557,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "KJBK002606230004"
+            "wanted_auth_no": "KJBK002606230004",
+            "label": 1
         }
     },
     {
@@ -16103,7 +16579,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K171252606230009"
+            "wanted_auth_no": "K171252606230009",
+            "label": 1
         }
     },
     {
@@ -16124,7 +16601,8 @@
             "close_date": "2026-07-07",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K163012606230010"
+            "wanted_auth_no": "K163012606230010",
+            "label": 1
         }
     },
     {
@@ -16145,7 +16623,8 @@
             "close_date": "2026-08-21",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K180142606230003"
+            "wanted_auth_no": "K180142606230003",
+            "label": 1
         }
     },
     {
@@ -16166,7 +16645,8 @@
             "close_date": "2026-08-16",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K120572606230005"
+            "wanted_auth_no": "K120572606230005",
+            "label": 1
         }
     },
     {
@@ -16187,7 +16667,8 @@
             "close_date": "2026-07-10",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K150122606230004"
+            "wanted_auth_no": "K150122606230004",
+            "label": 1
         }
     },
     {
@@ -16208,7 +16689,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "KJKX002606230007"
+            "wanted_auth_no": "KJKX002606230007",
+            "label": 1
         }
     },
     {
@@ -16229,7 +16711,8 @@
             "close_date": "2026-08-22",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "KJNM002606230002"
+            "wanted_auth_no": "KJNM002606230002",
+            "label": 1
         }
     },
     {
@@ -16250,7 +16733,8 @@
             "close_date": "2026-08-18",
             "created_date": "2026-06-23",
             "view_count": null,
-            "wanted_auth_no": "K120412606230012"
+            "wanted_auth_no": "K120412606230012",
+            "label": 1
         }
     },
     {
