@@ -14,6 +14,18 @@ import AppFooter from './components/common/AppFooter.vue';
 
 </script>
 
-<style scoped>
+<style lang="scss">
+$teal: #2ab59e;
 
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+#app {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
 </style>
