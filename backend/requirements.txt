@@ -1,3 +1,8 @@
+anyio==4.12.1
+appnope==0.1.4
+argon2-cffi==25.1.0
+argon2-cffi-bindings==25.1.0
+arrow==1.4.0
 asgiref==3.11.1
 beautifulsoup4==4.15.0
 certifi==2026.5.20
@@ -21,6 +26,3 @@ sqlparse==0.5.5
 typing_extensions==4.15.0
 tzdata==2026.2
 urllib3==2.7.0
-
-
-# ai score을 매기는 함수를 작성할꺼야. 일단 설계를 어떻게 했는지 알려줄꼐. signup을 하면 user와 동시에 profile이 만들어져. profile에는 category라는 column이 있을텐데(아직 column 추가 안함) 이건 category.Category model을 참조해. Category에는 21가지의 직무 종류가 정해져 있어. profile에서 category가 바뀔때마다(PUT)  어떠한 데이터와 profile의 의미유사도를 통해 자신에게 얼마나 적합한 채용정보인지 100점 만점으로 점수를 내는 코드를 작성하고 싶어. 벡터임베딩을 사용할꺼고, ai_score이라는 table을 하나 더 만들어서 user 와 certification, jobs, competitions, bootcamp를 genericForeignkey를 사용하려고해. 먼저 설계 구체화부터 하자. 내가 말한 것 중 이해 안가는 부분이나 기술구현에서 불가능한게 있어?

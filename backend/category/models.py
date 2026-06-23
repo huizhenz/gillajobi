@@ -6,7 +6,7 @@ class Category(models.Model):
 
     def __str__(self):
         return self.name
-    
+
 
 class Label(models.Model):
     name = models.CharField(max_length=100)
