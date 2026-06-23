@@ -14,13 +14,15 @@ from .models import (
 BASE_URL = "https://www.work24.go.kr"
 LIST_URL = BASE_URL + "/wk/a/b/1200/retriveDtlEmpSrchListInPost.do"
 HEADERS = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"}
+RESULT_CNT = 100
+MAX_PAGES = 5
 
 
 def _get_form_data(page):
     return {
         "currentPageNo": str(page),
         "pageIndex": str(page),
-        "resultCnt": "10",
+        "resultCnt": str(RESULT_CNT),
         "sortOrderBy": "DESC",
         "sortField": "DATE",
         "siteClcd": "all",
@@ -100,8 +102,9 @@ def _parse_list_row(row):
 def fetch_jobs_service():
     created_count = 0
     updated_count = 0
+    page = 1
 
-    for page in range(1, 11):
+    while page <= MAX_PAGES:
         try:
             time.sleep(0.3)
             response = requests.post(
@@ -115,7 +118,10 @@ def fetch_jobs_service():
             print(f"page={page}, rows={len(rows)}")
         except Exception as e:
             print(f"page={page} 요청 실패: {e}")
-            continue
+            break
+
+        if not rows:
+            break
 
         for row in rows:
             try:
@@ -123,7 +129,8 @@ def fetch_jobs_service():
                 if not data:
                     continue
 
-                company, _ = Company.objects.get_or_create(name=data["company_name"])
+                company, _ = Company.objects.get_or_create(
+                    name=data["company_name"])
 
                 _, created = Recruitment.objects.update_or_create(
                     recruitment_url=data["recruitment_url"],
@@ -152,6 +159,8 @@ def fetch_jobs_service():
             except Exception as e:
                 print(f"  행 처리 오류: {e}")
 
+        page += 1
+
     return {
         "created": created_count,
         "updated": updated_count,
@@ -172,10 +181,11 @@ def fetch_detail_service():
             )
             soup = BeautifulSoup(response.text, "html.parser")
 
-            detail, _ = RecruitmentDetail.objects.get_or_create(recruitment=recruitment)
+            detail, _ = RecruitmentDetail.objects.get_or_create(
+                recruitment=recruitment)
 
             # 직무내용
-            job_title = soup.find("strong", string="직무내용")
+            job_title = soup.find("strong", string=lambda t: t and "직무내용" in t)
             if job_title:
                 job_box = job_title.parent
                 detail.job_description = (
@@ -200,7 +210,8 @@ def fetch_detail_service():
 
                     if "모집인원" in clean_title:
                         try:
-                            recruitment.recruitment_count = int(value.replace("명", ""))
+                            recruitment.recruitment_count = int(
+                                value.replace("명", ""))
                         except ValueError:
                             pass
                     elif clean_title == "경력":
