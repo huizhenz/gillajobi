@@ -8,7 +8,7 @@
 </template>
 
 <script setup>
-import AppNav from './components/Common/AppNav.vue';
+import AppNav from './components/common/AppNav.vue';
 
 
 </script>
