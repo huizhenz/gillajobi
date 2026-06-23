@@ -1,6 +1,6 @@
 <template>
     <div>
-        <AppNav/>
+        <AppNav>
         <div>
             <router-view/>
         </div>
@@ -9,7 +9,6 @@
 
 <script setup>
 import AppNav from './components/common/AppNav.vue';
-
 
 </script>
 
