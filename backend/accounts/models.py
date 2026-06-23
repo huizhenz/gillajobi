@@ -22,7 +22,10 @@ class User(AbstractUser):
         choices=GENDER_CHOICES,
     )
 
-    birth = models.DateField()
+    birth = models.DateField(
+        blank=True,
+        null=True
+    )
 
     profile_image = models.ImageField(
         upload_to='profiles/',
