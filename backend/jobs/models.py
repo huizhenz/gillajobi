@@ -194,11 +194,6 @@ class RecruitmentDetail(models.Model):
         null=True
     )
 
-    ai_fit_score = models.IntegerField(
-        blank=True,
-        null=True
-    )
-
 class HiringProcess(models.Model):
 
     recruitment = models.ForeignKey(
