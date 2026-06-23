@@ -72,7 +72,12 @@ const router = createRouter({
       path: '/bootcamp',
       name: 'BootcampView',
       component: BootcampView,
-    },        
+    },
+    {
+      path: '/bootcamp/:bootcampPk',
+      name: 'BootcampDetailView',
+      component: () => import('@/views/BootcampDetailView.vue'),
+    },
   ],
 })
 

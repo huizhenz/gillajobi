@@ -1,12 +1,28 @@
-import { ref, computed } from 'vue'
+import axios from 'axios'
+import { ref } from 'vue'
 import { defineStore } from 'pinia'
 
 export const useBootcampStore = defineStore('bootcamps', () => {
-  const count = ref(0)
-  const doubleCount = computed(() => count.value * 2)
-  function increment() {
-    count.value++
+  const bootcampList = ref([])
+  const bootcamp = ref(null)
+
+  const getBootcampList = function () {
+    axios({
+      method: 'get',
+      url: 'http://127.0.0.1:8000/api/v1/bootcamps/'
+    })
+    .then(res => bootcampList.value = res.data)
+    .catch(err => console.log(err))
   }
 
-  return { count, doubleCount, increment }
+  const getBootcamp = function (pk) {
+    axios({
+      method: 'get',
+      url: `http://127.0.0.1:8000/api/v1/bootcamps/${pk}/`
+    })
+    .then(res => bootcamp.value = res.data)
+    .catch(err => console.log(err))
+  }
+
+  return { bootcampList, bootcamp, getBootcampList, getBootcamp }
 })
