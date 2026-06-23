@@ -1,6 +1,21 @@
 from django.db import models
+from category.models import Category, Label
 
 class Certification(models.Model):
+    label = models.ForeignKey(
+        Label,
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+        related_name='certifications'
+    )
+    category = models.ForeignKey(
+        Category,
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+        related_name='certifications'
+    )
     jm_cd = models.CharField(max_length=20, unique=True) # 종목코드
     name = models.CharField(max_length=200, blank=True) # 종목명
     qualification_cl = models.CharField(max_length=50, blank=True) # 국가기술자격
