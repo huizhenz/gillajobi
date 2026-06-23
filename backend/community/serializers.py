@@ -13,7 +13,7 @@ class ArticleDetailSerializer(serializers.ModelSerializer):
             model = Comment
             fields = '__all__'
 
-    comment_set = CommentSerializer(many=True, read_only=True)
+    comments = CommentSerializer(many=True, read_only=True)
     comment_count = serializers.SerializerMethodField()
 
     class Meta:
@@ -21,8 +21,8 @@ class ArticleDetailSerializer(serializers.ModelSerializer):
         fields = '__all__'
         read_only_fields = ('user',)
 
-    def get_review_count(self, obj):
-        return obj.review_count;
+    def get_comment_count(self, obj):
+        return obj.comments.count()
 
 
 class CommentListSerializer(serializers.ModelSerializer):

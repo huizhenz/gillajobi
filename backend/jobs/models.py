@@ -3,7 +3,7 @@ from category.models import Category
 
 # Create your models here.
 class Company(models.Model):
-    name = models.CharField(max_length=255)
+    name = models.CharField(max_length=255, unique=True)
 
     industry = models.CharField(max_length=255, blank=True)
     size = models.CharField(max_length=100, blank=True)
@@ -92,9 +92,10 @@ class Recruitment(models.Model):
     region = models.CharField(
         max_length=255,
         blank=True,
+        null=True,
     )
 
-    recruitment_url = models.URLField()
+    recruitment_url = models.URLField(unique=True)
 
     close_date = models.DateField(
         blank=True,
@@ -194,11 +195,6 @@ class RecruitmentDetail(models.Model):
         null=True
     )
 
-    ai_fit_score = models.IntegerField(
-        blank=True,
-        null=True
-    )
-
 class HiringProcess(models.Model):
 
     recruitment = models.ForeignKey(
@@ -208,3 +204,6 @@ class HiringProcess(models.Model):
     )
 
     name = models.CharField(max_length=100)
+
+    class Meta:
+        unique_together = [('recruitment', 'name')]
