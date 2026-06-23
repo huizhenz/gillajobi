@@ -1,3 +1,4 @@
+from django.shortcuts import get_object_or_404
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
@@ -18,7 +19,6 @@ from .serializers import (
 
 from .service import fetch_jobs_service, fetch_detail_service
 
-from django.conf import settings
 
 @api_view(['GET'])
 def jobs_list(request):
@@ -29,8 +29,11 @@ def jobs_list(request):
 
 @api_view(['GET'])
 def job_detail(request, job_pk):
-    recruitment = Recruitment.objects.get(pk=job_pk)
-    serializer = RecruitmentDetailReadSerializer(recruitment)
+    recruitment_detail = get_object_or_404(
+        RecruitmentDetail.objects.select_related('recruitment__company'),
+        recruitment_id=job_pk,
+    )
+    serializer = RecruitmentDetailReadSerializer(recruitment_detail)
     return Response(serializer.data)
 
 
