@@ -44,34 +44,40 @@ class Profile(models.Model):
         related_name='profile'
     )
 
-    education = models.TextField(
+    education = models.JSONField(
         blank=True,
-        null=True
+        null=True,
+        default=list
     )
 
-    certification = models.TextField(
+    certification = models.JSONField(
         blank=True,
-        null=True
+        null=True,
+        default=list
     )
 
-    experience = models.TextField(
+    experience = models.JSONField(
         blank=True,
-        null=True
+        null=True,
+        default=list
     )
 
-    language = models.TextField(
+    language = models.JSONField(
         blank=True,
-        null=True
+        null=True,
+        default=list
     )
 
-    preferred_location = models.TextField(
+    preferred_location = models.JSONField(
         blank=True,
-        null=True
+        null=True,
+        default=list
     )
 
-    preferred_position = models.TextField(
+    preferred_position = models.JSONField(
         blank=True,
-        null=True
+        null=True,
+        default=list
     )
 
     desired_salary = models.TextField(
