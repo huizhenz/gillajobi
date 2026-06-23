@@ -51,10 +51,25 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 import { useUserStore } from "@/stores/userStore.js";
 
 const userStore = useUserStore();
+
+onMounted(async () => {
+  const data = await userStore.getProfile()
+  if (!data) return
+
+  first_name.value = data.user.first_name || ''
+  last_name.value = data.user.last_name || ''
+  education.value = data.profile.education || []
+  certification.value = data.profile.certification || []
+  experience.value = data.profile.experience || []
+  language.value = data.profile.language || []
+  preferred_location.value = data.profile.preferred_location || []
+  preferred_position.value = data.profile.preferred_position || []
+  desired_salary.value = data.profile.desired_salary || ''
+})
 
 const first_name = ref('')
 const last_name = ref('')

@@ -77,6 +77,20 @@ export const useUserStore = defineStore('user', () => {
         .catch(err => console.log(err))
     }
 
+    const getProfile = () => {
+        return axios({
+            url: `${BASE_URL}/profile/`,
+            method: 'GET',
+            headers: {
+                Authorization: `Token ${token.value}`
+            }
+        }).then(response => {
+            return response.data
+        }).catch(error => {
+            console.log(error);
+        });
+    }
+
     const updateProfile = (payload) => {
         const formData = new FormData()
         if (payload.first_name) formData.append('first_name', payload.first_name)
@@ -113,6 +127,7 @@ export const useUserStore = defineStore('user', () => {
         signUp,
         logIn,
         logOut,
+        getProfile,
         updateProfile,
     }
 }, { persist: true })
