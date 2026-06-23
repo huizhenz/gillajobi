@@ -1,0 +1,149 @@
+[
+{
+    "model": "category.category",
+    "pk": 1,
+    "fields": {
+        "name": "기획·전략"
+    }
+},
+{
+    "model": "category.category",
+    "pk": 2,
+    "fields": {
+        "name": "마케팅·홍보·조사"
+    }
+},
+{
+    "model": "category.category",
+    "pk": 3,
+    "fields": {
+        "name": "회계·세무·재무"
+    }
+},
+{
+    "model": "category.category",
+    "pk": 4,
+    "fields": {
+        "name": "인사·노무·HRD"
+    }
+},
+{
+    "model": "category.category",
+    "pk": 5,
+    "fields": {
+        "name": "총무·법무·사무"
+    }
+},
+{
+    "model": "category.category",
+    "pk": 6,
+    "fields": {
+        "name": "IT개발·데이터"
+    }
+},
+{
+    "model": "category.category",
+    "pk": 7,
+    "fields": {
+        "name": "디자인"
+    }
+},
+{
+    "model": "category.category",
+    "pk": 8,
+    "fields": {
+        "name": "영업·판매·무역"
+    }
+},
+{
+    "model": "category.category",
+    "pk": 9,
+    "fields": {
+        "name": "고객상담·TM"
+    }
+},
+{
+    "model": "category.category",
+    "pk": 10,
+    "fields": {
+        "name": "구매·자재·물류"
+    }
+},
+{
+    "model": "category.category",
+    "pk": 11,
+    "fields": {
+        "name": "상품기획·MD"
+    }
+},
+{
+    "model": "category.category",
+    "pk": 12,
+    "fields": {
+        "name": "운전·운송·배송"
+    }
+},
+{
+    "model": "category.category",
+    "pk": 13,
+    "fields": {
+        "name": "서비스"
+    }
+},
+{
+    "model": "category.category",
+    "pk": 14,
+    "fields": {
+        "name": "생산"
+    }
+},
+{
+    "model": "category.category",
+    "pk": 15,
+    "fields": {
+        "name": "건설·건축"
+    }
+},
+{
+    "model": "category.category",
+    "pk": 16,
+    "fields": {
+        "name": "의료"
+    }
+},
+{
+    "model": "category.category",
+    "pk": 17,
+    "fields": {
+        "name": "연구·R&D"
+    }
+},
+{
+    "model": "category.category",
+    "pk": 18,
+    "fields": {
+        "name": "교육"
+    }
+},
+{
+    "model": "category.category",
+    "pk": 19,
+    "fields": {
+        "name": "미디어·문화·스포츠"
+    }
+},
+{
+    "model": "category.category",
+    "pk": 20,
+    "fields": {
+        "name": "금융·보험"
+    }
+},
+{
+    "model": "category.category",
+    "pk": 21,
+    "fields": {
+        "name": "공공·복지"
+    }
+}
+]
