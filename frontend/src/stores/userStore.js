@@ -46,6 +46,7 @@ export const useUserStore = defineStore('user', () => {
         }).then(response => {
             console.log(response);
             token.value = response.data.key;
+            router.push({ name: 'MainView' })
         }).catch(error => {
             console.log(error);
         });
