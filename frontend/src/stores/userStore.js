@@ -7,6 +7,7 @@ import router from '@/router'
 export const useUserStore = defineStore('user', () => {
     const BASE_URL = 'http://localhost:8000/api/v1/accounts'
     const token = ref('')
+    const username = ref('')
 
 
     const signUp = (payload) => {
@@ -47,6 +48,7 @@ export const useUserStore = defineStore('user', () => {
             console.log(response);
             token.value = response.data.key;
             router.push({ name: 'MainView' })
+            username.value = payload.username;
         }).catch(error => {
             console.log(error);
         });
@@ -67,7 +69,7 @@ export const useUserStore = defineStore('user', () => {
         .then(res => {
             token.value = null
             // 로그아웃하면 로그인 화면으로 이동
-            // router.push({ name: 'LogInView' })
+            router.push({ name: 'LogInView' })
         })
         .catch(err => console.log(err))
     }
@@ -76,6 +78,7 @@ export const useUserStore = defineStore('user', () => {
     return {
         BASE_URL,
         token,
+        username,
         isLogin,
         signUp,
         logIn,
