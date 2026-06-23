@@ -1,6 +1,8 @@
 import { ref, computed } from 'vue'
 import { defineStore } from 'pinia'
 import axios from "axios";
+import router from '@/router'
+
 
 export const useUserStore = defineStore('user', () => {
     const BASE_URL = 'http://localhost:8000/api/v1/accounts'
@@ -15,16 +17,19 @@ export const useUserStore = defineStore('user', () => {
         formData.append('password2', payload.password2)
         formData.append('nickname', payload.nickname)
         formData.append('gender', payload.gender)
-        formData.append('birth', payload.birth)
+        if (payload.birth) {
+            formData.append('birth', payload.birth)
+        }
         if (payload.profile_image) {
             formData.append('profile_image', payload.profile_image)
         }
-        axios({
+        return axios({
             url: `${BASE_URL}/registration/`,
             method: 'POST',
             data: formData,
         }).then(response => {
             console.log(response);
+            router.push({ name: 'UpdateProfileView' })
         }).catch(error => {
             console.log(error);
         });

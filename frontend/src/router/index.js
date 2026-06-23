@@ -7,6 +7,7 @@ import JobView from '@/views/JobView.vue'
 import LoginView from '@/views/LoginView.vue'
 import MainView from '@/views/MainView.vue'
 import ProfileView from '@/views/ProfileView.vue'
+import UpdateProfileView from '@/views/UpdateProfileView.vue'
 import SignupView from '@/views/SignupView.vue'
 import { createRouter, createWebHistory } from 'vue-router'
 
@@ -28,6 +29,13 @@ const router = createRouter({
       path: '/profile',
       name: 'ProfileView',
       component: ProfileView,
+      children: [
+        {
+          path: 'update',
+          name: 'UpdateProfileView',
+          component: UpdateProfileView,
+        }
+      ]
     },
     {
       path: '/login',
