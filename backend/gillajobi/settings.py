@@ -163,3 +163,5 @@ MEDIA_ROOT = BASE_DIR / 'media'
 REST_AUTH = {
     'REGISTER_SERIALIZER': 'accounts.serializers.UserSerializer',
 }
+
+ACCOUNT_EMAIL_VERIFICATION = 'none'
