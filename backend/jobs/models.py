@@ -1,9 +1,9 @@
 from django.db import models
-from category.models import Category
+from category.models import Category, Label
 
 # Create your models here.
 class Company(models.Model):
-    name = models.CharField(max_length=255)
+    name = models.CharField(max_length=255, unique=True)
 
     industry = models.CharField(max_length=255, blank=True)
     size = models.CharField(max_length=100, blank=True)
@@ -41,6 +41,14 @@ class Recruitment(models.Model):
     company = models.ForeignKey(
         Company,
         on_delete=models.CASCADE,
+        related_name='recruitments'
+    )
+
+    label = models.ForeignKey(
+        Label,
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
         related_name='recruitments'
     )
 
@@ -92,9 +100,10 @@ class Recruitment(models.Model):
     region = models.CharField(
         max_length=255,
         blank=True,
+        null=True,
     )
 
-    recruitment_url = models.URLField()
+    recruitment_url = models.URLField(unique=True)
 
     close_date = models.DateField(
         blank=True,
@@ -203,3 +212,6 @@ class HiringProcess(models.Model):
     )
 
     name = models.CharField(max_length=100)
+
+    class Meta:
+        unique_together = [('recruitment', 'name')]

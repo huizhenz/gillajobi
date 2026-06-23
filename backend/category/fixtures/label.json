@@ -1,0 +1,30 @@
+[
+{
+    "model": "category.label",
+    "pk": 1,
+    "fields": {
+        "name": "채용공고"
+    }
+},
+{
+    "model": "category.label",
+    "pk": 2,
+    "fields": {
+        "name": "자격증"
+    }
+},
+{
+    "model": "category.label",
+    "pk": 3,
+    "fields": {
+        "name": "부트캠프"
+    }
+},
+{
+    "model": "category.label",
+    "pk": 4,
+    "fields": {
+        "name": "공모전"
+    }
+}
+]
