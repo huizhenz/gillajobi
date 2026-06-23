@@ -1,5 +1,5 @@
 from django.db import models
-from category.models import Category
+from category.models import Category, Label
 
 # Create your models here.
 class Company(models.Model):
@@ -41,6 +41,14 @@ class Recruitment(models.Model):
     company = models.ForeignKey(
         Company,
         on_delete=models.CASCADE,
+        related_name='recruitments'
+    )
+
+    label = models.ForeignKey(
+        Label,
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
         related_name='recruitments'
     )
 
