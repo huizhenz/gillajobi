@@ -72,7 +72,7 @@ export const useUserStore = defineStore('user', () => {
             token.value = null
             username.value=null
             // 로그아웃하면 로그인 화면으로 이동
-            router.push({ name: 'LoginView' })
+            router.push({ name: 'MainView' })
         })
         .catch(err => console.log(err))
     }
