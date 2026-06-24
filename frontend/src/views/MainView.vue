@@ -51,7 +51,7 @@ $teal: #2ab59e;
     flex: 1;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 40px;
 }
 
 .heading {

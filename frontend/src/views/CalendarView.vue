@@ -19,6 +19,7 @@ import Todolist from '@/components/calendar/TodoList.vue';
     display: flex;
     gap: 24px;
     padding: 40px;
+    margin: 0 -24px;
 }
 
 .calendar-area {

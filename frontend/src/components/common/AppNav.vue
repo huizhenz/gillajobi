@@ -51,7 +51,7 @@ $primary: #2ab59e;
 }
 
 .navbar {
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
   padding: 0 24px;
   height: 60px;
