@@ -21,8 +21,9 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue';
+import { ref, onMounted, watch } from 'vue';
 import { useCommunityStore } from '@/stores/communityStore';
+import { onBeforeRouteLeave } from 'vue-router';
 // import { watch } from 'vue';
 const communityStore = useCommunityStore();
 
@@ -45,8 +46,21 @@ const createArticle = function () {
     content: content.value,
     label: selectedLabel.value || null,
   }
+  isWriting.value = false
   communityStore.createArticle(article)
 }
+
+const isWriting = ref(false)
+
+watch([title, content], ([t, c]) => {
+    if (t || c) isWriting.value = true
+})
+
+onBeforeRouteLeave(() => {
+    if (!isWriting.value) return true
+    return window.confirm("작성중이던 게시글이 있습니다. 다른 경로로 이동시 작성중이던 내용은 소멸됩니다. 이동하시겠습니까?")
+})
+
 
 
 </script>
