@@ -107,6 +107,7 @@ Base URL: `http://127.0.0.1:8000/api/v1`
 ### Community
 | Method | Endpoint | 설명 |
 |--------|----------|------|
+| GET | `/community/labels/` | 카테고리(레이블) 목록 |
 | GET / POST | `/community/articles/` | 게시글 목록 / 작성 |
 | GET / PUT / DELETE | `/community/articles/<id>/` | 게시글 상세 / 수정 / 삭제 |
 | GET / POST | `/community/articles/<id>/comments/` | 댓글 목록 / 작성 |
@@ -161,38 +162,56 @@ Base URL: `http://127.0.0.1:8000/api/v1`
 
 | 경로 | 컴포넌트 | 상태 |
 |------|----------|------|
-| `/` | MainView | 완료 (메인 페이지 + 검색 UI) |
+| `/` | MainView | 완료 |
 | `/signup` | SignupView | 완료 |
 | `/login` | LoginView | 완료 |
-| `/profile/:username` | ProfileView | 완료 |
-| `/profile/:username/update` | UpdateProfileView | 완료 |
-| `/bootcamp` | BootcampView | 완료 (부트캠프 목록) |
-| `/bootcamp/:bootcampPk` | BootcampDetailView | 완료 (부트캠프 상세) |
-| `/jobs` | JobView | 미구현 |
-| `/competition` | CompetitionView | 미구현 |
-| `/certification` | CertificationView | 미구현 |
-| `/community` | CommunityView | 미구현 |
-| `/calendar` | CalendarView | 미구현 |
+| `/profile/:username` | ProfileView | 완료 — 개인정보 탭 + 작성한 글 탭 (카드 레이아웃) |
+| `/profile/:username/update` | UpdateProfileView | 완료 — 프로필 수정 폼 (태그 pill UI) |
+| `/bootcamp` | BootcampView | 완료 |
+| `/bootcamp/:bootcampPk` | BootcampDetailView | 완료 — 기술 스택 pill 뱃지 |
+| `/jobs` | JobView | 완료 |
+| `/jobs/:jobPk` | JobDetailView | 완료 |
+| `/competition` | CompetitionView | 완료 |
+| `/competition/:competitionPk` | CompetitionDetailView | 완료 |
+| `/certification` | CertificationView | 완료 |
+| `/certification/:jm_cd` | CertificationDetailView | 완료 |
+| `/community` | CommunityView | 완료 — 카테고리 필터, 댓글 수 표시, 비로그인 블러 게이트 |
+| `/community/article` | CommunityFormView | 완료 — 카테고리 선택 포함 |
+| `/community/:pk` | CommunityDetailView | 완료 — 작성자 본인만 수정/삭제 |
+| `/community/:pk/update` | CommunityUpdateView | 완료 |
+| `/calendar` | CalendarView | 완료 |
 
 ---
 
 ## 프론트엔드 상태 관리 (Pinia Stores)
 
-| Store | 파일 | 상태 |
-|-------|------|------|
-| userStore | `stores/userStore.js` | 완료. 토큰 영속 저장, 회원가입/로그인/로그아웃/프로필 조회·수정 |
-| bootcampStore | `stores/bootcampStore.js` | 완료. 목록 조회(`getBootcampList`) + 단건 조회(`getBootcamp`) |
-| jobStore | `stores/jobStore.js` | 미구현 |
-| certificationStore | `stores/certificationStore.js` | 미구현 |
-| communityStore | `stores/communityStore.js` | 미구현 |
-| competitionStore | `stores/competitionStore.js` | 미구현 |
-| todoStore | `stores/todoStore.js` | 미구현 |
+| Store | 파일 | 주요 기능 |
+|-------|------|-----------|
+| userStore | `stores/userStore.js` | 토큰 영속 저장 (`persist: true`), 회원가입/로그인/로그아웃, 프로필 조회·수정 |
+| bootcampStore | `stores/bootcampStore.js` | 목록 조회(`getBootcampList`), 단건 조회(`getBootcamp`) |
+| communityStore | `stores/communityStore.js` | 게시글 CRUD, 레이블 목록, 상세 조회 |
+| comments | `stores/comments.js` | 댓글 작성(`commentCreate`), 댓글 삭제(`commentDelete`) |
+| jobStore | `stores/jobStore.js` | 채용공고 목록/상세 조회 |
+| certificationStore | `stores/certificationStore.js` | 자격증 목록/상세 조회 |
+| competitionStore | `stores/competitionStore.js` | 공모전 목록/상세 조회 |
+| todoStore | `stores/todoStore.js` | 할일 CRUD |
 
 ---
+
+---
+
+## 주요 구현 패턴
+
+- **비로그인 게이트**: 커뮤니티 목록에서 `v-else` 블러 오버레이 — 가짜 카드 blur + 로그인 안내 모달 카드
+- **사용자 권한 UI**: 게시글/댓글에서 `article.username === userStore.username` 비교로 수정·삭제 버튼 조건부 렌더링
+- **카테고리 필터**: 프론트엔드 `computed`로 `articleList`를 `selectedLabel`로 필터링
+- **스토어 순환 의존 방지**: `communityStore` 내 `useUserStore()`를 함수 바디 안에서 호출
+- **프로필 내 작성 글**: `communityStore.articleList.filter(a => a.username === userStore.username)` — 별도 API 없이 프론트 필터링
+- **이미지/배열 전송**: 프로필 수정 시 `FormData` + `JSON.stringify` 배열 필드
 
 ---
 
 ## 개발 예정 기능
 
 - **AI 적합도 점수**: 사용자 프로필과 채용공고/부트캠프를 비교해 fit 점수 도출 (`ai_score` 앱)
-- **캘린더**: 자격증 시험 일정, 공채 마감일 시각화
+- **캘린더 연동**: 자격증 시험 일정·공채 마감일 자동 등록
