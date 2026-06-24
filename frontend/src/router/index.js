@@ -1,6 +1,8 @@
 import BootcampView from '@/views/BootcampView.vue'
 import CalendarView from '@/views/CalendarView.vue'
 import CertificationView from '@/views/CertificationView.vue'
+import CommunityDetailView from '@/views/CommunityDetailView.vue'
+import CommunityFormView from '@/views/CommunityFormView.vue'
 import CommunityView from '@/views/CommunityView.vue'
 import CompetitionView from '@/views/CompetitionView.vue'
 import JobView from '@/views/JobView.vue'
@@ -48,6 +50,21 @@ const router = createRouter({
       path: '/community',
       name: 'CommunityView',
       component: CommunityView,
+    },
+    {
+      path: '/community/article',
+      name: 'articleCreate',
+      component: CommunityFormView,
+    },
+    {
+      path: '/community/:pk',
+      name: 'Articledetail',
+      component: CommunityDetailView,
+    },
+    {
+      path: '/community/:pk/update',
+      name: 'articleUpdate',
+      component: () => import('@/views/CommunityUpdateView.vue'),
     },
     {
       path: '/jobs',
