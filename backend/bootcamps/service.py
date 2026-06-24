@@ -253,13 +253,14 @@ def _extract_camp_data(soup, rsc_text):
     # 제목
     data["title"] = camp.get("title", "")
 
-    # 회사명: company 필드 우선, 없으면 companyIds에서 operator 역할
-    company_name = camp.get("company", "")
+    # 회사명: companyIds의 operator를 우선, 없으면 "company" 필드로 대체
+    company_name = ""
+    for c in camp.get("companyIds", []):
+        if c.get("companyRole") == "operator":
+            company_name = c.get("companyName", "")
+            break
     if not company_name:
-        for c in camp.get("companyIds", []):
-            if c.get("companyRole") == "operator":
-                company_name = c.get("companyName", "")
-                break
+        company_name = camp.get("company", "")
     data["company_name"] = company_name
 
     # 수강료 (tuition 숫자 → 만원 단위)
