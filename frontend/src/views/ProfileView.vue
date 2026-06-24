@@ -15,6 +15,12 @@
             희망 직무 · {{ pos }}
           </span>
         </div>
+        <div>
+          <h1>완료한 TODO</h1>
+          <p>{{todoStore.completedCount}}개</p>
+          <p>{{ todoStore.todoList.length ? Math.round(100 * todoStore.completedCount / todoStore.todoList.length) : 0 }}%를 달성했어요</p>
+        </div>
+
       </div>
 
       <!-- 오른쪽 패널 -->
@@ -100,9 +106,11 @@ import { ref, computed, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
 import { useUserStore } from '@/stores/userStore'
 import { useCommunityStore } from '@/stores/communityStore'
+import { useTodoStore } from '@/stores/todoStore'
 
 const userStore = useUserStore()
 const communityStore = useCommunityStore()
+const todoStore = useTodoStore()
 const router = useRouter()
 
 const profileData = ref(null)
