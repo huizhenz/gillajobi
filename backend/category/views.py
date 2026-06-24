@@ -15,26 +15,25 @@ def search(request):
     jobs_result = jobs_col.query(query_embeddings=[embedding], n_results=3)
     filtered_jobs = [
         meta for meta, dist in zip(jobs_result['metadatas'][0], jobs_result['distances'][0])
-        # if dist < 1.2
+        if dist < 1.0
     ]
-    print("jobs distances:", jobs_result['distances'])  # ← 여기
 
     bootcamps_result = bootcamps_col.query(query_embeddings=[embedding], n_results=3)
     filtered_bootcamps = [
         meta for meta, dist in zip(bootcamps_result['metadatas'][0], bootcamps_result['distances'][0])
-        # if dist < 1.2
+        if dist < 1.0
     ]
 
     certifications_result = certifications_col.query(query_embeddings=[embedding], n_results=3)
     filtered_certifications = [
         meta for meta, dist in zip(certifications_result['metadatas'][0], certifications_result['distances'][0])
-        # if dist < 1.2
+        if dist < 1.0
     ]
 
     competitions_result = competitions_col.query(query_embeddings=[embedding], n_results=3)
     filtered_competitions = [
         meta for meta, dist in zip(competitions_result['metadatas'][0], competitions_result['distances'][0])
-        # if dist < 1.2
+        if dist < 1.0
     ]
     
     # 2. Response에 컬렉션 객체가 아닌 결과의 메타데이터 넣기
