@@ -112,7 +112,7 @@ export const useUserStore = defineStore('user', () => {
             data: formData,
         }).then(response => {
             console.log(response);
-            router.push({ name: 'MainView' })
+            router.push({ name: 'ProfileView', params: { username: username.value } })
         }).catch(error => {
             console.log(error);
         });
