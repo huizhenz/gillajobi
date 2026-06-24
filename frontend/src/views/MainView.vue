@@ -5,7 +5,7 @@
         </div>
         <div class="content-wrapper">
             <div v-if="userstore.isLogin" class="heading">안녕하세요, {{userstore.nickname}}님 :) <br> 당신을 취업의 길로 이끌 <br> 가이드 <span>길라잡이</span>입니다.</div>
-            <div v-else class="heading">안녕하세요, 민진님 :) <br> 당신을 취업의 길로 이끌 <br> 가이드 <span>길라잡이</span>입니다.</div>
+            <div v-else class="heading">안녕하세요 :) <br> 당신을 취업의 길로 이끌 <br> 가이드 <span>길라잡이</span>입니다.</div>
 
             <form class="search-form" @submit.prevent="goToSearch">
                 <input v-model="searchStore.keyword" type="text" placeholder="관심 직무를 검색해보세요.">
