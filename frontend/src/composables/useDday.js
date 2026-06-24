@@ -1,5 +1,12 @@
 import { ref, watch, onUnmounted } from 'vue'
 
+export function getSortKey(dateStr) {
+  if (!dateStr) return Infinity
+  const target = new Date(`${dateStr}T23:59:59+09:00`).getTime()
+  if (target <= Date.now()) return Infinity
+  return target
+}
+
 export function useDday(getDateStr) {
   const dday = ref('')
   let timer = null
