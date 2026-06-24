@@ -30,7 +30,9 @@ export const useUserStore = defineStore('user', () => {
             data: formData,
         }).then(response => {
             console.log(response);
-            router.push({ name: 'UpdateProfileView' })
+            token.value = response.data.key;
+            username.value = payload.username;
+            router.push({ name: 'UpdateProfileView', params: { username: username.value } })
         }).catch(error => {
             console.log(error);
         });
@@ -68,10 +70,52 @@ export const useUserStore = defineStore('user', () => {
         })
         .then(res => {
             token.value = null
+            username.value=null
             // 로그아웃하면 로그인 화면으로 이동
             router.push({ name: 'LogInView' })
         })
         .catch(err => console.log(err))
+    }
+
+    const getProfile = () => {
+        return axios({
+            url: `${BASE_URL}/profile/`,
+            method: 'GET',
+            headers: {
+                Authorization: `Token ${token.value}`
+            }
+        }).then(response => {
+            return response.data
+        }).catch(error => {
+            console.log(error);
+        });
+    }
+
+    const updateProfile = (payload) => {
+        const formData = new FormData()
+        if (payload.first_name) formData.append('first_name', payload.first_name)
+        if (payload.last_name) formData.append('last_name', payload.last_name)
+        if (payload.profile_image) formData.append('profile_image', payload.profile_image)
+        formData.append('education', JSON.stringify(payload.education))
+        formData.append('certification', JSON.stringify(payload.certification))
+        formData.append('experience', JSON.stringify(payload.experience))
+        formData.append('language', JSON.stringify(payload.language))
+        formData.append('preferred_location', JSON.stringify(payload.preferred_location))
+        formData.append('preferred_position', JSON.stringify(payload.preferred_position))
+        if (payload.desired_salary) formData.append('desired_salary', payload.desired_salary)
+        return axios({
+            url: `${BASE_URL}/profile/`,
+            method: 'PATCH',
+            headers: {
+                Authorization: `Token ${token.value}`
+            },
+            data: formData,
+        }).then(response => {
+            console.log(response);
+            router.push({ name: 'MainView' })
+        }).catch(error => {
+            console.log(error);
+        });
     }
 
 
@@ -83,5 +127,7 @@ export const useUserStore = defineStore('user', () => {
         signUp,
         logIn,
         logOut,
+        getProfile,
+        updateProfile,
     }
 }, { persist: true })
