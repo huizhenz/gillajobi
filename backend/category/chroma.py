@@ -6,7 +6,19 @@ import chromadb
 client = chromadb.PersistentClient(path="./chroma_db")
 
 # 2. 컬렉션 4개 가져오기 (없으면 자동 생성)
-jobs_col = client.get_or_create_collection("jobs")
-bootcamps_col = client.get_or_create_collection("bootcamps")
-certifications_col = client.get_or_create_collection("certifications")
-competitions_col = client.get_or_create_collection("competitions")
+jobs_col = client.get_or_create_collection(
+    "jobs",
+    metadata={"hnsw:space": "cosine"}
+)
+bootcamps_col = client.get_or_create_collection(
+    "bootcamps",
+    metadata={"hnsw:space": "cosine"}
+)
+certifications_col = client.get_or_create_collection(
+    "certifications",
+    metadata={"hnsw:space": "cosine"}
+)
+competitions_col = client.get_or_create_collection(
+    "competitions",
+    metadata={"hnsw:space": "cosine"}
+)
