@@ -98,7 +98,8 @@ const router = createRouter({
       path: '/search',
       name: 'SearchView',
       component: () => import('@/views/SearchView.vue'),
-    }
+    },
+    {
       path: '/jobs/:jobPk',
       name: 'JobDetailView',
       component: () => import('@/views/JobDetailView.vue'),

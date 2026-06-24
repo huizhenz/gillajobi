@@ -34,7 +34,7 @@ export const useUserStore = defineStore('user', () => {
             username.value = payload.username;
             router.push({ name: 'UpdateProfileView', params: { username: username.value } })
         }).catch(error => {
-            console.log(error);
+            console.log(error.response.data);
         });
     }
 
