@@ -11,7 +11,7 @@
 
 <script setup>
 import Calendar from '@/components/calendar/Calendar.vue';
-import Todolist from '@/components/calendar/Todolist.vue';
+import Todolist from '@/components/calendar/TodoList.vue';
 </script>
 
 <style lang="scss" scoped>
@@ -22,10 +22,10 @@ import Todolist from '@/components/calendar/Todolist.vue';
 }
 
 .calendar-area {
-    flex: 7;
+    flex: 8;
 }
 
 .todo-area {
-    flex: 3;
+    flex: 2;
 }
 </style>

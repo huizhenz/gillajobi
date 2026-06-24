@@ -1,23 +1,38 @@
 <template>
     <div class="calendar-wrapper">
 
-        <!-- 헤더 -->
         <div class="calendar-header">
             <button @click="prevMonth">←</button>
             <h2>2026년 6월</h2>
             <button @click="nextMonth">→</button>
         </div>
 
-        <!-- 요일 행 -->
         <div class="calendar-grid">
             <div class="day-label" v-for="day in ['Mon','Tue','Wed','Thu','Fri','Sat','Sun']" :key="day">
                 {{ day }}
             </div>
 
-            <!-- 날짜 셀 42칸 -->
-            <div class="day-cell" v-for="(cell, index) in calendarCells" :key="index">
+            <div
+                class="day-cell"
+                :class="{ highlighted: cell && isInRange(cell) }"
+                v-for="(cell, index) in calendarCells"
+                :key="index"
+            >
                 <span v-if="cell">{{ cell }}</span>
-            </div>
+                <template v-if="cell">
+                    <div
+                        class="event-badge"
+                        v-for="(event, i) in eventMapFull[getDateKey(cell)]"
+                        :key="i"
+                        @mouseenter="hoveredEvent = event"
+                        @mouseleave="hoveredEvent = null"
+                    >
+                        <span class="category-tag">{{ event.category[0] }}</span>
+                        <span class="event-title">{{ event.title }}</span>
+                    </div>
+    </template>
+</div>
+
         </div>
 
     </div>
@@ -43,6 +58,46 @@ const calendarCells = computed(() => {
     return cells
 })
 
+const events = ref([
+    { title: '2026 부트캠프', category: '부트캠프', start: '2026-06-10', end: '2026-06-24' },
+    { title: '2026 희망청년 공모전', category: '공모전', start: '2026-05-28', end: '2026-06-01' },
+    { title: '2026 ai 해커톤', category: '공모전', start: '2026-06-10', end: '2026-06-15' },
+    { title: '2026 sk 하이닉스 수시채용', category: '채용공고', start: '2026-06-27', end: '2026-06-30' },
+    { title: '2026 SQLD 60회', category: '자격증', start: '2026-06-20', end: '2026-06-28' },
+])
+
+const eventMap = computed(() => {
+    const map = {}
+    events.value.forEach(event => {
+        if (!map[event.end]) map[event.end] = []
+        map[event.end].push(event.title)
+    })
+    return map
+})
+
+const eventMapFull = computed(() => {
+    const map = {}
+    events.value.forEach(event => {
+        if (!map[event.end]) map[event.end] = []
+        map[event.end].push(event)
+    })
+    return map
+})
+
+const hoveredEvent = ref(null)
+
+const isInRange = (day) => {
+    if (!hoveredEvent.value) return false
+    const dateKey = getDateKey(day)
+    return dateKey >= hoveredEvent.value.start && dateKey <= hoveredEvent.value.end
+}
+
+
+const getDateKey = (day) => {
+    const month = String(currentMonth.value).padStart(2, '0')
+    const d = String(day).padStart(2, '0')
+    return `${currentYear.value}-${month}-${d}`
+}
 </script>
 
 <style lang="scss" scoped>
@@ -99,6 +154,7 @@ $teal: #2ab59e;
 
 .day-cell {
     min-height: 72px;
+    min-width: 0;
     padding: 6px;
     border-radius: 8px;
     font-size: 13px;
@@ -112,5 +168,49 @@ $teal: #2ab59e;
         display: block;
         font-weight: 500;
     }
+
+    &.highlighted {
+    background: rgba(42, 181, 158, 0.12);
+}
+}
+
+.event-badge {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-top: 4px;
+    padding: 2px 6px;
+    background: $teal;
+    color: white;
+    border-radius: 4px;
+    font-size: 11px;
+    cursor: pointer;
+    width: 100%;
+    overflow: hidden;
+
+    span + & {
+        white-space: nowrap;
+    }
+}
+
+.category-tag {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 16px;
+    height: 16px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 3px;
+    font-size: 10px;
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+.event-title {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    flex: 1;
+    min-width: 0;
 }
 </style>
