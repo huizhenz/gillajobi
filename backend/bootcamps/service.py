@@ -54,7 +54,6 @@ PAGE_SIZE = 20
 
 
 def fetch_bootcamps_service(page=None):
-    from jobs.models import Company
     from category.models import Label
 
     # 1. 사이트맵에서 전체 URL 목록 가져오기
@@ -97,13 +96,6 @@ def fetch_bootcamps_service(page=None):
                 print(f"  title 없음: {camp_url}")
                 continue
 
-            # Company
-            company = None
-            if camp_data.get("company_name"):
-                company, _ = Company.objects.get_or_create(
-                    name=camp_data["company_name"]
-                )
-
             # Region
             region = None
             if camp_data.get("region_name"):
@@ -115,7 +107,7 @@ def fetch_bootcamps_service(page=None):
                 recruitment_url=camp_url,
                 defaults={
                     "title": camp_data["title"],
-                    "company": company,
+                    "company": camp_data.get("company_name", ""),
                     "category": None,
                     "label": label,
                     "region": region,
@@ -253,12 +245,16 @@ def _extract_camp_data(soup, rsc_text):
     # 제목
     data["title"] = camp.get("title", "")
 
-    # 회사명: companyIds의 operator를 우선, 없으면 "company" 필드로 대체
+    # 회사명: HTML h2[title] 우선 ("회사명 | 강의명" 형식), 없으면 RSC JSON 대체
     company_name = ""
-    for c in camp.get("companyIds", []):
-        if c.get("companyRole") == "operator":
-            company_name = c.get("companyName", "")
-            break
+    h2 = soup.find("h2", attrs={"title": lambda t: t and " | " in t})
+    if h2:
+        company_name = h2["title"].split(" | ")[0].strip()
+    if not company_name:
+        for c in camp.get("companyIds", []):
+            if c.get("companyRole") == "operator":
+                company_name = c.get("companyName", "")
+                break
     if not company_name:
         company_name = camp.get("company", "")
     data["company_name"] = company_name
