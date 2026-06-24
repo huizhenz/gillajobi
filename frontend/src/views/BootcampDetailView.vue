@@ -22,7 +22,9 @@
 
     <section v-if="store.bootcamp.skills?.length">
       <h3>기술 스택</h3>
-      <p v-for="skill in store.bootcamp.skills" :key="skill.id">{{ skill.name }}</p>
+      <div class="skill-tags">
+        <span v-for="skill in store.bootcamp.skills" :key="skill.id" class="skill-tag">{{ skill.name }}</span>
+      </div>
     </section>
 
     <a :href="store.bootcamp.recruitment_url" target="_blank">지원하기</a>
@@ -86,6 +88,23 @@ $primary: #2ab59e;
         width: 100px;
       }
     }
+  }
+
+  .skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding-top: 4px;
+  }
+
+  .skill-tag {
+    background-color: #e6f7f5;
+    color: $primary;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 4px 12px;
+    border-radius: 20px;
+    border: 1px solid #b2e8e0;
   }
 
   a {
