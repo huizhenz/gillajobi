@@ -4,7 +4,7 @@
       <h1>커뮤니티</h1>
       <RouterLink :to="{name:'articleCreate'}" class="btn-create">+ 글쓰기</RouterLink>
     </div>
-
+    <div v-if="userstore.isLogin">
     <div class="filter-bar">
       <button
         class="filter-btn"
@@ -35,6 +35,26 @@
         <div class="article-meta">{{ article.username }}</div>
       </div>
     </ul>
+    </div>
+    <div v-else class="gate-container">
+      <div class="gate-blur">
+        <div class="fake-card" v-for="n in 6" :key="n">
+          <div class="fake-bar short"></div>
+          <div class="fake-bar long"></div>
+          <div class="fake-bar mid"></div>
+        </div>
+      </div>
+      <div class="gate-overlay">
+        <div class="gate-card">
+          <p class="gate-title">로그인 후 이용가능합니다</p>
+          <div class="gate-links">
+            <RouterLink to="/login">로그인</RouterLink>
+            <span>|</span>
+            <RouterLink to="/signup">회원가입</RouterLink>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -42,9 +62,11 @@
 import { ref, computed, onMounted } from 'vue';
 import { RouterLink, useRouter } from 'vue-router'
 import { useCommunityStore } from '@/stores/communityStore';
+import { useUserStore } from '@/stores/userStore';
 
 const router = useRouter()
 const store = useCommunityStore();
+const userstore = useUserStore();
 const selectedLabel = ref(null)
 
 onMounted(() => {
@@ -181,5 +203,80 @@ const goDetail = (pk) => {
 .article-meta {
   font-size: 0.82rem;
   color: #888;
+}
+
+/* 비로그인 블러 게이트 */
+.gate-container {
+  position: relative;
+}
+
+.gate-blur {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  filter: blur(1px);
+  pointer-events: none;
+  user-select: none;
+}
+
+.fake-card {
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 16px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.fake-bar {
+  background: #e8e8e8;
+  border-radius: 4px;
+  height: 13px;
+}
+.fake-bar.short { width: 28%; }
+.fake-bar.long  { width: 65%; }
+.fake-bar.mid   { width: 18%; }
+
+.gate-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gate-card {
+  background: white;
+  border-radius: 14px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.14);
+  padding: 44px 64px;
+  text-align: center;
+}
+
+.gate-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 16px;
+}
+
+.gate-links {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.95rem;
+  color: #bbb;
+}
+
+.gate-links a {
+  color: #2ab59e;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.gate-links a:hover {
+  text-decoration: underline;
 }
 </style>

@@ -70,11 +70,16 @@ export const useCommunityStore = defineStore('community', () => {
   }
 
   const deleteArticle = function (pk) {
+    const userStore = useUserStore()
     axios({
       method: 'delete',
       url: `http://127.0.0.1:8000/api/v1/community/articles/${pk}/`,
+      headers: {
+        Authorization: `Token ${userStore.token}`
+      },
     })
-    .then(res => router.push({name:'CommunityView'}))
+    .then(() => router.push({name:'CommunityView'}))
+    .catch(err => console.log(err))
   }
   return { labelList, getLabelList, articleList, getArticleList, detailArticle, getDetailArticle, createArticle, deleteArticle, updateArticle }
 })
