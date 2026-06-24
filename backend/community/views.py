@@ -4,8 +4,17 @@ from rest_framework import status
 
 from .models import Article, Comment
 from .serializers import ArticleListSerializer, ArticleDetailSerializer, CommentListSerializer, CommentDetailSerializer
+from category.models import Label
+from category.serializers import LabelSerializer
 
 # Create your views here.
+@api_view(['GET'])
+def label_list(request):
+    labels = Label.objects.all()
+    serializer = LabelSerializer(labels, many=True)
+    return Response(serializer.data)
+
+
 @api_view(['GET', 'POST'])
 def article_list(request):
     if request.method == 'GET':
