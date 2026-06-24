@@ -1,8 +1,8 @@
 <template>
-    <div class="bootcamp-card" @click="goDetail(bootcamp.id)">
-        <p class="company-name">{{ bootcamp.company?.name }}</p>
-        <h3 class="title">{{ bootcamp.title }}</h3>
-        <p v-if="bootcamp.close_date" class="close-date">~ {{ bootcamp.close_date }}</p>
+    <div class="job-card" @click="goDetail(job.id)">
+        <p class="company-name">{{ job.company?.name }}</p>
+        <h3 class="title">{{ job.title }}</h3>
+        <p v-if="job.close_date" class="close-date">~ {{ job.close_date }}</p>
     </div>
 </template>
 
@@ -10,20 +10,18 @@
 import { useRouter } from 'vue-router';
 
 const props = defineProps({
-  bootcamp: Object
+  job: Object
 })
 
 const router = useRouter()
 
 const goDetail = (pk) => {
-  router.push({ name: 'BootcampDetailView', params: { bootcampPk: pk } })
+  router.push({ name: 'JobDetailView', params: { jobPk: pk } })
 }
 </script>
 
 <style lang="scss" scoped>
-$primary: #2ab59e;
-
-.bootcamp-card {
+.job-card {
   background: #fff;
   border: 1px solid #e8e8e8;
   border-radius: 10px;

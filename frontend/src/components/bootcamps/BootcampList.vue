@@ -1,6 +1,5 @@
 <template>
-  <div>
-    <h1>BootCamp List</h1>
+  <div class="bootcamp-grid">
     <BootcampDetail
       v-for="bootcamp in store.bootcampList"
       :key="bootcamp.pk"
@@ -22,5 +21,10 @@ onMounted(() => {
 </script>
 
 <style lang="scss" scoped>
-
+.bootcamp-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 24px;
+}
 </style>
