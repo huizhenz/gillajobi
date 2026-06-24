@@ -1,8 +1,8 @@
 <template>
-    <div class="bootcamp-card" @click="goDetail(bootcamp.id)">
-        <p class="company-name">{{ bootcamp.company?.name }}</p>
-        <h3 class="title">{{ bootcamp.title }}</h3>
-        <p v-if="bootcamp.close_date" class="close-date">~ {{ bootcamp.close_date }}</p>
+    <div class="competition-card" @click="goDetail(competition.id)">
+        <p class="host">{{ competition.host }}</p>
+        <h3 class="title">{{ competition.title }}</h3>
+        <p v-if="competition.keyword" class="keyword">{{ competition.keyword }}</p>
     </div>
 </template>
 
@@ -10,20 +10,20 @@
 import { useRouter } from 'vue-router';
 
 const props = defineProps({
-  bootcamp: Object
+  competition: Object
 })
 
 const router = useRouter()
 
 const goDetail = (pk) => {
-  router.push({ name: 'BootcampDetailView', params: { bootcampPk: pk } })
+  router.push({ name: 'CompetitionDetailView', params: { competitionPk: pk } })
 }
 </script>
 
 <style lang="scss" scoped>
 $primary: #2ab59e;
 
-.bootcamp-card {
+.competition-card {
   background: #fff;
   border: 1px solid #e8e8e8;
   border-radius: 10px;
@@ -38,7 +38,7 @@ $primary: #2ab59e;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
   }
 
-  .company-name {
+  .host {
     font-size: 12px;
     color: #888;
     font-weight: 500;
@@ -52,11 +52,13 @@ $primary: #2ab59e;
     flex: 1;
   }
 
-  .close-date {
-    font-size: 13px;
-    color: #666;
-    text-align: right;
-    margin-top: auto;
+  .keyword {
+    font-size: 12px;
+    color: #fff;
+    background-color: $primary;
+    padding: 3px 10px;
+    border-radius: 20px;
+    align-self: flex-start;
   }
 }
 </style>

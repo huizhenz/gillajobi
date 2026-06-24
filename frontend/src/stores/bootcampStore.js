@@ -7,7 +7,7 @@ export const useBootcampStore = defineStore('bootcamps', () => {
   const bootcamp = ref(null)
 
   const getBootcampList = function () {
-    axios({
+    return axios({
       method: 'get',
       url: 'http://127.0.0.1:8000/api/v1/bootcamps/'
     })
@@ -16,7 +16,7 @@ export const useBootcampStore = defineStore('bootcamps', () => {
   }
 
   const getBootcamp = function (pk) {
-    axios({
+    return axios({
       method: 'get',
       url: `http://127.0.0.1:8000/api/v1/bootcamps/${pk}/`
     })
