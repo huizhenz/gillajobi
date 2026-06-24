@@ -2,7 +2,7 @@
   <div class="community-wrap">
     <div class="community-header">
       <h1>커뮤니티</h1>
-      <RouterLink :to="{name:'articleCreate'}" class="btn-create">+ 글쓰기</RouterLink>
+      <RouterLink v-if="userstore.isLogin" :to="{name:'articleCreate'}" class="btn-create">+ 글쓰기</RouterLink>
     </div>
     <div v-if="userstore.isLogin">
     <div class="filter-bar">
