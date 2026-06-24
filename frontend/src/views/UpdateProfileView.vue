@@ -1,51 +1,67 @@
 <template>
-  <div>
-    <form @submit.prevent="updateProfile">
-      <div>
-        <h2>기본 정보</h2>
+  <div class="update-page">
+    <div class="update-card">
 
-        <div>
-          <label for="profile_image">프로필 이미지</label>
-          <input type="file" id="profile_image" accept="image/*" @change="onImageChange" />
-        </div>
-
-        <div>
-          <label for="last_name">성</label>
-          <input type="text" id="last_name" v-model.trim="last_name" />
-        </div>
-
-        <div>
-          <label for="first_name">이름</label>
-          <input type="text" id="first_name" v-model.trim="first_name" />
-        </div>
-
-        <div v-for="field in arrayFields" :key="field.key">
-          <label>{{ field.label }}</label>
-          <div>
-            <span v-for="(item, index) in field.arr.value" :key="index">
-              {{ item }}
-              <button type="button" @click="removeItem(field.arr, index)">x</button>
-            </span>
-          </div>
-          <input
-            type="text"
-            v-model="field.input.value"
-            @keyup.enter.prevent="addItem(field.arr, field.input)"
-            :placeholder="field.placeholder"
-          />
-          <button type="button" @click="addItem(field.arr, field.input)">추가</button>
-        </div>
-
-        <div>
-          <label for="desired_salary">희망 연봉</label>
-          <input type="text" id="desired_salary" v-model.trim="desired_salary" />
-        </div>
+      <div class="tab-bar">
+        <span class="tab active">프로필 수정</span>
       </div>
 
-      <button type="submit">프로필 등록</button>
-    </form>
-    <div>
-      <router-link to="/">나중에 등록하기</router-link>
+      <div class="form-section">
+        <form @submit.prevent="updateProfile">
+
+          <div class="section-header">
+            <h3>기본 정보</h3>
+          </div>
+
+          <div class="info-grid">
+            <div class="form-item">
+              <label for="last_name" class="form-label">성</label>
+              <input type="text" id="last_name" v-model.trim="last_name" class="form-input" />
+            </div>
+
+            <div class="form-item">
+              <label for="first_name" class="form-label">이름</label>
+              <input type="text" id="first_name" v-model.trim="first_name" class="form-input" />
+            </div>
+
+            <div class="form-item full">
+              <label for="profile_image" class="form-label">프로필 이미지</label>
+              <input type="file" id="profile_image" accept="image/*" @change="onImageChange" class="form-input-file" />
+            </div>
+
+            <div v-for="field in arrayFields" :key="field.key" class="form-item full">
+              <label class="form-label">{{ field.label }}</label>
+              <div class="tag-list">
+                <span v-for="(item, index) in field.arr.value" :key="index" class="tag">
+                  {{ item }}
+                  <button type="button" class="tag-remove" @click="removeItem(field.arr, index)">×</button>
+                </span>
+              </div>
+              <div class="tag-input-row">
+                <input
+                  type="text"
+                  v-model="field.input.value"
+                  @keyup.enter.prevent="addItem(field.arr, field.input)"
+                  :placeholder="field.placeholder"
+                  class="form-input"
+                />
+                <button type="button" class="btn-add" @click="addItem(field.arr, field.input)">추가</button>
+              </div>
+            </div>
+
+            <div class="form-item full">
+              <label for="desired_salary" class="form-label">희망 연봉</label>
+              <input type="text" id="desired_salary" v-model.trim="desired_salary" class="form-input" />
+            </div>
+          </div>
+
+          <div class="form-actions">
+            <router-link to="/" class="btn-skip">나중에 등록하기</router-link>
+            <button type="submit" class="btn-submit">프로필 등록</button>
+          </div>
+
+        </form>
+      </div>
     </div>
   </div>
 </template>
@@ -136,6 +152,185 @@ const updateProfile = () => {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+$primary: #2ab59e;
 
+.update-page {
+  background: #f4f6f9;
+  min-height: 100vh;
+  padding: 40px 24px;
+}
+
+.update-card {
+  max-width: 720px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+}
+
+.tab-bar {
+  display: flex;
+  border-bottom: 1px solid #eee;
+  padding: 0 28px;
+}
+
+.tab {
+  padding: 16px 4px;
+  margin-right: 24px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #bbb;
+
+  &.active {
+    color: $primary;
+    border-bottom: 2px solid $primary;
+  }
+}
+
+.form-section {
+  padding: 28px;
+}
+
+.section-header {
+  margin-bottom: 24px;
+
+  h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #1a1a1a;
+  }
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px 32px;
+}
+
+.form-item {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+
+  &.full {
+    grid-column: 1 / -1;
+  }
+}
+
+.form-label {
+  font-size: 0.78rem;
+  color: #999;
+  font-weight: 500;
+}
+
+.form-input {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 9px 12px;
+  font-size: 0.9rem;
+  outline: none;
+  transition: border-color 0.2s;
+  width: 100%;
+  box-sizing: border-box;
+
+  &:focus {
+    border-color: $primary;
+  }
+}
+
+.form-input-file {
+  font-size: 0.88rem;
+  color: #555;
+}
+
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  min-height: 28px;
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: #e6f7f5;
+  color: $primary;
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 20px;
+}
+
+.tag-remove {
+  background: none;
+  border: none;
+  color: $primary;
+  cursor: pointer;
+  font-size: 1rem;
+  line-height: 1;
+  padding: 0;
+
+  &:hover {
+    color: #d00;
+  }
+}
+
+.tag-input-row {
+  display: flex;
+  gap: 8px;
+}
+
+.btn-add {
+  background: #f0f0f0;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 0 16px;
+  font-size: 0.88rem;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.2s;
+
+  &:hover {
+    background: #e0e0e0;
+  }
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 12px;
+  margin-top: 32px;
+  padding-top: 20px;
+  border-top: 1px solid #f0f0f0;
+}
+
+.btn-skip {
+  font-size: 0.88rem;
+  color: #999;
+  text-decoration: none;
+
+  &:hover {
+    color: #555;
+  }
+}
+
+.btn-submit {
+  background: $primary;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 24px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+
+  &:hover {
+    background: #239e8a;
+  }
+}
 </style>

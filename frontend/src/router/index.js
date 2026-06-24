@@ -28,13 +28,11 @@ const router = createRouter({
       path: '/profile/:username',
       name: 'ProfileView',
       component: ProfileView,
-      children: [
-        {
-          path: 'update',
-          name: 'UpdateProfileView',
-          component: () => import('@/views/UpdateProfileView.vue'),
-        }
-      ]
+    },
+    {
+      path: '/profile/:username/update',
+      name: 'UpdateProfileView',
+      component: UpdateProfileView,
     },
     {
       path: '/login',
