@@ -42,7 +42,10 @@ class UserDetailSerializer(serializers.ModelSerializer):
             'gender',
             'birth',
             'profile_image',
+            'first_name',
+            'last_name',
         )
+        read_only_fields = ('id', 'username', 'email', 'nickname', 'gender', 'birth')
 
 
 class ProfileSerializer(serializers.ModelSerializer):

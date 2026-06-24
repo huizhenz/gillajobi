@@ -10,6 +10,7 @@ import ProfileView from '@/views/ProfileView.vue'
 import UpdateProfileView from '@/views/UpdateProfileView.vue'
 import SignupView from '@/views/SignupView.vue'
 import { createRouter, createWebHistory } from 'vue-router'
+import SearchView from '@/views/SearchView.vue'
 
 
 const router = createRouter({
@@ -26,7 +27,7 @@ const router = createRouter({
       component: SignupView,
     },
     {
-      path: '/profile',
+      path: '/profile/:username',
       name: 'ProfileView',
       component: ProfileView,
       children: [
@@ -72,7 +73,17 @@ const router = createRouter({
       path: '/bootcamp',
       name: 'BootcampView',
       component: BootcampView,
-    },        
+    },
+    {
+      path: '/bootcamp/:bootcampPk',
+      name: 'BootcampDetailView',
+      component: () => import('@/views/BootcampDetailView.vue'),
+    },
+    {
+      path: '/search',
+      name: 'SearchView',
+      component: () => import('@/views/SearchView.vue'),
+    }
   ],
 })
 

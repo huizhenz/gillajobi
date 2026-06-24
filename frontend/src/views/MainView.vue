@@ -5,8 +5,8 @@
         </div>
         <div class="content-wrapper">
             <div class="heading">안녕하세요, 민진님 :) <br> 당신을 취업의 길로 이끌 <br> 가이드 <span>길라잡이</span>입니다.</div>
-            <form class="search-form">
-                <input type="text" placeholder="관심 직무를 검색해보세요.">
+            <form class="search-form" @submit.prevent="goToSearch">
+                <input v-model="searchStore.keyword" type="text" placeholder="관심 직무를 검색해보세요.">
             </form>
             <div class="example-tags">
                 ex. 마케팅, 클라우드 엔지니어, 영상 디자인
@@ -16,7 +16,15 @@
 </template>
 
 <script setup>
+import { useRouter } from 'vue-router'
+import { useSearchStore } from '@/stores/searchStore'
 
+const searchStore = useSearchStore()
+const router = useRouter()
+
+const goToSearch = () => {
+    router.push('/search')
+}
 </script>
 
 <style lang="scss" scoped>
