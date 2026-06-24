@@ -29,4 +29,5 @@ urlpatterns = [
     path('api/v1/competitions/', include('competitions.urls')),
     path('api/v1/jobs/', include('jobs.urls')),
     path('api/v1/todos/', include('todos.urls')),
+    path('api/v1/category/', include('category.urls'))
 ]  + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
