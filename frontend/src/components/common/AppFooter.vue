@@ -1,6 +1,8 @@
 <template>
     <div class="footer">
-        <p class="footer-text">© 2026 길라잡이. All rights reserved.</p>
+        <div class="footer-inner">
+            <p class="footer-text">© 2026 길라잡이. All rights reserved.</p>
+        </div>
     </div>
 </template>
 
@@ -12,6 +14,12 @@
 .footer {
   background: #f4f6f9;
   border-top: 1px solid #e0e0e0;
+  width: 100%;
+}
+
+.footer-inner {
+  max-width: 1400px;
+  margin: 0 auto;
   padding: 24px;
   text-align: center;
 }

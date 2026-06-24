@@ -139,7 +139,6 @@ onMounted(async () => {
 $primary: #2ab59e;
 
 .profile-page {
-  background: #f4f6f9;
   min-height: 100vh;
   padding: 40px 24px;
 }
