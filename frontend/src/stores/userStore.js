@@ -8,6 +8,7 @@ export const useUserStore = defineStore('user', () => {
     const BASE_URL = 'http://localhost:8000/api/v1/accounts'
     const token = ref('')
     const username = ref('')
+    const nickname = ref('')
 
 
     const signUp = (payload) => {
@@ -32,6 +33,7 @@ export const useUserStore = defineStore('user', () => {
             console.log(response);
             token.value = response.data.key;
             username.value = payload.username;
+            nickname.value = payload.nickname;
             router.push({ name: 'UpdateProfileView', params: { username: username.value } })
         }).catch(error => {
             console.log(error.response.data);
@@ -123,6 +125,7 @@ export const useUserStore = defineStore('user', () => {
         BASE_URL,
         token,
         username,
+        nickname,
         isLogin,
         signUp,
         logIn,

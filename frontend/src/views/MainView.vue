@@ -4,7 +4,9 @@
             <img src="../assets/main.png" alt="길라잡이 메인 이미지">
         </div>
         <div class="content-wrapper">
-            <div class="heading">안녕하세요, 민진님 :) <br> 당신을 취업의 길로 이끌 <br> 가이드 <span>길라잡이</span>입니다.</div>
+            <div v-if="userstore.isLogin" class="heading">안녕하세요, {{userstore.nickname}}님 :) <br> 당신을 취업의 길로 이끌 <br> 가이드 <span>길라잡이</span>입니다.</div>
+            <div v-else class="heading">안녕하세요, 민진님 :) <br> 당신을 취업의 길로 이끌 <br> 가이드 <span>길라잡이</span>입니다.</div>
+
             <form class="search-form" @submit.prevent="goToSearch">
                 <input v-model="searchStore.keyword" type="text" placeholder="관심 직무를 검색해보세요.">
             </form>
@@ -18,9 +20,11 @@
 <script setup>
 import { useRouter } from 'vue-router'
 import { useSearchStore } from '@/stores/searchStore'
+import { useUserStore } from '@/stores/userStore'
 
 const searchStore = useSearchStore()
 const router = useRouter()
+const userstore = useUserStore();
 
 const goToSearch = () => {
     router.push('/search')
