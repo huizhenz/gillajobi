@@ -72,7 +72,7 @@ export const useUserStore = defineStore('user', () => {
             token.value = null
             username.value=null
             // 로그아웃하면 로그인 화면으로 이동
-            router.push({ name: 'LogInView' })
+            router.push({ name: 'MainView' })
         })
         .catch(err => console.log(err))
     }
@@ -112,7 +112,7 @@ export const useUserStore = defineStore('user', () => {
             data: formData,
         }).then(response => {
             console.log(response);
-            router.push({ name: 'MainView' })
+            router.push({ name: 'ProfileView', params: { username: username.value } })
         }).catch(error => {
             console.log(error);
         });
