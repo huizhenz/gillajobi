@@ -124,8 +124,8 @@ Base URL: `http://127.0.0.1:8000/api/v1`
 ## 데이터 모델
 
 ### Accounts
-- **User**: AbstractUser 확장. `nickname`(unique), `gender`, `birth`, `profile_image`
-- **Profile**: User 1:1. `education`, `certification`, `experience`, `language` (JSONField 배열), `preferred_location`, `preferred_position`, `desired_salary`
+- **User**: AbstractUser 확장. `nickname`(unique), `gender`, `birth`, `profile_image`, `first_name`, `last_name`
+- **Profile**: User 1:1. `education`, `certification`, `experience`, `language`, `preferred_location`, `preferred_position` (JSONField 배열 — 여러 항목 저장), `desired_salary`(TextField)
 
 ### Bootcamps
 - **Bootcamp**: `title`, `region`(FK), `skills`(M2M), `expense`, `period`, `participation_time`, `program_process`, `recruitment_linkage`, `close_date`, `close_date_text`, `recruitment_url`(unique), `ai_fit_score`
@@ -166,7 +166,7 @@ Base URL: `http://127.0.0.1:8000/api/v1`
 | `/signup` | SignupView | 완료 |
 | `/login` | LoginView | 완료 |
 | `/profile/:username` | ProfileView | 완료 — 개인정보 탭 + 작성한 글 탭 (카드 레이아웃) |
-| `/profile/:username/update` | UpdateProfileView | 완료 — 프로필 수정 폼 (태그 pill UI) |
+| `/profile/:username/update` | UpdateProfileView | 완료 — 성/이름/프로필이미지 + 배열 필드 태그 pill UI (추가·삭제), 기존 데이터 자동 pre-fill |
 | `/bootcamp` | BootcampView | 완료 |
 | `/bootcamp/:bootcampPk` | BootcampDetailView | 완료 — 기술 스택 pill 뱃지 |
 | `/jobs` | JobView | 완료 |
@@ -187,7 +187,7 @@ Base URL: `http://127.0.0.1:8000/api/v1`
 
 | Store | 파일 | 주요 기능 |
 |-------|------|-----------|
-| userStore | `stores/userStore.js` | 토큰 영속 저장 (`persist: true`), 회원가입/로그인/로그아웃, 프로필 조회·수정 |
+| userStore | `stores/userStore.js` | 토큰 영속 저장 (`persist: true`), 회원가입 후 토큰 즉시 저장, 로그인/로그아웃, 프로필 조회(`getProfile`)·수정, 에러 re-throw |
 | bootcampStore | `stores/bootcampStore.js` | 목록 조회(`getBootcampList`), 단건 조회(`getBootcamp`) |
 | communityStore | `stores/communityStore.js` | 게시글 CRUD, 레이블 목록, 상세 조회 |
 | comments | `stores/comments.js` | 댓글 작성(`commentCreate`), 댓글 삭제(`commentDelete`) |
@@ -207,7 +207,23 @@ Base URL: `http://127.0.0.1:8000/api/v1`
 - **카테고리 필터**: 프론트엔드 `computed`로 `articleList`를 `selectedLabel`로 필터링
 - **스토어 순환 의존 방지**: `communityStore` 내 `useUserStore()`를 함수 바디 안에서 호출
 - **프로필 내 작성 글**: `communityStore.articleList.filter(a => a.username === userStore.username)` — 별도 API 없이 프론트 필터링
-- **이미지/배열 전송**: 프로필 수정 시 `FormData` + `JSON.stringify` 배열 필드
+- **이미지/배열 전송**: 프로필 수정 시 `FormData` + `JSON.stringify` 배열 필드, 백엔드에서 `json.loads`로 파싱
+- **실시간 유효성 검사**: SignupView에서 Vue `watch`로 각 필드 입력 즉시 검증 (형식·길이·일치 여부), 서버 에러는 catch에서 병합 표시
+- **로그인 에러 표시**: LoginView에서 `non_field_errors` 응답을 "아이디 또는 비밀번호가 잘못되었습니다." 고정 문구로 표시
+- **라우터 가드**: `beforeEach`에서 인증 필요 페이지 접근 시 LoginView로 리다이렉트
+- **이탈 방지**: CommunityFormView에서 `onBeforeRouteLeave` + `watch([title, content])`로 작성 중 이탈 confirm (Vue Router 4 `return` 패턴)
+
+---
+
+## 픽스처 로드
+
+모든 앱의 fixture를 `backend/fixtures.json` 하나로 통합했습니다 (총 7,172개 레코드).
+
+```bash
+python manage.py loaddata fixtures.json
+```
+
+로드 순서: category → label → region → skill → jobs → bootcamp → certifications → examinations → competitions
 
 ---
 
