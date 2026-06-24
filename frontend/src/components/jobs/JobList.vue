@@ -2,7 +2,7 @@
   <div class="job-grid">
     <JobDetail
       v-for="job in store.jobList"
-      :key="job.pk"
+      :key="job.id"
       :job="job"
     />
   </div>

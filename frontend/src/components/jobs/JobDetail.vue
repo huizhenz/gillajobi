@@ -2,6 +2,7 @@
     <div class="job-card" @click="goDetail(job.id)">
         <p class="company-name">{{ job.company?.name }}</p>
         <h3 class="title">{{ job.title }}</h3>
+        <p>{{ job.category }}</p>
         <p v-if="job.close_date" class="close-date">~ {{ job.close_date }}</p>
     </div>
 </template>

@@ -1,7 +1,12 @@
 <template>
     <div class="certification-card" @click="goDetail(certification.jm_cd)">
-        <h3 class="name">{{ certification.name }}</h3>
         <p class="series">{{ certification.series_name }}</p>
+        <h3 class="name">{{ certification.name }}</h3>
+        <p>{{ certification.category }}</p>
+        <p v-if="certification.examinations?.[0]?.doc_reg_end" class="close-date">
+          접수 마감: {{ certification.examinations[0].doc_reg_end }}
+        </p>
+
     </div>
 </template>
 

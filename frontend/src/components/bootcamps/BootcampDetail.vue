@@ -1,7 +1,8 @@
 <template>
     <div class="bootcamp-card" @click="goDetail(bootcamp.id)">
-        <p class="company-name">{{ bootcamp.company?.name }}</p>
+        <p class="company-name">{{ bootcamp.company }}</p>
         <h3 class="title">{{ bootcamp.title }}</h3>
+        <p>{{ bootcamp.category }}</p>
         <p v-if="bootcamp.close_date" class="close-date">~ {{ bootcamp.close_date }}</p>
     </div>
 </template>
