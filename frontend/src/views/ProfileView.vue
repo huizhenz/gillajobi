@@ -20,11 +20,12 @@
       <!-- 오른쪽 패널 -->
       <div class="right-card">
         <div class="tab-bar">
-          <span class="tab active">개인정보</span>
-          <span class="tab disabled">작성한 글</span>
+          <span class="tab" :class="{ active: activeTab === 'info' }" @click="activeTab = 'info'">개인정보</span>
+          <span class="tab" :class="{ active: activeTab === 'articles' }" @click="activeTab = 'articles'">작성한 글</span>
         </div>
 
-        <div class="info-section">
+        <!-- 개인정보 탭 -->
+        <div class="info-section" v-if="activeTab === 'info'">
           <div class="section-header">
             <h3>기본 정보</h3>
             <router-link :to="{ name: 'UpdateProfileView', params: { username: userStore.username } }" class="btn-edit">수정하기</router-link>
@@ -69,6 +70,24 @@
             </div>
           </div>
         </div>
+
+        <!-- 작성한 글 탭 -->
+        <div class="article-section" v-if="activeTab === 'articles'">
+          <div v-if="myArticles.length === 0" class="no-articles">작성한 글이 없습니다.</div>
+          <div
+            v-for="article in myArticles"
+            :key="article.id"
+            class="my-article-card"
+            @click="goDetail(article.id)"
+          >
+            <div class="my-article-top">
+              <span class="label-badge" v-if="article.label_name">{{ article.label_name }}</span>
+              <span class="article-date">{{ article.created_at?.slice(0, 10) }}</span>
+            </div>
+            <p class="my-article-title">{{ article.title }} [{{ article.comment_count }}]</p>
+          </div>
+        </div>
+
       </div>
 
     </div>
@@ -78,18 +97,33 @@
 
 <script setup>
 import { ref, computed, onMounted } from 'vue'
+import { useRouter } from 'vue-router'
 import { useUserStore } from '@/stores/userStore'
+import { useCommunityStore } from '@/stores/communityStore'
 
 const userStore = useUserStore()
+const communityStore = useCommunityStore()
+const router = useRouter()
+
 const profileData = ref(null)
+const activeTab = ref('info')
 
 const avatarLetter = computed(() => {
   const name = profileData.value?.user?.nickname || profileData.value?.user?.username || ''
   return name.charAt(0).toUpperCase()
 })
 
+const myArticles = computed(() =>
+  communityStore.articleList.filter(a => a.username === userStore.username)
+)
+
+const goDetail = (pk) => {
+  router.push({ name: 'Articledetail', params: { pk } })
+}
+
 onMounted(async () => {
   profileData.value = await userStore.getProfile()
+  communityStore.getArticleList()
 })
 </script>
 
@@ -272,5 +306,64 @@ $primary: #2ab59e;
   text-align: center;
   color: #999;
   margin-top: 80px;
+}
+
+/* 작성한 글 탭 */
+.article-section {
+  padding: 20px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.no-articles {
+  font-size: 0.9rem;
+  color: #bbb;
+  text-align: center;
+  padding: 40px 0;
+}
+
+.my-article-card {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 14px 16px;
+  cursor: pointer;
+  transition: box-shadow 0.2s;
+
+  &:hover {
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  }
+}
+
+.my-article-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.label-badge {
+  background: #e6f7f5;
+  color: $primary;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 20px;
+}
+
+.article-date {
+  font-size: 0.78rem;
+  color: #bbb;
+}
+
+.my-article-title {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: #222;
+}
+
+/* 탭 cursor 통일 */
+.tab {
+  cursor: pointer;
 }
 </style>
