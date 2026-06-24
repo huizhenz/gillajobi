@@ -12,6 +12,7 @@ import ProfileView from '@/views/ProfileView.vue'
 import SignupView from '@/views/SignupView.vue'
 import UpdateProfileView from '@/views/UpdateProfileView.vue'
 import { createRouter, createWebHistory } from 'vue-router'
+import SearchView from '@/views/SearchView.vue'
 
 
 const router = createRouter({
@@ -94,6 +95,10 @@ const router = createRouter({
       component: () => import('@/views/BootcampDetailView.vue'),
     },
     {
+      path: '/search',
+      name: 'SearchView',
+      component: () => import('@/views/SearchView.vue'),
+    }
       path: '/jobs/:jobPk',
       name: 'JobDetailView',
       component: () => import('@/views/JobDetailView.vue'),
