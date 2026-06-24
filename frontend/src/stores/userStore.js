@@ -42,7 +42,7 @@ export const useUserStore = defineStore('user', () => {
     }
 
     const logIn = (payload) => {
-        axios({
+        return axios({
             url: `${BASE_URL}/login/`,
             method: 'POST',
             data: {
@@ -56,6 +56,7 @@ export const useUserStore = defineStore('user', () => {
             username.value = payload.username;
         }).catch(error => {
             console.log(error);
+            throw error;
         });
     }
 
