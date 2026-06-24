@@ -2,6 +2,7 @@
   <div class="community-wrap">
     <div class="community-header">
       <h1>커뮤니티</h1>
+      <span>취업준비, 같이 하면 덜 외로워요. 후기와 꿀팁을 나눠보세요</span>
       <RouterLink v-if="userstore.isLogin" :to="{name:'articleCreate'}" class="btn-create">+ 글쓰기</RouterLink>
     </div>
     <div v-if="userstore.isLogin">
