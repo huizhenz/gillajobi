@@ -1,5 +1,6 @@
 <template>
   <div v-if="store.competition" class="competition-detail">
+    <img v-if="store.competition.thumbnail" :src="store.competition.thumbnail" class="thumbnail" alt="썸네일"  />
     <h2>{{ store.competition.title }}</h2>
 
     <section>
@@ -45,11 +46,19 @@ onMounted(() => {
 <style lang="scss" scoped>
 $primary: #2ab59e;
 
+
+
 .competition-detail {
   padding: 32px 0;
   display: flex;
   flex-direction: column;
   gap: 24px;
+
+  .thumbnail {
+    width: 30%;
+    object-fit: cover;
+    border-radius: 10px;
+  }
 
   h2 {
     font-size: 24px;
