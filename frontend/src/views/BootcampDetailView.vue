@@ -1,6 +1,7 @@
 <template>
   <div v-if="store.bootcamp" class="bootcamp-detail">
     <h2>{{ store.bootcamp.title }}</h2>
+    <p v-if="dday">{{ dday }}</p>
 
     <section>
       <h3>운영 기관</h3>
@@ -35,9 +36,12 @@
 import { useBootcampStore } from '@/stores/bootcampStore'
 import { useRoute } from 'vue-router'
 import { onMounted } from 'vue'
+import { useDday } from '@/composables/useDday.js'
 
 const store = useBootcampStore()
 const route = useRoute()
+
+const { dday } = useDday(() => store.bootcamp?.close_date)
 
 onMounted(() => {
   store.getBootcamp(route.params.bootcampPk)

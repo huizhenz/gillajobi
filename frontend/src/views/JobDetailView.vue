@@ -1,6 +1,7 @@
 <template>
   <div v-if="store.job" class="job-detail">
     <h2>{{ store.job.recruitment?.title }}</h2>
+    <p v-if="dday">{{ dday }}</p>
 
     <section>
       <h3>회사 정보</h3>
@@ -59,10 +60,13 @@
 <script setup>
 import { useJobStore } from '@/stores/jobStore'
 import { useRoute } from 'vue-router'
-import { onMounted } from 'vue'
+import { onMounted, computed } from 'vue'
+import { useDday } from '@/composables/useDday.js'
 
 const store = useJobStore()
 const route = useRoute()
+
+const { dday } = useDday(() => store.job?.recruitment?.close_date)
 
 onMounted(() => {
   store.getJob(route.params.jobPk)
