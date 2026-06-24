@@ -23,7 +23,6 @@ const logOut = function () {
         <div v-if="userstore.isLogin">
             <router-link to="/calendar">캘린더</router-link>
             <router-link v-if="userstore.username" :to="{ name: 'ProfileView', params: { username: userstore.username } }">{{ userstore.username }}님의 프로필</router-link>
-            <router-link v-if="userstore.username" :to="{ name: 'UpdateProfileView', params: { username: userstore.username } }">프로필 수정하기</router-link>
         </div>
         <div v-else>
             <router-link to="/login">로그인</router-link>
