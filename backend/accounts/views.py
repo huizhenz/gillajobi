@@ -19,7 +19,7 @@ def profile(request):
 
     if request.method == 'GET':
 
-        user_serializer = UserDetailSerializer(request.user)
+        user_serializer = UserDetailSerializer(request.user, context={'request': request})
         profile_serializer = ProfileSerializer(request.user.profile)
 
         return Response({
@@ -60,6 +60,6 @@ def profile(request):
         profile_serializer.save()
 
         return Response({
-            'user': UserDetailSerializer(request.user).data,
+            'user': UserDetailSerializer(request.user, context={'request': request}).data,
             'profile': profile_serializer.data,
         })
