@@ -13,9 +13,9 @@ class Command(BaseCommand):
     help = 'DB 데이터를 ChromaDB에 임베딩하여 저장'
 
     def handle(self, *args, **kwargs):
-        self.embed_jobs()
-        self.embed_bootcamps()
-        self.embed_certifications()
+        # self.embed_jobs()
+        # self.embed_bootcamps()
+        # self.embed_certifications()
         self.embed_competitions()
 
     def embed_jobs(self):
@@ -95,6 +95,6 @@ class Command(BaseCommand):
                 metadatas=[{
                     "type": "certification",
                     "id": competition.id,
-                    "title": competition.name,
+                    "title": competition.title,
                 }]
             )
