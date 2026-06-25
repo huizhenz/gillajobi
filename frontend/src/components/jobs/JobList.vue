@@ -2,7 +2,7 @@
   <div>
     <div class="job-grid">
       <JobDetail
-        v-for="job in store.jobList"
+        v-for="job in sortedList"
         :key="job.pk"
         :job="job"
       />
@@ -12,7 +12,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted } from 'vue';
+import { ref, onMounted, onUnmounted, computed } from 'vue';
 import { useJobStore } from '@/stores/jobStore.js';
 import JobDetail from './JobDetail.vue';
 import { getSortKey } from '@/composables/useDday.js';

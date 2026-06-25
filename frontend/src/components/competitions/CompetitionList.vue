@@ -2,7 +2,7 @@
   <div>
     <div class="competition-grid">
       <CompetitionDetail
-        v-for="competition in store.competitionList"
+        v-for="competition in sortedList"
         :key="competition.pk"
         :competition="competition"
       />
@@ -12,7 +12,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted } from 'vue';
+import { ref, onMounted, onUnmounted, computed } from 'vue';
 import { useCompetitionStore } from '@/stores/competitionStore.js';
 import CompetitionDetail from './CompetitionDetail.vue';
 import { getSortKey } from '@/composables/useDday.js';
