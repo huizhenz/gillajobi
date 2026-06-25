@@ -361,3 +361,65 @@ python manage.py loaddata category.json label.json region.json skill.json bootca
 
 - **AI 적합도 점수**: 사용자 프로필과 채용공고/부트캠프를 비교해 fit 점수 도출 (`ai_score` 앱)
 - **캘린더 연동**: 자격증 시험 일정·공채 마감일 자동 등록
+
+---
+
+## UI/UX 개선 이력
+
+### 카테고리 페이지 통합 디자인 (채용공고·자격증·부트캠프·공모전)
+
+#### 검색/필터 영역
+- 셀렉트박스 + 검색창을 한 줄(`flex-direction: row`)로 배치, 가운데 정렬
+- 채용공고: 지역 셀렉트박스 1개 + SearchBox
+- 부트캠프: 지역·카테고리 셀렉트박스 2개 + SearchBox
+- 자격증·공모전: SearchBox만 (가운데 정렬)
+- SearchBox 디자인 통일 — `border: 2px solid #2ab59e`, `border-radius: 50px`, 박스 그림자 제거, 돋보기 아이콘 제거, placeholder `"관심 직무를 검색해보세요."`
+
+#### 카드 레이아웃 통일
+모든 카테고리 카드(목록·검색 결과·길라잡이 픽)를 동일한 `card-top / card-bottom` 구조로 통일:
+
+| 영역 | 채용공고 | 자격증 | 부트캠프 | 공모전 |
+|------|---------|--------|---------|--------|
+| card-top 상단 (14px 회색) | 회사명 | 계열명 | 운영사 | 주최사 |
+| card-top 중단 (17px 굵게) | 공고 타이틀 | 자격증명 | 부트캠프명 | 공모전명 |
+| card-top 하단 (13px) | 경력 | — | — | 키워드(회색) |
+| card-bottom 좌 (14px teal) | 카테고리 | 시험 일정 버튼 | 카테고리 | 카테고리 |
+| card-bottom 우 (14px 회색) | 마감일 | — | 마감일 | 시작일 |
+
+- 모든 카드 `height: 200px` 고정, `box-sizing: border-box`, `justify-content: space-between`
+- 자격증 "시험 일정 보러가기" 버튼: 초록색(`#2ab59e`) 배경, `border-radius: 7px`
+
+#### 길라잡이 픽 (`gillajobi_pick.vue`)
+- 카드 3개를 가로(`flex-direction: row`) 배치
+- 순위 뱃지(1·2·3)를 카드 우상단에 배치
+- 카드 하단 좌측에 카테고리명 표시
+- 컴포넌트 타이틀 동적 변환: `type` prop → `채용공고 / 자격증 / 부트캠프 / 공모전`
+- 810px 이하: `flex-direction: column` 반응형 적용
+- 백엔드 `jobs/views.py`, `bootcamps/views.py`, `competitions/views.py`의 `top3` 뷰에 `category__name` 필드 추가
+
+#### AI 추천 컴포넌트 (`AiRecommend.vue`)
+- 4개 카테고리 뷰 공통으로 신규 생성
+- 컴포넌트 타이틀 동적: `✨ AI 추천 채용공고 / 자격증 / 부트캠프 / 공모전`
+- 배경색 없음
+
+#### 검색·필터 시 AI 추천/길라잡이 픽 자동 숨김
+- 채용공고: 검색 결과가 있거나(`searchResults !== null`) 지역 필터 선택 시 숨김
+- 자격증·공모전: 검색 결과가 있을 때 숨김
+- 부트캠프: 검색 결과가 없고 지역·카테고리 필터도 미선택인 경우에만 표시
+
+#### 목록 섹션 타이틀 및 검색 결과 표시
+- 기본 상태: "전체 채용공고 / 전체 자격증 / 전체 부트캠프 / 전체 공모전" 타이틀 + teal 구분선
+- 검색/필터 후: `"키워드" 검색 결과 N건` (font-size: 1rem, color: #666)
+- 부트캠프 필터 레이블: 지역 + 카테고리 + 키워드를 `" / "`로 조합 (`filterLabel` computed)
+- 결과 없음: `"키워드"에 일치하는 정보가 없습니다.` (font-size: 1.2rem, 중앙 정렬)
+
+#### TopButton 컴포넌트 (`TopButton.vue`) 신규
+- 4개 카테고리 뷰에 공통 추가
+- 스크롤 300px 초과 시 노출, 클릭 시 최상단 부드럽게 이동
+- 스타일: teal 테두리 원형 + SVG 위 화살표, 우하단 고정(40px)
+
+#### AppNav 탭 동일 페이지 새로고침
+- 이미 해당 페이지에 있는 탭 클릭 시 `router.go(0)`으로 페이지 새로고침
+- 다른 페이지로 이동 시 기존 `router.push` 유지
+- 모바일 드롭다운 링크도 동일 로직 적용
+- 전체 폰트 크기 소폭 증가: nav-link 1rem, btn-calendar/btn-signup 0.95rem, nav-username 1rem, mobile-link 1.02rem
