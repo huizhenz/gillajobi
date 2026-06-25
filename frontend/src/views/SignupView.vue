@@ -39,9 +39,9 @@
           <label for="nickname" class="sr-only">닉네임</label>
           <input class="form-input" type="text" id="nickname" v-model.trim="nickname" placeholder="닉네임" />
           <p v-for="msg in errors.nickname" :key="msg" class="error">{{ msg }}</p>
-          <p>회원가입 이후 수정 불가능</p>
+          <p class="notice">* 회원가입 이후 수정 불가능</p>
         </div>
-        <div class="field">
+        <div class="field birth-field">
           <label for="birth" class="field-label">생년월일</label>
           <input class="form-input" :class="{ 'has-value': birth }" type="date" id="birth" v-model.trim="birth" />
         </div>
@@ -299,5 +299,15 @@ $teal: #2ab59e;
   color: #e53935;
   font-size: 0.82rem;
   padding-left: 2px;
+}
+
+.notice {
+  font-size: 0.8rem;
+  color: $teal;
+  margin: 4px 0 0 2px;
+}
+
+.birth-field {
+  margin-top: 8px;
 }
 </style>
