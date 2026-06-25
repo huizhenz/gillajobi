@@ -17,6 +17,7 @@
             </div>
         </div>
     </div>
+    <NewsCarousel />
 </template>
 
 <script setup>
@@ -24,6 +25,7 @@ import { ref, computed, watch, onMounted, onUnmounted } from 'vue'
 import { useRouter, useRoute } from 'vue-router'
 import { useSearchStore } from '@/stores/searchStore'
 import { useUserStore } from '@/stores/userStore'
+import NewsCarousel from '@/components/common/NewsCarousel.vue'
 
 const searchStore = useSearchStore()
 const router = useRouter()
