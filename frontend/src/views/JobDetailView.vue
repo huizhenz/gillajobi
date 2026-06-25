@@ -46,12 +46,14 @@
       <p><span>외국어</span>{{ store.job.foreign_language }}</p>
       <p><span>근무 시간</span>{{ store.job.working_hours }}</p>
       <p><span>휴게 시간</span>{{ store.job.break_time }}</p>
-      <p><span>주소</span>{{ store.job.address }}</p>
+      <p><span>주소</span>{{ cleanAddress(store.job.address) }}</p>
       <p><span>4대 보험</span>{{ store.job.social_insurance }}</p>
       <p><span>퇴직금</span>{{ store.job.retirement_pay }}</p>
       <p><span>제출 서류</span>{{ store.job.submission_documents }}</p>
       <p><span>지원 방법</span>{{ store.job.application_method }}</p>
     </section>
+
+    <KakaoMap v-if="mapAddress" :address="mapAddress" />
 
     <a :href="store.job.recruitment?.recruitment_url" target="_blank">지원하기</a>
   </div>
@@ -62,11 +64,19 @@ import { useJobStore } from '@/stores/jobStore'
 import { useRoute } from 'vue-router'
 import { onMounted, computed } from 'vue'
 import { useDday } from '@/composables/useDday.js'
+import KakaoMap from '@/components/jobs/KakaoMap.vue'
 
 const store = useJobStore()
 const route = useRoute()
 
 const { dday } = useDday(() => store.job?.recruitment?.close_date)
+
+const cleanAddress = (addr) => addr ? addr.replace(/지도\s*보기.*$/, '').trim() : ''
+
+const mapAddress = computed(() => {
+  const addr = store.job?.address || store.job?.recruitment?.region || ''
+  return cleanAddress(addr)
+})
 
 onMounted(() => {
   store.getJob(route.params.jobPk)
