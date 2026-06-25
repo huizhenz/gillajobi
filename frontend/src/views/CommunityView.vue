@@ -30,10 +30,15 @@
         >
         <div class="article-card-top">
           <span class="label-badge" v-if="article.label_name" :style="getLabelStyle(article.label_name)">{{ article.label_name }}</span>
-          <span class="article-id">#{{ article.id }}</span>
         </div>
-        <h3 class="article-title">{{ article.title }} [{{ article.comment_count }}]</h3>
-        <div class="article-meta">{{ article.username }}</div>
+        <h3 class="article-title">{{ article.title }}</h3>
+        <div class="article-meta">
+          <span>{{ article.created_at?.slice(0, 10) }} · {{ article.nickname }}</span>
+          <span class="comment-count">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+            {{ article.comment_count }}
+          </span>
+        </div>
       </div>
     </ul>
     </div>
@@ -196,11 +201,6 @@ const getLabelStyle = (name) => labelColorMap[name] ?? {}
   border-radius: 20px;
 }
 
-.article-id {
-  font-size: 0.78rem;
-  color: #aaa;
-}
-
 .article-title {
   font-size: 1rem;
   font-weight: 600;
@@ -209,8 +209,19 @@ const getLabelStyle = (name) => labelColorMap[name] ?? {}
 }
 
 .article-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   font-size: 0.82rem;
   color: #888;
+}
+
+.comment-count {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: #aaa;
+  font-size: 0.8rem;
 }
 
 /* 비로그인 블러 게이트 */

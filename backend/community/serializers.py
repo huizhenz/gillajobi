@@ -3,6 +3,7 @@ from .models import Article, Comment
 
 class ArticleListSerializer(serializers.ModelSerializer):
     username = serializers.CharField(source='user.username', read_only=True)
+    nickname = serializers.CharField(source='user.nickname', read_only=True)
     label_name = serializers.CharField(source='label.name', read_only=True)
     comment_count = serializers.IntegerField(source='comments.count', read_only=True)
     class Meta:
@@ -20,6 +21,7 @@ class ArticleDetailSerializer(serializers.ModelSerializer):
     comments = CommentSerializer(many=True, read_only=True)
     comment_count = serializers.SerializerMethodField()
     username = serializers.CharField(source='user.username', read_only=True)
+    nickname = serializers.CharField(source='user.nickname', read_only=True)
     label_name = serializers.CharField(source='label.name', read_only=True)
 
     class Meta:

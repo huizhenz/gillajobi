@@ -1,5 +1,8 @@
 <template>
   <div class="detail-wrap">
+    <div class="list-nav">
+      <button class="btn-list" @click="router.push({ name: 'CommunityView' })">← 목록으로</button>
+    </div>
     <div class="article-box">
       <div class="article-top">
         <span class="label-badge" v-if="store.detailArticle.label_name">{{ store.detailArticle.label_name }}</span>
@@ -152,5 +155,26 @@ onMounted(() => {
   display: flex;
   flex-direction: column;
   gap: 8px;
+}
+
+.list-nav {
+  margin-bottom: 16px;
+}
+
+.btn-list {
+  background: none;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 7px 16px;
+  font-size: 0.88rem;
+  color: #666;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-list:hover {
+  background: #f5f5f5;
+  color: #2ab59e;
+  border-color: #2ab59e;
 }
 </style>
