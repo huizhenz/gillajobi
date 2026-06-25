@@ -55,6 +55,25 @@ onMounted(() => {
     gap: 16px;
 }
 
+@media (max-width: 810px) {
+  .calendar-page {
+    flex-direction: column;
+    padding: 20px 16px;
+    margin: 0;
+    gap: 40px;
+  }
+
+  .calendar-area {
+    flex: none;
+    width: 100%;
+  }
+
+  .todo-area {
+    flex: none;
+    width: 100%;
+  }
+}
+
 .todo-card {
   width: 100%;
   background: #2ab59e;

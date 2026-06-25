@@ -24,7 +24,7 @@
       <input
         v-model="newTodo"
         type="text"
-        placeholder="할 일 추가"
+        placeholder=""
         @keyup.enter="handleCreate"
         class="todo-input"
       />
@@ -148,6 +148,8 @@ $teal: #2ab59e;
     border-radius: 8px;
     font-size: 14px;
     cursor: pointer;
+    white-space: nowrap;
+    flex-shrink: 0;
 
     &:hover {
         opacity: 0.9;
