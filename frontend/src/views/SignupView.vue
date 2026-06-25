@@ -44,7 +44,7 @@
     <button type="submit">회원가입</button>
     <div>
         <p>이미 회원이신가요?</p>
-        <router-link to="/login">로그인</router-link>
+        <router-link :to="{ name: 'LoginView' }">로그인</router-link>
     </div>
     </form>
     </div>

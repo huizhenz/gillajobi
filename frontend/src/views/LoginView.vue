@@ -13,7 +13,7 @@
       <button type="submit">로그인</button>
       <div>
         <p>아직 회원이 아니세요?</p>
-        <router-link to="/signup">회원가입</router-link>
+        <router-link :to="{ name: 'SignupView' }">회원가입</router-link>
       </div>
     </form>
   </div>

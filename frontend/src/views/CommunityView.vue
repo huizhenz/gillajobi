@@ -49,9 +49,9 @@
         <div class="gate-card">
           <p class="gate-title">로그인 후 이용가능합니다</p>
           <div class="gate-links">
-            <RouterLink to="/login">로그인</RouterLink>
+            <RouterLink :to="{ name: 'LoginView' }">로그인</RouterLink>
             <span>|</span>
-            <RouterLink to="/signup">회원가입</RouterLink>
+            <RouterLink :to="{ name: 'SignupView' }">회원가입</RouterLink>
           </div>
         </div>
       </div>
