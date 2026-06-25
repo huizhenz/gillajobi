@@ -2,13 +2,30 @@
   <div class="ai-recommend-wrapper">
     <h2 class="ai-recommend-title">✨ AI 추천 {{ LABEL[type] }}</h2>
     <hr class="ai-recommend-divider">
-    <div class="ai-recommend-content">
-      <!-- AI 추천 내용 -->
+
+    <div v-if="userStore.isLogin" class="ai-recommend-content">
+      <!-- 로그인 시 AI 추천 내용 -->
+    </div>
+
+    <div v-else class="gate-container">
+      <div class="gate-overlay">
+        <div class="gate-card">
+          <p class="gate-title">로그인 후 AI 추천을 받아보세요</p>
+          <div class="gate-links">
+            <RouterLink :to="{ name: 'LoginView' }">로그인</RouterLink>
+            <span>|</span>
+            <RouterLink :to="{ name: 'SignupView' }">회원가입</RouterLink>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
 
 <script setup>
+import { RouterLink } from 'vue-router'
+import { useUserStore } from '@/stores/userStore'
+
 const props = defineProps({
   type: {
     type: String,
@@ -23,7 +40,7 @@ const LABEL = {
   competitions: '공모전',
 }
 
-const { type } = props
+const userStore = useUserStore()
 </script>
 
 <style lang="scss" scoped>
@@ -46,12 +63,59 @@ const { type } = props
 
 .ai-recommend-content {
   min-height: 80px;
-  // border: 1px solid #d0d0d0;
   border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
   color: #aaa;
   font-size: 0.9rem;
+}
+
+/* 비로그인 게이트 */
+.gate-container {
+  position: relative;
+  height: 200px;
+}
+
+.gate-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gate-card {
+  background: white;
+  border-radius: 14px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.14);
+  padding: 32px 48px;
+  text-align: center;
+}
+
+.gate-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 14px;
+}
+
+.gate-links {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.9rem;
+  color: #bbb;
+
+  a {
+    color: #2ab59e;
+    text-decoration: none;
+    font-weight: 600;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 }
 </style>

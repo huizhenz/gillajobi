@@ -156,8 +156,8 @@ $teal: #2ab59e;
 .signup-page {
   display: flex;
   justify-content: center;
-  // padding: 48px 24px;
-  margin-top: 10%;
+  padding-top: 10vh;
+  padding-bottom: 10vh;
 }
 
 .signup-form {

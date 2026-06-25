@@ -49,8 +49,8 @@ $teal: #2ab59e;
 .login-page {
   display: flex;
   justify-content: center;
-  align-items: center;
-  margin-top: 20%;
+  align-items: flex-start;
+  padding-top: 10vh;
 }
 
 .login-form {

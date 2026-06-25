@@ -110,7 +110,7 @@ $teal: #2ab59e;
     align-items: center;
     justify-content: center;
     gap: 60px;
-    padding: 120px 60px 0px 60px;
+    padding: 10vh 60px 0px 60px;
 }
 
 .image-wrapper {

@@ -46,13 +46,21 @@
     </ul>
     </div>
     <div v-else class="gate-container">
-      <div class="gate-blur">
-        <div class="fake-card" v-for="n in 6" :key="n">
-          <div class="fake-bar short"></div>
-          <div class="fake-bar long"></div>
-          <div class="fake-bar mid"></div>
+      <ul class="article-list gate-blur">
+        <div
+          v-for="article in store.articleList.slice(0, 6)"
+          :key="article.id"
+          class="article-card"
+        >
+          <div class="article-card-top">
+            <span class="label-badge" v-if="article.label_name" :style="getLabelStyle(article.label_name)">{{ article.label_name }}</span>
+          </div>
+          <h3 class="article-title">{{ article.title }}</h3>
+          <div class="article-meta">
+            <span>{{ article.created_at?.slice(0, 10) }} · {{ article.nickname }}</span>
+          </div>
         </div>
-      </div>
+      </ul>
       <div class="gate-overlay">
         <div class="gate-card">
           <p class="gate-title">로그인 후 이용가능합니다</p>
@@ -123,7 +131,7 @@ const getLabelStyle = (name) => labelColorMap[name] ?? {}
 }
 
 .community-header h1 {
-  font-size: 1.8rem;
+  font-size: 24px;
   font-weight: 700;
   color: #1a1a1a;
 }
@@ -257,35 +265,14 @@ const getLabelStyle = (name) => labelColorMap[name] ?? {}
 /* 비로그인 블러 게이트 */
 .gate-container {
   position: relative;
+  padding-top: 20px;
 }
 
 .gate-blur {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  filter: blur(1px);
+  filter: blur(4px);
   pointer-events: none;
   user-select: none;
 }
-
-.fake-card {
-  background: white;
-  border: 1px solid #e0e0e0;
-  border-radius: 10px;
-  padding: 16px 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.fake-bar {
-  background: #e8e8e8;
-  border-radius: 4px;
-  height: 13px;
-}
-.fake-bar.short { width: 28%; }
-.fake-bar.long  { width: 65%; }
-.fake-bar.mid   { width: 18%; }
 
 .gate-overlay {
   position: absolute;
