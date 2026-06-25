@@ -2,7 +2,7 @@
   <div>
     <div class="certification-grid">
       <CertificationDetail
-        v-for="certification in store.certificationList"
+        v-for="certification in sortedList"
         :key="certification.pk"
         :certification="certification"
       />
@@ -12,7 +12,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted } from 'vue';
+import { ref, onMounted, onUnmounted, computed } from 'vue';
 import CertificationDetail from './CertificationDetail.vue';
 import { useCertificationStore } from '@/stores/certificationStore.js';
 import { getSortKey } from '@/composables/useDday.js';
