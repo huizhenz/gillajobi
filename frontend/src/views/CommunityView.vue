@@ -104,7 +104,7 @@ const getLabelStyle = (name) => labelColorMap[name] ?? {}
 
 <style scoped>
 .community-wrap {
-  max-width: 800px;
+  max-width: 1400px;
   margin: 40px auto;
   padding: 0 20px;
 }
