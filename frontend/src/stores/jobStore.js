@@ -5,24 +5,29 @@ import { defineStore } from 'pinia'
 export const useJobStore = defineStore('jobs', () => {
   const jobList = ref([])
   const job = ref(null)
-  const currentPage = ref(1) // 다음 요청 시 몇 번째 페이지인지 추적
-  const hasMore = ref(true) // 마지막 페이지 도달 여부
-  const isLoading = ref(false) // 요청 중 여부
+  const currentPage = ref(1)
+  const hasMore = ref(true)
+  const isLoading = ref(false)
+  const selectedRegion = ref('')
+  const regions = ref([])
 
-  const getJobList = function () { // 처음부터 다시 시작-
+  const getJobList = function () {
     jobList.value = []
     currentPage.value = 1
     hasMore.value = true
     return loadMore()
   }
 
-  const loadMore = function () { // 다음 페이지 가져와서 이어붙이기
+  const loadMore = function () {
     if (isLoading.value || !hasMore.value) return
     isLoading.value = true
 
+    const params = new URLSearchParams({ page: currentPage.value })
+    if (selectedRegion.value) params.append('region', selectedRegion.value)
+
     return axios({
       method: 'get',
-      url: `http://127.0.0.1:8000/api/v1/jobs/?page=${currentPage.value}`
+      url: `http://127.0.0.1:8000/api/v1/jobs/?${params.toString()}`
     })
     .then(res => {
       jobList.value.push(...res.data.results)
@@ -31,6 +36,17 @@ export const useJobStore = defineStore('jobs', () => {
     })
     .catch(err => console.log(err))
     .finally(() => isLoading.value = false)
+  }
+
+  const setRegion = function (region) {
+    selectedRegion.value = region
+    getJobList()
+  }
+
+  const getRegions = function () {
+    return axios.get('http://127.0.0.1:8000/api/v1/jobs/regions/')
+      .then(res => { regions.value = res.data })
+      .catch(err => console.log(err))
   }
 
   const getJob = function (pk) {
@@ -42,5 +58,5 @@ export const useJobStore = defineStore('jobs', () => {
     .catch(err => console.log(err))
   }
 
-  return { jobList, job, hasMore, isLoading, getJobList, loadMore, getJob }
+  return { jobList, job, hasMore, isLoading, selectedRegion, regions, getJobList, loadMore, setRegion, getRegions, getJob }
 })

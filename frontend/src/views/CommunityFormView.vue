@@ -35,11 +35,6 @@ onMounted(() => {
   communityStore.getLabelList()
 })
 
-// watch(() => communityStore.detailArticle, (val) => {
-//   pk.value = val.id
-//   title.value = val.title
-//   content.value = val.content
-// })
 const createArticle = function () {
   const article = {
     title: title.value,
