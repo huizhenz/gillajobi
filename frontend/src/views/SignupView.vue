@@ -39,6 +39,7 @@
           <label for="nickname" class="sr-only">닉네임</label>
           <input class="form-input" type="text" id="nickname" v-model.trim="nickname" placeholder="닉네임" />
           <p v-for="msg in errors.nickname" :key="msg" class="error">{{ msg }}</p>
+          <p>회원가입 이후 수정 불가능</p>
         </div>
         <div class="field">
           <label for="birth" class="field-label">생년월일</label>
