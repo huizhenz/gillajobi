@@ -15,16 +15,11 @@
             희망 직무 · {{ pos }}
           </span>
         </div>
-        <div class="todo-card">
-          <span class="todo-label">완료한 To-do</span>
-          <p class="todo-count">{{ todoStore.completedCount }}<span class="todo-unit">개</span></p>
-          <div class="todo-progress-wrap">
-            <div class="todo-progress-bar" :style="{ width: todoProgress + '%' }"></div>
-          </div>
-          <p class="todo-next">전체 {{ todoStore.todoList.length }}개 중 {{ todoStore.completedCount }}개 완료</p>
-        </div>
 
       </div>
+
+      <!-- 투두 진행률 카드 -->
+      <TodoProgressCard class="todo-progress-area" />
 
       <!-- 오른쪽 패널 -->
       <div class="right-card">
@@ -115,11 +110,10 @@ import { ref, computed, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
 import { useUserStore } from '@/stores/userStore'
 import { useCommunityStore } from '@/stores/communityStore'
-import { useTodoStore } from '@/stores/todoStore'
+import TodoProgressCard from '@/components/common/TodoProgressCard.vue'
 
 const userStore = useUserStore()
 const communityStore = useCommunityStore()
-const todoStore = useTodoStore()
 const router = useRouter()
 
 const profileData = ref(null)
@@ -147,17 +141,9 @@ const labelColorMap = {
 
 const getLabelStyle = (name) => labelColorMap[name] ?? {}
 
-const todoProgress = computed(() => {
-  const total = todoStore.todoList.length
-  if (!total) return 0
-  return Math.round((todoStore.completedCount / total) * 100)
-})
-
-
 onMounted(async () => {
   profileData.value = await userStore.getProfile()
   communityStore.getArticleList()
-  todoStore.getTodoList()
 })
 </script>
 
@@ -172,9 +158,15 @@ $primary: #2ab59e;
 .profile-layout {
   max-width: 1200px;
   margin: 0 auto;
-  display: flex;
-  gap: 40px;
-  align-items: flex-start;
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  grid-template-rows: auto auto;
+  gap: 24px 40px;
+}
+
+.todo-progress-area {
+  grid-column: 1;
+  grid-row: 2;
 }
 
 /* 왼쪽 카드 */
@@ -182,14 +174,16 @@ $primary: #2ab59e;
   background: white;
   border-radius: 16px;
   padding: 32px 24px;
-  width: 240px;
-  flex-shrink: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 8px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  grid-column: 1;
+  grid-row: 1;
 }
+
+/* 오른쪽 카드 */
 
 .avatar-wrap {
   margin-bottom: 8px;
@@ -243,65 +237,15 @@ $primary: #2ab59e;
   border-radius: 20px;
 }
 
-/* 투두 카드 */
-.todo-card {
-  width: 100%;
-  background: #2ab59e;
-  border-radius: 14px;
-  padding: 18px 20px;
-  margin-top: 8px;
-  color: white;
-}
-
-.todo-label {
-  font-size: 0.90rem;
-  font-weight: 600;
-  opacity: 0.9;
-  display: block;
-  margin-bottom: 10px;
-}
-
-.todo-count {
-  font-size: 2.4rem;
-  font-weight: 700;
-  line-height: 1;
-  margin-bottom: 12px;
-}
-
-.todo-unit {
-  font-size: 1rem;
-  font-weight: 600;
-  margin-left: 2px;
-}
-
-
-.todo-progress-wrap {
-  background: rgba(255, 255, 255, 0.3);
-  border-radius: 20px;
-  height: 6px;
-  margin-bottom: 10px;
-  overflow: hidden;
-}
-
-.todo-progress-bar {
-  height: 100%;
-  background: white;
-  border-radius: 20px;
-  transition: width 0.5s ease;
-}
-
-.todo-next {
-  font-size: 0.78rem;
-  opacity: 0.85;
-}
 
 /* 오른쪽 카드 */
 .right-card {
-  flex: 1;
   background: white;
   border-radius: 16px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.06);
   overflow: hidden;
+  grid-column: 2;
+  grid-row: 1 / 4;
 }
 
 .tab-bar {
@@ -472,15 +416,23 @@ $primary: #2ab59e;
   }
 
   .profile-layout {
-    flex-direction: column;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
   }
 
   .left-card {
-    width: 100%;
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .todo-progress-area {
+    grid-column: 1;
+    grid-row: 2;
   }
 
   .right-card {
-    width: 100%;
+    grid-column: 1;
+    grid-row: 3;
   }
 
   .info-grid {

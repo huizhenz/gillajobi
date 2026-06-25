@@ -3,61 +3,71 @@
     <h2 class="ai-recommend-title">✨ AI 추천 {{ LABEL[type] }}</h2>
     <hr class="ai-recommend-divider">
 
-    <!-- 비로그인 -->
-    <div v-if="typeState.status === 'not_logged_in'" class="ai-recommend-message">
-      <p>로그인 후 AI 추천을 받아보세요</p>
-      <router-link :to="{ name: 'LoginView' }" class="msg-link">로그인하기</router-link>
-    </div>
+    <div v-if="userStore.isLogin" class="ai-recommend-content">
+      <!-- 프로필 미입력 -->
+      <div v-if="typeState.status === 'empty_profile'" class="ai-recommend-message">
+        <p>프로필을 입력하면 AI 맞춤 추천을 받을 수 있어요</p>
+        <router-link :to="{ name: 'UpdateProfileView', params: { username: userStore.username } }" class="msg-link">프로필 입력하기</router-link>
+      </div>
 
-    <!-- 프로필 미입력 -->
-    <div v-else-if="typeState.status === 'empty_profile'" class="ai-recommend-message">
-      <p>프로필을 입력하면 AI 맞춤 추천을 받을 수 있어요</p>
-      <router-link :to="{ name: 'UpdateProfileView', params: { username: userStore.username } }" class="msg-link">프로필 입력하기</router-link>
-    </div>
+      <!-- 계산 중 -->
+      <div v-else-if="typeState.status === 'computing' || typeState.loading" class="ai-recommend-message">
+        <span class="spinner"></span>
+        <p>AI가 맞춤 추천을 계산하고 있어요...</p>
+      </div>
 
-    <!-- 계산 중 -->
-    <div v-else-if="typeState.status === 'computing' || typeState.loading" class="ai-recommend-message">
-      <span class="spinner"></span>
-      <p>AI가 맞춤 추천을 계산하고 있어요...</p>
-    </div>
+      <!-- 관련 결과 없음 -->
+      <div v-else-if="typeState.status === 'no_match'" class="ai-recommend-message">
+        <p>프로필과 일치하는 {{ LABEL[type] }}이(가) 없습니다.</p>
+      </div>
 
-    <!-- 관련 결과 없음 -->
-    <div v-else-if="typeState.status === 'no_match'" class="ai-recommend-message">
-      <p>프로필과 일치하는 {{ LABEL[type] }}이(가) 없습니다.</p>
-    </div>
+      <!-- 오류 -->
+      <div v-else-if="typeState.status === 'error'" class="ai-recommend-message">
+        <p>추천을 불러오지 못했습니다.</p>
+      </div>
 
-    <!-- 오류 -->
-    <div v-else-if="typeState.status === 'error'" class="ai-recommend-message">
-      <p>추천을 불러오지 못했습니다.</p>
-    </div>
-
-    <!-- 추천 카드 -->
-    <div v-else-if="typeState.status === 'ready'" class="pick-list">
-      <router-link
-        v-for="item in typeState.items"
-        :key="item.id"
-        :to="item.link"
-        class="pick-card"
-      >
-        <div class="card-header">
-          <div class="card-top">
-            <p class="subtitle">{{ item.company }}</p>
-            <p class="title">{{ item.title }}</p>
-            <p class="reason">{{ item.reason }}</p>
+      <!-- 추천 카드 -->
+      <div v-else-if="typeState.status === 'ready'" class="pick-list">
+        <router-link
+          v-for="item in typeState.items"
+          :key="item.id"
+          :to="item.link"
+          class="pick-card"
+        >
+          <div class="card-header">
+            <div class="card-top">
+              <p class="subtitle">{{ item.company }}</p>
+              <p class="title">{{ item.title }}</p>
+              <p class="reason">{{ item.reason }}</p>
+            </div>
+            <span class="score-badge" :class="scoreBadgeClass(item.score)">{{ item.score }}</span>
           </div>
-          <span class="score-badge" :class="scoreBadgeClass(item.score)">{{ item.score }}</span>
+          <div class="card-bottom">
+            <span class="category">{{ item.category }}</span>
+            <span class="close-date" v-if="item.close_date">~{{ item.close_date }}</span>
+          </div>
+        </router-link>
+      </div>
+    </div>
+
+    <div v-else class="gate-container">
+      <div class="gate-overlay">
+        <div class="gate-card">
+          <p class="gate-title">로그인 후 AI 추천을 받아보세요</p>
+          <div class="gate-links">
+            <RouterLink :to="{ name: 'LoginView' }">로그인</RouterLink>
+            <span>|</span>
+            <RouterLink :to="{ name: 'SignupView' }">회원가입</RouterLink>
+          </div>
         </div>
-        <div class="card-bottom">
-          <span class="category">{{ item.category }}</span>
-          <span class="close-date" v-if="item.close_date">~{{ item.close_date }}</span>
-        </div>
-      </router-link>
+      </div>
     </div>
   </div>
 </template>
 
 <script setup>
-import { computed, onMounted, watch } from 'vue'
+import { RouterLink } from 'vue-router'
+import { computed, onMounted } from 'vue'
 import { useAiScoreStore } from '@/stores/aiScoreStore'
 import { useUserStore } from '@/stores/userStore'
 
@@ -260,6 +270,54 @@ onMounted(async () => {
   .pick-card {
     flex: 1 1 100%;
     height: 200px;
+  }
+}
+
+/* 비로그인 게이트 */
+.gate-container {
+  position: relative;
+  height: 200px;
+}
+
+.gate-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gate-card {
+  background: white;
+  border-radius: 14px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.14);
+  padding: 32px 48px;
+  text-align: center;
+}
+
+.gate-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 14px;
+}
+
+.gate-links {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.9rem;
+  color: #bbb;
+
+  a {
+    color: #2ab59e;
+    text-decoration: none;
+    font-weight: 600;
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
 }
 </style>

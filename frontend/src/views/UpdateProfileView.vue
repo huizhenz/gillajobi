@@ -40,6 +40,7 @@
 
             <div v-for="field in arrayFields" :key="field.key" class="form-item full">
               <label class="form-label">{{ field.label }}</label>
+              <p v-if="field.key === 'preferred_position'" class="field-notice">* 반드시 1개 이상의 희망직무를 입력해주세요.</p>
               <div class="tag-input-row">
                 <input
                   type="text"
@@ -254,6 +255,12 @@ $primary: #2ab59e;
   font-size: 0.9rem;
   color: #999;
   font-weight: 500;
+}
+
+.field-notice {
+  font-size: 0.78rem;
+  color: #e53935;
+  margin: 2px 0 4px;
 }
 
 .form-input {

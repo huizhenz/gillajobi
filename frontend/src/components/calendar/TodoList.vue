@@ -40,6 +40,7 @@ import { useTodoStore } from '@/stores/todoStore'
 const todoStore = useTodoStore()
 const newTodo = ref('')
 
+
 const handleCreate = function () {
   if (!newTodo.value.trim()) return
   todoStore.createTodo({ todo: newTodo.value.trim() })
@@ -120,6 +121,7 @@ $teal: #2ab59e;
     cursor: pointer;
     padding: 0 4px;
 }
+
 
 .todo-input-area {
     display: flex;
