@@ -2,6 +2,7 @@ from django.shortcuts import get_object_or_404
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
+from rest_framework.pagination import PageNumberPagination
 
 from .models import (
     Company,
@@ -19,13 +20,26 @@ from .serializers import (
 
 from .service import fetch_jobs_service, fetch_detail_service
 
+class JobPagination(PageNumberPagination):
+    page_size = 15 # 3열 그리드에 맞춰서 5줄 -> 15개
+    page_size_query_param = 'page_size'
+
 
 @api_view(['GET'])
 def jobs_list(request):
     recruitments = Recruitment.objects.all()
-    serializer = RecruitmentListSerializer(recruitments, many=True)
-    return Response(serializer.data)
 
+    paginator = JobPagination() # JobPagination 클래스의 인스턴스 생성
+    
+    page = paginator.paginate_queryset(recruitments, request) # 전체 recruitments 쿼리셋에서 15개만 잘라서 반환
+    serializer = RecruitmentListSerializer(page, many=True) # 잘라낸 15개짜리 page를 JSON으로 직렬화
+    return paginator.get_paginated_response(serializer.data) # 페이지 정보도 같이 감싸서 반환
+    # {
+    # "count": 150,
+    # "next": "http://.../jobs/?page=2",
+    # "previous": null,
+    # "results": [ ... ]
+    # }
 
 @api_view(['GET'])
 def job_detail(request, job_pk):
@@ -43,6 +57,7 @@ def fetch_jobs(request):
     result = fetch_jobs_service()
 
     return Response(result)
+
 
 @api_view(['GET'])
 def fetch_detail(request):

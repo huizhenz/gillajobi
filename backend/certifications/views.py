@@ -1,17 +1,25 @@
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
+from rest_framework.pagination import PageNumberPagination
 
 from .models import Certification, Examination
 from .serializers import CertificationSerializer, ExaminationSerializer, CertificationDetailSerializer
 from .services import get_certification_data, get_examination_data, sync_all_examinations
 
+class CompetitionPagination(PageNumberPagination):
+    page_size = 15
+    page_size_query_param = 'page_size'
+
 # Create your views here.
 @api_view(['GET'])
 def fetch_certifications(request):
     certifications = Certification.objects.all()
-    serializer = CertificationSerializer(certifications, many=True)
-    return Response(serializer.data, status=status.HTTP_200_OK)
+    paginator = CompetitionPagination()
+
+    page = paginator.paginate_queryset(certifications, request) # 전체 recruitments 쿼리셋에서 15개만 잘라서 반환
+    serializer = CertificationSerializer(page, many=True) # 잘라낸 15개짜리 page를 JSON으로 직렬화
+    return paginator.get_paginated_response(serializer.data) # 페이지 정보도 같이 감싸서 반환
 
 @api_view(['POST'])
 def sync_certifications(request):
