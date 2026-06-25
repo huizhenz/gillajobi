@@ -3,9 +3,10 @@
         <div class="card-top">
             <p class="series">{{ certification.series_name }}</p>
             <h3 class="name">{{ certification.name }}</h3>
-            <p v-if="certification.category" class="category-sub">{{ certification.category }}</p>
+            
         </div>
         <div class="card-bottom">
+            <p v-if="certification.major_job_field" class="category-sub">{{ certification.major_job_field }}</p>
             <span class="detail-link">시험 일정 보러 가기 →</span>
         </div>
     </div>
@@ -73,15 +74,22 @@ $primary: #2ab59e;
 }
 
 .category-sub {
-  font-size: 13px;
-  color: #aaa;
+  font-size: 0.83rem;
+  color: #2ab59e;
+  font-weight: 500;
   margin: 0;
 }
 
 .card-bottom {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
+}
+
+.category {
+  font-size: 14px;
+  color: $primary;
+  font-weight: 500;
 }
 
 .detail-link {

@@ -57,7 +57,7 @@ const TYPE_CONFIG = {
     url: `${BASE}/certifications/top3/`,
     getTitle: item => item.name,
     getSubtitle: item => item.series_name ?? '',
-    getCategory: item => item.series_name ?? '',
+    getCategory: item => item.major_job_field ?? '',
     getLink: item => `/certification/${item.jm_cd}`,
   },
   competitions: {

@@ -3,7 +3,7 @@
         <div class="card-top">
             <p class="company-name">{{ job.company?.name }}</p>
             <h3 class="title">{{ job.title }}</h3>
-            <p v-if="job.recruitment?.career" class="career">{{ job.recruitment.career }}</p>
+            <p v-if="job.career" class="career">{{ job.career }}</p>
         </div>
         <div class="card-bottom">
             <span class="category">{{ job.category }}</span>
