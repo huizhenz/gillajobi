@@ -83,15 +83,18 @@ Base URL: `http://127.0.0.1:8000/api/v1`
 ### Bootcamps
 | Method | Endpoint | 설명 |
 |--------|----------|------|
-| GET | `/bootcamps/` | 부트캠프 목록 |
+| GET | `/bootcamps/` | 부트캠프 목록 (`?region=`, `?category=` 필터 지원) |
 | GET | `/bootcamps/<bootcamp_pk>/` | 부트캠프 상세 |
+| GET | `/bootcamps/regions/` | 지역 목록 (드롭다운용) |
+| GET | `/bootcamps/categories/` | 카테고리 목록 (드롭다운용, 연결된 bootcamp 있는 것만) |
 | GET | `/bootcamps/fetch/` | 외부 사이트(boottent.com) 크롤링 후 저장 (`?page=N` 옵션) |
 
 ### Jobs
 | Method | Endpoint | 설명 |
 |--------|----------|------|
-| GET | `/jobs/` | 채용공고 목록 |
+| GET | `/jobs/` | 채용공고 목록 (`?region=` 필터 지원, 앞 2글자 prefix 매칭) |
 | GET | `/jobs/<job_pk>/` | 채용공고 상세 |
+| GET | `/jobs/regions/` | 지역 목록 (앞 2글자로 축약·중복 제거, 드롭다운용) |
 | GET | `/jobs/fetch/` | work24.go.kr 크롤링 후 저장 |
 | GET | `/jobs/fetch_detail/` | 채용공고 상세 정보 크롤링 |
 
@@ -123,7 +126,7 @@ Base URL: `http://127.0.0.1:8000/api/v1`
 ### Search (AI 키워드 확장)
 | Method | Endpoint | 설명 |
 |--------|----------|------|
-| GET | `/category/search/?q=검색어` | 자연어 검색 — Claude AI로 키워드 확장 후 4개 카테고리 동시 검색. `label` 미지정: 각 5건 / `label=jobs\|bootcamps\|certifications\|competitions` 지정: 해당 카테고리만 50건 |
+| GET | `/category/search/?q=검색어` | 자연어 검색 — Claude AI로 키워드 확장 후 4개 카테고리 동시 검색. `label` 미지정: 각 5건 / `label` 지정: 해당 카테고리만 50건. `region`(jobs·bootcamps), `category`(bootcamps) 필터 조합 가능 |
 
 ### Todos
 | Method | Endpoint | 설명 |
@@ -149,7 +152,7 @@ Base URL: `http://127.0.0.1:8000/api/v1`
       │  [JSON 응답] → .slice(0, 3) → 4개 섹션 각 최대 3건 표시
       │
       └─ label='jobs'|'bootcamps'|'certifications'|'competitions'
-              │ GET /api/v1/category/search/?q=검색어&label=jobs
+              │ GET /api/v1/category/search/?q=검색어&label=jobs[&region=서울][&category=IT]
               ▼
          [해당 카테고리만 최대 50건] → List 컴포넌트 인라인 표시 후 input 초기화
               ▼
@@ -238,9 +241,9 @@ Base URL: `http://127.0.0.1:8000/api/v1`
 | `/login` | LoginView | 완료 — 중앙 정렬, 로고 이미지, SCSS 스타일링 |
 | `/profile/:username` | ProfileView | 완료 — 개인정보 탭 + 작성한 글 탭, 닉네임 표시, 투두 카드(teal, 프로그레스 바, 완료 수 표기), 희망 연봉 "만원" 표시, 작성한 글 카드 CommunityView 동일 스타일, 810px 반응형 |
 | `/profile/:username/update` | UpdateProfileView | 완료 — 성/이름/프로필이미지(3:4·150×200px·border-radius 5%) + 배열 필드 태그 pill UI, 기존 데이터 pre-fill, 희망 연봉 "만원" 단위 표시, 태그 input 하단 배치 |
-| `/bootcamp` | BootcampView | 완료 — 상단 SearchBox |
+| `/bootcamp` | BootcampView | 완료 — 상단 SearchBox + 지역·카테고리 드롭다운 필터 |
 | `/bootcamp/:bootcampPk` | BootcampDetailView | 완료 — 기술 스택 pill 뱃지 |
-| `/jobs` | JobView | 완료 — 상단 SearchBox |
+| `/jobs` | JobView | 완료 — 상단 SearchBox + 지역 드롭다운 필터 |
 | `/jobs/:jobPk` | JobDetailView | 완료 |
 | `/competition` | CompetitionView | 완료 — 상단 SearchBox |
 | `/competition/:competitionPk` | CompetitionDetailView | 완료 |
@@ -259,10 +262,10 @@ Base URL: `http://127.0.0.1:8000/api/v1`
 | Store | 파일 | 주요 기능 |
 |-------|------|-----------|
 | userStore | `stores/userStore.js` | 토큰 영속 저장 (`persist: true`), 회원가입 후 토큰 즉시 저장, 로그인 후 프로필 자동 fetch(닉네임 유지), 로그아웃 시 nickname 초기화, 프로필 조회·수정 |
-| bootcampStore | `stores/bootcampStore.js` | 목록 조회(`getBootcampList`), 단건 조회(`getBootcamp`) |
+| bootcampStore | `stores/bootcampStore.js` | 목록 조회(`getBootcampList`), 단건 조회(`getBootcamp`), 지역·카테고리 필터(`selectedRegion`, `selectedCategory`, `setRegion`, `setCategory`), 옵션 목록 조회(`getRegions`, `getCategories`) |
 | communityStore | `stores/communityStore.js` | 게시글 CRUD, 레이블 목록, 상세 조회 |
 | comments | `stores/comments.js` | 댓글 작성(`commentCreate`), 댓글 삭제(`commentDelete`) |
-| jobStore | `stores/jobStore.js` | 채용공고 목록/상세 조회 |
+| jobStore | `stores/jobStore.js` | 채용공고 목록/상세 조회, 지역 필터(`selectedRegion`, `setRegion`), 지역 목록 조회(`getRegions`) |
 | certificationStore | `stores/certificationStore.js` | 자격증 목록/상세 조회 |
 | competitionStore | `stores/competitionStore.js` | 공모전 목록/상세 조회 |
 | todoStore | `stores/todoStore.js` | 할일 CRUD |
@@ -283,9 +286,12 @@ Base URL: `http://127.0.0.1:8000/api/v1`
 ## 주요 구현 패턴
 
 - **AI 키워드 확장 검색**: `category/services.py`에서 Claude Haiku로 검색어를 최대 10개 관련 키워드로 확장 → SQLite `icontains` OR 필터로 4개 모델 동시 검색. 결과는 24시간 캐시(LocMemCache)
-- **SearchBox 컴포넌트**: `components/common/SearchBox.vue`로 분리. `label` prop으로 동작 분기 — `null`이면 `/search`로 이동(전체 검색), 문자열이면 해당 카테고리 내 인라인 검색 후 `@results` emit. 검색 완료 후 input 자동 초기화.
+- **SearchBox 컴포넌트**: `components/common/SearchBox.vue`로 분리. `label` prop으로 동작 분기 — `null`이면 `/search`로 이동(전체 검색), 문자열이면 해당 카테고리 내 인라인 검색 후 `@results` emit. 검색 완료 후 input 자동 초기화. `extraParams` prop으로 region·category 필터를 검색 API에 함께 전달.
 - **라벨 내 검색**: JobView·BootcampView·CertificationView·CompetitionView에서 SearchBox의 `@results` 이벤트를 수신해 List 컴포넌트에 `searchResults` prop으로 전달. 결과 0건이면 "키워드에 일치하는 정보가 없습니다." 출력.
 - **검색 카드 일관성**: 각 카테고리 List 컴포넌트의 검색 결과 카드를 해당 카테고리 DetailCard 컴포넌트와 동일한 레이아웃·CSS로 통일.
+- **드롭다운 필터**: JobView — 지역(앞 2글자 축약) 드롭다운. BootcampView — 지역·카테고리 드롭다운 2개. 뷰 진입 시 항상 전체로 초기화(store setup 단계에서 reset).
+- **필터·검색 조합**: 필터 선택 후 검색(extraParams로 전달) 및 검색 후 필터 변경(JobView·BootcampView의 `watch`로 search API 재호출) 양방향 모두 지원. 검색 결과 모드가 아닐 때 필터 변경은 일반 목록을 재조회.
+- **SearchView 인라인 검색**: SearchView 내 검색창에서 직접 검색 가능. 결과는 페이지 이동 없이 인라인 업데이트. 로딩 중 스피너 표시, 이전 결과 즉시 초기화.
 - **비로그인 게이트**: 커뮤니티 목록에서 `v-else` 블러 오버레이 — 가짜 카드 blur + 로그인 안내 모달 카드
 - **사용자 권한 UI**: 게시글/댓글에서 `article.username === userStore.username` 비교로 수정·삭제 버튼 조건부 렌더링
 - **카테고리 필터**: 프론트엔드 `computed`로 `articleList`를 `selectedLabel`로 필터링

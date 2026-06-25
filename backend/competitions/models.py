@@ -28,3 +28,5 @@ class Competition(models.Model):
     thumbnail = models.URLField(blank=True) # 썸네일 이미지 URL
     detail_url = models.URLField(blank=True) # 상세 페이지 URL
     description = models.JSONField(default=dict) # 공모 요강 (페이지마다 다른 항목)
+
+    view_count = models.IntegerField(default=0)

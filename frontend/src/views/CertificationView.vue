@@ -3,6 +3,7 @@
         <div class="search-area">
             <SearchBox label="certifications" @results="onResults" />
         </div>
+        <GillajobiPick type="certifications" />
         <certification-list :search-results="searchResults" :searched-keyword="searchedKeyword" />
     </div>
 </template>
@@ -12,6 +13,7 @@ import { ref } from 'vue'
 import { useSearchStore } from '@/stores/searchStore'
 import CertificationList from '@/components/certifications/CertificationList.vue'
 import SearchBox from '@/components/common/SearchBox.vue'
+import GillajobiPick from '@/components/common/gillajobi_pick.vue'
 
 const searchStore = useSearchStore()
 const searchResults = ref(null)

@@ -9,6 +9,7 @@
                 <option v-for="region in jobStore.regions" :key="region" :value="region">{{ region }}</option>
             </select>
         </div>
+        <Gillajobi_pick type="jobs" />
         <job-list :search-results="searchResults" :searched-keyword="searchedKeyword" />
     </div>
 </template>
@@ -20,6 +21,7 @@ import { useJobStore } from '@/stores/jobStore'
 import JobList from '@/components/jobs/JobList.vue'
 import SearchBox from '@/components/common/SearchBox.vue'
 import axios from 'axios'
+import Gillajobi_pick from '@/components/common/gillajobi_pick.vue'
 
 const searchStore = useSearchStore()
 const jobStore = useJobStore()

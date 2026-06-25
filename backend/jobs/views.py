@@ -1,4 +1,6 @@
 from django.shortcuts import get_object_or_404
+from django.db.models import F
+from django.db.models.functions import Coalesce
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
@@ -56,8 +58,21 @@ def job_detail(request, job_pk):
         RecruitmentDetail.objects.select_related('recruitment__company'),
         recruitment_id=job_pk,
     )
+    Recruitment.objects.filter(pk=job_pk).update(
+        view_count=Coalesce(F('view_count'), 0) + 1
+    )
     serializer = RecruitmentDetailReadSerializer(recruitment_detail)
     return Response(serializer.data)
+
+
+@api_view(['GET'])
+def jobs_top3(request):
+    top3 = (
+        Recruitment.objects
+        .order_by('-view_count')
+        .values('id', 'title', 'company__name', 'view_count')[:3]
+    )
+    return Response(list(top3))
 
 
 @api_view(['GET'])
