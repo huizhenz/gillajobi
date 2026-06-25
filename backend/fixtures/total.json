@@ -28370,13 +28370,6 @@
     }
   },
   {
-    "model": "category.label",
-    "pk": 5,
-    "fields": {
-      "name": "bootcamp"
-    }
-  },
-  {
     "model": "sites.site",
     "pk": 1,
     "fields": {

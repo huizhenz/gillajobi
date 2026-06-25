@@ -29,7 +29,7 @@
           @click="goDetail(article.id)"
         >
         <div class="article-card-top">
-          <span class="label-badge" v-if="article.label_name">{{ article.label_name }}</span>
+          <span class="label-badge" v-if="article.label_name" :style="getLabelStyle(article.label_name)">{{ article.label_name }}</span>
           <span class="article-id">#{{ article.id }}</span>
         </div>
         <h3 class="article-title">{{ article.title }} [{{ article.comment_count }}]</h3>
@@ -83,6 +83,15 @@ const filteredArticles = computed(() => {
 const goDetail = (pk) => {
   router.push({name:'Articledetail', params:{pk: pk}})
 }
+
+const labelColorMap = {
+  '자격증':  { backgroundColor: '#E7EFFB', color: '#3284FF', borderColor: '#E7EFFB' },
+  '부트캠프': { backgroundColor: '#EFF1F5', color: '#6F7988', borderColor: '#EFF1F5' },
+  '공모전':  { backgroundColor: '#E3F4ED', color: '#2DA270', borderColor: '#E3F4ED' },
+  '채용공고': { backgroundColor: '#FBEBE1', color: '#E55627', borderColor: '#FBEBE1' },
+}
+
+const getLabelStyle = (name) => labelColorMap[name] ?? {}
 </script>
 
 <style scoped>
@@ -181,8 +190,6 @@ const goDetail = (pk) => {
 }
 
 .label-badge {
-  background-color: #e6f7f5;
-  color: #2ab59e;
   font-size: 0.75rem;
   font-weight: 600;
   padding: 2px 8px;
