@@ -66,6 +66,12 @@ export const useUserStore = defineStore('user', () => {
         return token.value ? true : false
     })
 
+    const clearAuth = () => {
+        token.value = null
+        username.value = null
+        nickname.value = null
+    }
+
     const logOut = function () {
         axios({
             method: 'post',
@@ -74,13 +80,15 @@ export const useUserStore = defineStore('user', () => {
                 Authorization: `Token ${token.value}`
             }
         })
-        .then(res => {
-            token.value = null
-            username.value = null
-            nickname.value = null
+        .then(() => {
+            clearAuth()
             router.push({ name: 'MainView' })
         })
-        .catch(err => console.log(err))
+        .catch(err => {
+            console.log(err)
+            clearAuth()
+            router.push({ name: 'MainView' })
+        })
     }
 
     const getProfile = () => {
@@ -94,7 +102,20 @@ export const useUserStore = defineStore('user', () => {
             return response.data
         }).catch(error => {
             console.log(error);
+            if (error.response?.status === 401) {
+                clearAuth()
+            }
+            return null
         });
+    }
+
+    const initAuth = async () => {
+        if (!token.value) return
+        const profile = await getProfile()
+        if (profile) {
+            nickname.value = profile.user.nickname
+            username.value = profile.user.username
+        }
     }
 
     const updateProfile = (payload) => {
@@ -136,5 +157,7 @@ export const useUserStore = defineStore('user', () => {
         logOut,
         getProfile,
         updateProfile,
+        initAuth,
+        clearAuth,
     }
 }, { persist: true })
