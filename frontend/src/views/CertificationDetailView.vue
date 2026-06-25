@@ -2,6 +2,7 @@
   <div v-if="store.certification" class="certification-detail">
     <h2 class="name">{{ store.certification.name }}</h2>
     <p class="series">{{ store.certification.series_name }}</p>
+    <p v-if="dday">{{ dday }}</p>
 
     <div v-if="store.certification.examinations && store.certification.examinations.length" class="exam-section">
       <div
@@ -38,9 +39,12 @@
 import { onMounted } from 'vue'
 import { useRoute } from 'vue-router'
 import { useCertificationStore } from '@/stores/certificationStore.js'
+import { useDday } from '@/composables/useDday.js'
 
 const route = useRoute()
 const store = useCertificationStore()
+
+const { dday } = useDday(() => store.certification?.examinations?.[0]?.doc_reg_end)
 
 onMounted(() => {
   store.getCertification(route.params.jm_cd)

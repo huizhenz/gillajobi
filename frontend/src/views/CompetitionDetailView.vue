@@ -1,6 +1,8 @@
 <template>
   <div v-if="store.competition" class="competition-detail">
+    <img v-if="store.competition.thumbnail" :src="store.competition.thumbnail" class="thumbnail" alt="썸네일"  />
     <h2>{{ store.competition.title }}</h2>
+    <p v-if="dday">{{ dday }}</p>
 
     <section>
       <h3>공모전 정보</h3>
@@ -33,9 +35,12 @@
 import { useCompetitionStore } from '@/stores/competitionStore'
 import { useRoute } from 'vue-router'
 import { onMounted } from 'vue'
+import { useDday } from '@/composables/useDday.js'
 
 const store = useCompetitionStore()
 const route = useRoute()
+
+const { dday } = useDday(() => store.competition?.end_date)
 
 onMounted(() => {
   store.getCompetition(route.params.competitionPk)
@@ -45,11 +50,19 @@ onMounted(() => {
 <style lang="scss" scoped>
 $primary: #2ab59e;
 
+
+
 .competition-detail {
   padding: 32px 0;
   display: flex;
   flex-direction: column;
   gap: 24px;
+
+  .thumbnail {
+    width: 30%;
+    object-fit: cover;
+    border-radius: 10px;
+  }
 
   h2 {
     font-size: 24px;

@@ -1,7 +1,7 @@
 <template>
   <div class="bootcamp-grid">
     <BootcampDetail
-      v-for="bootcamp in store.bootcampList"
+      v-for="bootcamp in sortedList"
       :key="bootcamp.pk"
       :bootcamp="bootcamp"
     />
@@ -10,10 +10,15 @@
 
 <script setup>
 import { useBootcampStore } from '@/stores/bootcampStore';
-import { onMounted } from 'vue';
+import { onMounted, computed } from 'vue';
 import BootcampDetail from './BootcampDetail.vue';
+import { getSortKey } from '@/composables/useDday.js';
 
 const store = useBootcampStore();
+
+const sortedList = computed(() =>
+  [...(store.bootcampList ?? [])].sort((a, b) => getSortKey(a.close_date) - getSortKey(b.close_date))
+)
 
 onMounted(() => {
   store.getBootcampList();

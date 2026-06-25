@@ -30,6 +30,7 @@ class RecruitmentDetailSerializer(serializers.ModelSerializer):
 
 class RecruitmentListSerializer(serializers.ModelSerializer):
     company = CompanySerializer(read_only=True)
+    category = serializers.SlugRelatedField(slug_field='name', read_only=True)
 
     class Meta:
         model = Recruitment
@@ -51,6 +52,8 @@ class RecruitmentDetailReadSerializer(serializers.ModelSerializer):
         many=True,
         read_only=True
     )
+    category = serializers.SlugRelatedField(slug_field='name', read_only=True)
+
 
     class Meta:
         model = RecruitmentDetail

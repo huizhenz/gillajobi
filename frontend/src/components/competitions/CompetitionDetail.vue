@@ -3,6 +3,7 @@
         <p class="host">{{ competition.host }}</p>
         <h3 class="title">{{ competition.title }}</h3>
         <p v-if="competition.keyword" class="keyword">{{ competition.keyword }}</p>
+        <p v-if="competition.start_date" class="close-date">{{ competition.start_date }}~</p>
     </div>
 </template>
 
@@ -59,6 +60,13 @@ $primary: #2ab59e;
     padding: 3px 10px;
     border-radius: 20px;
     align-self: flex-start;
+  }
+
+  .close-date {
+    font-size: 13px;
+    color: #666;
+    text-align: right;
+    margin-top: auto;
   }
 }
 </style>

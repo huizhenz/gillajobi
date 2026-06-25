@@ -1,7 +1,7 @@
 <template>
   <div class="certification-grid">
     <CertificationDetail
-      v-for="certification in store.certificationList"
+      v-for="certification in sortedList"
       :key="certification.pk"
       :certification="certification"
     />
@@ -9,11 +9,18 @@
 </template>
 
 <script setup>
-import { onMounted } from 'vue';
+import { onMounted, computed } from 'vue';
 import CertificationDetail from './CertificationDetail.vue';
 import { useCertificationStore } from '@/stores/certificationStore.js';
+import { getSortKey } from '@/composables/useDday.js';
 
 const store = useCertificationStore();
+
+const sortedList = computed(() =>
+  [...(store.certificationList ?? [])].sort(
+    (a, b) => getSortKey(a.examinations?.[0]?.doc_reg_end) - getSortKey(b.examinations?.[0]?.doc_reg_end)
+  )
+)
 
 onMounted(() => {
   store.getCertificationList();
