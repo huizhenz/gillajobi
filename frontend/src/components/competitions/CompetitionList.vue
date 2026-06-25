@@ -15,10 +15,15 @@
 import { ref, onMounted, onUnmounted } from 'vue';
 import { useCompetitionStore } from '@/stores/competitionStore.js';
 import CompetitionDetail from './CompetitionDetail.vue';
+import { getSortKey } from '@/composables/useDday.js';
 
 const store = useCompetitionStore();
 const sentinel = ref(null)
 let observer = null
+
+const sortedList = computed(() =>
+  [...(store.competitionList ?? [])].sort((a, b) => getSortKey(a.end_date) - getSortKey(b.end_date))
+)
 
 onMounted(() => {
   store.getCompetitionList()

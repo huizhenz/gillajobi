@@ -21,6 +21,7 @@ class SkillSerializer(serializers.ModelSerializer):
 
 
 class BootcampSerializer(serializers.ModelSerializer):
+    category = serializers.SlugRelatedField(slug_field='name', read_only=True)
     skills = SkillSerializer(many=True, read_only=True)
     region = RegionSerializer(read_only=True)
 

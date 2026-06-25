@@ -15,10 +15,15 @@
 import { ref, onMounted, onUnmounted } from 'vue';
 import { useJobStore } from '@/stores/jobStore.js';
 import JobDetail from './JobDetail.vue';
+import { getSortKey } from '@/composables/useDday.js';
 
 const store = useJobStore();
 const sentinel = ref(null)
 let observer = null
+
+const sortedList = computed(() =>
+  [...(store.jobList ?? [])].sort((a, b) => getSortKey(a.close_date) - getSortKey(b.close_date))
+)
 
 onMounted(() => {
   store.getJobList()

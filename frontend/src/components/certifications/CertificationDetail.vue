@@ -1,7 +1,10 @@
 <template>
-    <div class="certification-card" @click="goDetail(certification.jm_cd)">
-        <h3 class="name">{{ certification.name }}</h3>
+    <div class="certification-card" >
         <p class="series">{{ certification.series_name }}</p>
+        <h3 class="name">{{ certification.name }}</h3>
+        <p>{{ certification.category }}</p>
+        <button @click="goDetail(certification.jm_cd)">시험 일정 보러 가기 -> </button>
+
     </div>
 </template>
 

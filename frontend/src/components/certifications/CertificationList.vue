@@ -15,10 +15,17 @@
 import { ref, onMounted, onUnmounted } from 'vue';
 import CertificationDetail from './CertificationDetail.vue';
 import { useCertificationStore } from '@/stores/certificationStore.js';
+import { getSortKey } from '@/composables/useDday.js';
 
 const store = useCertificationStore();
 const sentinel = ref(null)
 let observer = null
+
+const sortedList = computed(() =>
+  [...(store.certificationList ?? [])].sort((a, b) =>
+    a.name.localeCompare(b.name, 'ko')
+  )
+)
 
 onMounted(() => {
   store.getCertificationList()
