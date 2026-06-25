@@ -27,7 +27,7 @@ const router = useRouter()
 const userstore = useUserStore();
 
 const goToSearch = () => {
-    router.push('/search')
+    router.push({ name: 'SearchView' })
 }
 </script>
 

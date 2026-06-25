@@ -56,7 +56,7 @@
           </div>
 
           <div class="form-actions">
-            <router-link to="/" class="btn-skip">나중에 등록하기</router-link>
+            <router-link :to="{ name: 'MainView' }" class="btn-skip">나중에 등록하기</router-link>
             <button type="submit" class="btn-submit">프로필 등록</button>
           </div>
 

@@ -1,20 +1,6 @@
-import BootcampView from '@/views/BootcampView.vue'
-import CalendarView from '@/views/CalendarView.vue'
-import CertificationView from '@/views/CertificationView.vue'
-import CommunityDetailView from '@/views/CommunityDetailView.vue'
-import CommunityFormView from '@/views/CommunityFormView.vue'
-import CommunityView from '@/views/CommunityView.vue'
-import CompetitionView from '@/views/CompetitionView.vue'
-import JobView from '@/views/JobView.vue'
-import LoginView from '@/views/LoginView.vue'
-import MainView from '@/views/MainView.vue'
-import ProfileView from '@/views/ProfileView.vue'
-import SignupView from '@/views/SignupView.vue'
-import UpdateProfileView from '@/views/UpdateProfileView.vue'
 import { createRouter, createWebHistory } from 'vue-router'
-import SearchView from '@/views/SearchView.vue'
 import { useUserStore } from '@/stores/userStore'
-
+import MainView from '@/views/MainView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -27,42 +13,42 @@ const router = createRouter({
     {
       path: '/signup',
       name: 'SignupView',
-      component: SignupView,
+      component: () => import('@/views/SignupView.vue'),
     },
     {
       path: '/profile/:username',
       name: 'ProfileView',
-      component: ProfileView,
+      component: () => import('@/views/ProfileView.vue'),
     },
     {
       path: '/profile/:username/update',
       name: 'UpdateProfileView',
-      component: UpdateProfileView,
+      component: () => import('@/views/UpdateProfileView.vue'),
     },
     {
       path: '/login',
       name: 'LoginView',
-      component: LoginView,
+      component: () => import('@/views/LoginView.vue'),
     },
     {
       path: '/calendar',
       name: 'CalendarView',
-      component: CalendarView,
+      component: () => import('@/views/CalendarView.vue'),
     },
     {
       path: '/community',
       name: 'CommunityView',
-      component: CommunityView,
+      component: () => import('@/views/CommunityView.vue'),
     },
     {
       path: '/community/article',
       name: 'articleCreate',
-      component: CommunityFormView,
+      component: () => import('@/views/CommunityFormView.vue'),
     },
     {
       path: '/community/:pk',
       name: 'Articledetail',
-      component: CommunityDetailView,
+      component: () => import('@/views/CommunityDetailView.vue'),
     },
     {
       path: '/community/:pk/update',
@@ -72,23 +58,23 @@ const router = createRouter({
     {
       path: '/jobs',
       name: 'JobView',
-      component: JobView,
+      component: () => import('@/views/JobView.vue'),
     },
     {
       path: '/competition',
       name: 'CompetitionView',
-      component: CompetitionView,
+      component: () => import('@/views/CompetitionView.vue'),
     },
     
     {
       path: '/certification',
       name: 'CertificationView',
-      component: CertificationView,
+      component: () => import('@/views/CertificationView.vue'),
     },
     {
       path: '/bootcamp',
       name: 'BootcampView',
-      component: BootcampView,
+      component: () => import('@/views/BootcampView.vue'),
     },
     {
       path: '/bootcamp/:bootcampPk',

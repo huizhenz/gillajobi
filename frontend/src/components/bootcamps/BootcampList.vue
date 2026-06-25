@@ -3,7 +3,7 @@
     <div class="bootcamp-grid">
       <BootcampDetail
         v-for="bootcamp in sortedList"
-        :key="bootcamp.pk"
+        :key="bootcamp.id"
         :bootcamp="bootcamp"
       />
     </div>

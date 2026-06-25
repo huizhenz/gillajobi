@@ -58,7 +58,6 @@
         <p>이미 회원이신가요?</p>
         <router-link :to="{ name: 'LoginView' }">로그인</router-link>
       </div>
-
     </form>
   </div>
 </template>
