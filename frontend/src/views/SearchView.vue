@@ -4,7 +4,7 @@
             <input
                 v-model="searchStore.keyword"
                 type="text"
-                placeholder="관심 직무·기술·자격증을 검색하세요"
+                placeholder="관심 직무를 검색해보세요."
                 class="search-input"
             />
             <button type="submit" class="search-btn" :disabled="searchStore.isLoading">
@@ -132,7 +132,8 @@ $teal: #2ab59e;
 .search-area {
     display: flex;
     align-items: center;
-    max-width: 600px;
+    width: 50%;
+    max-width: 1000px;
     margin: 0 auto;
     border: 2px solid $teal;
     border-radius: 50px;
@@ -178,6 +179,7 @@ $teal: #2ab59e;
     font-size: 24px;
     font-weight: 700;
     color: #111;
+    margin-bottom: 20px;
 }
 
 .loading {
