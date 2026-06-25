@@ -54,16 +54,16 @@ $teal: #2ab59e;
 }
 
 .login-form {
-  width: 100%;
-  max-width: 30%;
+  max-width: 400px;
   display: flex;
   flex-direction: column;
   gap: 12px;
   padding: 0 24px;
+  box-sizing: border-box;
 }
 
 .login-logo {
-  width: 100%;
+  max-width: 100%;
   margin: 0 auto 40px;
   display: block;
 }
