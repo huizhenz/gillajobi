@@ -13,6 +13,7 @@ import SignupView from '@/views/SignupView.vue'
 import UpdateProfileView from '@/views/UpdateProfileView.vue'
 import { createRouter, createWebHistory } from 'vue-router'
 import SearchView from '@/views/SearchView.vue'
+import { useUserStore } from '@/stores/userStore'
 
 
 const router = createRouter({
@@ -115,6 +116,15 @@ const router = createRouter({
       component: () => import('@/views/CompetitionDetailView.vue'),
     },
   ],
+})
+
+router.beforeEach((to, from) => {
+  const userStore = useUserStore()
+
+  if ((to.name === 'ProfileView' || to.name === 'UpdateProfileView' || to.name === 'CalendarView' || to.name === 'articleCreate' || to.name === 'Articledetail' || to.name === 'articleUpdate') && !userStore.isLogin) {
+    window.alert('로그인이 필요합니다.')
+    return { name: 'LoginView' }
+  }
 })
 
 export default router

@@ -24,7 +24,7 @@ const logOut = function () {
       <div class="nav-right">
         <div v-if="userstore.isLogin" class="nav-right-auth">
           <router-link to="/calendar" class="btn-calendar">캘린더</router-link>
-          <router-link v-if="userstore.username" :to="{ name: 'ProfileView', params: { username: userstore.username } }" class="nav-username">{{ userstore.username }}님</router-link>
+          <router-link v-if="userstore.username" :to="{ name: 'ProfileView', params: { username: userstore.username } }" class="nav-username">{{ userstore.nickname }}님</router-link>
           <form @submit.prevent="logOut" class="logout-form">
             <input type="submit" value="로그아웃" class="btn-logout">
           </form>
