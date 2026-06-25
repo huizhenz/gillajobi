@@ -7,6 +7,12 @@
       <span v-if="dday" class="dday-badge" :class="{ closed: dday === '마감' }">{{ dday }}</span>
     </div>
 
+    <!-- AI 적합도 점수 -->
+    <div v-if="fitScore && fitScore.score !== null" class="ai-score-banner">
+      <span class="ai-score-badge" :class="scoreBadgeClass(fitScore.score)">AI 적합도 {{ fitScore.score }}점</span>
+      <span class="ai-score-reason">{{ fitScore.reason }}</span>
+    </div>
+
     <!-- 자격증 정보 -->
     <section class="info-section">
       <h3 class="section-title">자격증 정보</h3>
@@ -72,15 +78,31 @@
 </template>
 
 <script setup>
-import { onMounted } from 'vue'
+import { onMounted, computed, watch } from 'vue'
 import { useRoute } from 'vue-router'
 import { useCertificationStore } from '@/stores/certificationStore.js'
+import { useAiScoreStore } from '@/stores/aiScoreStore'
 import { useDday } from '@/composables/useDday.js'
 
 const route = useRoute()
 const store = useCertificationStore()
+const aiScoreStore = useAiScoreStore()
 
 const { dday } = useDday(() => store.certification?.examinations?.[0]?.doc_reg_end)
+
+const fitScore = computed(() =>
+  store.certification?.id ? aiScoreStore.getScore('certifications', store.certification.id) : null
+)
+
+const scoreBadgeClass = (score) => {
+  if (score >= 80) return 'badge-green'
+  if (score >= 60) return 'badge-yellow'
+  return 'badge-orange'
+}
+
+watch(() => store.certification?.id, (id) => {
+  if (id) aiScoreStore.getSingleScore('certifications', id)
+})
 
 onMounted(() => {
   store.getCertification(route.params.jm_cd)
@@ -186,5 +208,32 @@ $primary: #2ab59e;
   color: #aaa;
   text-align: center;
   padding: 40px 0;
+}
+
+.ai-score-banner {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #fff;
+  border: 1px solid #e8e8e8;
+  border-radius: 10px;
+  padding: 14px 24px;
+}
+
+.ai-score-badge {
+  flex-shrink: 0;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 6px 14px;
+  border-radius: 50px;
+
+  &.badge-green  { background: #d4f5ee; color: #1a8c7b; }
+  &.badge-yellow { background: #fff8d4; color: #9a7d00; }
+  &.badge-orange { background: #fdebd0; color: #c06000; }
+}
+
+.ai-score-reason {
+  font-size: 14px;
+  color: #555;
 }
 </style>

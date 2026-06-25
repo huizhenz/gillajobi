@@ -61,3 +61,8 @@ class ProfileSerializer(serializers.ModelSerializer):
             'preferred_position',
             'desired_salary',
         )
+
+    def validate_preferred_position(self, value):
+        if not value or len(value) == 0:
+            raise serializers.ValidationError('희망 직무를 1개 이상 입력해주세요.')
+        return value
