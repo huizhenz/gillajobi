@@ -14,8 +14,9 @@ const props = defineProps({
 })
 const content = ref('')
 const createComment = function () {
-  console.log(props)
+  if (!content.value.trim()) return
   store.commentCreate(props.articlePk, content.value)
+  content.value = ''
 }
 </script>
 

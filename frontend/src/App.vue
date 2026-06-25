@@ -9,8 +9,15 @@
 </template>
 
 <script setup>
+import { onMounted } from 'vue'
 import AppNav from './components/common/AppNav.vue';
 import AppFooter from './components/common/AppFooter.vue';
+import { useUserStore } from '@/stores/userStore'
+
+const userStore = useUserStore()
+onMounted(() => {
+    userStore.initAuth()
+})
 </script>
 
 <style lang="scss">
