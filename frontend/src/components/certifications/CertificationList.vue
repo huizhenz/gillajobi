@@ -17,8 +17,8 @@ import { getSortKey } from '@/composables/useDday.js';
 const store = useCertificationStore();
 
 const sortedList = computed(() =>
-  [...(store.certificationList ?? [])].sort(
-    (a, b) => getSortKey(a.examinations?.[0]?.doc_reg_end) - getSortKey(b.examinations?.[0]?.doc_reg_end)
+  [...(store.certificationList ?? [])].sort((a, b) =>
+    a.name.localeCompare(b.name, 'ko')
   )
 )
 
