@@ -11,15 +11,21 @@
           :to="`/certification/${cert.jm_cd}`"
           class="certification-card"
         >
-          <p class="series">{{ cert.series_name }}</p>
-          <h3 class="name">{{ cert.name }}</h3>
-          <span class="detail-link">시험 일정 보러 가기 -&gt;</span>
+          <div class="card-top">
+            <p class="series">{{ cert.series_name }}</p>
+            <h3 class="name">{{ cert.name }}</h3>
+          </div>
+          <div class="card-bottom">
+            <span class="detail-link">시험 일정 보러 가기 →</span>
+          </div>
         </router-link>
       </div>
     </template>
 
     <!-- 목록 -->
     <template v-else>
+      <h2 class="section-title">전체 자격증</h2>
+      <hr class="section-divider">
       <div class="certification-grid">
         <CertificationDetail
           v-for="certification in sortedList"
@@ -66,6 +72,20 @@ onUnmounted(() => { observer?.disconnect() })
 <style lang="scss" scoped>
 $primary: #2ab59e;
 
+.section-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #222;
+  margin: 0 0 8px;
+  padding: 0;
+}
+
+.section-divider {
+  border: none;
+  border-top: 2px solid #2ab59e;
+  margin: 0 0 16px;
+}
+
 .certification-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -85,10 +105,12 @@ $primary: #2ab59e;
   border: 1px solid #e8e8e8;
   border-radius: 10px;
   padding: 20px;
+  height: 200px;
+  box-sizing: border-box;
   cursor: pointer;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  justify-content: space-between;
   transition: box-shadow 0.2s;
   text-decoration: none;
   color: inherit;
@@ -96,23 +118,47 @@ $primary: #2ab59e;
   &:hover {
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
   }
+}
 
-  .series {
-    font-size: 12px;
-    color: #888;
-  }
+.card-top {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
 
-  .name {
-    font-size: 15px;
-    font-weight: 700;
-    color: #222;
-    line-height: 1.4;
-  }
+.series {
+  font-size: 14px;
+  color: #888;
+  font-weight: 500;
+  margin: 0;
+}
 
-  .detail-link {
-    font-size: 13px;
-    color: $primary;
-    font-weight: 500;
-  }
+.name {
+  font-size: 17px;
+  font-weight: 700;
+  color: #222;
+  line-height: 1.4;
+  margin: 0;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.card-bottom {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.detail-link {
+  font-size: 13px;
+  color: #fff;
+  font-weight: 600;
+  background: $primary;
+  padding: 6px 14px;
+  border-radius: 20px;
+  white-space: nowrap;
 }
 </style>

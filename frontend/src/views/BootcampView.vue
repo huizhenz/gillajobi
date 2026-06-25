@@ -1,9 +1,6 @@
 <template>
     <div>
-        <div class="search-area">
-            <SearchBox label="bootcamps" :extra-params="{ region: bootcampStore.selectedRegion, category: bootcampStore.selectedCategory }" @results="onResults" />
-        </div>
-        <div class="filter-area">
+        <div class="search-filter-area">
             <select class="filter-select" :value="bootcampStore.selectedRegion" @change="bootcampStore.setRegion($event.target.value)">
                 <option value="">전체 지역</option>
                 <option v-for="region in bootcampStore.regions" :key="region" :value="region">{{ region }}</option>
@@ -12,7 +9,9 @@
                 <option value="">전체 카테고리</option>
                 <option v-for="cat in bootcampStore.categories" :key="cat" :value="cat">{{ cat }}</option>
             </select>
+            <SearchBox label="bootcamps" :extra-params="{ region: bootcampStore.selectedRegion, category: bootcampStore.selectedCategory }" @results="onResults" />
         </div>
+        <AiRecommend type="bootcamps" />
         <GillajobiPick type="bootcamps" />
         <bootcamp-list :search-results="searchResults" :searched-keyword="searchedKeyword" />
     </div>
@@ -25,6 +24,7 @@ import { useBootcampStore } from '@/stores/bootcampStore'
 import BootcampList from '@/components/bootcamps/BootcampList.vue'
 import SearchBox from '@/components/common/SearchBox.vue'
 import GillajobiPick from '@/components/common/gillajobi_pick.vue'
+import AiRecommend from '@/components/common/AiRecommend.vue'
 import axios from 'axios'
 
 const searchStore = useSearchStore()
@@ -71,14 +71,10 @@ div {
   padding: 32px 0;
 }
 
-.search-area {
+.search-filter-area {
   display: flex;
+  align-items: center;
   justify-content: center;
-  padding: 0 24px 16px;
-}
-
-.filter-area {
-  display: flex;
   gap: 12px;
   padding: 0 24px 24px;
 }

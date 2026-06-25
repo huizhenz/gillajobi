@@ -1,14 +1,13 @@
 <template>
     <div>
-        <div class="search-area">
-            <SearchBox label="jobs" :extra-params="{ region: jobStore.selectedRegion }" @results="onResults" />
-        </div>
-        <div class="filter-area">
+        <div class="search-filter-area">
             <select class="filter-select" :value="jobStore.selectedRegion" @change="jobStore.setRegion($event.target.value)">
                 <option value="">전체 지역</option>
                 <option v-for="region in jobStore.regions" :key="region" :value="region">{{ region }}</option>
             </select>
+            <SearchBox label="jobs" :extra-params="{ region: jobStore.selectedRegion }" @results="onResults" />
         </div>
+        <AiRecommend type="jobs" />
         <Gillajobi_pick type="jobs" />
         <job-list :search-results="searchResults" :searched-keyword="searchedKeyword" />
     </div>
@@ -22,6 +21,7 @@ import JobList from '@/components/jobs/JobList.vue'
 import SearchBox from '@/components/common/SearchBox.vue'
 import axios from 'axios'
 import Gillajobi_pick from '@/components/common/gillajobi_pick.vue'
+import AiRecommend from '@/components/common/AiRecommend.vue'
 
 const searchStore = useSearchStore()
 const jobStore = useJobStore()
@@ -58,14 +58,10 @@ div {
   padding: 32px 0;
 }
 
-.search-area {
+.search-filter-area {
   display: flex;
+  align-items: center;
   justify-content: center;
-  padding: 0 24px 16px;
-}
-
-.filter-area {
-  display: flex;
   gap: 12px;
   padding: 0 24px 24px;
 }

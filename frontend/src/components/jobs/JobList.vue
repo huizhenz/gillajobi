@@ -11,15 +11,23 @@
           :to="`/jobs/${job.id}`"
           class="job-card"
         >
-          <p class="company-name">{{ job['company__name'] }}</p>
-          <h3 class="title">{{ job.title }}</h3>
-          <p v-if="job.close_date" class="close-date">~ {{ job.close_date }}</p>
+          <div class="card-top">
+            <p class="company-name">{{ job['company__name'] }}</p>
+            <h3 class="title">{{ job.title }}</h3>
+            <p v-if="job.career" class="career">{{ job.career }}</p>
+          </div>
+          <div class="card-bottom">
+            <span class="category">{{ job.category }}</span>
+            <span v-if="job.close_date" class="close-date">~ {{ job.close_date }}</span>
+          </div>
         </router-link>
       </div>
     </template>
 
     <!-- 목록  -->
     <template v-else>
+      <h2 class="section-title">전체 채용공고</h2>
+      <hr class="section-divider">
       <div class="job-grid">
         <JobDetail
           v-for="job in sortedList"
@@ -63,6 +71,20 @@ onUnmounted(() => { observer?.disconnect() })
 </script>
 
 <style lang="scss" scoped>
+.section-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #222;
+  margin: 0 0 8px;
+  padding: 0;
+}
+
+.section-divider {
+  border: none;
+  border-top: 2px solid #2ab59e;
+  margin: 0 0 16px;
+}
+
 .job-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -82,10 +104,12 @@ onUnmounted(() => { observer?.disconnect() })
   border: 1px solid #e8e8e8;
   border-radius: 10px;
   padding: 20px;
+  height: 200px;
+  box-sizing: border-box;
   cursor: pointer;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  justify-content: space-between;
   transition: box-shadow 0.2s;
   text-decoration: none;
   color: inherit;
@@ -93,26 +117,51 @@ onUnmounted(() => { observer?.disconnect() })
   &:hover {
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
   }
+}
 
-  .company-name {
-    font-size: 12px;
-    color: #888;
-    font-weight: 500;
-  }
+.card-top {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
 
-  .title {
-    font-size: 15px;
-    font-weight: 700;
-    color: #222;
-    line-height: 1.4;
-    flex: 1;
-  }
+.company-name {
+  font-size: 14px;
+  color: #888;
+  font-weight: 500;
+}
 
-  .close-date {
-    font-size: 13px;
-    color: #666;
-    text-align: right;
-    margin-top: auto;
-  }
+.title {
+  font-size: 17px;
+  font-weight: 700;
+  color: #222;
+  line-height: 1.4;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.career {
+  font-size: 13px;
+  color: #aaa;
+  margin: 0;
+}
+
+.card-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.category {
+  font-size: 14px;
+  color: #2ab59e;
+  font-weight: 500;
+}
+
+.close-date {
+  font-size: 14px;
+  color: #999;
 }
 </style>
