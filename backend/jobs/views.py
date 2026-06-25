@@ -70,7 +70,7 @@ def jobs_top3(request):
     top3 = (
         Recruitment.objects
         .order_by('-view_count')
-        .values('id', 'title', 'company__name', 'view_count')[:3]
+        .values('id', 'title', 'company__name', 'category__name', 'view_count')[:3]
     )
     return Response(list(top3))
 

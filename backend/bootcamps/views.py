@@ -75,7 +75,7 @@ def bootcamps_top3(request):
     top3 = (
         Bootcamp.objects
         .order_by('-view_count')
-        .values('id', 'title', 'company', 'view_count')[:3]
+        .values('id', 'title', 'company', 'category__name', 'view_count')[:3]
     )
     return Response(list(top3))
 

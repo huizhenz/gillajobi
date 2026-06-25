@@ -19,7 +19,7 @@ def competitions_top3(request):
     top3 = (
         Competition.objects
         .order_by('-view_count')
-        .values('id', 'title', 'host', 'view_count')[:3]
+        .values('id', 'title', 'host', 'category__name', 'view_count')[:3]
     )
     return Response(list(top3))
 
