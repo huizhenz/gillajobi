@@ -1,7 +1,7 @@
 <template>
     <div class="app-layout">
         <app-nav/>
-        <div class="content-wrap">
+        <div class="content-wrap" :class="{ wide: route.name === 'MainView' }">
             <router-view/>
         </div>
         <app-footer/>
@@ -10,9 +10,12 @@
 
 <script setup>
 import { onMounted } from 'vue'
+import { useRoute } from 'vue-router'
 import AppNav from './components/common/AppNav.vue';
 import AppFooter from './components/common/AppFooter.vue';
 import { useUserStore } from '@/stores/userStore'
+
+const route = useRoute()
 
 const userStore = useUserStore()
 onMounted(() => {
@@ -42,9 +45,13 @@ html, body {
 
 .content-wrap {
     flex: 1;
-    max-width: 1400px;
+    max-width: 1200px;
     width: 100%;
     margin: 0 auto;
     padding: 24px;
+
+    &.wide {
+        max-width: 1400px;
+    }
 }
 </style>

@@ -87,7 +87,7 @@ $primary: #2ab59e;
 }
 
 .update-card {
-  max-width: 720px;
+  max-width: 1200px;
   margin: 0 auto;
   background: white;
   border-radius: 16px;
