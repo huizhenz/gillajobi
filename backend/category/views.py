@@ -1,3 +1,5 @@
+import os
+import requests as http_requests
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from django.db.models import Q, Subquery, OuterRef
@@ -77,3 +79,34 @@ def search(request):
         "certifications": certifications,
         "competitions": competitions,
     })
+
+
+@api_view(['GET'])
+def news(request):
+    api_key = os.getenv('NEWS_API_KEY')
+    try:
+        resp = http_requests.get(
+            'https://api.kcisa.kr/openapi/service/rest/meta14/getKCPG051802',
+            params={'serviceKey': api_key, 'numOfRows': 12, 'pageNo': 1},
+            headers={'Accept': 'application/json'},
+            timeout=8,
+        )
+        data = resp.json()
+        body = data.get('response', {}).get('body', {})
+        items = body.get('items', [])
+        if isinstance(items, dict):
+            items = items.get('item', [])
+        if isinstance(items, dict):
+            items = [items]
+        result = [
+            {
+                'title': item.get('title', ''),
+                'thumbnail': item.get('referenceIdentifier', ''),
+                'url': item.get('url') or item.get('identifier', ''),
+            }
+            for item in (items or [])
+            if item.get('title')
+        ]
+        return Response({'news': result})
+    except Exception:
+        return Response({'news': []})
