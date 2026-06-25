@@ -298,4 +298,24 @@ const getLabelStyle = (name) => labelColorMap[name] ?? {}
 .gate-links a:hover {
   text-decoration: underline;
 }
+
+@media (max-width: 768px) {
+  .community-wrap {
+    margin: 20px auto;
+    padding: 0 12px;
+  }
+
+  .community-header span {
+    display: none;
+  }
+
+  .article-card {
+    padding: 14px 16px;
+  }
+
+  .gate-card {
+    padding: 32px 28px;
+    margin: 0 16px;
+  }
+}
 </style>

@@ -6,7 +6,7 @@
     <div class="article-box">
       <div class="article-top">
         <span class="label-badge" v-if="store.detailArticle.label_name">{{ store.detailArticle.label_name }}</span>
-        <span class="article-meta">{{ store.detailArticle.username }} · {{ store.detailArticle.created_at?.slice(0, 10) }}</span>
+        <span class="article-meta">{{ store.detailArticle.nickname }} · {{ store.detailArticle.created_at?.slice(0, 10) }}</span>
       </div>
       <h2 class="article-title">{{ store.detailArticle.title }}</h2>
       <p class="article-content">{{ store.detailArticle.content }}</p>

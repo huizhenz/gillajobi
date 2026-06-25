@@ -1,7 +1,7 @@
 <template>
   <li class="comment-item">
     <div class="comment-body">
-      <span class="comment-user">{{ comment.username }}</span>
+      <span class="comment-user">{{ comment.nickname }}</span>
       <span class="comment-content">{{ comment.content }}</span>
     </div>
     <button v-if="comment.username === userStore.username" class="btn-delete" @click="commentDelete">🗑</button>
