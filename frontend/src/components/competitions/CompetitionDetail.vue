@@ -7,7 +7,7 @@
         </div>
         <div class="card-bottom">
             <span class="category">{{ competition.category }}</span>
-            <span v-if="competition.start_date" class="start-date">{{ competition.start_date }}~</span>
+            <span v-if="competition.end_date" class="start-date">~{{ competition.end_date }}</span>
         </div>
     </div>
 </template>

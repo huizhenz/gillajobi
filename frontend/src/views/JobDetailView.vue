@@ -1,7 +1,9 @@
 <template>
   <div v-if="store.job" class="job-detail">
-    <h2>{{ store.job.recruitment?.title }}</h2>
-    <p v-if="dday">{{ dday }}</p>
+    <div class="detail-header">
+      <h2>{{ store.job.recruitment?.title }}</h2>
+      <span v-if="dday" class="dday-badge" :class="{ closed: dday === '마감' }">{{ dday }}</span>
+    </div>
 
     <section>
       <h3>회사 정보</h3>
@@ -92,10 +94,38 @@ $primary: #2ab59e;
   flex-direction: column;
   gap: 24px;
 
+  .detail-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    background: #fff;
+    border: 1px solid #e8e8e8;
+    border-radius: 10px;
+    padding: 20px 24px;
+  }
+
   h2 {
     font-size: 24px;
     font-weight: 700;
     color: #222;
+  }
+
+  .dday-badge {
+    flex-shrink: 0;
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+    border: 1.5px solid #333;
+    border-radius: 50px;
+    padding: 6px 18px;
+    white-space: nowrap;
+    letter-spacing: 0.03em;
+
+    &.closed {
+      color: #aaa;
+      border-color: #ccc;
+    }
   }
 
   section {
