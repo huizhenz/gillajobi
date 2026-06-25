@@ -1,7 +1,7 @@
 <template>
   <div class="login-page">
     <form class="login-form" @submit.prevent="logIn">
-      <img src="@/assets/LOGO.png" alt="길라잡이 로고" class="login-logo" />
+      <img src="@/assets/logo.png" alt="길라잡이 로고" class="login-logo" />
       <div class="input-group">
         <label for="id" class="sr-only">아이디</label>
         <input class="login-input" type="text" id="id" v-model.trim="username" placeholder="아이디" />

@@ -22,7 +22,7 @@ router.afterEach(() => {
     <nav class="navbar">
       <div class="nav-left">
         <router-link :to="{ name: 'MainView' }" class="nav-logo">
-          <img src="@/assets/LOGO.png" alt="LogoImg" class="logo-img">
+          <img src="@/assets/logo.png" alt="LogoImg" class="logo-img">
         </router-link>
         <router-link :to="{ name: 'JobView' }" class="nav-link desktop-only">채용공고</router-link>
         <router-link :to="{ name: 'CertificationView' }" class="nav-link desktop-only">자격증</router-link>
