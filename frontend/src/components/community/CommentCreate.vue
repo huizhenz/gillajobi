@@ -29,7 +29,7 @@ const createComment = function () {
   flex: 1;
   border: 1px solid #ddd;
   border-radius: 8px;
-  padding: 8px 12px;
+  padding: 10px 12px;
   font-size: 0.9rem;
   outline: none;
   transition: border-color 0.2s;

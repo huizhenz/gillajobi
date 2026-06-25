@@ -22,7 +22,7 @@ router.afterEach(() => {
     <nav class="navbar">
       <div class="nav-left">
         <router-link :to="{ name: 'MainView' }" class="nav-logo">
-          <img src="@/assets/LOGO.png" alt="LogoImg" class="logo-img">
+          <img src="@/assets/logo.png" alt="LogoImg" class="logo-img">
         </router-link>
         <router-link :to="{ name: 'JobView' }" class="nav-link desktop-only">채용공고</router-link>
         <router-link :to="{ name: 'CertificationView' }" class="nav-link desktop-only">자격증</router-link>
@@ -35,10 +35,15 @@ router.afterEach(() => {
         <!-- 데스크탑 -->
         <div v-if="userstore.isLogin" class="nav-right-auth desktop-only">
           <router-link :to="{ name: 'CalendarView' }" class="btn-calendar">캘린더</router-link>
-          <router-link v-if="userstore.username" :to="{ name: 'ProfileView', params: { username: userstore.username } }" class="nav-username">{{ userstore.nickname }}님</router-link>
-          <form @submit.prevent="logOut" class="logout-form">
-            <input type="submit" value="로그아웃" class="btn-logout">
-          </form>
+          <div class="profile-dropdown-wrap">
+            <button class="nav-username">{{ userstore.nickname }}님</button>
+            <div class="profile-dropdown">
+              <div class="profile-dropdown-inner">
+                <router-link v-if="userstore.username" :to="{ name: 'ProfileView', params: { username: userstore.username } }" class="dropdown-item">내 프로필</router-link>
+                <button class="dropdown-item" @click="logOut">로그아웃</button>
+              </div>
+            </div>
+          </div>
         </div>
         <div v-else class="nav-right-guest desktop-only">
           <router-link :to="{ name: 'LoginView' }" class="nav-link">로그인</router-link>
@@ -66,7 +71,7 @@ router.afterEach(() => {
 
       <template v-if="userstore.isLogin">
         <router-link :to="{ name: 'CalendarView' }" class="mobile-link">캘린더</router-link>
-        <router-link v-if="userstore.username" :to="{ name: 'ProfileView', params: { username: userstore.username } }" class="mobile-link">{{ userstore.nickname }}님</router-link>
+        <router-link v-if="userstore.username" :to="{ name: 'ProfileView', params: { username: userstore.username } }" class="mobile-link">내 프로필</router-link>
         <button class="mobile-link mobile-logout" @click="logOut">로그아웃</button>
       </template>
       <template v-else>
@@ -79,7 +84,7 @@ router.afterEach(() => {
 
 <style lang="scss" scoped>
 $primary: #2ab59e;
-$breakpoint: 755px;
+$breakpoint: 810px;
 
 .nav-wrap {
   position: sticky;
@@ -161,29 +166,66 @@ $breakpoint: 755px;
 .nav-username {
   font-size: 0.9rem;
   color: #333;
-  text-decoration: none;
-  font-weight: 600;
+  font-weight: 700;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: color 0.2s;
 
   &:hover {
     color: $primary;
   }
 }
 
-.logout-form {
-  margin: 0;
+.profile-dropdown-wrap {
+  position: relative;
 }
 
-.btn-logout {
+.profile-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  padding-top: 8px;
+  background: transparent;
+  min-width: 130px;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-4px);
+  transition: opacity 0.18s ease, transform 0.18s ease;
+}
+
+.profile-dropdown-wrap:hover .profile-dropdown {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.profile-dropdown-inner {
+  background: white;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.dropdown-item {
+  display: block;
+  width: 100%;
+  padding: 12px 18px;
+  font-size: 0.9rem;
+  color: #333;
+  text-decoration: none;
+  font-weight: 500;
   background: none;
   border: none;
-  font-size: 0.85rem;
-  color: #aaa;
+  text-align: left;
   cursor: pointer;
-  padding: 0;
-  transition: color 0.2s;
+  transition: background 0.15s, color 0.15s;
 
   &:hover {
-    color: #555;
+    background: #f5fffe;
+    color: $primary;
   }
 }
 

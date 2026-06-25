@@ -1,8 +1,10 @@
 <template>
   <div class="community-wrap">
     <div class="community-header">
-      <h1>커뮤니티</h1>
-      <span>취업준비, 같이 하면 덜 외로워요. 후기와 꿀팁을 나눠보세요</span>
+      <div class="community-title-group">
+        <h1>커뮤니티</h1>
+        <span class="community-subtitle">취업준비, 같이 하면 덜 외로워요. 후기와 꿀팁을 나눠보세요</span>
+      </div>
       <RouterLink v-if="userstore.isLogin" :to="{name:'articleCreate'}" class="btn-create">+ 글쓰기</RouterLink>
     </div>
     <div v-if="userstore.isLogin">
@@ -15,8 +17,9 @@
       <button
         v-for="lbl in store.labelList"
         :key="lbl.id"
-        class="filter-btn"
+        class="filter-btn label-btn"
         :class="{ active: selectedLabel === lbl.id }"
+        :style="getLabelStyle(lbl.name)"
         @click="selectedLabel = lbl.id"
       >{{ lbl.name }}</button>
     </div>
@@ -30,10 +33,15 @@
         >
         <div class="article-card-top">
           <span class="label-badge" v-if="article.label_name" :style="getLabelStyle(article.label_name)">{{ article.label_name }}</span>
-          <span class="article-id">#{{ article.id }}</span>
         </div>
-        <h3 class="article-title">{{ article.title }} [{{ article.comment_count }}]</h3>
-        <div class="article-meta">{{ article.username }}</div>
+        <h3 class="article-title">{{ article.title }}</h3>
+        <div class="article-meta">
+          <span>{{ article.created_at?.slice(0, 10) }} · {{ article.nickname }}</span>
+          <span class="comment-count">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+            {{ article.comment_count }}
+          </span>
+        </div>
       </div>
     </ul>
     </div>
@@ -85,9 +93,9 @@ const goDetail = (pk) => {
 }
 
 const labelColorMap = {
-  '자격증':  { backgroundColor: '#E7EFFB', color: '#3284FF', borderColor: '#E7EFFB' },
-  '부트캠프': { backgroundColor: '#EFF1F5', color: '#6F7988', borderColor: '#EFF1F5' },
-  '공모전':  { backgroundColor: '#E3F4ED', color: '#2DA270', borderColor: '#E3F4ED' },
+  '자격증':  { backgroundColor: '#E7EFFB', color: '#7AB8E8', borderColor: '#E7EFFB' },
+  '부트캠프': { backgroundColor: '#FEF9E7', color: '#E8C04A', borderColor: '#FEF9E7' },
+  '공모전':  { backgroundColor: '#F0FAF5', color: '#6EC49A', borderColor: '#F0FAF5' },
   '채용공고': { backgroundColor: '#FBEBE1', color: '#E55627', borderColor: '#FBEBE1' },
 }
 
@@ -108,10 +116,22 @@ const getLabelStyle = (name) => labelColorMap[name] ?? {}
   margin-bottom: 20px;
 }
 
+.community-title-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
 .community-header h1 {
   font-size: 1.8rem;
   font-weight: 700;
   color: #1a1a1a;
+}
+
+.community-subtitle {
+  font-size: 0.90rem;
+  color: #999;
+  margin-top: 10px;
 }
 
 .btn-create {
@@ -159,6 +179,21 @@ const getLabelStyle = (name) => labelColorMap[name] ?? {}
   font-weight: 600;
 }
 
+.label-btn {
+  font-weight: 600;
+}
+
+.label-btn.active {
+  filter: brightness(0.88);
+  font-weight: 700;
+}
+
+.label-btn:hover {
+  filter: brightness(0.93);
+  color: inherit;
+  border-color: inherit;
+}
+
 .article-list {
   list-style: none;
   padding: 0;
@@ -196,11 +231,6 @@ const getLabelStyle = (name) => labelColorMap[name] ?? {}
   border-radius: 20px;
 }
 
-.article-id {
-  font-size: 0.78rem;
-  color: #aaa;
-}
-
 .article-title {
   font-size: 1rem;
   font-weight: 600;
@@ -209,8 +239,19 @@ const getLabelStyle = (name) => labelColorMap[name] ?? {}
 }
 
 .article-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   font-size: 0.82rem;
   color: #888;
+}
+
+.comment-count {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: #aaa;
+  font-size: 0.8rem;
 }
 
 /* 비로그인 블러 게이트 */
@@ -286,5 +327,22 @@ const getLabelStyle = (name) => labelColorMap[name] ?? {}
 
 .gate-links a:hover {
   text-decoration: underline;
+}
+
+@media (max-width: 810px) {
+  .community-wrap {
+    margin: 20px auto;
+    padding: 0 12px;
+  }
+
+
+  .article-card {
+    padding: 14px 16px;
+  }
+
+  .gate-card {
+    padding: 32px 28px;
+    margin: 0 16px;
+  }
 }
 </style>

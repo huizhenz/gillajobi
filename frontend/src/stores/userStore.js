@@ -49,11 +49,13 @@ export const useUserStore = defineStore('user', () => {
                 username: payload.username,
                 password: payload.password
             }
-        }).then(response => {
+        }).then(async response => {
             console.log(response);
             token.value = response.data.key;
-            router.push({ name: 'MainView' })
             username.value = payload.username;
+            const profile = await getProfile()
+            if (profile) nickname.value = profile.user.nickname
+            router.push({ name: 'MainView' })
         }).catch(error => {
             console.log(error);
             throw error;
@@ -74,8 +76,8 @@ export const useUserStore = defineStore('user', () => {
         })
         .then(res => {
             token.value = null
-            username.value=null
-            // 로그아웃하면 로그인 화면으로 이동
+            username.value = null
+            nickname.value = null
             router.push({ name: 'MainView' })
         })
         .catch(err => console.log(err))
