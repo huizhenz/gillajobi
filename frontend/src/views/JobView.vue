@@ -1,16 +1,87 @@
 <template>
     <div>
-        <p>여기에 검색창</p>
-        <job-list/>
+        <div class="search-filter-area">
+            <select class="filter-select" :value="jobStore.selectedRegion" @change="jobStore.setRegion($event.target.value)">
+                <option value="">전체 지역</option>
+                <option v-for="region in jobStore.regions" :key="region" :value="region">{{ region }}</option>
+            </select>
+            <SearchBox label="jobs" :extra-params="{ region: jobStore.selectedRegion }" @results="onResults" />
+        </div>
+        <template v-if="searchResults === null && !jobStore.selectedRegion">
+            <AiRecommend type="jobs" />
+            <Gillajobi_pick type="jobs" />
+        </template>
+        <job-list :search-results="searchResults" :searched-keyword="searchedKeyword" :selected-region="jobStore.selectedRegion" />
+        <TopButton />
     </div>
 </template>
 
 <script setup>
-import JobList from '@/components/jobs/JobList.vue';
+import { ref, onMounted, watch } from 'vue'
+import { useSearchStore } from '@/stores/searchStore'
+import { useJobStore } from '@/stores/jobStore'
+import JobList from '@/components/jobs/JobList.vue'
+import SearchBox from '@/components/common/SearchBox.vue'
+import axios from 'axios'
+import Gillajobi_pick from '@/components/common/gillajobi_pick.vue'
+import AiRecommend from '@/components/common/AiRecommend.vue'
+import TopButton from '@/components/common/TopButton.vue'
 
+const searchStore = useSearchStore()
+const jobStore = useJobStore()
+jobStore.selectedRegion = ''  // setup 단계에서 초기화 → 자식 onMounted보다 먼저 실행
 
+const searchResults = ref(null)
+const searchedKeyword = ref('')
+
+onMounted(() => {
+  jobStore.getRegions()
+})
+
+const onResults = (items) => {
+  searchedKeyword.value = searchStore.keyword
+  searchResults.value = items
+}
+
+// 검색 결과 모드일 때 region 변경 시 검색 재실행
+watch(() => jobStore.selectedRegion, async (newRegion) => {
+  if (searchResults.value === null || !searchedKeyword.value) return
+  try {
+    const res = await axios.get('http://127.0.0.1:8000/api/v1/category/search/', {
+      params: { q: searchedKeyword.value, label: 'jobs', region: newRegion },
+    })
+    searchResults.value = res.data.jobs
+  } catch (err) {
+    console.error(err)
+  }
+})
 </script>
 
 <style lang="scss" scoped>
+div {
+  padding: 32px 0;
+}
 
+.search-filter-area {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 0 24px 24px;
+}
+
+.filter-select {
+  padding: 8px 12px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  color: #333;
+  background: #fff;
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+    border-color: #2ab59e;
+  }
+}
 </style>

@@ -23,6 +23,8 @@ class Certification(models.Model):
     major_job_field = models.CharField(max_length=100, blank=True) # 직무분야 대분류
     minor_job_field = models.CharField(max_length=100, blank=True) # 직무분야 중분류
 
+    view_count = models.IntegerField(default=0)
+
 
 class Examination(models.Model):
     certification = models.ForeignKey(Certification, on_delete=models.CASCADE, related_name='examinations', to_field='jm_cd')

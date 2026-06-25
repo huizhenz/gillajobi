@@ -1,3 +1,4 @@
+from django.db.models import F
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
@@ -12,6 +13,16 @@ class CompetitionPagination(PageNumberPagination):
     page_size_query_param = 'page_size'
 
 # Create your views here.
+@api_view(['GET'])
+def certifications_top3(request):
+    top3 = (
+        Certification.objects
+        .order_by('-view_count')
+        .values('id', 'jm_cd', 'name', 'series_name', 'qualification_cl', 'major_job_field', 'category__name', 'view_count')[:3]
+    )
+    return Response(list(top3))
+
+
 @api_view(['GET'])
 def fetch_certifications(request):
     certifications = Certification.objects.all()
@@ -52,5 +63,6 @@ def sync_examinations(request):
 @api_view(['GET'])
 def fetch_certification_detail(request, jm_cd):
     certification = Certification.objects.get(jm_cd=jm_cd)
+    Certification.objects.filter(jm_cd=jm_cd).update(view_count=F('view_count') + 1)
     serializer = CertificationDetailSerializer(certification)
     return Response(serializer.data, status=status.HTTP_200_OK)

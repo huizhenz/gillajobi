@@ -6,7 +6,7 @@ from dj_rest_auth.registration.serializers import RegisterSerializer
 class UserSerializer(RegisterSerializer):
     nickname = serializers.CharField()
     gender = serializers.ChoiceField(choices=User._meta.get_field('gender').choices)
-    birth = serializers.DateField()
+    birth = serializers.DateField(required=False, allow_null=True)
     profile_image = serializers.ImageField(required=False, allow_null=True)
 
     def get_cleaned_data(self):

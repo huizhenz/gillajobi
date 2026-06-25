@@ -1,6 +1,6 @@
 <template>
   <form class="comment-form" @submit.prevent="createComment">
-    <input type="text" name="content" id="content" v-model="content" placeholder="댓글을 입력하세요" class="comment-input">
+    <input type="text" name="content" id="content" v-model="content" placeholder="댓글을 입력하세요." class="comment-input">
     <button class="btn-submit">작성</button>
   </form>
 </template>
@@ -14,8 +14,9 @@ const props = defineProps({
 })
 const content = ref('')
 const createComment = function () {
-  console.log(props)
+  if (!content.value.trim()) return
   store.commentCreate(props.articlePk, content.value)
+  content.value = ''
 }
 </script>
 
@@ -29,7 +30,7 @@ const createComment = function () {
   flex: 1;
   border: 1px solid #ddd;
   border-radius: 8px;
-  padding: 8px 12px;
+  padding: 10px 12px;
   font-size: 0.9rem;
   outline: none;
   transition: border-color 0.2s;

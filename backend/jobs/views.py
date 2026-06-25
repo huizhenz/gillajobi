@@ -1,4 +1,6 @@
 from django.shortcuts import get_object_or_404
+from django.db.models import F
+from django.db.models.functions import Coalesce
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
@@ -29,17 +31,26 @@ class JobPagination(PageNumberPagination):
 def jobs_list(request):
     recruitments = Recruitment.objects.all()
 
-    paginator = JobPagination() # JobPagination 클래스의 인스턴스 생성
-    
-    page = paginator.paginate_queryset(recruitments, request) # 전체 recruitments 쿼리셋에서 15개만 잘라서 반환
-    serializer = RecruitmentListSerializer(page, many=True) # 잘라낸 15개짜리 page를 JSON으로 직렬화
-    return paginator.get_paginated_response(serializer.data) # 페이지 정보도 같이 감싸서 반환
-    # {
-    # "count": 150,
-    # "next": "http://.../jobs/?page=2",
-    # "previous": null,
-    # "results": [ ... ]
-    # }
+    region = request.GET.get('region', '').strip()
+    if region:
+        recruitments = recruitments.filter(region__startswith=region)
+
+    paginator = JobPagination()
+    page = paginator.paginate_queryset(recruitments, request)
+    serializer = RecruitmentListSerializer(page, many=True)
+    return paginator.get_paginated_response(serializer.data)
+
+
+@api_view(['GET'])
+def regions_list(request):
+    all_regions = (
+        Recruitment.objects
+        .exclude(region__isnull=True)
+        .exclude(region='')
+        .values_list('region', flat=True)
+    )
+    short_regions = sorted(set(r[:2] for r in all_regions if r))
+    return Response(short_regions)
 
 @api_view(['GET'])
 def job_detail(request, job_pk):
@@ -47,8 +58,21 @@ def job_detail(request, job_pk):
         RecruitmentDetail.objects.select_related('recruitment__company'),
         recruitment_id=job_pk,
     )
+    Recruitment.objects.filter(pk=job_pk).update(
+        view_count=Coalesce(F('view_count'), 0) + 1
+    )
     serializer = RecruitmentDetailReadSerializer(recruitment_detail)
     return Response(serializer.data)
+
+
+@api_view(['GET'])
+def jobs_top3(request):
+    top3 = (
+        Recruitment.objects
+        .order_by('-view_count')
+        .values('id', 'title', 'company__name', 'category__name', 'view_count')[:3]
+    )
+    return Response(list(top3))
 
 
 @api_view(['GET'])

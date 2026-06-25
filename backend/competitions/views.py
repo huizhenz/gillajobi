@@ -1,3 +1,4 @@
+from django.db.models import F
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
@@ -13,6 +14,16 @@ class CompetitionPagination(PageNumberPagination):
 
 
 # Create your views here.
+@api_view(['GET'])
+def competitions_top3(request):
+    top3 = (
+        Competition.objects
+        .order_by('-view_count')
+        .values('id', 'title', 'host', 'category__name', 'view_count')[:3]
+    )
+    return Response(list(top3))
+
+
 @api_view(['GET'])
 def fetch_competitions(request):
     competitions = Competition.objects.all()
@@ -32,5 +43,6 @@ def sync_competitions(request):
 @api_view(['GET'])
 def fetch_competition_detail(request, pk):
     competitions = Competition.objects.get(pk=pk)
+    Competition.objects.filter(pk=pk).update(view_count=F('view_count') + 1)
     serializer = CompetitionSerializer(competitions)
     return Response(serializer.data, status=status.HTTP_200_OK)

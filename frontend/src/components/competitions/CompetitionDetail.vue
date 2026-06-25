@@ -1,9 +1,14 @@
 <template>
     <div class="competition-card" @click="goDetail(competition.id)">
-        <p class="host">{{ competition.host }}</p>
-        <h3 class="title">{{ competition.title }}</h3>
-        <p v-if="competition.keyword" class="keyword">{{ competition.keyword }}</p>
-        <p v-if="competition.start_date" class="close-date">{{ competition.start_date }}~</p>
+        <div class="card-top">
+            <p class="host">{{ competition.host }}</p>
+            <h3 class="title">{{ competition.title }}</h3>
+            <p v-if="competition.keyword" class="keyword">{{ competition.keyword }}</p>
+        </div>
+        <div class="card-bottom">
+            <span class="category">{{ competition.category }}</span>
+            <span v-if="competition.end_date" class="start-date">~{{ competition.end_date }}</span>
+        </div>
     </div>
 </template>
 
@@ -22,51 +27,70 @@ const goDetail = (pk) => {
 </script>
 
 <style lang="scss" scoped>
-$primary: #2ab59e;
-
 .competition-card {
   background: #fff;
   border: 1px solid #e8e8e8;
   border-radius: 10px;
   padding: 20px;
+  height: 200px;
+  box-sizing: border-box;
   cursor: pointer;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  justify-content: space-between;
   transition: box-shadow 0.2s;
 
   &:hover {
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
   }
+}
 
-  .host {
-    font-size: 12px;
-    color: #888;
-    font-weight: 500;
-  }
+.card-top {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
 
-  .title {
-    font-size: 15px;
-    font-weight: 700;
-    color: #222;
-    line-height: 1.4;
-    flex: 1;
-  }
+.host {
+  font-size: 14px;
+  color: #888;
+  font-weight: 500;
+  margin: 0;
+}
 
-  .keyword {
-    font-size: 12px;
-    color: #fff;
-    background-color: $primary;
-    padding: 3px 10px;
-    border-radius: 20px;
-    align-self: flex-start;
-  }
+.title {
+  font-size: 17px;
+  font-weight: 700;
+  color: #222;
+  line-height: 1.4;
+  margin: 0;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
 
-  .close-date {
-    font-size: 13px;
-    color: #666;
-    text-align: right;
-    margin-top: auto;
-  }
+.keyword {
+  font-size: 13px;
+  color: #aaa;
+  margin: 0;
+}
+
+.card-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.category {
+  font-size: 14px;
+  color: #2ab59e;
+  font-weight: 500;
+}
+
+.start-date {
+  font-size: 14px;
+  color: #999;
 }
 </style>

@@ -8,17 +8,20 @@
           <img v-if="profileData.user.profile_image" :src="profileData.user.profile_image" class="avatar-img" />
           <div v-else class="avatar-circle">{{ avatarLetter }}</div>
         </div>
-        <p class="name">{{ profileData.user.last_name }}{{ profileData.user.first_name || profileData.user.nickname }}</p>
+        <p class="name">{{ profileData.user.nickname }}</p>
         <p class="username">@{{ profileData.user.username }}</p>
         <div class="badge-list">
           <span v-for="(pos, i) in profileData.profile.preferred_position" :key="i" class="position-badge">
             희망 직무 · {{ pos }}
           </span>
         </div>
-        <div>
-          <h1>완료한 TODO</h1>
-          <p>{{todoStore.completedCount}}개</p>
-          <p>{{ todoStore.todoList.length ? Math.round(100 * todoStore.completedCount / todoStore.todoList.length) : 0 }}%를 달성했어요</p>
+        <div class="todo-card">
+          <span class="todo-label">완료한 To-do</span>
+          <p class="todo-count">{{ todoStore.completedCount }}<span class="todo-unit">개</span></p>
+          <div class="todo-progress-wrap">
+            <div class="todo-progress-bar" :style="{ width: todoProgress + '%' }"></div>
+          </div>
+          <p class="todo-next">전체 {{ todoStore.todoList.length }}개 중 {{ todoStore.completedCount }}개 완료</p>
         </div>
 
       </div>
@@ -60,7 +63,7 @@
             </div>
             <div class="info-item full">
               <span class="info-label">희망 연봉</span>
-              <span class="info-value">{{ profileData.profile.desired_salary || '-' }}</span>
+              <span class="info-value">{{ profileData.profile.desired_salary ? profileData.profile.desired_salary + '만원' : '-' }}</span>
             </div>
             <div class="info-item full" v-if="profileData.profile.experience?.length">
               <span class="info-label">경력</span>
@@ -87,10 +90,16 @@
             @click="goDetail(article.id)"
           >
             <div class="my-article-top">
-              <span class="label-badge" v-if="article.label_name">{{ article.label_name }}</span>
-              <span class="article-date">{{ article.created_at?.slice(0, 10) }}</span>
+              <span class="label-badge" v-if="article.label_name" :style="getLabelStyle(article.label_name)">{{ article.label_name }}</span>
             </div>
-            <p class="my-article-title">{{ article.title }} [{{ article.comment_count }}]</p>
+            <h3 class="my-article-title">{{ article.title }}</h3>
+            <div class="my-article-meta">
+              <span>{{ article.created_at?.slice(0, 10) }}</span>
+              <span class="comment-count">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                {{ article.comment_count }}
+              </span>
+            </div>
           </div>
         </div>
 
@@ -129,9 +138,26 @@ const goDetail = (pk) => {
   router.push({ name: 'Articledetail', params: { pk } })
 }
 
+const labelColorMap = {
+  '자격증':  { backgroundColor: '#E7EFFB', color: '#7AB8E8', borderColor: '#E7EFFB' },
+  '부트캠프': { backgroundColor: '#FEF9E7', color: '#E8C04A', borderColor: '#FEF9E7' },
+  '공모전':  { backgroundColor: '#F0FAF5', color: '#6EC49A', borderColor: '#F0FAF5' },
+  '채용공고': { backgroundColor: '#FBEBE1', color: '#E55627', borderColor: '#FBEBE1' },
+}
+
+const getLabelStyle = (name) => labelColorMap[name] ?? {}
+
+const todoProgress = computed(() => {
+  const total = todoStore.todoList.length
+  if (!total) return 0
+  return Math.round((todoStore.completedCount / total) * 100)
+})
+
+
 onMounted(async () => {
   profileData.value = await userStore.getProfile()
   communityStore.getArticleList()
+  todoStore.getTodoList()
 })
 </script>
 
@@ -139,15 +165,15 @@ onMounted(async () => {
 $primary: #2ab59e;
 
 .profile-page {
-  min-height: 100vh;
+  margin-top: 20px;
   padding: 40px 24px;
 }
 
 .profile-layout {
-  max-width: 960px;
+  max-width: 1200px;
   margin: 0 auto;
   display: flex;
-  gap: 20px;
+  gap: 40px;
   align-items: flex-start;
 }
 
@@ -173,7 +199,7 @@ $primary: #2ab59e;
   width: 80px;
   height: 80px;
   border-radius: 50%;
-  background: #aac8e4;
+  background: #e6e6e6;
   color: white;
   font-size: 2rem;
   font-weight: 700;
@@ -217,6 +243,58 @@ $primary: #2ab59e;
   border-radius: 20px;
 }
 
+/* 투두 카드 */
+.todo-card {
+  width: 100%;
+  background: #2ab59e;
+  border-radius: 14px;
+  padding: 18px 20px;
+  margin-top: 8px;
+  color: white;
+}
+
+.todo-label {
+  font-size: 0.90rem;
+  font-weight: 600;
+  opacity: 0.9;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.todo-count {
+  font-size: 2.4rem;
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: 12px;
+}
+
+.todo-unit {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-left: 2px;
+}
+
+
+.todo-progress-wrap {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 20px;
+  height: 6px;
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+
+.todo-progress-bar {
+  height: 100%;
+  background: white;
+  border-radius: 20px;
+  transition: width 0.5s ease;
+}
+
+.todo-next {
+  font-size: 0.78rem;
+  opacity: 0.85;
+}
+
 /* 오른쪽 카드 */
 .right-card {
   flex: 1;
@@ -235,7 +313,7 @@ $primary: #2ab59e;
 .tab {
   padding: 16px 4px;
   margin-right: 24px;
-  font-size: 0.95rem;
+  font-size: 1.2rem;
   font-weight: 600;
   color: #bbb;
   cursor: pointer;
@@ -243,6 +321,7 @@ $primary: #2ab59e;
   &.active {
     color: $primary;
     border-bottom: 2px solid $primary;
+    font-size: 1.2rem;
   }
 
   &.disabled {
@@ -261,7 +340,7 @@ $primary: #2ab59e;
   margin-bottom: 24px;
 
   h3 {
-    font-size: 1rem;
+    font-size: 1.2rem;
     font-weight: 700;
     color: #1a1a1a;
   }
@@ -285,7 +364,7 @@ $primary: #2ab59e;
 .info-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 20px 32px;
+  gap: 32px;
 }
 
 .info-item {
@@ -299,12 +378,14 @@ $primary: #2ab59e;
 }
 
 .info-label {
-  font-size: 0.78rem;
+  font-size: 16px;
   color: #999;
+  font-weight: 600;
+  margin-bottom: 10px;
 }
 
 .info-value {
-  font-size: 0.95rem;
+  font-size: 16px;
   color: #1a1a1a;
   font-weight: 500;
 }
@@ -332,45 +413,82 @@ $primary: #2ab59e;
 
 .my-article-card {
   border: 1px solid #e0e0e0;
-  border-radius: 8px;
-  padding: 14px 16px;
+  border-radius: 10px;
+  padding: 16px 20px;
   cursor: pointer;
-  transition: box-shadow 0.2s;
+  transition: box-shadow 0.2s, transform 0.2s;
 
   &:hover {
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transform: translateY(-2px);
   }
 }
 
 .my-article-top {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  gap: 8px;
   margin-bottom: 6px;
 }
 
 .label-badge {
-  background: #e6f7f5;
-  color: $primary;
-  font-size: 0.72rem;
+  font-size: 0.75rem;
   font-weight: 600;
   padding: 2px 8px;
   border-radius: 20px;
 }
 
-.article-date {
-  font-size: 0.78rem;
-  color: #bbb;
-}
-
 .my-article-title {
-  font-size: 0.92rem;
+  font-size: 1rem;
   font-weight: 600;
   color: #222;
+  margin: 0 0 8px;
+}
+
+.my-article-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.82rem;
+  color: #888;
+}
+
+.comment-count {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: #aaa;
+  font-size: 0.8rem;
 }
 
 /* 탭 cursor 통일 */
 .tab {
   cursor: pointer;
+}
+
+@media (max-width: 810px) {
+  .profile-page {
+    padding: 20px 12px;
+  }
+
+  .profile-layout {
+    flex-direction: column;
+  }
+
+  .left-card {
+    width: 100%;
+  }
+
+  .right-card {
+    width: 100%;
+  }
+
+  .info-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .info-item.full {
+    grid-column: 1;
+  }
 }
 </style>

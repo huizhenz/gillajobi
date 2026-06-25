@@ -213,4 +213,29 @@ $teal: #2ab59e;
     flex: 1;
     min-width: 0;
 }
+
+@media (max-width: 810px) {
+  .calendar-wrapper {
+    padding: 16px 12px;
+  }
+
+  .day-cell {
+    min-height: 48px;
+    padding: 4px;
+    font-size: 11px;
+  }
+
+  .event-badge {
+    font-size: 9px;
+    padding: 1px 4px;
+
+    .category-tag {
+      display: none;
+    }
+  }
+
+  .calendar-header h2 {
+    font-size: 15px;
+  }
+}
 </style>

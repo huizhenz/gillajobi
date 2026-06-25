@@ -25,18 +25,21 @@
             </div>
 
             <div class="form-item full">
-              <label for="profile_image" class="form-label">프로필 이미지</label>
-              <input type="file" id="profile_image" accept="image/*" @change="onImageChange" class="form-input-file" />
+              <label class="form-label">프로필 이미지</label>
+              <div class="avatar-upload">
+                <div class="avatar-preview">
+                  <img v-if="imagePreview" :src="imagePreview" class="avatar-img" />
+                  <div v-else class="avatar-placeholder">
+                    <span>{{ (last_name || first_name) ? (last_name + first_name).charAt(0).toUpperCase() : '' }}</span>
+                  </div>
+                  <label for="profile_image" class="avatar-btn">+</label>
+                </div>
+                <input type="file" id="profile_image" accept="image/*" @change="onImageChange" class="hidden-file-input" />
+              </div>
             </div>
 
             <div v-for="field in arrayFields" :key="field.key" class="form-item full">
               <label class="form-label">{{ field.label }}</label>
-              <div class="tag-list">
-                <span v-for="(item, index) in field.arr.value" :key="index" class="tag">
-                  {{ item }}
-                  <button type="button" class="tag-remove" @click="removeItem(field.arr, index)">×</button>
-                </span>
-              </div>
               <div class="tag-input-row">
                 <input
                   type="text"
@@ -47,16 +50,25 @@
                 />
                 <button type="button" class="btn-add" @click="addItem(field.arr, field.input)">추가</button>
               </div>
+              <div class="tag-list">
+                <span v-for="(item, index) in field.arr.value" :key="index" class="tag">
+                  {{ item }}
+                  <button type="button" class="tag-remove" @click="removeItem(field.arr, index)">×</button>
+                </span>
+              </div>
             </div>
 
             <div class="form-item full">
               <label for="desired_salary" class="form-label">희망 연봉</label>
-              <input type="text" id="desired_salary" v-model.trim="desired_salary" class="form-input" />
+              <div class="salary-wrap">
+                <input type="text" id="desired_salary" v-model.trim="desired_salary" class="form-input" placeholder="숫자 입력" />
+                <span class="salary-unit">만원</span>
+              </div>
             </div>
           </div>
 
           <div class="form-actions">
-            <router-link to="/" class="btn-skip">나중에 등록하기</router-link>
+            <router-link :to="{ name: 'MainView' }" class="btn-skip">나중에 등록하기</router-link>
             <button type="submit" class="btn-submit">프로필 등록</button>
           </div>
 
@@ -85,14 +97,24 @@ onMounted(async () => {
   preferred_location.value = data.profile.preferred_location || []
   preferred_position.value = data.profile.preferred_position || []
   desired_salary.value = data.profile.desired_salary || ''
+  if (data.user.profile_image) {
+    imagePreview.value = data.user.profile_image
+  }
 })
 
 const first_name = ref('')
 const last_name = ref('')
 const profile_image = ref(null)
+const imagePreview = ref(null)
 
 const onImageChange = (e) => {
-  profile_image.value = e.target.files[0] || null
+  const file = e.target.files[0] || null
+  profile_image.value = file
+  if (file) {
+    imagePreview.value = URL.createObjectURL(file)
+  } else {
+    imagePreview.value = null
+  }
 }
 
 const education = ref([])
@@ -116,12 +138,12 @@ const preferredPositionInput = ref('')
 const desired_salary = ref('')
 
 const arrayFields = [
-  { key: 'education', label: '학력', arr: education, input: educationInput, placeholder: '학력 입력 후 추가' },
-  { key: 'certification', label: '자격증', arr: certification, input: certificationInput, placeholder: '자격증 입력 후 추가' },
-  { key: 'experience', label: '경력', arr: experience, input: experienceInput, placeholder: '경력 입력 후 추가' },
-  { key: 'language', label: '어학', arr: language, input: languageInput, placeholder: '어학 입력 후 추가' },
-  { key: 'preferred_location', label: '희망 근무 지역', arr: preferred_location, input: preferredLocationInput, placeholder: '지역 입력 후 추가' },
-  { key: 'preferred_position', label: '희망 직무', arr: preferred_position, input: preferredPositionInput, placeholder: '직무 입력 후 추가' },
+  { key: 'education', label: '학력', arr: education, input: educationInput},
+  { key: 'certification', label: '자격증', arr: certification, input: certificationInput },
+  { key: 'experience', label: '경력', arr: experience, input: experienceInput },
+  { key: 'language', label: '어학', arr: language, input: languageInput },
+  { key: 'preferred_location', label: '희망 근무 지역', arr: preferred_location, input: preferredLocationInput },
+  { key: 'preferred_position', label: '희망 직무', arr: preferred_position, input: preferredPositionInput},
 ]
 
 const addItem = (arr, inputRef) => {
@@ -156,7 +178,6 @@ const updateProfile = () => {
 $primary: #2ab59e;
 
 .update-page {
-  background: #f4f6f9;
   min-height: 100vh;
   padding: 40px 24px;
 }
@@ -197,7 +218,7 @@ $primary: #2ab59e;
   margin-bottom: 24px;
 
   h3 {
-    font-size: 1rem;
+    font-size: 1.2rem;
     font-weight: 700;
     color: #1a1a1a;
   }
@@ -206,7 +227,7 @@ $primary: #2ab59e;
 .info-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 20px 32px;
+  gap: 24px 32px;
 }
 
 .form-item {
@@ -220,7 +241,7 @@ $primary: #2ab59e;
 }
 
 .form-label {
-  font-size: 0.78rem;
+  font-size: 0.9rem;
   color: #999;
   font-weight: 500;
 }
@@ -228,28 +249,81 @@ $primary: #2ab59e;
 .form-input {
   border: 1px solid #e0e0e0;
   border-radius: 8px;
-  padding: 9px 12px;
-  font-size: 0.9rem;
+  padding: 10px 14px;
+  font-size: 0.92rem;
   outline: none;
   transition: border-color 0.2s;
   width: 100%;
   box-sizing: border-box;
+  background: #fafafa;
+
+  &::placeholder {
+    color: #bbb;
+  }
 
   &:focus {
     border-color: $primary;
+    background: white;
   }
 }
 
-.form-input-file {
-  font-size: 0.88rem;
-  color: #555;
+.hidden-file-input {
+  display: none;
+}
+
+.avatar-upload {
+  display: flex;
+  align-items: center;
+}
+
+.avatar-preview {
+  position: relative;
+  width: 150px;
+  height: 200px;
+}
+
+.avatar-img {
+  width: 150px;
+  height: 200px;
+  border-radius: 5%;
+  object-fit: cover;
+  border: 2px solid #e0e0e0;
+}
+
+.avatar-placeholder {
+  width: 150px;
+  height: 200px;
+  border-radius: 5%;
+  background: #e6e6e6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: 700;
+  color: white;
+}
+
+.avatar-btn {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: $primary;
+  color: white;
+  font-size: 1.2rem;
+  text-align: center;
+  line-height: 22px;
+  cursor: pointer;
+  border: 2px solid white;
+  display: block;
 }
 
 .tag-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 6px;
-  min-height: 28px;
+  gap: 8px;
 }
 
 .tag {
@@ -283,12 +357,30 @@ $primary: #2ab59e;
   gap: 8px;
 }
 
+.salary-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.salary-wrap .form-input {
+  width: auto;
+  flex: 1;
+}
+
+.salary-unit {
+  font-size: 1.05rem;
+  color: #999;
+  white-space: nowrap;
+}
+
 .btn-add {
   background: #f0f0f0;
   border: 1px solid #e0e0e0;
   border-radius: 8px;
   padding: 0 16px;
   font-size: 0.88rem;
+  font-weight: 500;
   cursor: pointer;
   white-space: nowrap;
   transition: background 0.2s;
@@ -331,6 +423,44 @@ $primary: #2ab59e;
 
   &:hover {
     background: #239e8a;
+  }
+}
+
+@media (max-width: 810px) {
+  .update-page {
+    padding: 16px 12px;
+  }
+
+  .update-card {
+    border-radius: 12px;
+  }
+
+  .tab-bar {
+    padding: 0 16px;
+  }
+
+  .form-section {
+    padding: 16px;
+  }
+
+  .info-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-actions {
+    flex-direction: column-reverse;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .btn-submit {
+    width: 100%;
+    text-align: center;
+    padding: 14px;
+  }
+
+  .btn-skip {
+    text-align: center;
   }
 }
 </style>
