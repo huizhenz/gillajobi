@@ -1,10 +1,10 @@
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
-from django.db.models import Q
+from django.db.models import Q, Subquery, OuterRef
 from .services import expand_keywords
 from jobs.models import Recruitment
 from bootcamps.models import Bootcamp
-from certifications.models import Certification
+from certifications.models import Certification, Examination
 from competitions.models import Competition
 
 
@@ -52,13 +52,24 @@ def search(request):
         bootcamps_qs = bootcamps_qs.distinct()
     bootcamps = list(bootcamps_qs.values('id', 'title', 'company', 'close_date')[:(limit_label if label == 'bootcamps' else limit_all)]) if should_query('bootcamps') else []
 
+    exam_start_sub = Examination.objects.filter(
+        certification=OuterRef('jm_cd')
+    ).order_by('doc_exam_start').values('doc_exam_start')[:1]
+
+    exam_end_sub = Examination.objects.filter(
+        certification=OuterRef('jm_cd')
+    ).order_by('doc_exam_start').values('doc_exam_end')[:1]
+
     certifications = list(Certification.objects.filter(make_filter([
         'name', 'major_job_field', 'minor_job_field'
-    ])).distinct().values('id', 'jm_cd', 'name', 'series_name')[:(limit_label if label == 'certifications' else limit_all)]) if should_query('certifications') else []
+    ])).annotate(
+        exam_start=Subquery(exam_start_sub),
+        exam_end=Subquery(exam_end_sub),
+    ).distinct().values('id', 'jm_cd', 'name', 'series_name', 'exam_start', 'exam_end')[:(limit_label if label == 'certifications' else limit_all)]) if should_query('certifications') else []
 
     competitions = list(Competition.objects.filter(make_filter([
         'title', 'keyword'
-    ])).distinct().values('id', 'title', 'host', 'keyword', 'start_date')[:(limit_label if label == 'competitions' else limit_all)]) if should_query('competitions') else []
+    ])).distinct().values('id', 'title', 'host', 'keyword', 'start_date', 'end_date')[:(limit_label if label == 'competitions' else limit_all)]) if should_query('competitions') else []
 
     return Response({
         "jobs": jobs,

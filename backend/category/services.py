@@ -48,23 +48,21 @@ JSON 배열로만 응답. 다른 텍스트 없이 배열만."""
         }]
     }
 
-    resp = requests.post(GMS_URL, headers=headers, json=body, timeout=10)
-    if not resp.ok:
-        print(f"[GMS ERROR] status={resp.status_code} body={resp.text}")
+    try:
+        resp = requests.post(GMS_URL, headers=headers, json=body, timeout=10)
         resp.raise_for_status()
 
-    text = resp.json()["content"][0]["text"].strip()
+        text = resp.json()["content"][0]["text"].strip()
 
-    # 마크다운 코드블록 제거 (```json ... ``` 형태)
-    if text.startswith("```"):
-        text = text.split("```")[1]
-        if text.startswith("json"):
-            text = text[4:]
-        text = text.strip()
+        if text.startswith("```"):
+            text = text.split("```")[1]
+            if text.startswith("json"):
+                text = text[4:]
+            text = text.strip()
 
-    try:
         keywords = json.loads(text)
-    except (json.JSONDecodeError, ValueError):
+    except Exception as e:
+        print(f"[GMS ERROR] 키워드 확장 실패, 원본 키워드 사용: {e}")
         keywords = [query]
 
     cache.set(cache_key, keywords, timeout=60 * 60 * 24)
