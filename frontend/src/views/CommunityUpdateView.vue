@@ -88,6 +88,10 @@ $primary: #2ab59e;
   color: #bbb;
 
   &.active {
+    font-size: 1.2rem;
+  }
+
+  &.active {
     color: $primary;
     border-bottom: 2px solid $primary;
   }
@@ -107,15 +111,21 @@ $primary: #2ab59e;
 }
 
 .form-label {
-  font-size: 0.85rem;
+  font-size: 1rem;
   color: #999;
-  font-weight: 500;
+  font-weight: 600;
+  margin-top: 20px;
+}
+
+.form-item:first-child .form-label {
+  margin-top: 0;
 }
 
 .form-input {
   border: 1px solid #e0e0e0;
   border-radius: 8px;
   padding: 10px 14px;
+  margin-top: 10px;
   font-size: 0.9rem;
   outline: none;
   transition: border-color 0.2s;
@@ -137,6 +147,7 @@ $primary: #2ab59e;
   border: 1px solid #e0e0e0;
   border-radius: 8px;
   padding: 12px 14px;
+  margin-top: 10px;
   font-size: 0.9rem;
   outline: none;
   transition: border-color 0.2s;

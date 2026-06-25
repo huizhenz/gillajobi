@@ -1,6 +1,6 @@
 <template>
   <form class="comment-form" @submit.prevent="createComment">
-    <input type="text" name="content" id="content" v-model="content" placeholder="댓글을 입력하세요" class="comment-input">
+    <input type="text" name="content" id="content" v-model="content" placeholder="댓글을 입력하세요." class="comment-input">
     <button class="btn-submit">작성</button>
   </form>
 </template>
