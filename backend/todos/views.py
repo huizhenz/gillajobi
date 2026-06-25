@@ -1,18 +1,19 @@
 from rest_framework.response import Response
-from rest_framework.decorators import api_view
+from rest_framework.decorators import api_view, permission_classes
+from rest_framework.permissions import IsAuthenticated
 from rest_framework import status
 
 from .models import Todo
 from .serializers import TodoSerializer, TodoCompleteSerializer
 
-# Create your views here.
 @api_view(['GET', 'POST'])
+@permission_classes([IsAuthenticated])
 def todo_list(request):
     if request.method == 'GET':
-        todos = Todo.objects.all()
+        todos = Todo.objects.filter(user=request.user)
         serializer = TodoSerializer(todos, many=True)
         return Response(serializer.data)
-    
+
     elif request.method == 'POST':
         serializer = TodoSerializer(data=request.data)
         if serializer.is_valid(raise_exception=True):
@@ -21,18 +22,18 @@ def todo_list(request):
 
 
 @api_view(['PUT', 'DELETE'])
+@permission_classes([IsAuthenticated])
 def todo_detail(request, todo_pk):
-    todo = Todo.objects.get(pk=todo_pk)
+    todo = Todo.objects.filter(pk=todo_pk, user=request.user).first()
+    if todo is None:
+        return Response(status=status.HTTP_404_NOT_FOUND)
 
     if request.method == 'PUT':
         serializer = TodoCompleteSerializer(todo, data=request.data)
         if serializer.is_valid(raise_exception=True):
             serializer.save()
             return Response(serializer.data)
-        
+
     elif request.method == 'DELETE':
         todo.delete()
-        message = {
-            'delete' : f'투두가 삭제되었습니다.'
-        }
-        return Response(message, status=status.HTTP_200_OK)
+        return Response(status=status.HTTP_204_NO_CONTENT)

@@ -61,5 +61,7 @@ export const useTodoStore = defineStore('todos', () => {
     .catch(err => console.log(err))
   }
 
-  return { todoList, completedCount, getTodoList, createTodo, deleteTodo, updateTodo }
+  const clearTodos = () => { todoList.value = [] }
+
+  return { todoList, completedCount, getTodoList, createTodo, deleteTodo, updateTodo, clearTodos }
 })

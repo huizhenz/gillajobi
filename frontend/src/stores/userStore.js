@@ -2,6 +2,7 @@ import { ref, computed } from 'vue'
 import { defineStore } from 'pinia'
 import axios from "axios";
 import router from '@/router'
+import { useTodoStore } from './todoStore'
 
 
 export const useUserStore = defineStore('user', () => {
@@ -81,11 +82,13 @@ export const useUserStore = defineStore('user', () => {
             }
         })
         .then(() => {
+            useTodoStore().clearTodos()
             clearAuth()
             router.push({ name: 'MainView' })
         })
         .catch(err => {
             console.log(err)
+            useTodoStore().clearTodos()
             clearAuth()
             router.push({ name: 'MainView' })
         })
