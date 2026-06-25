@@ -111,6 +111,10 @@ router.beforeEach((to, from) => {
     window.alert('로그인이 필요합니다.')
     return { name: 'LoginView' }
   }
+
+  if ((to.name === 'LoginView' || to.name === 'SignupView') && userStore.isLogin) {
+    return { name: 'MainView' }
+  }
 })
 
 export default router

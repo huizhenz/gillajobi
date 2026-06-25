@@ -51,6 +51,7 @@
             <label class="gender-option"><input type="radio" value="M" v-model="gender" /> 남성</label>
             <label class="gender-option"><input type="radio" value="F" v-model="gender" /> 여성</label>
           </div>
+          <p v-for="msg in errors.gender" :key="msg" class="error">{{ msg }}</p>
         </div>
       </div>
 
@@ -108,6 +109,19 @@ watch(nickname, (val) => {
 })
 
 const signUp = () => {
+  const clientErrors = {}
+  if (!username.value) clientErrors.username = ['아이디를 입력해주세요.']
+  if (!email.value) clientErrors.email = ['이메일을 입력해주세요.']
+  else if (!emailRegex.test(email.value)) clientErrors.email = ['올바른 이메일 형식이 아닙니다.']
+  if (!password1.value) clientErrors.password1 = ['비밀번호를 입력해주세요.']
+  if (!password2.value) clientErrors.password2 = ['비밀번호 확인을 입력해주세요.']
+  else if (password1.value !== password2.value) clientErrors.password2 = ['비밀번호가 일치하지 않습니다.']
+  if (!nickname.value) clientErrors.nickname = ['닉네임을 입력해주세요.']
+  if (!gender.value) clientErrors.gender = ['성별을 선택해주세요.']
+  if (Object.keys(clientErrors).length > 0) {
+    errors.value = clientErrors
+    return
+  }
   errors.value = {}
   const payload = {
     username: username.value,
