@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="search-area">
+        <div class="search-filter-area">
             <SearchBox label="competitions" @results="onResults" />
         </div>
         <AiRecommend type="competitions" />
@@ -31,9 +31,11 @@ div {
   padding: 32px 0;
 }
 
-.search-area {
+.search-filter-area {
   display: flex;
+  align-items: center;
   justify-content: center;
-  padding: 0 24px 32px;
+  gap: 12px;
+  padding: 0 24px 24px;
 }
 </style>

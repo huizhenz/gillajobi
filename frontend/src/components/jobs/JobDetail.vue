@@ -52,13 +52,13 @@ const goDetail = (pk) => {
 }
 
 .company-name {
-  font-size: 12px;
+  font-size: 14px;
   color: #888;
   font-weight: 500;
 }
 
 .title {
-  font-size: 15px;
+  font-size: 17px;
   font-weight: 700;
   color: #222;
   line-height: 1.4;
@@ -69,7 +69,7 @@ const goDetail = (pk) => {
 }
 
 .career {
-  font-size: 11px;
+  font-size: 13px;
   color: #aaa;
   margin: 0;
 }
@@ -81,13 +81,13 @@ const goDetail = (pk) => {
 }
 
 .category {
-  font-size: 12px;
+  font-size: 14px;
   color: #2ab59e;
   font-weight: 500;
 }
 
 .close-date {
-  font-size: 12px;
+  font-size: 14px;
   color: #999;
 }
 </style>

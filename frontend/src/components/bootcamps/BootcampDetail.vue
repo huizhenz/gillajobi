@@ -1,9 +1,13 @@
 <template>
     <div class="bootcamp-card" @click="goDetail(bootcamp.id)">
-        <p class="company-name">{{ bootcamp.company }}</p>
-        <h3 class="title">{{ bootcamp.title }}</h3>
-        <p>{{ bootcamp.category }}</p>
-        <p v-if="bootcamp.close_date" class="close-date">~ {{ bootcamp.close_date }}</p>
+        <div class="card-top">
+            <p class="company-name">{{ bootcamp.company }}</p>
+            <h3 class="title">{{ bootcamp.title }}</h3>
+        </div>
+        <div class="card-bottom">
+            <span class="category">{{ bootcamp.category }}</span>
+            <span v-if="bootcamp.close_date" class="close-date">~ {{ bootcamp.close_date }}</span>
+        </div>
     </div>
 </template>
 
@@ -22,42 +26,64 @@ const goDetail = (pk) => {
 </script>
 
 <style lang="scss" scoped>
-$primary: #2ab59e;
-
 .bootcamp-card {
   background: #fff;
   border: 1px solid #e8e8e8;
   border-radius: 10px;
   padding: 20px;
+  height: 200px;
+  box-sizing: border-box;
   cursor: pointer;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  justify-content: space-between;
   transition: box-shadow 0.2s;
 
   &:hover {
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
   }
+}
 
-  .company-name {
-    font-size: 12px;
-    color: #888;
-    font-weight: 500;
-  }
+.card-top {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
 
-  .title {
-    font-size: 15px;
-    font-weight: 700;
-    color: #222;
-    line-height: 1.4;
-    flex: 1;
-  }
+.company-name {
+  font-size: 14px;
+  color: #888;
+  font-weight: 500;
+  margin: 0;
+}
 
-  .close-date {
-    font-size: 13px;
-    color: #666;
-    text-align: right;
-    margin-top: auto;
-  }
+.title {
+  font-size: 17px;
+  font-weight: 700;
+  color: #222;
+  line-height: 1.4;
+  margin: 0;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.card-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.category {
+  font-size: 14px;
+  color: #2ab59e;
+  font-weight: 500;
+}
+
+.close-date {
+  font-size: 14px;
+  color: #999;
 }
 </style>

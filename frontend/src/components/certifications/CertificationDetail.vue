@@ -1,10 +1,13 @@
 <template>
-    <div class="certification-card" >
-        <p class="series">{{ certification.series_name }}</p>
-        <h3 class="name">{{ certification.name }}</h3>
-        <p>{{ certification.category }}</p>
-        <button @click="goDetail(certification.jm_cd)">시험 일정 보러 가기 -> </button>
-
+    <div class="certification-card" @click="goDetail(certification.jm_cd)">
+        <div class="card-top">
+            <p class="series">{{ certification.series_name }}</p>
+            <h3 class="name">{{ certification.name }}</h3>
+            <p v-if="certification.category" class="category-sub">{{ certification.category }}</p>
+        </div>
+        <div class="card-bottom">
+            <span class="detail-link">시험 일정 보러 가기 →</span>
+        </div>
     </div>
 </template>
 
@@ -30,26 +33,64 @@ $primary: #2ab59e;
   border: 1px solid #e8e8e8;
   border-radius: 10px;
   padding: 20px;
+  height: 200px;
+  box-sizing: border-box;
   cursor: pointer;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  justify-content: space-between;
   transition: box-shadow 0.2s;
 
   &:hover {
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
   }
+}
 
-  .name {
-    font-size: 15px;
-    font-weight: 700;
-    color: #222;
-    line-height: 1.4;
-  }
+.card-top {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
 
-  .series {
-    font-size: 12px;
-    color: #888;
-  }
+.series {
+  font-size: 14px;
+  color: #888;
+  font-weight: 500;
+  margin: 0;
+}
+
+.name {
+  font-size: 17px;
+  font-weight: 700;
+  color: #222;
+  line-height: 1.4;
+  margin: 0;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.category-sub {
+  font-size: 13px;
+  color: #aaa;
+  margin: 0;
+}
+
+.card-bottom {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.detail-link {
+  font-size: 13px;
+  color: #fff;
+  font-weight: 600;
+  background: $primary;
+  padding: 6px 14px;
+  border-radius: 20px;
+  white-space: nowrap;
 }
 </style>

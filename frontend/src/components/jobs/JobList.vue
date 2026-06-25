@@ -26,6 +26,8 @@
 
     <!-- 목록  -->
     <template v-else>
+      <h2 class="section-title">전체 채용공고</h2>
+      <hr class="section-divider">
       <div class="job-grid">
         <JobDetail
           v-for="job in sortedList"
@@ -69,6 +71,20 @@ onUnmounted(() => { observer?.disconnect() })
 </script>
 
 <style lang="scss" scoped>
+.section-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #222;
+  margin: 0 0 8px;
+  padding: 0;
+}
+
+.section-divider {
+  border: none;
+  border-top: 2px solid #2ab59e;
+  margin: 0 0 16px;
+}
+
 .job-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -116,7 +132,7 @@ onUnmounted(() => { observer?.disconnect() })
 }
 
 .title {
-  font-size: 15px;
+  font-size: 17px;
   font-weight: 700;
   color: #222;
   line-height: 1.4;
@@ -127,7 +143,7 @@ onUnmounted(() => { observer?.disconnect() })
 }
 
 .career {
-  font-size: 11px;
+  font-size: 13px;
   color: #aaa;
   margin: 0;
 }
@@ -139,13 +155,13 @@ onUnmounted(() => { observer?.disconnect() })
 }
 
 .category {
-  font-size: 12px;
+  font-size: 14px;
   color: #2ab59e;
   font-weight: 500;
 }
 
 .close-date {
-  font-size: 12px;
+  font-size: 14px;
   color: #999;
 }
 </style>
