@@ -221,7 +221,7 @@ $primary: #2ab59e;
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 810px) {
   .update-page {
     padding: 16px 12px;
   }

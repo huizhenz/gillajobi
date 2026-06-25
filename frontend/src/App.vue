@@ -14,10 +14,13 @@ import AppFooter from './components/common/AppFooter.vue';
 </script>
 
 <style lang="scss">
+@import 'pretendard/dist/web/static/pretendard.css';
+
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 html, body {

@@ -66,7 +66,7 @@ router.afterEach(() => {
 
       <template v-if="userstore.isLogin">
         <router-link :to="{ name: 'CalendarView' }" class="mobile-link">캘린더</router-link>
-        <router-link v-if="userstore.username" :to="{ name: 'ProfileView', params: { username: userstore.username } }" class="mobile-link">{{ userstore.nickname }}님</router-link>
+        <router-link v-if="userstore.username" :to="{ name: 'ProfileView', params: { username: userstore.username } }" class="mobile-link">내 프로필</router-link>
         <button class="mobile-link mobile-logout" @click="logOut">로그아웃</button>
       </template>
       <template v-else>
@@ -79,7 +79,7 @@ router.afterEach(() => {
 
 <style lang="scss" scoped>
 $primary: #2ab59e;
-$breakpoint: 768px;
+$breakpoint: 810px;
 
 .nav-wrap {
   position: sticky;

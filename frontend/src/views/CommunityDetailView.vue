@@ -9,6 +9,7 @@
         <span class="article-meta">{{ store.detailArticle.nickname }} · {{ store.detailArticle.created_at?.slice(0, 10) }}</span>
       </div>
       <h2 class="article-title">{{ store.detailArticle.title }}</h2>
+      <hr class="article-divider" />
       <p class="article-content">{{ store.detailArticle.content }}</p>
       <div class="article-actions" v-if="store.detailArticle.username === userStore.username">
         <button class="btn-edit" @click="router.push({name:'articleUpdate', params:{pk:store.detailArticle.id}})">수정</button>
@@ -92,6 +93,12 @@ onMounted(() => {
   margin: 0 0 16px;
 }
 
+.article-divider {
+  border: none;
+  border-top: 1px solid #f0f0f0;
+  margin: 16px 0;
+}
+
 .article-content {
   font-size: 1rem;
   color: #333;
@@ -138,7 +145,7 @@ onMounted(() => {
   background: white;
   border: 1px solid #e0e0e0;
   border-radius: 12px;
-  padding: 24px 32px;
+  padding: 24px;
 }
 
 .comment-title {

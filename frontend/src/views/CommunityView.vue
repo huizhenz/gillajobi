@@ -1,8 +1,10 @@
 <template>
   <div class="community-wrap">
     <div class="community-header">
-      <h1>커뮤니티</h1>
-      <span>취업준비, 같이 하면 덜 외로워요. 후기와 꿀팁을 나눠보세요</span>
+      <div class="community-title-group">
+        <h1>커뮤니티</h1>
+        <span class="community-subtitle">취업준비, 같이 하면 덜 외로워요. 후기와 꿀팁을 나눠보세요</span>
+      </div>
       <RouterLink v-if="userstore.isLogin" :to="{name:'articleCreate'}" class="btn-create">+ 글쓰기</RouterLink>
     </div>
     <div v-if="userstore.isLogin">
@@ -15,8 +17,9 @@
       <button
         v-for="lbl in store.labelList"
         :key="lbl.id"
-        class="filter-btn"
+        class="filter-btn label-btn"
         :class="{ active: selectedLabel === lbl.id }"
+        :style="getLabelStyle(lbl.name)"
         @click="selectedLabel = lbl.id"
       >{{ lbl.name }}</button>
     </div>
@@ -90,9 +93,9 @@ const goDetail = (pk) => {
 }
 
 const labelColorMap = {
-  '자격증':  { backgroundColor: '#E7EFFB', color: '#3284FF', borderColor: '#E7EFFB' },
-  '부트캠프': { backgroundColor: '#EFF1F5', color: '#6F7988', borderColor: '#EFF1F5' },
-  '공모전':  { backgroundColor: '#E3F4ED', color: '#2DA270', borderColor: '#E3F4ED' },
+  '자격증':  { backgroundColor: '#E7EFFB', color: '#7AB8E8', borderColor: '#E7EFFB' },
+  '부트캠프': { backgroundColor: '#FEF9E7', color: '#E8C04A', borderColor: '#FEF9E7' },
+  '공모전':  { backgroundColor: '#F0FAF5', color: '#6EC49A', borderColor: '#F0FAF5' },
   '채용공고': { backgroundColor: '#FBEBE1', color: '#E55627', borderColor: '#FBEBE1' },
 }
 
@@ -113,10 +116,22 @@ const getLabelStyle = (name) => labelColorMap[name] ?? {}
   margin-bottom: 20px;
 }
 
+.community-title-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
 .community-header h1 {
   font-size: 1.8rem;
   font-weight: 700;
   color: #1a1a1a;
+}
+
+.community-subtitle {
+  font-size: 0.90rem;
+  color: #999;
+  margin-top: 10px;
 }
 
 .btn-create {
@@ -162,6 +177,21 @@ const getLabelStyle = (name) => labelColorMap[name] ?? {}
   border-color: #2ab59e;
   color: white;
   font-weight: 600;
+}
+
+.label-btn {
+  font-weight: 600;
+}
+
+.label-btn.active {
+  filter: brightness(0.88);
+  font-weight: 700;
+}
+
+.label-btn:hover {
+  filter: brightness(0.93);
+  color: inherit;
+  border-color: inherit;
 }
 
 .article-list {
@@ -299,15 +329,12 @@ const getLabelStyle = (name) => labelColorMap[name] ?? {}
   text-decoration: underline;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 810px) {
   .community-wrap {
     margin: 20px auto;
     padding: 0 12px;
   }
 
-  .community-header span {
-    display: none;
-  }
 
   .article-card {
     padding: 14px 16px;
