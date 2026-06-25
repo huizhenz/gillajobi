@@ -2,8 +2,8 @@
   <div>
     <!-- 검색 -->
     <template v-if="searchResults !== null">
-      <p class="search-status" v-if="searchResults.length">"{{ searchedKeyword }}" 검색 결과 {{ searchResults.length }}건</p>
-      <p v-else class="no-result">"{{ searchedKeyword }}"에 일치하는 정보가 없습니다.</p>
+      <p class="search-status" v-if="searchResults.length">"{{ filterLabel }}" 검색 결과 {{ searchResults.length }}건</p>
+      <p v-else class="no-result">"{{ filterLabel }}"에 일치하는 정보가 없습니다.</p>
       <div class="bootcamp-grid">
         <router-link
           v-for="bootcamp in searchResults"
@@ -25,8 +25,14 @@
 
     <!-- 목록 -->
     <template v-else>
-      <h2 class="section-title">전체 부트캠프</h2>
-      <hr class="section-divider">
+      <template v-if="selectedRegion || selectedCategory">
+        <p class="search-status" v-if="store.bootcampList.length">"{{ filterLabel }}" 검색 결과 {{ store.bootcampList.length }}건</p>
+        <p v-else class="no-result">"{{ filterLabel }}"에 일치하는 정보가 없습니다.</p>
+      </template>
+      <template v-else>
+        <h2 class="section-title">전체 부트캠프</h2>
+        <hr class="section-divider">
+      </template>
       <div class="bootcamp-grid">
         <BootcampDetail
           v-for="bootcamp in sortedList"
@@ -45,9 +51,11 @@ import { useBootcampStore } from '@/stores/bootcampStore'
 import BootcampDetail from './BootcampDetail.vue'
 import { getSortKey } from '@/composables/useDday.js'
 
-defineProps({
+const props = defineProps({
   searchResults: { type: Array, default: null },
   searchedKeyword: { type: String, default: '' },
+  selectedRegion: { type: String, default: '' },
+  selectedCategory: { type: String, default: '' },
 })
 
 const store = useBootcampStore()
@@ -56,6 +64,11 @@ let observer = null
 
 const sortedList = computed(() =>
   [...(store.bootcampList ?? [])].sort((a, b) => getSortKey(a.close_date) - getSortKey(b.close_date))
+)
+
+const filterLabel = computed(() =>
+  [props.selectedRegion, props.selectedCategory, props.searchedKeyword]
+    .filter(Boolean).join(' / ')
 )
 
 onMounted(() => {
@@ -71,7 +84,7 @@ onUnmounted(() => { observer?.disconnect() })
 
 <style lang="scss" scoped>
 .section-title {
-  font-size: 1.1rem;
+  font-size: 22px;
   font-weight: 700;
   color: #222;
   margin: 0 0 8px;
@@ -99,7 +112,7 @@ onUnmounted(() => { observer?.disconnect() })
 }
 
 .no-result {
-  font-size: 0.95rem;
+  font-size: 1.2rem;
   color: #888;
   padding: 40px 0;
   text-align: center;

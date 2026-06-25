@@ -18,7 +18,7 @@ def certifications_top3(request):
     top3 = (
         Certification.objects
         .order_by('-view_count')
-        .values('id', 'jm_cd', 'name', 'series_name', 'view_count')[:3]
+        .values('id', 'jm_cd', 'name', 'series_name', 'qualification_cl', 'major_job_field', 'category__name', 'view_count')[:3]
     )
     return Response(list(top3))
 

@@ -12,8 +12,8 @@
             <div class="example-tags">
                 <span class="example-label">ex.</span>
                 <span class="example-tag">마케팅</span>
-                <span class="example-tag">클라우드 엔지니어</span>
-                <span class="example-tag">영상 디자인</span>
+                <span class="example-tag">건축</span>
+                <span class="example-tag">보안관제</span>
             </div>
         </div>
     </div>

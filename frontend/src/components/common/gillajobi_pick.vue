@@ -1,6 +1,6 @@
 <template>
   <div class="pick-wrapper">
-    <h2 class="pick-title">🏆 길라잡이 Pick! 채용공고</h2>
+    <h2 class="pick-title">🏆 길라잡이 Pick! {{ LABEL[props.type] }}</h2>
     <hr class="pick-divider">
     <div class="pick-list">
       <router-link
@@ -57,7 +57,7 @@ const TYPE_CONFIG = {
     url: `${BASE}/certifications/top3/`,
     getTitle: item => item.name,
     getSubtitle: item => item.series_name ?? '',
-    getCategory: item => item.series_name ?? '',
+    getCategory: item => item.major_job_field ?? '',
     getLink: item => `/certification/${item.jm_cd}`,
   },
   competitions: {
@@ -67,6 +67,13 @@ const TYPE_CONFIG = {
     getCategory: item => item['category__name'] ?? '',
     getLink: item => `/competition/${item.id}`,
   },
+}
+
+const LABEL = {
+  jobs: '채용공고',
+  bootcamps: '부트캠프',
+  certifications: '자격증',
+  competitions: '공모전',
 }
 
 const config = TYPE_CONFIG[props.type]
@@ -85,7 +92,7 @@ onMounted(() => {
 }
 
 .pick-title {
-  font-size: 1.1rem;
+  font-size: 22px;
   font-weight: 700;
   color: #222;
   margin: 0 0 8px;

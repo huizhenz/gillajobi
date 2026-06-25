@@ -78,7 +78,7 @@ onUnmounted(() => { observer?.disconnect() })
 
 <style lang="scss" scoped>
 .section-title {
-  font-size: 1.1rem;
+  font-size: 22px;
   font-weight: 700;
   color: #222;
   margin: 0 0 8px;
@@ -99,7 +99,7 @@ onUnmounted(() => { observer?.disconnect() })
 }
 
 .no-result {
-  font-size: 0.95rem;
+  font-size: 1.2rem;
   color: #888;
   padding: 40px 0;
   text-align: center;

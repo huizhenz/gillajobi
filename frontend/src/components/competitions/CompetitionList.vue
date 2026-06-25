@@ -74,7 +74,7 @@ onUnmounted(() => { observer?.disconnect() })
 $primary: #2ab59e;
 
 .section-title {
-  font-size: 1.1rem;
+  font-size: 22px;
   font-weight: 700;
   color: #222;
   margin: 0 0 8px;
@@ -102,7 +102,7 @@ $primary: #2ab59e;
 }
 
 .no-result {
-  font-size: 0.95rem;
+  font-size: 1.2rem;
   color: #888;
   padding: 40px 0;
   text-align: center;

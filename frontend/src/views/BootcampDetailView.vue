@@ -1,34 +1,64 @@
 <template>
   <div v-if="store.bootcamp" class="bootcamp-detail">
-    <h2>{{ store.bootcamp.title }}</h2>
-    <p v-if="dday">{{ dday }}</p>
 
-    <section>
-      <h3>운영 기관</h3>
-      <p><span>기관명</span>{{ store.bootcamp.company?.name }}</p>
+    <!-- 타이틀 + 디데이 -->
+    <div class="detail-header">
+      <h2>{{ store.bootcamp.title }}</h2>
+      <span v-if="dday" class="dday-badge" :class="{ closed: dday === '마감' }">{{ dday }}</span>
+    </div>
+
+    <!-- 부트캠프 정보 -->
+    <section class="info-section">
+      <h3 class="section-title">부트캠프 정보</h3>
+      <div class="info-rows">
+        <div v-if="store.bootcamp.company?.name" class="info-row">
+          <span class="label">운영 기관</span>
+          <span class="value">{{ store.bootcamp.company.name }}</span>
+        </div>
+        <div v-if="store.bootcamp.region?.name" class="info-row">
+          <span class="label">지역</span>
+          <span class="value">{{ store.bootcamp.region.name }}</span>
+        </div>
+        <div v-if="store.bootcamp.program_process" class="info-row">
+          <span class="label">과정 유형</span>
+          <span class="value">{{ store.bootcamp.program_process }}</span>
+        </div>
+        <div v-if="store.bootcamp.expense" class="info-row">
+          <span class="label">수강료</span>
+          <span class="value">{{ store.bootcamp.expense }}</span>
+        </div>
+        <div v-if="store.bootcamp.period" class="info-row">
+          <span class="label">기간</span>
+          <span class="value">{{ store.bootcamp.period }}</span>
+        </div>
+        <div v-if="store.bootcamp.participation_time" class="info-row">
+          <span class="label">참여 시간</span>
+          <span class="value">{{ store.bootcamp.participation_time }}</span>
+        </div>
+        <div v-if="store.bootcamp.recruitment_linkage" class="info-row">
+          <span class="label">취업 연계</span>
+          <span class="value">{{ store.bootcamp.recruitment_linkage }}</span>
+        </div>
+        <div class="info-row">
+          <span class="label">마감일</span>
+          <span class="value">{{ store.bootcamp.close_date || store.bootcamp.close_date_text }}</span>
+        </div>
+      </div>
     </section>
 
-    <section>
-      <h3>부트캠프 정보</h3>
-      <p><span>지역</span>{{ store.bootcamp.region?.name }}</p>
-      <p><span>과정 유형</span>{{ store.bootcamp.program_process }}</p>
-      <p><span>수강료</span>{{ store.bootcamp.expense }}</p>
-      <p><span>기간</span>{{ store.bootcamp.period }}</p>
-      <p><span>참여 시간</span>{{ store.bootcamp.participation_time }}</p>
-      <p><span>취업 연계</span>{{ store.bootcamp.recruitment_linkage }}</p>
-      <p v-if="store.bootcamp.close_date"><span>마감일</span>{{ store.bootcamp.close_date }}</p>
-      <p v-else><span>마감일</span>{{ store.bootcamp.close_date_text }}</p>
-      <p v-if="store.bootcamp.ai_fit_score !== null"><span>AI 적합도</span>{{ store.bootcamp.ai_fit_score }}</p>
-    </section>
-
-    <section v-if="store.bootcamp.skills?.length">
-      <h3>기술 스택</h3>
+    <!-- 기술 스택 -->
+    <section v-if="store.bootcamp.skills?.length" class="info-section">
+      <h3 class="section-title">기술 스택</h3>
       <div class="skill-tags">
         <span v-for="skill in store.bootcamp.skills" :key="skill.id" class="skill-tag">{{ skill.name }}</span>
       </div>
     </section>
 
-    <a :href="store.bootcamp.recruitment_url" target="_blank">지원하기</a>
+    <!-- 지원하기 -->
+    <div class="apply-wrap">
+      <a :href="store.bootcamp.recruitment_url" target="_blank" class="apply-btn">지원하기</a>
+    </div>
+
   </div>
 </template>
 
@@ -52,78 +82,132 @@ onMounted(() => {
 $primary: #2ab59e;
 
 .bootcamp-detail {
+  max-width: 1200px;
+  margin: 0 auto;
   padding: 32px 0;
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 20px;
+}
+
+.detail-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  background: #fff;
+  border: 1px solid #e8e8e8;
+  border-radius: 10px;
+  padding: 22px 28px;
 
   h2 {
     font-size: 24px;
     font-weight: 700;
     color: #222;
+    line-height: 1.4;
+  }
+}
+
+.dday-badge {
+  flex-shrink: 0;
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+  border: 1.5px solid #333;
+  border-radius: 50px;
+  padding: 6px 18px;
+  white-space: nowrap;
+  letter-spacing: 0.03em;
+
+  &.closed {
+    color: #aaa;
+    border-color: #ccc;
+  }
+}
+
+.info-section {
+  background: #fff;
+  border: 1px solid #e8e8e8;
+  border-radius: 10px;
+  padding: 24px 28px;
+}
+
+.section-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: $primary;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.info-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.info-row {
+  display: flex;
+  gap: 24px;
+  padding: 12px 0;
+  border-bottom: 1px solid #f7f7f7;
+  font-size: 16px;
+
+  &:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
   }
 
-  section {
-    background: #fff;
-    border: 1px solid #e8e8e8;
-    border-radius: 10px;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-
-    h3 {
-      font-size: 14px;
-      font-weight: 600;
-      color: $primary;
-      padding-bottom: 10px;
-      border-bottom: 1px solid #f0f0f0;
-    }
-
-    p {
-      font-size: 14px;
-      color: #333;
-      display: flex;
-      justify-content: space-between;
-
-      span {
-        color: #888;
-        flex-shrink: 0;
-        width: 100px;
-      }
-    }
-  }
-
-  .skill-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    padding-top: 4px;
-  }
-
-  .skill-tag {
-    background-color: #e6f7f5;
-    color: $primary;
-    font-size: 13px;
+  .label {
+    flex-shrink: 0;
+    width: 110px;
+    color: #888;
     font-weight: 600;
-    padding: 4px 12px;
-    border-radius: 20px;
-    border: 1px solid #b2e8e0;
   }
 
-  a {
-    display: inline-block;
-    background: $primary;
-    color: #fff;
-    padding: 12px 28px;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: 600;
-    align-self: flex-start;
+  .value {
+    color: #222;
+    line-height: 1.6;
+    word-break: keep-all;
+  }
+}
 
-    &:hover {
-      opacity: 0.85;
-    }
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.skill-tag {
+  background-color: #e6f7f5;
+  color: $primary;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 20px;
+  border: 1px solid #b2e8e0;
+}
+
+.apply-wrap {
+  display: flex;
+  justify-content: center;
+  padding: 8px 0;
+}
+
+.apply-btn {
+  display: inline-block;
+  background: $primary;
+  color: #fff;
+  padding: 14px 48px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 700;
+  transition: opacity 0.2s;
+
+  &:hover {
+    opacity: 0.85;
   }
 }
 </style>

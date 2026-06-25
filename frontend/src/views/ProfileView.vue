@@ -170,10 +170,10 @@ $primary: #2ab59e;
 }
 
 .profile-layout {
-  max-width: 960px;
+  max-width: 1200px;
   margin: 0 auto;
   display: flex;
-  gap: 20px;
+  gap: 40px;
   align-items: flex-start;
 }
 
@@ -313,7 +313,7 @@ $primary: #2ab59e;
 .tab {
   padding: 16px 4px;
   margin-right: 24px;
-  font-size: 0.95rem;
+  font-size: 1.2rem;
   font-weight: 600;
   color: #bbb;
   cursor: pointer;
@@ -321,6 +321,7 @@ $primary: #2ab59e;
   &.active {
     color: $primary;
     border-bottom: 2px solid $primary;
+    font-size: 1.2rem;
   }
 
   &.disabled {
@@ -339,7 +340,7 @@ $primary: #2ab59e;
   margin-bottom: 24px;
 
   h3 {
-    font-size: 1rem;
+    font-size: 1.2rem;
     font-weight: 700;
     color: #1a1a1a;
   }
@@ -363,7 +364,7 @@ $primary: #2ab59e;
 .info-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 20px 32px;
+  gap: 32px;
 }
 
 .info-item {
@@ -377,12 +378,14 @@ $primary: #2ab59e;
 }
 
 .info-label {
-  font-size: 0.78rem;
+  font-size: 16px;
   color: #999;
+  font-weight: 600;
+  margin-bottom: 10px;
 }
 
 .info-value {
-  font-size: 0.95rem;
+  font-size: 16px;
   color: #1a1a1a;
   font-weight: 500;
 }

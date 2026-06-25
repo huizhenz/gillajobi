@@ -82,7 +82,7 @@ $primary: #2ab59e;
   flex: 1;
   border: none;
   outline: none;
-  padding: 7px 12px;
+  padding: 10px 16px;
   font-size: 0.9rem;
   background: transparent;
   color: #222;
@@ -112,10 +112,11 @@ $primary: #2ab59e;
   color: white;
   font-size: 0.9rem;
   font-weight: 600;
-  padding: 8px 16px;
+  padding: 10px 16px;
   cursor: pointer;
   transition: background 0.2s;
   white-space: nowrap;
+  align-self: stretch;
 
   &:hover:not(:disabled) {
     background: #239e8a;

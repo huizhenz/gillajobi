@@ -15,7 +15,7 @@
             <AiRecommend type="bootcamps" />
             <GillajobiPick type="bootcamps" />
         </template>
-        <bootcamp-list :search-results="searchResults" :searched-keyword="searchedKeyword" />
+        <bootcamp-list :search-results="searchResults" :searched-keyword="searchedKeyword" :selected-region="bootcampStore.selectedRegion" :selected-category="bootcampStore.selectedCategory" />
         <TopButton />
     </div>
 </template>

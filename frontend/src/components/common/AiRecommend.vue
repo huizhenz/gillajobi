@@ -1,6 +1,6 @@
 <template>
   <div class="ai-recommend-wrapper">
-    <h2 class="ai-recommend-title">✨ AI 추천 채용공고</h2>
+    <h2 class="ai-recommend-title">✨ AI 추천 {{ LABEL[type] }}</h2>
     <hr class="ai-recommend-divider">
     <div class="ai-recommend-content">
       <!-- AI 추천 내용 -->
@@ -9,12 +9,21 @@
 </template>
 
 <script setup>
-defineProps({
+const props = defineProps({
   type: {
     type: String,
     required: true,
   },
 })
+
+const LABEL = {
+  jobs: '채용공고',
+  bootcamps: '부트캠프',
+  certifications: '자격증',
+  competitions: '공모전',
+}
+
+const { type } = props
 </script>
 
 <style lang="scss" scoped>
@@ -23,7 +32,7 @@ defineProps({
 }
 
 .ai-recommend-title {
-  font-size: 1.1rem;
+  font-size: 22px;
   font-weight: 700;
   color: #222;
   margin: 0 0 8px;

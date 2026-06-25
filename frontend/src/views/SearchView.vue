@@ -4,7 +4,7 @@
             <input
                 v-model="searchStore.keyword"
                 type="text"
-                placeholder="관심 직무·기술·자격증을 검색하세요"
+                placeholder="관심 직무를 검색해보세요."
                 class="search-input"
             />
             <button type="submit" class="search-btn" :disabled="searchStore.isLoading">
@@ -12,16 +12,18 @@
             </button>
         </form>
 
-        <h2 v-if="searchStore.searchedKeyword" class="search-title">"{{ searchStore.searchedKeyword }}" 검색 결과</h2>
+        <h2 v-if="searchStore.searchedKeyword" class="search-title">"{{ searchStore.searchedKeyword }}" 검색 결과입니다.</h2>
 
         <div v-if="searchStore.isLoading" class="loading">검색 중...</div>
 
-        <template v-else>
+        <div v-else class="results-wrap">
             <section class="category-section">
-                <h3 class="category-title">채용공고</h3>
-                <router-link to="/jobs">더보기</router-link>
+                <div class="section-header">
+                  <h3 class="category-title">채용공고</h3>
+                  <router-link to="/jobs" class="more-link">더보기</router-link>
+                </div>
                 <div class="card-grid">
-                    <div v-if="searchStore.results.jobs.length === 0">검색 결과가 없습니다</div>
+                    <p v-if="searchStore.results.jobs.length === 0" class="no-result">일치하는 채용공고가 없습니다.</p>
                     <div v-for="job in searchStore.results.jobs.slice(0, 3)" :key="job.id" class="card">
                         <div @click="goJobDetail(job.id)">
                         <span class="card-type">채용</span>
@@ -32,10 +34,12 @@
             </section>
 
             <section class="category-section">
-                <h3 class="category-title">부트캠프</h3>
-                <router-link to="/bootcamp">더보기</router-link>
+                <div class="section-header">
+                  <h3 class="category-title">부트캠프</h3>
+                  <router-link to="/bootcamp" class="more-link">더보기</router-link>
+                </div>
                 <div class="card-grid">
-                    <div v-if="searchStore.results.bootcamps.length === 0">검색 결과가 없습니다</div>
+                    <p v-if="searchStore.results.bootcamps.length === 0" class="no-result">일치하는 부트캠프가 없습니다.</p>
                     <div v-for="bootcamp in searchStore.results.bootcamps.slice(0, 3)" :key="bootcamp.id" class="card">
                         <div @click="goBootcampDetail(bootcamp.id)">
                         <span class="card-type">부트캠프</span>
@@ -46,10 +50,12 @@
             </section>
 
             <section class="category-section">
-                <h3 class="category-title">자격증</h3>
-                <router-link to="/certification">더보기</router-link>
+                <div class="section-header">
+                  <h3 class="category-title">자격증</h3>
+                  <router-link to="/certification" class="more-link">더보기</router-link>
+                </div>
                 <div class="card-grid">
-                    <div v-if="searchStore.results.certifications.length === 0">검색 결과가 없습니다</div>
+                    <p v-if="searchStore.results.certifications.length === 0" class="no-result">일치하는 자격증이 없습니다.</p>
                     <div v-for="cert in searchStore.results.certifications.slice(0, 3)" :key="cert.id" class="card">
                         <div @click="goCertificationDetail(cert.jm_cd)">
                         <span class="card-type">자격증</span>
@@ -60,10 +66,12 @@
             </section>
 
             <section class="category-section">
-                <h3 class="category-title">공모전</h3>
-                <router-link to="/competition">더보기</router-link>
+                <div class="section-header">
+                  <h3 class="category-title">공모전</h3>
+                  <router-link to="/competition" class="more-link">더보기</router-link>
+                </div>
                 <div class="card-grid">
-                    <div v-if="searchStore.results.competitions.length === 0">검색 결과가 없습니다</div>
+                    <p v-if="searchStore.results.competitions.length === 0" class="no-result">일치하는 공모전이 없습니다.</p>
                     <div v-for="comp in searchStore.results.competitions.slice(0, 3)" :key="comp.id" class="card">
                         <div @click="goCompetitionDetail(comp.id)">
                         <span class="card-type">공모전</span>
@@ -72,7 +80,7 @@
                     </div>
                 </div>
             </section>
-        </template>
+        </div>
     </div>
 </template>
 
@@ -110,29 +118,34 @@ $teal: #2ab59e;
 
 .search-container {
     padding: 40px 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.results-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
 }
 
 .search-area {
     display: flex;
     align-items: center;
-    max-width: 600px;
-    margin: 0 auto 40px;
-    border: 2px solid #e0e0e0;
-    border-radius: 30px;
+    width: 50%;
+    max-width: 1000px;
+    margin: 0 auto;
+    border: 2px solid $teal;
+    border-radius: 50px;
     overflow: hidden;
-    transition: border-color 0.2s;
-
-    &:focus-within {
-        border-color: $teal;
-    }
 }
 
 .search-input {
     flex: 1;
     border: none;
     outline: none;
-    padding: 12px 20px;
-    font-size: 0.95rem;
+    padding: 10px 16px;
+    font-size: 0.9rem;
     background: transparent;
     color: #222;
 
@@ -147,7 +160,7 @@ $teal: #2ab59e;
     color: white;
     font-size: 0.9rem;
     font-weight: 600;
-    padding: 12px 24px;
+    padding: 10px 20px;
     cursor: pointer;
     transition: background 0.2s;
     white-space: nowrap;
@@ -165,8 +178,8 @@ $teal: #2ab59e;
 .search-title {
     font-size: 24px;
     font-weight: 700;
-    margin-bottom: 40px;
     color: #111;
+    margin-bottom: 20px;
 }
 
 .loading {
@@ -177,25 +190,53 @@ $teal: #2ab59e;
 }
 
 .category-section {
-    margin-bottom: 48px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
-.category-title {
-    font-size: 18px;
-    font-weight: 700;
+.no-result {
+    font-size: 1rem;
+    color: #aaa;
+    text-align: center;
+    padding: 32px 0;
+    grid-column: 1 / -1;
+}
+
+.section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     margin-bottom: 16px;
     padding-bottom: 8px;
     border-bottom: 2px solid $teal;
+}
+
+.category-title {
+    font-size: 22px;
+    font-weight: 700;
     color: #111;
 }
 
+.more-link {
+    font-size: 16px;
+    color: #888;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+
+    &:hover {
+        color: $teal;
+    }
+}
+
 .card-grid {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: 16px;
 }
 
 .card {
-    flex: 1;
     padding: 20px;
     border: 1px solid #e0e0e0;
     border-radius: 12px;

@@ -104,7 +104,7 @@ const getLabelStyle = (name) => labelColorMap[name] ?? {}
 
 <style scoped>
 .community-wrap {
-  max-width: 800px;
+  max-width: 1200px;
   margin: 40px auto;
   padding: 0 20px;
 }
@@ -221,7 +221,7 @@ const getLabelStyle = (name) => labelColorMap[name] ?? {}
   display: flex;
   align-items: center;
   gap: 8px;
-  margin-bottom: 6px;
+  margin-bottom: 10px;
 }
 
 .label-badge {
@@ -232,7 +232,7 @@ const getLabelStyle = (name) => labelColorMap[name] ?? {}
 }
 
 .article-title {
-  font-size: 1rem;
+  font-size: 1.15rem;
   font-weight: 600;
   color: #222;
   margin: 0 0 8px;
