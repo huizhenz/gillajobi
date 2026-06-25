@@ -133,7 +133,7 @@ $breakpoint: 810px;
 }
 
 .nav-link {
-  font-size: 0.92rem;
+  font-size: 1rem;
   color: #444;
   text-decoration: none;
   font-weight: 500;
@@ -161,7 +161,7 @@ $breakpoint: 810px;
   background: $primary;
   color: white;
   text-decoration: none;
-  font-size: 0.88rem;
+  font-size: 0.95rem;
   font-weight: 600;
   padding: 7px 18px;
   border-radius: 20px;
@@ -173,7 +173,7 @@ $breakpoint: 810px;
 }
 
 .nav-username {
-  font-size: 0.9rem;
+  font-size: 1rem;
   color: #333;
   font-weight: 700;
   background: none;
@@ -249,12 +249,12 @@ $breakpoint: 810px;
 
   :deep(.search-input) {
     padding: 6px 14px;
-    font-size: 0.88rem;
+    font-size: 0.95rem;
   }
 
   :deep(.search-btn) {
     padding: 6px 16px;
-    font-size: 0.85rem;
+    font-size: 0.92rem;
   }
 }
 
@@ -262,7 +262,7 @@ $breakpoint: 810px;
   background: $primary;
   color: white;
   text-decoration: none;
-  font-size: 0.88rem;
+  font-size: 0.95rem;
   font-weight: 600;
   padding: 7px 18px;
   border-radius: 20px;
@@ -316,7 +316,7 @@ $breakpoint: 810px;
 .mobile-link {
   display: block;
   padding: 14px 24px;
-  font-size: 0.95rem;
+  font-size: 1.02rem;
   color: #333;
   text-decoration: none;
   font-weight: 500;
@@ -335,7 +335,7 @@ $breakpoint: 810px;
 }
 
 .mobile-logout {
-  font-size: 0.95rem;
+  font-size: 1.02rem;
   font-weight: 500;
 }
 

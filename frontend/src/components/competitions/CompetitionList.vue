@@ -102,7 +102,7 @@ $primary: #2ab59e;
 }
 
 .no-result {
-  font-size: 0.95rem;
+  font-size: 1.2rem;
   color: #888;
   padding: 40px 0;
   text-align: center;
