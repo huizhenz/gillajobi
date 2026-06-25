@@ -40,12 +40,6 @@
 
             <div v-for="field in arrayFields" :key="field.key" class="form-item full">
               <label class="form-label">{{ field.label }}</label>
-              <div class="tag-list">
-                <span v-for="(item, index) in field.arr.value" :key="index" class="tag">
-                  {{ item }}
-                  <button type="button" class="tag-remove" @click="removeItem(field.arr, index)">×</button>
-                </span>
-              </div>
               <div class="tag-input-row">
                 <input
                   type="text"
@@ -56,11 +50,20 @@
                 />
                 <button type="button" class="btn-add" @click="addItem(field.arr, field.input)">추가</button>
               </div>
+              <div class="tag-list">
+                <span v-for="(item, index) in field.arr.value" :key="index" class="tag">
+                  {{ item }}
+                  <button type="button" class="tag-remove" @click="removeItem(field.arr, index)">×</button>
+                </span>
+              </div>
             </div>
 
             <div class="form-item full">
               <label for="desired_salary" class="form-label">희망 연봉</label>
-              <input type="text" id="desired_salary" v-model.trim="desired_salary" class="form-input" />
+              <div class="salary-wrap">
+                <input type="text" id="desired_salary" v-model.trim="desired_salary" class="form-input" placeholder="숫자 입력" />
+                <span class="salary-unit">만원</span>
+              </div>
             </div>
           </div>
 
@@ -135,12 +138,12 @@ const preferredPositionInput = ref('')
 const desired_salary = ref('')
 
 const arrayFields = [
-  { key: 'education', label: '학력', arr: education, input: educationInput, placeholder: '학력 입력 후 추가' },
-  { key: 'certification', label: '자격증', arr: certification, input: certificationInput, placeholder: '자격증 입력 후 추가' },
-  { key: 'experience', label: '경력', arr: experience, input: experienceInput, placeholder: '경력 입력 후 추가' },
-  { key: 'language', label: '어학', arr: language, input: languageInput, placeholder: '어학 입력 후 추가' },
-  { key: 'preferred_location', label: '희망 근무 지역', arr: preferred_location, input: preferredLocationInput, placeholder: '지역 입력 후 추가' },
-  { key: 'preferred_position', label: '희망 직무', arr: preferred_position, input: preferredPositionInput, placeholder: '직무 입력 후 추가' },
+  { key: 'education', label: '학력', arr: education, input: educationInput},
+  { key: 'certification', label: '자격증', arr: certification, input: certificationInput },
+  { key: 'experience', label: '경력', arr: experience, input: experienceInput },
+  { key: 'language', label: '어학', arr: language, input: languageInput },
+  { key: 'preferred_location', label: '희망 근무 지역', arr: preferred_location, input: preferredLocationInput },
+  { key: 'preferred_position', label: '희망 직무', arr: preferred_position, input: preferredPositionInput},
 ]
 
 const addItem = (arr, inputRef) => {
@@ -238,7 +241,7 @@ $primary: #2ab59e;
 }
 
 .form-label {
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   color: #999;
   font-weight: 500;
 }
@@ -247,7 +250,7 @@ $primary: #2ab59e;
   border: 1px solid #e0e0e0;
   border-radius: 8px;
   padding: 10px 14px;
-  font-size: 0.9rem;
+  font-size: 0.92rem;
   outline: none;
   transition: border-color 0.2s;
   width: 100%;
@@ -320,6 +323,7 @@ $primary: #2ab59e;
 .tag-list {
   display: flex;
   flex-wrap: wrap;
+  gap: 8px;
 }
 
 .tag {
@@ -351,6 +355,23 @@ $primary: #2ab59e;
 .tag-input-row {
   display: flex;
   gap: 8px;
+}
+
+.salary-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.salary-wrap .form-input {
+  width: auto;
+  flex: 1;
+}
+
+.salary-unit {
+  font-size: 1.05rem;
+  color: #999;
+  white-space: nowrap;
 }
 
 .btn-add {
