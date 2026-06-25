@@ -4,4 +4,5 @@ from . import views
 app_name = 'category'
 urlpatterns = [
     path('search/', views.search),
+    path('news/', views.news),
 ]
