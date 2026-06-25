@@ -13,6 +13,7 @@
                 <option v-for="cat in bootcampStore.categories" :key="cat" :value="cat">{{ cat }}</option>
             </select>
         </div>
+        <GillajobiPick type="bootcamps" />
         <bootcamp-list :search-results="searchResults" :searched-keyword="searchedKeyword" />
     </div>
 </template>
@@ -23,6 +24,7 @@ import { useSearchStore } from '@/stores/searchStore'
 import { useBootcampStore } from '@/stores/bootcampStore'
 import BootcampList from '@/components/bootcamps/BootcampList.vue'
 import SearchBox from '@/components/common/SearchBox.vue'
+import GillajobiPick from '@/components/common/gillajobi_pick.vue'
 import axios from 'axios'
 
 const searchStore = useSearchStore()

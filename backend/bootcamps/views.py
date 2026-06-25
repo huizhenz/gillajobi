@@ -69,6 +69,16 @@ def bootcamp_detail(request, bootcamp_pk):
 
 
 @api_view(['GET'])
+def bootcamps_top3(request):
+    top3 = (
+        Bootcamp.objects
+        .order_by('-view_count')
+        .values('id', 'title', 'company', 'view_count')[:3]
+    )
+    return Response(list(top3))
+
+
+@api_view(['GET'])
 def fetch_bootcamps(request):
     page_param = request.query_params.get('page')
     if page_param is not None:

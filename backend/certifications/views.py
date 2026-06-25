@@ -13,6 +13,16 @@ class CompetitionPagination(PageNumberPagination):
 
 # Create your views here.
 @api_view(['GET'])
+def certifications_top3(request):
+    top3 = (
+        Certification.objects
+        .order_by('-view_count')
+        .values('id', 'jm_cd', 'name', 'series_name', 'view_count')[:3]
+    )
+    return Response(list(top3))
+
+
+@api_view(['GET'])
 def fetch_certifications(request):
     certifications = Certification.objects.all()
     paginator = CompetitionPagination()

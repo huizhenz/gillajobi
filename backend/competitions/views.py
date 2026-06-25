@@ -14,6 +14,16 @@ class CompetitionPagination(PageNumberPagination):
 
 # Create your views here.
 @api_view(['GET'])
+def competitions_top3(request):
+    top3 = (
+        Competition.objects
+        .order_by('-view_count')
+        .values('id', 'title', 'host', 'view_count')[:3]
+    )
+    return Response(list(top3))
+
+
+@api_view(['GET'])
 def fetch_competitions(request):
     competitions = Competition.objects.all()
     paginator = CompetitionPagination()
