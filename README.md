@@ -1,6 +1,6 @@
 # 길라잡이 (Gillajobi)
 
-취업 준비생을 위한 채용 정보 통합 플랫폼. 채용공고, 부트캠프, 자격증, 공모전 정보를 한 곳에서 제공하며, AI 기반 자연어 검색을 지원한다.
+취업 준비생을 위한 채용 정보 통합 플랫폼. 채용공고, 부트캠프, 자격증, 공모전 정보를 한 곳에서 제공하며, AI 기반 자연어 검색과 사용자 맞춤 적합도 점수를 지원한다.
 
 ---
 
@@ -13,7 +13,8 @@
 | DB | SQLite |
 | 인증 | Token Authentication |
 | 데이터 수집 | Requests, BeautifulSoup4 (크롤링) |
-| AI | Claude Haiku 4.5 (`claude-haiku-4-5-20251001`) — 검색어 키워드 확장 (Context window: 200,000 tokens / Max output: 64,000 tokens) |
+| AI (검색) | Claude Haiku 4.5 (`claude-haiku-4-5-20251001`) — 검색어 키워드 확장, max_tokens 300 |
+| AI (적합도) | Claude Haiku 4.5 (`claude-haiku-4-5-20251001`) — 프로필 기반 콘텐츠 점수화, max_tokens 2000 |
 
 ---
 
@@ -31,7 +32,11 @@ gillajobi/
 │   ├── jobs/                 # 채용공고
 │   ├── todos/                # 사용자 할일 관리
 │   ├── category/             # 공통 카테고리 & 검색 (AI 키워드 확장)
-│   └── ai_score/             # AI 적합도 점수 (개발 예정)
+│   └── ai_score/             # AI 적합도 점수 시스템
+│       ├── models.py         # FitScore 모델
+│       ├── services.py       # 3단계 파이프라인 (키워드 확장 → ORM 필터 → Claude 점수화)
+│       ├── views.py          # recommendations / single_score API
+│       └── ai_score.log      # 백그라운드 스레드 실행 로그
 │
 ├── fixtures/                 # 통합 픽스처 (total.json)
 │
@@ -39,7 +44,7 @@ gillajobi/
     └── src/
         ├── views/            # 페이지 컴포넌트
         ├── components/       # 재사용 UI 컴포넌트
-        │   └── common/       # SearchBox, AppNav, AppFooter
+        │   └── common/       # SearchBox, AiRecommend, AppNav, AppFooter
         ├── stores/           # Pinia 상태 관리
         └── router/           # Vue Router 설정
 ```
@@ -57,7 +62,7 @@ python manage.py migrate
 python manage.py runserver     # http://127.0.0.1:8000
 ```
 
-> `backend/.env`에 `GMS_KEY`가 설정되어 있어야 AI 검색이 동작합니다.
+> `backend/.env`에 `GMS_KEY`가 설정되어 있어야 AI 검색 및 적합도 점수가 동작합니다.
 
 ### Frontend
 ```bash
@@ -78,7 +83,7 @@ Base URL: `http://127.0.0.1:8000/api/v1`
 | POST | `/accounts/registration/` | 회원가입 |
 | POST | `/accounts/login/` | 로그인 (토큰 발급) |
 | POST | `/accounts/logout/` | 로그아웃 |
-| GET / PATCH | `/accounts/profile/` | 프로필 조회 / 수정 |
+| GET / PATCH | `/accounts/profile/` | 프로필 조회 / 수정 (PATCH 시 AI 점수 재계산 트리거) |
 
 ### Bootcamps
 | Method | Endpoint | 설명 |
@@ -127,6 +132,12 @@ Base URL: `http://127.0.0.1:8000/api/v1`
 | Method | Endpoint | 설명 |
 |--------|----------|------|
 | GET | `/category/search/?q=검색어` | 자연어 검색 — Claude AI로 키워드 확장 후 4개 카테고리 동시 검색. `label` 미지정: 각 5건 / `label` 지정: 해당 카테고리만 50건. `region`(jobs·bootcamps), `category`(bootcamps) 필터 조합 가능 |
+
+### AI 적합도 점수
+| Method | Endpoint | 설명 |
+|--------|----------|------|
+| GET | `/ai_score/recommendations/?type=bootcamp\|job\|certification\|competition` | 사용자 맞춤 상위 3건 반환. `status`: `ready` / `computing` / `no_match` / `empty_profile` |
+| GET | `/ai_score/score/?type=bootcamp&id=42` | 단건 적합도 점수 조회. `{"score": 88, "reason": "..."}` |
 
 ### Todos
 | Method | Endpoint | 설명 |
@@ -194,11 +205,96 @@ Base URL: `http://127.0.0.1:8000/api/v1`
 
 ---
 
+## AI 적합도 점수 시스템
+
+사용자 프로필(희망 직무·경력·학력·선호 지역 등)을 바탕으로 부트캠프·채용공고·자격증·공모전의 적합도를 0~100점으로 평가하고 카테고리별 상위 3개를 추천한다. 임베딩·벡터 DB 없이 Claude를 직접 심사위원으로 활용하는 **Direct Prompting** 방식이다.
+
+### 동작 원리 (3단계 파이프라인)
+
+```
+[UpdateProfile 저장]
+        │ 즉시 "저장 완료" 반환
+        ↓
+[백그라운드 스레드 시작]   ← threading.Thread(daemon=True)
+        │
+        ├─ Stage 0: 키워드 확장
+        │   preferred_position + experience → expand_keywords() (Claude 호출)
+        │   "반도체 엔지니어" → ["반도체 엔지니어", "semiconductor", "공정 엔지니어", ...]
+        │   * 원본 프로필 키워드를 항상 포함하여 안정성 확보
+        │
+        ├─ Stage 1: ORM 후보 필터링 (카테고리별 최대 15개)
+        │   확장 키워드로 SQLite icontains OR 검색
+        │   - bootcamp: skills__name, category__name
+        │   - job: category__name, title (선호 지역 필터 → 결과 없으면 전국 fallback)
+        │   - certification: major_job_field, minor_job_field, name
+        │   - competition: keyword, title
+        │
+        └─ Stage 2: Claude 일괄 점수화 (4카테고리 순차 실행)
+            후보 15개 → Claude 1회 호출 → JSON 배열 점수
+            완료 시 DB 저장 (FitScore.update_or_create)
+            후보 0개 or 점수화 실패 → sentinel 저장 (score=-1)
+
+[추천 페이지 진입]
+        ↓
+    FitScore(score≥0) 있음? → status: ready   → 상위 3건 즉시 표시
+    sentinel(score=-1) 있음? → status: no_match → "일치하는 항목 없음" 표시
+    FitScore 없음?           → status: computing → 스피너 → 3초 폴링 (최대 10회)
+    프로필 비어있음?          → status: empty_profile → 프로필 입력 안내
+```
+
+### 왜 RAG/벡터DB가 아닌 Direct Prompting인가
+
+| 방식 | 장점 | 단점 |
+|------|------|------|
+| RAG + 벡터 DB | 대규모 데이터 처리 가능 | 임베딩 모델·벡터 DB 별도 운영, 구현 복잡 |
+| LangChain | 에이전트 체이닝 용이 | 추가 의존성, 디버깅 어려움 |
+| **Direct Prompting (채택)** | 기존 GMS 인프라 재사용, 구현 단순, 이유 설명 자연스러움 | 콘텐츠 수 제한 (15개/카테고리) |
+
+SQLite icontains 필터로 전체 DB(~2,000개)에서 관련 후보를 15개로 압축한 뒤 Claude에게 일괄 점수화를 요청하므로, 토큰 비용과 정확도 사이의 균형을 맞췄다.
+
+### 관련 파일
+
+#### Backend
+
+| 파일 | 역할 |
+|------|------|
+| `ai_score/models.py` | `FitScore` 모델: user + content_type + object_id 복합 유니크. score=-1은 "계산 완료, 결과 없음" sentinel |
+| `ai_score/services.py` | 3단계 파이프라인 전체. `compute_scores_for_user()`, `get_recommendations()`, `get_single_score()`, `invalidate_user_scores()` |
+| `ai_score/views.py` | `/recommendations/`, `/score/` 뷰 (IsAuthenticated) |
+| `ai_score/urls.py` | URL 라우팅 |
+| `accounts/views.py` | 프로필 PATCH 저장 후 `invalidate_user_scores()` + 백그라운드 스레드 시작 |
+
+#### Frontend
+
+| 파일 | 역할 |
+|------|------|
+| `stores/aiScoreStore.js` | 타입별 상태 관리. `getRecommendations()`, `pollUntilReady()` (3초×10회), `getSingleScore()`, `getScore()`, TYPE_MAP(jobs→job 등) |
+| `components/common/AiRecommend.vue` | 4개 카테고리 뷰 최상단에 공통 배치. status별 분기 렌더링 (스피너 / 카드 3개 / 안내 메시지) |
+| `views/BootcampDetailView.vue` | 상세 페이지 진입 시 `getSingleScore()` 호출 → 점수 뱃지 표시 |
+| `views/JobDetailView.vue` | 동일 패턴 |
+| `views/CertificationDetailView.vue` | `watch(store.certification?.id)`로 id 확정 후 점수 조회 (route param이 jm_cd이기 때문) |
+| `views/CompetitionDetailView.vue` | 동일 패턴 |
+
+### 점수 뱃지 색상
+
+| 점수 범위 | 색상 | 의미 |
+|----------|------|------|
+| 80~100점 | 초록 (badge-green) | 매우 적합 |
+| 60~79점  | 노랑 (badge-yellow) | 적합 |
+| 0~59점   | 주황 (badge-orange) | 보통/낮음 |
+
+---
+
 ## 데이터 모델
 
 ### Accounts
 - **User**: AbstractUser 확장. `nickname`(unique), `gender`, `birth`, `profile_image`, `first_name`, `last_name`
 - **Profile**: User 1:1. `education`, `certification`, `experience`, `language`, `preferred_location`, `preferred_position` (JSONField 배열), `desired_salary`
+
+### AI Score
+- **FitScore**: `user`(FK), `content_type`('bootcamp'|'job'|'certification'|'competition'), `object_id`(INT), `score`(0~100, -1은 sentinel), `reason`(최대 200자), `computed_at`(auto_now)
+  - `unique_together`: (user, content_type, object_id)
+  - `index`: (user, content_type, score)
 
 ### Bootcamps
 - **Bootcamp**: `title`, `region`(FK), `skills`(M2M), `expense`, `period`, `participation_time`, `program_process`, `recruitment_linkage`, `close_date`, `recruitment_url`(unique), `ai_fit_score`
@@ -240,15 +336,15 @@ Base URL: `http://127.0.0.1:8000/api/v1`
 | `/signup` | SignupView | 완료 - 기본/추가 정보 섹션 구분, 실시간 유효성 검사, 생년월일 placeholder 숨김 |
 | `/login` | LoginView | 완료 — 중앙 정렬, 로고 이미지, SCSS 스타일링 |
 | `/profile/:username` | ProfileView | 완료 — 개인정보 탭 + 작성한 글 탭, 닉네임 표시, 투두 카드(teal, 프로그레스 바, 완료 수 표기), 희망 연봉 "만원" 표시, 작성한 글 카드 CommunityView 동일 스타일, 810px 반응형 |
-| `/profile/:username/update` | UpdateProfileView | 완료 — 성/이름/프로필이미지(3:4·150×200px·border-radius 5%) + 배열 필드 태그 pill UI, 기존 데이터 pre-fill, 희망 연봉 "만원" 단위 표시, 태그 input 하단 배치 |
-| `/bootcamp` | BootcampView | 완료 — 상단 SearchBox + 지역·카테고리 드롭다운 필터 |
-| `/bootcamp/:bootcampPk` | BootcampDetailView | 완료 — 기술 스택 pill 뱃지 |
-| `/jobs` | JobView | 완료 — 상단 SearchBox + 지역 드롭다운 필터 |
-| `/jobs/:jobPk` | JobDetailView | 완료 |
-| `/competition` | CompetitionView | 완료 — 상단 SearchBox |
-| `/competition/:competitionPk` | CompetitionDetailView | 완료 |
-| `/certification` | CertificationView | 완료 — 상단 SearchBox |
-| `/certification/:jm_cd` | CertificationDetailView | 완료 |
+| `/profile/:username/update` | UpdateProfileView | 완료 — 성/이름/프로필이미지(3:4·150×200px·border-radius 5%) + 배열 필드 태그 pill UI, 기존 데이터 pre-fill, 희망 연봉 "만원" 단위 표시, 태그 input 하단 배치, **저장 시 AI 점수 재계산 트리거** |
+| `/bootcamp` | BootcampView | 완료 — 상단 AI 추천(AiRecommend) + 길라잡이 픽 + SearchBox + 지역·카테고리 드롭다운 필터 |
+| `/bootcamp/:bootcampPk` | BootcampDetailView | 완료 — 기술 스택 pill 뱃지, **AI 적합도 점수 뱃지** |
+| `/jobs` | JobView | 완료 — 상단 AI 추천(AiRecommend) + 길라잡이 픽 + SearchBox + 지역 드롭다운 필터 |
+| `/jobs/:jobPk` | JobDetailView | 완료, **AI 적합도 점수 뱃지** |
+| `/competition` | CompetitionView | 완료 — 상단 AI 추천(AiRecommend) + 길라잡이 픽 + SearchBox |
+| `/competition/:competitionPk` | CompetitionDetailView | 완료, **AI 적합도 점수 뱃지** |
+| `/certification` | CertificationView | 완료 — 상단 AI 추천(AiRecommend) + 길라잡이 픽 + SearchBox |
+| `/certification/:jm_cd` | CertificationDetailView | 완료, **AI 적합도 점수 뱃지** |
 | `/community` | CommunityView | 완료 — 카테고리 필터(고정 컬러), 댓글 수 우하단 SVG 아이콘, 닉네임·날짜 표시, 비로그인 블러 게이트, 810px 반응형 |
 | `/community/article` | CommunityFormView | 완료 — UpdateProfileView 통일 디자인, 카테고리 선택, 이탈 방지 가드 |
 | `/community/:pk` | CommunityDetailView | 완료 — 작성자 닉네임 표시, 목록으로 버튼, 제목 하단 구분선 |
@@ -262,6 +358,7 @@ Base URL: `http://127.0.0.1:8000/api/v1`
 | Store | 파일 | 주요 기능 |
 |-------|------|-----------|
 | userStore | `stores/userStore.js` | 토큰 영속 저장 (`persist: true`), 회원가입 후 토큰 즉시 저장, 로그인 후 프로필 자동 fetch(닉네임 유지), 로그아웃 시 nickname 초기화, 프로필 조회·수정 |
+| aiScoreStore | `stores/aiScoreStore.js` | 타입별 추천 상태(`{ items, status, loading }`), `getRecommendations()`, `pollUntilReady()` (3초×10회, 타임아웃 시 error 전환), `getSingleScore()`, `getScore()`, TYPE_MAP(jobs→job 변환) |
 | bootcampStore | `stores/bootcampStore.js` | 목록 조회(`getBootcampList`), 단건 조회(`getBootcamp`), 지역·카테고리 필터(`selectedRegion`, `selectedCategory`, `setRegion`, `setCategory`), 옵션 목록 조회(`getRegions`, `getCategories`) |
 | communityStore | `stores/communityStore.js` | 게시글 CRUD, 레이블 목록, 상세 조회 |
 | comments | `stores/comments.js` | 댓글 작성(`commentCreate`), 댓글 삭제(`commentDelete`) |
@@ -286,6 +383,10 @@ Base URL: `http://127.0.0.1:8000/api/v1`
 ## 주요 구현 패턴
 
 - **AI 키워드 확장 검색**: `category/services.py`에서 Claude Haiku로 검색어를 최대 10개 관련 키워드로 확장 → SQLite `icontains` OR 필터로 4개 모델 동시 검색. 결과는 24시간 캐시(LocMemCache)
+- **AI 적합도 Direct Prompting**: 임베딩/벡터DB 없이 ORM으로 후보 15개 추린 뒤 Claude에게 프로필 대비 점수·이유를 JSON으로 일괄 요청. GMS API가 동시 호출에 불안정하므로 4카테고리 순차 실행.
+- **백그라운드 점수 계산**: `threading.Thread(daemon=True)`로 프로필 저장 응답을 블로킹하지 않고 계산. Django `close_old_connections()`로 스레드 DB 연결 관리. 실패 시 재시도 1회(sleep 2s).
+- **Sentinel 패턴**: 후보가 없거나 점수화에 실패하면 `FitScore(score=-1)` sentinel을 저장해 "계산 완료, 결과 없음"을 표현. `get_recommendations()`에서 score≥0과 score=-1을 분리해 `ready` / `no_match` 상태를 반환.
+- **프론트 폴링**: `pollUntilReady(type, maxRetries=10)` — 3초 간격, 최대 10회. `ready` / `no_match` / `error` 도달 시 종료. 10회 소진 후 `computing` 상태면 `error`로 전환.
 - **SearchBox 컴포넌트**: `components/common/SearchBox.vue`로 분리. `label` prop으로 동작 분기 — `null`이면 `/search`로 이동(전체 검색), 문자열이면 해당 카테고리 내 인라인 검색 후 `@results` emit. 검색 완료 후 input 자동 초기화. `extraParams` prop으로 region·category 필터를 검색 API에 함께 전달.
 - **라벨 내 검색**: JobView·BootcampView·CertificationView·CompetitionView에서 SearchBox의 `@results` 이벤트를 수신해 List 컴포넌트에 `searchResults` prop으로 전달. 결과 0건이면 "키워드에 일치하는 정보가 없습니다." 출력.
 - **검색 카드 일관성**: 각 카테고리 List 컴포넌트의 검색 결과 카드를 해당 카테고리 DetailCard 컴포넌트와 동일한 레이아웃·CSS로 통일.
@@ -299,18 +400,30 @@ Base URL: `http://127.0.0.1:8000/api/v1`
 - **닉네임 표시**: 커뮤니티 게시글·댓글·프로필 전 영역에서 `username` 대신 `nickname` 표시 — 백엔드 시리얼라이저에 `SerializerMethodField`(source=`user.nickname`) 추가
 - **스토어 순환 의존 방지**: `communityStore` 내 `useUserStore()`를 함수 바디 안에서 호출
 - **이미지/배열 전송**: 프로필 수정 시 `FormData` + `JSON.stringify` 배열 필드, 백엔드에서 `json.loads`로 파싱
-- **실시간 유효성 검사**: SignupView에서 Vue `watch`로 각 필드 입력 즉시 검증 (형식·길이·일치 여부)
+- **실시간 유효성 검사**: SignupView에서 Vue `watch`로 각 필드 입력 즉시 검증 (형식·길이·일치 여부), 서버 에러는 catch에서 병합 표시
+- **로그인 에러 표시**: LoginView에서 `non_field_errors` 응답을 "아이디 또는 비밀번호가 잘못되었습니다." 고정 문구로 표시
 - **라우터 가드**: `beforeEach`에서 인증 필요 페이지 접근 시 LoginView로 리다이렉트
-- **이탈 방지**: CommunityFormView에서 `onBeforeRouteLeave` + `watch([title, content])`로 작성 중 이탈 confirm
+- **라우터 name 통일**: 전체 프론트엔드에서 `to="/path"` 대신 `{ name: 'RouteName' }` 방식으로 통일 — 경로 변경 시 한 곳(router/index.js)만 수정하면 됨
+- **이탈 방지**: CommunityFormView에서 `onBeforeRouteLeave` + `watch([title, content])`로 작성 중 이탈 confirm (Vue Router 4 `return` 패턴)
+- **로그인 후 닉네임 유지**: `userStore.logIn()` 성공 후 `getProfile()`을 호출해 `nickname` 즉시 설정, 로그아웃 시 `nickname = null` 초기화
+- **투두 카드 프로그레스**: `todoStore.completedCount / todoStore.todoList.length`로 진행률 계산, CSS width 바인딩으로 애니메이션
+- **캘린더 이벤트 표시**: 더미데이터 기반 마감일 배지 + 호버 시 이벤트 기간 전체 하이라이트 (`isInRange` computed)
+- **TodoList 슬림 UI**: `height: 32px` 고정 + `white-space: nowrap`으로 버튼 텍스트 줄바꿈 방지, wrapper에 `display: flex; flex-direction: column`으로 `margin-top: auto` 정상 동작
+- **반응형 기준 통일**: 전체 브레이크포인트 810px — 모든 뷰(MainView·ProfileView·CommunityView·UpdateProfileView 등) 및 AppNav 동일 기준 적용
+- **타이핑 효과**: MainView 헤딩에서 `setInterval`로 한 글자씩 출력, `route.fullPath` watch로 페이지 진입 시마다 재시작, `v-html` + `:deep()` 으로 scoped 환경에서 동적 span 색상 적용
+- **반응형 JS**: `window.innerWidth`를 `ref`로 래핑 + `resize` 이벤트로 반응형 — 1420px 이하에서 닉네임 줄 분리를 JS 단에서 처리(`displayedHtml` computed 내 문자열 조작)
 
 ---
 
 ## 픽스처 로드
 
-통합 픽스처 `backend/fixtures/total.json` (총 7,661개 레코드).
+모든 앱의 fixture를 `backend/fixtures/total.json` 하나로 통합했습니다 (총 7,661개 레코드).
 
 ```bash
-python manage.py loaddata ../fixtures/total.json
+# 통합 로드 (권장)
+cd backend
+python manage.py migrate
+python manage.py loaddata ../fixtures/total.json --exclude contenttypes --exclude auth.Permission
 ```
 
 | 구성 | 레코드 수 |
@@ -322,30 +435,6 @@ python manage.py loaddata ../fixtures/total.json
 | 기타 (region, skill, category 등) | 나머지 |
 
 테스트 데이터 커버 분야: 프론트엔드 · 백엔드 · 데이터 엔지니어링 · AI/ML · UI/UX 디자인 · 클라우드/DevOps · 정보보안 · 모바일 앱 · 게임 개발 · 회계/재무
-- **로그인 후 닉네임 유지**: `userStore.logIn()` 성공 후 `getProfile()`을 호출해 `nickname` 즉시 설정, 로그아웃 시 `nickname = null` 초기화
-- **투두 카드 프로그레스**: `todoStore.completedCount / todoStore.todoList.length`로 진행률 계산, CSS width 바인딩으로 애니메이션
-- **실시간 유효성 검사**: SignupView에서 Vue `watch`로 각 필드 입력 즉시 검증 (형식·길이·일치 여부), 서버 에러는 catch에서 병합 표시
-- **로그인 에러 표시**: LoginView에서 `non_field_errors` 응답을 "아이디 또는 비밀번호가 잘못되었습니다." 고정 문구로 표시
-- **라우터 가드**: `beforeEach`에서 인증 필요 페이지 접근 시 LoginView로 리다이렉트
-- **라우터 name 통일**: 전체 프론트엔드에서 `to="/path"` 대신 `{ name: 'RouteName' }` 방식으로 통일 — 경로 변경 시 한 곳(router/index.js)만 수정하면 됨
-- **캘린더 이벤트 표시**: 더미데이터 기반 마감일 배지 + 호버 시 이벤트 기간 전체 하이라이트 (`isInRange` computed)
-- **TodoList 슬림 UI**: `height: 32px` 고정 + `white-space: nowrap`으로 버튼 텍스트 줄바꿈 방지, wrapper에 `display: flex; flex-direction: column`으로 `margin-top: auto` 정상 동작
-- **이탈 방지**: CommunityFormView에서 `onBeforeRouteLeave` + `watch([title, content])`로 작성 중 이탈 confirm (Vue Router 4 `return` 패턴)
-- **반응형 기준 통일**: 전체 브레이크포인트 810px — 모든 뷰(MainView·ProfileView·CommunityView·UpdateProfileView 등) 및 AppNav 동일 기준 적용
-- **타이핑 효과**: MainView 헤딩에서 `setInterval`로 한 글자씩 출력, `route.fullPath` watch로 페이지 진입 시마다 재시작, `v-html` + `:deep()` 으로 scoped 환경에서 동적 span 색상 적용
-- **반응형 JS**: `window.innerWidth`를 `ref`로 래핑 + `resize` 이벤트로 반응형 — 1420px 이하에서 닉네임 줄 분리를 JS 단에서 처리(`displayedHtml` computed 내 문자열 조작)
-
----
-
-## 픽스처 로드
-
-모든 앱의 fixture를 `backend/fixtures/total.json` 하나로 통합했습니다.
-
-```bash
-# 통합 로드 (권장)
-python manage.py migrate
-python manage.py loaddata total.json
-```
 
 외래 키 오류 발생 시 개별 순서대로 로드:
 
@@ -357,9 +446,42 @@ python manage.py loaddata category.json label.json region.json skill.json bootca
 
 ---
 
+## 트러블슈팅
+
+### GMS API 동시 호출 시 응답 누락
+- **현상**: `ThreadPoolExecutor`로 4카테고리를 병렬 호출하면 그 중 하나의 응답이 드롭됨
+- **원인**: SSAFY GMS 프록시 서버가 동시 요청에 불안정
+- **해결**: `ThreadPoolExecutor` 제거 → 4카테고리 순차 실행으로 변경
+
+### max_tokens 부족으로 JSON 중간 절단
+- **현상**: `_batch_score`가 빈 배열을 반환하거나 파싱 실패
+- **원인**: `max_tokens=600` 설정 시 후보 15개의 JSON 응답이 중간에 잘림 (15개 × 약 50토큰 = 750토큰 필요)
+- **해결**: `max_tokens=2000`으로 증가, 후보 수도 30개 → 15개로 축소
+
+### 키워드 확장 비결정성으로 ORM 매칭 불안정
+- **현상**: 같은 프로필인데 실행할 때마다 후보 목록이 달라짐
+- **원인**: Claude가 매번 다른 확장 키워드를 반환하는 AI 특성
+- **해결**: `preferred_position + experience` 원본 키워드를 항상 확장 결과 앞에 고정 포함
+
+### 무한 "계산 중" 상태
+- **현상**: 후보 데이터가 0개이거나 점수화에 실패하면 프론트엔드가 영원히 스피너를 표시
+- **원인**: `computing` 상태를 벗어날 신호가 없음
+- **해결**: Sentinel 패턴 도입 — 결과가 없으면 `FitScore(score=-1)`을 저장, `get_recommendations()`에서 sentinel 감지 시 `status: no_match` 반환
+
+### 특정 직무의 채용공고 추천 결과 없음
+- **현상**: 희망 직무가 "반도체 엔지니어"일 때 AI 추천 채용공고가 표시되지 않음
+- **원인**: AI 기술의 한계가 아닌 **데이터 커버리지 문제**. 크롤링한 채용공고가 IT/개발 직군 위주로 구성되어 있어 반도체·제조·하드웨어 계열 공고가 DB에 없음
+- **해결**: Sentinel 패턴으로 무한 로딩 대신 "프로필과 일치하는 채용공고가 없습니다" 안내 메시지 표시. 근본적 해결은 다양한 직군의 데이터 추가 수집 필요
+
+### Claude 응답 파싱 실패
+- **현상**: Claude가 유효한 점수를 반환했음에도 `_parse_scores()`가 빈 배열을 반환
+- **원인**: Claude가 JSON을 마크다운 코드블록(` ```json `)으로 감싸거나 앞뒤에 설명 텍스트를 붙이는 경우 단순 `json.loads()`로 파싱 불가
+- **해결**: 3단계 파싱 도입 — ① 마크다운 코드블록 추출 → ② 전체 텍스트 직접 파싱 → ③ 정규식으로 JSON 배열 패턴 검색
+
+---
+
 ## 개발 예정 기능
 
-- **AI 적합도 점수**: 사용자 프로필과 채용공고/부트캠프를 비교해 fit 점수 도출 (`ai_score` 앱)
 - **캘린더 연동**: 자격증 시험 일정·공채 마감일 자동 등록
 
 ---
@@ -376,7 +498,7 @@ python manage.py loaddata category.json label.json region.json skill.json bootca
 - SearchBox 디자인 통일 — `border: 2px solid #2ab59e`, `border-radius: 50px`, 박스 그림자 제거, 돋보기 아이콘 제거, placeholder `"관심 직무를 검색해보세요."`
 
 #### 카드 레이아웃 통일
-모든 카테고리 카드(목록·검색 결과·길라잡이 픽)를 동일한 `card-top / card-bottom` 구조로 통일:
+모든 카테고리 카드(목록·검색 결과·길라잡이 픽·AI 추천)를 동일한 `card-top / card-bottom` 구조로 통일:
 
 | 영역 | 채용공고 | 자격증 | 부트캠프 | 공모전 |
 |------|---------|--------|---------|--------|
@@ -388,6 +510,7 @@ python manage.py loaddata category.json label.json region.json skill.json bootca
 
 - 모든 카드 `height: 200px` 고정, `box-sizing: border-box`, `justify-content: space-between`
 - 자격증 "시험 일정 보러가기" 버튼: 초록색(`#2ab59e`) 배경, `border-radius: 7px`
+- AI 추천 카드: 우상단에 원형 점수 뱃지 (초록 80+점 / 노랑 60-79점 / 주황 0-59점)
 
 #### 길라잡이 픽 (`gillajobi_pick.vue`)
 - 카드 3개를 가로(`flex-direction: row`) 배치
@@ -398,9 +521,15 @@ python manage.py loaddata category.json label.json region.json skill.json bootca
 - 백엔드 `jobs/views.py`, `bootcamps/views.py`, `competitions/views.py`의 `top3` 뷰에 `category__name` 필드 추가
 
 #### AI 추천 컴포넌트 (`AiRecommend.vue`)
-- 4개 카테고리 뷰 공통으로 신규 생성
-- 컴포넌트 타이틀 동적: `✨ AI 추천 채용공고 / 자격증 / 부트캠프 / 공모전`
-- 배경색 없음
+- 4개 카테고리 뷰 공통으로 신규 생성 (길라잡이 픽 위에 배치)
+- 컴포넌트 타이틀 동적: `✨ AI 추천 {채용공고|부트캠프|자격증|공모전}`
+- status별 UI 분기: 스피너(computing) / 카드 3개(ready) / 안내 메시지(no_match·empty_profile·error)
+- 카드 우상단: 원형 점수 뱃지 (초록/노랑/주황)
+- 카드 본문: 추천 이유 한 줄 표시
+
+#### 상세 페이지 AI 점수 뱃지
+- 4개 상세 뷰(Bootcamp·Job·Certification·Competition) 타이틀 하단에 점수 뱃지 + 이유 텍스트 표시
+- 점수가 null(미계산·비로그인)이면 뱃지 숨김
 
 #### 검색·필터 시 AI 추천/길라잡이 픽 자동 숨김
 - 채용공고: 검색 결과가 있거나(`searchResults !== null`) 지역 필터 선택 시 숨김

@@ -1,4 +1,5 @@
 import json
+import threading
 
 from rest_framework.decorators import (
     api_view,
@@ -11,6 +12,7 @@ from .serializers import (
     UserDetailSerializer,
     ProfileSerializer,
 )
+from ai_score.services import compute_scores_for_user, invalidate_user_scores, _is_profile_empty
 
 
 @api_view(['GET', 'PATCH'])
@@ -58,6 +60,16 @@ def profile(request):
         profile_serializer = ProfileSerializer(request.user.profile, data=profile_data, partial=True)
         profile_serializer.is_valid(raise_exception=True)
         profile_serializer.save()
+
+        # 기존 점수 삭제 후 백그라운드에서 재계산
+        invalidate_user_scores(request.user)
+        if not _is_profile_empty(request.user.profile):
+            t = threading.Thread(
+                target=compute_scores_for_user,
+                args=(request.user,),
+                daemon=True,
+            )
+            t.start()
 
         return Response({
             'user': UserDetailSerializer(request.user, context={'request': request}).data,

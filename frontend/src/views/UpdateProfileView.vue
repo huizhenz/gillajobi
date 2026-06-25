@@ -44,9 +44,9 @@
                 <input
                   type="text"
                   v-model="field.input.value"
-                  @keyup.enter.prevent="addItem(field.arr, field.input)"
+                  @keydown.enter.prevent="addItem(field.arr, field.input)"
                   :placeholder="field.placeholder"
-                  class="form-input"
+                  :class="['form-input', { 'input-error': field.key === 'preferred_position' && positionError }]"
                 />
                 <button type="button" class="btn-add" @click="addItem(field.arr, field.input)">추가</button>
               </div>
@@ -56,6 +56,7 @@
                   <button type="button" class="tag-remove" @click="removeItem(field.arr, index)">×</button>
                 </span>
               </div>
+              <p v-if="field.key === 'preferred_position' && positionError" class="error-msg">{{ positionError }}</p>
             </div>
 
             <div class="form-item full">
@@ -79,7 +80,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, watch } from 'vue'
 import { useUserStore } from "@/stores/userStore.js";
 
 const userStore = useUserStore();
@@ -134,6 +135,11 @@ const preferredLocationInput = ref('')
 
 const preferred_position = ref([])
 const preferredPositionInput = ref('')
+const positionError = ref('')
+
+watch(preferred_position, (val) => {
+  if (val.length > 0) positionError.value = ''
+}, { deep: true })
 
 const desired_salary = ref('')
 
@@ -158,6 +164,10 @@ const removeItem = (arr, index) => {
 }
 
 const updateProfile = () => {
+  if (preferred_position.value.length === 0) {
+    positionError.value = '희망 직무를 입력하지 않으면 AI 추천 기능을 사용할 수 없습니다.'
+    return
+  }
   const payload = {
     first_name: first_name.value,
     last_name: last_name.value,
@@ -355,6 +365,17 @@ $primary: #2ab59e;
 .tag-input-row {
   display: flex;
   gap: 8px;
+}
+
+.input-error {
+  border-color: #e53e3e !important;
+  background: #fff5f5 !important;
+}
+
+.error-msg {
+  font-size: 0.82rem;
+  color: #e53e3e;
+  margin: 4px 0 0;
 }
 
 .salary-wrap {
