@@ -1,6 +1,6 @@
 <template>
   <div class="pick-wrapper">
-    <h2 class="pick-title">Gillajobi Pick!</h2>
+    <h2 class="pick-title">🏆 길라잡이 Pick! 채용공고</h2>
     <hr class="pick-divider">
     <div class="pick-list">
       <router-link
@@ -90,21 +90,25 @@ onMounted(() => {
 
 .pick-list {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   gap: 10px;
 }
 
 .pick-card {
+  flex: 1;
   display: flex;
   align-items: center;
   gap: 14px;
   padding: 14px 16px;
+  height: 200px;
+  box-sizing: border-box;
   background: #fff;
   border: 1px solid #e8e8e8;
   border-radius: 10px;
   text-decoration: none;
   color: inherit;
   transition: box-shadow 0.2s;
+  min-width: 0;
 
   &:hover {
     box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
@@ -155,5 +159,16 @@ onMounted(() => {
   font-size: 0.78rem;
   color: #aaa;
   flex-shrink: 0;
+}
+
+@media (max-width: 810px) {
+  .pick-list {
+    flex-direction: column;
+  }
+
+  .pick-card {
+    flex: 1 1 100%;
+    height: 200px;
+  }
 }
 </style>

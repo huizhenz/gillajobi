@@ -3,6 +3,7 @@
         <div class="search-area">
             <SearchBox label="competitions" @results="onResults" />
         </div>
+        <AiRecommend type="competitions" />
         <GillajobiPick type="competitions" />
         <competition-list :search-results="searchResults" :searched-keyword="searchedKeyword" />
     </div>
@@ -14,6 +15,7 @@ import { useSearchStore } from '@/stores/searchStore'
 import CompetitionList from '@/components/competitions/CompetitionList.vue'
 import SearchBox from '@/components/common/SearchBox.vue'
 import GillajobiPick from '@/components/common/gillajobi_pick.vue'
+import AiRecommend from '@/components/common/AiRecommend.vue'
 
 const searchStore = useSearchStore()
 const searchResults = ref(null)
