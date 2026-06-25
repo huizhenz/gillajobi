@@ -229,6 +229,26 @@ $breakpoint: 810px;
   }
 }
 
+.nav-search-wrap {
+  flex: 0 0 auto;
+  width: 260px;
+
+  :deep(.search-box) {
+    border-width: 1px;
+    border-radius: 20px;
+  }
+
+  :deep(.search-input) {
+    padding: 6px 14px;
+    font-size: 0.88rem;
+  }
+
+  :deep(.search-btn) {
+    padding: 6px 16px;
+    font-size: 0.85rem;
+  }
+}
+
 .btn-signup {
   background: $primary;
   color: white;

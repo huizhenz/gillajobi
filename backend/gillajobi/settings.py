@@ -167,3 +167,9 @@ REST_AUTH = {
 }
 
 ACCOUNT_EMAIL_VERIFICATION = 'none'
+
+CACHES = {
+    "default": {
+        "BACKEND": "django.core.cache.backends.locmem.LocMemCache",
+    }
+}

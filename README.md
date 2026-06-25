@@ -1,6 +1,6 @@
 # 길라잡이 (Gillajobi)
 
-취업 준비생을 위한 채용 정보 통합 플랫폼. 채용공고, 부트캠프, 자격증, 공모전 정보를 한 곳에서 제공한다.
+취업 준비생을 위한 채용 정보 통합 플랫폼. 채용공고, 부트캠프, 자격증, 공모전 정보를 한 곳에서 제공하며, AI 기반 자연어 검색을 지원한다.
 
 ---
 
@@ -13,6 +13,7 @@
 | DB | SQLite |
 | 인증 | Token Authentication |
 | 데이터 수집 | Requests, BeautifulSoup4 (크롤링) |
+| AI | Claude Haiku 4.5 (`claude-haiku-4-5-20251001`) — 검색어 키워드 확장 (Context window: 200,000 tokens / Max output: 64,000 tokens) |
 
 ---
 
@@ -29,13 +30,16 @@ gillajobi/
 │   ├── community/            # 커뮤니티 게시글 & 댓글
 │   ├── jobs/                 # 채용공고
 │   ├── todos/                # 사용자 할일 관리
-│   ├── category/             # 공통 카테고리 & 라벨
+│   ├── category/             # 공통 카테고리 & 검색 (AI 키워드 확장)
 │   └── ai_score/             # AI 적합도 점수 (개발 예정)
+│
+├── fixtures/                 # 통합 픽스처 (total.json)
 │
 └── frontend/                 # Vue.js 클라이언트
     └── src/
         ├── views/            # 페이지 컴포넌트
         ├── components/       # 재사용 UI 컴포넌트
+        │   └── common/       # SearchBox, AppNav, AppFooter
         ├── stores/           # Pinia 상태 관리
         └── router/           # Vue Router 설정
 ```
@@ -48,15 +52,18 @@ gillajobi/
 ```bash
 cd backend
 pip install -r requirements.txt
+pip install anthropic          # AI 검색 의존성
 python manage.py migrate
-python manage.py runserver        # http://127.0.0.1:8000
+python manage.py runserver     # http://127.0.0.1:8000
 ```
+
+> `backend/.env`에 `GMS_KEY`가 설정되어 있어야 AI 검색이 동작합니다.
 
 ### Frontend
 ```bash
 cd frontend
 npm install
-npm run dev                       # http://localhost:5173
+npm run dev                    # http://localhost:5173
 ```
 
 ---
@@ -113,6 +120,11 @@ Base URL: `http://127.0.0.1:8000/api/v1`
 | GET / POST | `/community/articles/<id>/comments/` | 댓글 목록 / 작성 |
 | DELETE | `/community/comments/<id>/` | 댓글 삭제 |
 
+### Search (AI 키워드 확장)
+| Method | Endpoint | 설명 |
+|--------|----------|------|
+| GET | `/category/search/?q=검색어` | 자연어 검색 — Claude AI로 키워드 확장 후 4개 카테고리 동시 검색. `label` 미지정: 각 5건 / `label=jobs\|bootcamps\|certifications\|competitions` 지정: 해당 카테고리만 50건 |
+
 ### Todos
 | Method | Endpoint | 설명 |
 |--------|----------|------|
@@ -121,14 +133,72 @@ Base URL: `http://127.0.0.1:8000/api/v1`
 
 ---
 
+## AI 검색 구조
+
+```
+[사용자 입력]
+      │
+      ▼
+[SearchBox.vue] — label prop으로 동작 분기
+      │
+      ├─ label=null (MainView): router.push('/search') → input 초기화
+      │       ▼
+      │  [SearchView — onMounted → searchStore.search()]
+      │       │ GET /api/v1/category/search/?q=검색어
+      │       ▼
+      │  [JSON 응답] → .slice(0, 3) → 4개 섹션 각 최대 3건 표시
+      │
+      └─ label='jobs'|'bootcamps'|'certifications'|'competitions'
+              │ GET /api/v1/category/search/?q=검색어&label=jobs
+              ▼
+         [해당 카테고리만 최대 50건] → List 컴포넌트 인라인 표시 후 input 초기화
+              ▼
+         [0건이면 "키워드에 일치하는 정보가 없습니다." 출력]
+
+공통 흐름:
+      GET /api/v1/category/search/
+              │
+              ├─ 캐시 HIT (LocMemCache, 24시간) ──────────────┐
+              │                                                │
+              ▼ 캐시 MISS                                      │
+      [category/services.py — expand_keywords()]              │
+        Claude Haiku 4.5 (SSAFY GMS 엔드포인트)               │
+        "vite" → ["vite", "프론트엔드", "React", "Vue", ...]  │
+              │                                                │
+              ▼                                                │
+      [SQLite icontains OR 검색] ◀────────────────────────────┘
+        Recruitment / Bootcamp / Certification / Competition
+```
+
+| 항목 | 내용 |
+|------|------|
+| 모델 | `claude-haiku-4-5-20251001` |
+| 엔드포인트 | `https://gms.ssafy.io/gmsapi/api.anthropic.com/v1/messages` |
+| 인증 | `.env`의 `GMS_KEY` |
+| 캐시 | LocMemCache, TTL 24시간 |
+| max_tokens | 300 (JSON 배열 반환용) |
+| SearchView 표시 | 카테고리별 최대 3건 (`.slice(0, 3)`) |
+| Label 뷰 표시 | 해당 카테고리 최대 50건 |
+
+### 검색 카드 반환 필드
+
+| 카테고리 | 반환 필드 | 카드 표시 |
+|---------|----------|----------|
+| jobs | `id`, `title`, `company__name`, `close_date` | 회사명(회색) / 공고명(굵게) / 마감일 |
+| bootcamps | `id`, `title`, `company`, `close_date` | 운영사(회색) / 부트캠프명(굵게) / 마감일 |
+| certifications | `id`, `jm_cd`, `name`, `series_name` | 계열명(회색) / 자격증명(굵게) / 시험일정 링크 |
+| competitions | `id`, `title`, `host`, `keyword`, `start_date` | 주최사(회색) / 공모전명(굵게) / 분야 뱃지 / 시작일 |
+
+---
+
 ## 데이터 모델
 
 ### Accounts
 - **User**: AbstractUser 확장. `nickname`(unique), `gender`, `birth`, `profile_image`, `first_name`, `last_name`
-- **Profile**: User 1:1. `education`, `certification`, `experience`, `language`, `preferred_location`, `preferred_position` (JSONField 배열 — 여러 항목 저장), `desired_salary`(TextField)
+- **Profile**: User 1:1. `education`, `certification`, `experience`, `language`, `preferred_location`, `preferred_position` (JSONField 배열), `desired_salary`
 
 ### Bootcamps
-- **Bootcamp**: `title`, `region`(FK), `skills`(M2M), `expense`, `period`, `participation_time`, `program_process`, `recruitment_linkage`, `close_date`, `close_date_text`, `recruitment_url`(unique), `ai_fit_score`
+- **Bootcamp**: `title`, `region`(FK), `skills`(M2M), `expense`, `period`, `participation_time`, `program_process`, `recruitment_linkage`, `close_date`, `recruitment_url`(unique), `ai_fit_score`
 - **Region**: `name`(unique)
 - **Skill**: `name`(unique)
 
@@ -163,18 +233,18 @@ Base URL: `http://127.0.0.1:8000/api/v1`
 | 경로 | 컴포넌트 | 상태 |
 |------|----------|------|
 | `/` | MainView | 완료 — 타이핑 효과(닉네임 포함 인사말, 90ms, 커서 깜빡임), 검색창 teal 그림자·최대 너비 600px, 예시 태그 pill 칩, 반응형(1200px: 이미지 400px·폰트 38px / 1000px 이하: 세로 배치), 1420px 이하 닉네임 줄 분리 |
-| `/signup` | SignupView | 완료 |
+| `/search` | SearchView | 완료 — AI 검색 결과 (채용공고·부트캠프·자격증·공모전) |
+| `/signup` | SignupView | 완료 - 기본/추가 정보 섹션 구분, 실시간 유효성 검사, 생년월일 placeholder 숨김 |
 | `/login` | LoginView | 완료 — 중앙 정렬, 로고 이미지, SCSS 스타일링 |
-| `/signup` | SignupView | 완료 — 기본/추가 정보 섹션 구분, 실시간 유효성 검사, 생년월일 placeholder 숨김 |
 | `/profile/:username` | ProfileView | 완료 — 개인정보 탭 + 작성한 글 탭, 닉네임 표시, 투두 카드(teal, 프로그레스 바, 완료 수 표기), 희망 연봉 "만원" 표시, 작성한 글 카드 CommunityView 동일 스타일, 810px 반응형 |
 | `/profile/:username/update` | UpdateProfileView | 완료 — 성/이름/프로필이미지(3:4·150×200px·border-radius 5%) + 배열 필드 태그 pill UI, 기존 데이터 pre-fill, 희망 연봉 "만원" 단위 표시, 태그 input 하단 배치 |
-| `/bootcamp` | BootcampView | 완료 |
+| `/bootcamp` | BootcampView | 완료 — 상단 SearchBox |
 | `/bootcamp/:bootcampPk` | BootcampDetailView | 완료 — 기술 스택 pill 뱃지 |
-| `/jobs` | JobView | 완료 |
+| `/jobs` | JobView | 완료 — 상단 SearchBox |
 | `/jobs/:jobPk` | JobDetailView | 완료 |
-| `/competition` | CompetitionView | 완료 |
+| `/competition` | CompetitionView | 완료 — 상단 SearchBox |
 | `/competition/:competitionPk` | CompetitionDetailView | 완료 |
-| `/certification` | CertificationView | 완료 |
+| `/certification` | CertificationView | 완료 — 상단 SearchBox |
 | `/certification/:jm_cd` | CertificationDetailView | 완료 |
 | `/community` | CommunityView | 완료 — 카테고리 필터(고정 컬러), 댓글 수 우하단 SVG 아이콘, 닉네임·날짜 표시, 비로그인 블러 게이트, 810px 반응형 |
 | `/community/article` | CommunityFormView | 완료 — UpdateProfileView 통일 디자인, 카테고리 선택, 이탈 방지 가드 |
@@ -195,9 +265,8 @@ Base URL: `http://127.0.0.1:8000/api/v1`
 | jobStore | `stores/jobStore.js` | 채용공고 목록/상세 조회 |
 | certificationStore | `stores/certificationStore.js` | 자격증 목록/상세 조회 |
 | competitionStore | `stores/competitionStore.js` | 공모전 목록/상세 조회 |
-| todoStore | `stores/todoStore.js` | 할일 CRUD, ProfileView onMounted에서 자동 로드 |
-
----
+| todoStore | `stores/todoStore.js` | 할일 CRUD |
+| searchStore | `stores/searchStore.js` | 검색어 바인딩(`keyword`), 검색 실행(`search`), 결과 저장(jobs·bootcamps·certifications·competitions) |
 
 ---
 
@@ -213,14 +282,40 @@ Base URL: `http://127.0.0.1:8000/api/v1`
 
 ## 주요 구현 패턴
 
+- **AI 키워드 확장 검색**: `category/services.py`에서 Claude Haiku로 검색어를 최대 10개 관련 키워드로 확장 → SQLite `icontains` OR 필터로 4개 모델 동시 검색. 결과는 24시간 캐시(LocMemCache)
+- **SearchBox 컴포넌트**: `components/common/SearchBox.vue`로 분리. `label` prop으로 동작 분기 — `null`이면 `/search`로 이동(전체 검색), 문자열이면 해당 카테고리 내 인라인 검색 후 `@results` emit. 검색 완료 후 input 자동 초기화.
+- **라벨 내 검색**: JobView·BootcampView·CertificationView·CompetitionView에서 SearchBox의 `@results` 이벤트를 수신해 List 컴포넌트에 `searchResults` prop으로 전달. 결과 0건이면 "키워드에 일치하는 정보가 없습니다." 출력.
+- **검색 카드 일관성**: 각 카테고리 List 컴포넌트의 검색 결과 카드를 해당 카테고리 DetailCard 컴포넌트와 동일한 레이아웃·CSS로 통일.
 - **비로그인 게이트**: 커뮤니티 목록에서 `v-else` 블러 오버레이 — 가짜 카드 blur + 로그인 안내 모달 카드
 - **사용자 권한 UI**: 게시글/댓글에서 `article.username === userStore.username` 비교로 수정·삭제 버튼 조건부 렌더링
 - **카테고리 필터**: 프론트엔드 `computed`로 `articleList`를 `selectedLabel`로 필터링
 - **카테고리 고정 컬러**: `labelColorMap` 객체로 자격증·부트캠프·공모전·채용공고 배경색/글자색 고정, 필터 버튼도 동일 컬러 적용
 - **닉네임 표시**: 커뮤니티 게시글·댓글·프로필 전 영역에서 `username` 대신 `nickname` 표시 — 백엔드 시리얼라이저에 `SerializerMethodField`(source=`user.nickname`) 추가
 - **스토어 순환 의존 방지**: `communityStore` 내 `useUserStore()`를 함수 바디 안에서 호출
-- **프로필 내 작성 글**: `communityStore.articleList.filter(a => a.username === userStore.username)` — 별도 API 없이 프론트 필터링
 - **이미지/배열 전송**: 프로필 수정 시 `FormData` + `JSON.stringify` 배열 필드, 백엔드에서 `json.loads`로 파싱
+- **실시간 유효성 검사**: SignupView에서 Vue `watch`로 각 필드 입력 즉시 검증 (형식·길이·일치 여부)
+- **라우터 가드**: `beforeEach`에서 인증 필요 페이지 접근 시 LoginView로 리다이렉트
+- **이탈 방지**: CommunityFormView에서 `onBeforeRouteLeave` + `watch([title, content])`로 작성 중 이탈 confirm
+
+---
+
+## 픽스처 로드
+
+통합 픽스처 `backend/fixtures/total.json` (총 7,661개 레코드).
+
+```bash
+python manage.py loaddata ../fixtures/total.json
+```
+
+| 구성 | 레코드 수 |
+|------|----------|
+| 채용공고 (Recruitment) | 534개 (기존 484 + 테스트 50) |
+| 자격증 (Certification) | 633개 (기존 613 + IT분야 20) |
+| 부트캠프 (Bootcamp) | 447개 |
+| 공모전 (Competition) | 426개 |
+| 기타 (region, skill, category 등) | 나머지 |
+
+테스트 데이터 커버 분야: 프론트엔드 · 백엔드 · 데이터 엔지니어링 · AI/ML · UI/UX 디자인 · 클라우드/DevOps · 정보보안 · 모바일 앱 · 게임 개발 · 회계/재무
 - **로그인 후 닉네임 유지**: `userStore.logIn()` 성공 후 `getProfile()`을 호출해 `nickname` 즉시 설정, 로그아웃 시 `nickname = null` 초기화
 - **투두 카드 프로그레스**: `todoStore.completedCount / todoStore.todoList.length`로 진행률 계산, CSS width 바인딩으로 애니메이션
 - **실시간 유효성 검사**: SignupView에서 Vue `watch`로 각 필드 입력 즉시 검증 (형식·길이·일치 여부), 서버 에러는 catch에서 병합 표시

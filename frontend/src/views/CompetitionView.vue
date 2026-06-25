@@ -1,16 +1,35 @@
 <template>
     <div>
-        <p>여기에 검색창</p>
-        <competition-list/>
+        <div class="search-area">
+            <SearchBox label="competitions" @results="onResults" />
+        </div>
+        <competition-list :search-results="searchResults" :searched-keyword="searchedKeyword" />
     </div>
 </template>
 
 <script setup>
-import CompetitionList from '@/components/competitions/CompetitionList.vue';
+import { ref } from 'vue'
+import { useSearchStore } from '@/stores/searchStore'
+import CompetitionList from '@/components/competitions/CompetitionList.vue'
+import SearchBox from '@/components/common/SearchBox.vue'
 
-
+const searchStore = useSearchStore()
+const searchResults = ref(null)
+const searchedKeyword = ref('')
+const onResults = (items) => {
+  searchedKeyword.value = searchStore.keyword
+  searchResults.value = items
+}
 </script>
 
 <style lang="scss" scoped>
+div {
+  padding: 32px 0;
+}
 
+.search-area {
+  display: flex;
+  justify-content: center;
+  padding: 0 24px 32px;
+}
 </style>

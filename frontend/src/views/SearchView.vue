@@ -1,66 +1,108 @@
 <template>
     <div class="search-container">
-        <h2 class="search-title">"{{ searchStore.keyword }}" 검색 결과</h2>
+        <form class="search-area" @submit.prevent="searchStore.search()">
+            <input
+                v-model="searchStore.keyword"
+                type="text"
+                placeholder="관심 직무·기술·자격증을 검색하세요"
+                class="search-input"
+            />
+            <button type="submit" class="search-btn" :disabled="searchStore.isLoading">
+                {{ searchStore.isLoading ? '검색 중…' : '검색' }}
+            </button>
+        </form>
 
-        <section class="category-section">
-            <h3 class="category-title">채용공고</h3>
-            <router-link :to="{ name: 'JobView' }">더보기</router-link>
-    
-            <div class="card-grid">
-                <div v-for="job in searchStore.results.jobs" :key="job.id" class="card">
-                    <span class="card-type">채용</span>
-                    <p class="card-title">{{ job.title }}</p>
+        <h2 v-if="searchStore.searchedKeyword" class="search-title">"{{ searchStore.searchedKeyword }}" 검색 결과</h2>
+
+        <div v-if="searchStore.isLoading" class="loading">검색 중...</div>
+
+        <template v-else>
+            <section class="category-section">
+                <h3 class="category-title">채용공고</h3>
+                <router-link to="/jobs">더보기</router-link>
+                <div class="card-grid">
+                    <div v-if="searchStore.results.jobs.length === 0">검색 결과가 없습니다</div>
+                    <div v-for="job in searchStore.results.jobs.slice(0, 3)" :key="job.id" class="card">
+                        <div @click="goJobDetail(job.id)">
+                        <span class="card-type">채용</span>
+                        <p class="card-title">{{ job.title }}</p>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <section class="category-section">
-            <h3 class="category-title">부트캠프</h3>
-            <router-link :to="{ name: 'BootcampView' }">더보기</router-link>
-
-            <div class="card-grid">
-                <div v-for="bootcamp in searchStore.results.bootcamps" :key="bootcamp.id" class="card">
-                    <span class="card-type">부트캠프</span>
-                    <p class="card-title">{{ bootcamp.title }}</p>
+            <section class="category-section">
+                <h3 class="category-title">부트캠프</h3>
+                <router-link to="/bootcamp">더보기</router-link>
+                <div class="card-grid">
+                    <div v-if="searchStore.results.bootcamps.length === 0">검색 결과가 없습니다</div>
+                    <div v-for="bootcamp in searchStore.results.bootcamps.slice(0, 3)" :key="bootcamp.id" class="card">
+                        <div @click="goBootcampDetail(bootcamp.id)">
+                        <span class="card-type">부트캠프</span>
+                        <p class="card-title">{{ bootcamp.title }}</p>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <section class="category-section">
-            <h3 class="category-title">자격증</h3>
-            <router-link :to="{ name: 'CertificationView' }">더보기</router-link>
-
-            <div class="card-grid">
-                <div v-for="cert in searchStore.results.certifications" :key="cert.id" class="card">
-                    <span class="card-type">자격증</span>
-                    <p class="card-title">{{ cert.title }}</p>
+            <section class="category-section">
+                <h3 class="category-title">자격증</h3>
+                <router-link to="/certification">더보기</router-link>
+                <div class="card-grid">
+                    <div v-if="searchStore.results.certifications.length === 0">검색 결과가 없습니다</div>
+                    <div v-for="cert in searchStore.results.certifications.slice(0, 3)" :key="cert.id" class="card">
+                        <div @click="goCertificationDetail(cert.jm_cd)">
+                        <span class="card-type">자격증</span>
+                        <p class="card-title">{{ cert.name }}</p>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <section class="category-section">
-            <h3 class="category-title">공모전</h3>
-            <router-link :to="{ name: 'CompetitionView' }">더보기</router-link>
-
-            <div class="card-grid">
-                <div v-for="comp in searchStore.results.competitions" :key="comp.id" class="card">
-                    <span class="card-type">공모전</span>
-                    <p class="card-title">{{ comp.title }}</p>
+            <section class="category-section">
+                <h3 class="category-title">공모전</h3>
+                <router-link to="/competition">더보기</router-link>
+                <div class="card-grid">
+                    <div v-if="searchStore.results.competitions.length === 0">검색 결과가 없습니다</div>
+                    <div v-for="comp in searchStore.results.competitions.slice(0, 3)" :key="comp.id" class="card">
+                        <div @click="goCompetitionDetail(comp.id)">
+                        <span class="card-type">공모전</span>
+                        <p class="card-title">{{ comp.title }}</p>  
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </section>
+            </section>
+        </template>
     </div>
 </template>
 
 <script setup>
 import { onMounted } from 'vue'
 import { useSearchStore } from '@/stores/searchStore'
-import { RouterLink } from 'vue-router';
+import { RouterLink, useRouter } from 'vue-router';
 
+const router = useRouter();
 const searchStore = useSearchStore()
 onMounted(() => {
     searchStore.search()
+    searchStore.keyword = ''
 })
+
+const goBootcampDetail = (pk) => {
+  router.push({ name: 'BootcampDetailView', params: { bootcampPk: pk } })
+}
+
+const goCertificationDetail = (jm_cd) => {
+  router.push({ name: 'CertificationDetailView', params: { jm_cd: jm_cd } })
+}
+
+const goCompetitionDetail = (pk) => {
+  router.push({ name: 'CompetitionDetailView', params: { competitionPk: pk } })
+}
+
+const goJobDetail = (pk) => {
+  router.push({ name: 'JobDetailView', params: { jobPk: pk } })
+}
 </script>
 
 <style lang="scss" scoped>
@@ -70,11 +112,68 @@ $teal: #2ab59e;
     padding: 40px 60px;
 }
 
+.search-area {
+    display: flex;
+    align-items: center;
+    max-width: 600px;
+    margin: 0 auto 40px;
+    border: 2px solid #e0e0e0;
+    border-radius: 30px;
+    overflow: hidden;
+    transition: border-color 0.2s;
+
+    &:focus-within {
+        border-color: $teal;
+    }
+}
+
+.search-input {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 12px 20px;
+    font-size: 0.95rem;
+    background: transparent;
+    color: #222;
+
+    &::placeholder {
+        color: #aaa;
+    }
+}
+
+.search-btn {
+    border: none;
+    background: $teal;
+    color: white;
+    font-size: 0.9rem;
+    font-weight: 600;
+    padding: 12px 24px;
+    cursor: pointer;
+    transition: background 0.2s;
+    white-space: nowrap;
+
+    &:hover:not(:disabled) {
+        background: #239e8a;
+    }
+
+    &:disabled {
+        opacity: 0.6;
+        cursor: default;
+    }
+}
+
 .search-title {
     font-size: 24px;
     font-weight: 700;
     margin-bottom: 40px;
     color: #111;
+}
+
+.loading {
+    text-align: center;
+    padding: 60px 0;
+    font-size: 16px;
+    color: #888;
 }
 
 .category-section {

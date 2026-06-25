@@ -4,6 +4,8 @@ import axios from 'axios'
 
 export const useSearchStore = defineStore('search', () => {
   const keyword = ref('')
+  const searchedKeyword = ref('')
+  const isLoading = ref(false)
   const results = ref({
     jobs: [],
     bootcamps: [],
@@ -12,16 +14,17 @@ export const useSearchStore = defineStore('search', () => {
   })
 
   const search = function () {
-    axios({
-        method: 'post',
-        url: 'http://127.0.0.1:8000/api/v1/category/search/',
-        data: {
-            keyword: keyword.value,
-        }
+    if (!keyword.value.trim()) return
+    searchedKeyword.value = keyword.value
+    isLoading.value = true
+    results.value = { jobs: [], bootcamps: [], certifications: [], competitions: [] }
+    axios.get('http://127.0.0.1:8000/api/v1/category/search/', {
+      params: { q: searchedKeyword.value }
     })
-    .then(res => results.value = res.data)
-    .catch(err => console.log(err))
+    .then(res => { results.value = res.data })
+    .catch(err => console.error(err))
+    .finally(() => { isLoading.value = false })
   }
 
-  return { keyword, results, search }
+  return { keyword, searchedKeyword, isLoading, results, search }
 })

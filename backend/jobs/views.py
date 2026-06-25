@@ -29,17 +29,26 @@ class JobPagination(PageNumberPagination):
 def jobs_list(request):
     recruitments = Recruitment.objects.all()
 
-    paginator = JobPagination() # JobPagination 클래스의 인스턴스 생성
-    
-    page = paginator.paginate_queryset(recruitments, request) # 전체 recruitments 쿼리셋에서 15개만 잘라서 반환
-    serializer = RecruitmentListSerializer(page, many=True) # 잘라낸 15개짜리 page를 JSON으로 직렬화
-    return paginator.get_paginated_response(serializer.data) # 페이지 정보도 같이 감싸서 반환
-    # {
-    # "count": 150,
-    # "next": "http://.../jobs/?page=2",
-    # "previous": null,
-    # "results": [ ... ]
-    # }
+    region = request.GET.get('region', '').strip()
+    if region:
+        recruitments = recruitments.filter(region__startswith=region)
+
+    paginator = JobPagination()
+    page = paginator.paginate_queryset(recruitments, request)
+    serializer = RecruitmentListSerializer(page, many=True)
+    return paginator.get_paginated_response(serializer.data)
+
+
+@api_view(['GET'])
+def regions_list(request):
+    all_regions = (
+        Recruitment.objects
+        .exclude(region__isnull=True)
+        .exclude(region='')
+        .values_list('region', flat=True)
+    )
+    short_regions = sorted(set(r[:2] for r in all_regions if r))
+    return Response(short_regions)
 
 @api_view(['GET'])
 def job_detail(request, job_pk):
