@@ -1,3 +1,4 @@
+from django.db.models import F
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
@@ -42,5 +43,6 @@ def sync_competitions(request):
 @api_view(['GET'])
 def fetch_competition_detail(request, pk):
     competitions = Competition.objects.get(pk=pk)
+    Competition.objects.filter(pk=pk).update(view_count=F('view_count') + 1)
     serializer = CompetitionSerializer(competitions)
     return Response(serializer.data, status=status.HTTP_200_OK)

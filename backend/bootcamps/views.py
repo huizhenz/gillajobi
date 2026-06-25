@@ -1,4 +1,5 @@
 from django.shortcuts import get_object_or_404
+from django.db.models import F
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
@@ -63,6 +64,7 @@ def categories_list(request):
 @api_view(['GET'])
 def bootcamp_detail(request, bootcamp_pk):
     bootcamp = get_object_or_404(Bootcamp, pk=bootcamp_pk)
+    Bootcamp.objects.filter(pk=bootcamp_pk).update(view_count=F('view_count') + 1)
     serializer = BootcampSerializer(bootcamp)
     return Response(serializer.data)
 

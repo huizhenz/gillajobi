@@ -1,3 +1,4 @@
+from django.db.models import F
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
@@ -62,5 +63,6 @@ def sync_examinations(request):
 @api_view(['GET'])
 def fetch_certification_detail(request, jm_cd):
     certification = Certification.objects.get(jm_cd=jm_cd)
+    Certification.objects.filter(jm_cd=jm_cd).update(view_count=F('view_count') + 1)
     serializer = CertificationDetailSerializer(certification)
     return Response(serializer.data, status=status.HTTP_200_OK)
