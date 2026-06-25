@@ -2,6 +2,7 @@ from django.shortcuts import get_object_or_404
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
+from rest_framework.pagination import PageNumberPagination
 
 from .models import (
     Region,
@@ -17,12 +18,20 @@ from .serializers import (
 from .service import fetch_bootcamps_service
 from django.conf import settings
 
+class BootcampPagination(PageNumberPagination):
+    page_size = 15
+    page_size_query_param = 'page_size'
+
 
 @api_view(['GET'])
 def bootcamps_list(request):
     bootcamps = Bootcamp.objects.all()
-    serializer = BootcampSerializer(bootcamps, many=True)
-    return Response(serializer.data)
+
+    paginator = BootcampPagination()
+    
+    page = paginator.paginate_queryset(bootcamps, request) # 전체 recruitments 쿼리셋에서 15개만 잘라서 반환
+    serializer = BootcampSerializer(page, many=True) # 잘라낸 15개짜리 page를 JSON으로 직렬화
+    return paginator.get_paginated_response(serializer.data)
 
 @api_view(['GET'])
 def bootcamp_detail(request, bootcamp_pk):
