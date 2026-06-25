@@ -173,7 +173,7 @@ $primary: #2ab59e;
   width: 80px;
   height: 80px;
   border-radius: 50%;
-  background: #aac8e4;
+  background: #e6e6e6;
   color: white;
   font-size: 2rem;
   font-weight: 700;

@@ -25,8 +25,17 @@
             </div>
 
             <div class="form-item full">
-              <label for="profile_image" class="form-label">프로필 이미지</label>
-              <input type="file" id="profile_image" accept="image/*" @change="onImageChange" class="form-input-file" />
+              <label class="form-label">프로필 이미지</label>
+              <div class="avatar-upload">
+                <div class="avatar-preview">
+                  <img v-if="imagePreview" :src="imagePreview" class="avatar-img" />
+                  <div v-else class="avatar-placeholder">
+                    <span>{{ (last_name || first_name) ? (last_name + first_name).charAt(0).toUpperCase() : '' }}</span>
+                  </div>
+                  <label for="profile_image" class="avatar-btn">+</label>
+                </div>
+                <input type="file" id="profile_image" accept="image/*" @change="onImageChange" class="hidden-file-input" />
+              </div>
             </div>
 
             <div v-for="field in arrayFields" :key="field.key" class="form-item full">
@@ -85,14 +94,24 @@ onMounted(async () => {
   preferred_location.value = data.profile.preferred_location || []
   preferred_position.value = data.profile.preferred_position || []
   desired_salary.value = data.profile.desired_salary || ''
+  if (data.user.profile_image) {
+    imagePreview.value = data.user.profile_image
+  }
 })
 
 const first_name = ref('')
 const last_name = ref('')
 const profile_image = ref(null)
+const imagePreview = ref(null)
 
 const onImageChange = (e) => {
-  profile_image.value = e.target.files[0] || null
+  const file = e.target.files[0] || null
+  profile_image.value = file
+  if (file) {
+    imagePreview.value = URL.createObjectURL(file)
+  } else {
+    imagePreview.value = null
+  }
 }
 
 const education = ref([])
@@ -196,7 +215,7 @@ $primary: #2ab59e;
   margin-bottom: 24px;
 
   h3 {
-    font-size: 1rem;
+    font-size: 1.2rem;
     font-weight: 700;
     color: #1a1a1a;
   }
@@ -205,7 +224,7 @@ $primary: #2ab59e;
 .info-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 20px 32px;
+  gap: 24px 32px;
 }
 
 .form-item {
@@ -219,7 +238,7 @@ $primary: #2ab59e;
 }
 
 .form-label {
-  font-size: 0.78rem;
+  font-size: 0.85rem;
   color: #999;
   font-weight: 500;
 }
@@ -245,17 +264,62 @@ $primary: #2ab59e;
   }
 }
 
-.form-input-file {
-  font-size: 0.88rem;
-  color: #555;
-  padding: 8px 0;
+.hidden-file-input {
+  display: none;
+}
+
+.avatar-upload {
+  display: flex;
+  align-items: center;
+}
+
+.avatar-preview {
+  position: relative;
+  width: 150px;
+  height: 200px;
+}
+
+.avatar-img {
+  width: 150px;
+  height: 200px;
+  border-radius: 5%;
+  object-fit: cover;
+  border: 2px solid #e0e0e0;
+}
+
+.avatar-placeholder {
+  width: 150px;
+  height: 200px;
+  border-radius: 5%;
+  background: #e6e6e6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: 700;
+  color: white;
+}
+
+.avatar-btn {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: $primary;
+  color: white;
+  font-size: 1.2rem;
+  text-align: center;
+  line-height: 22px;
+  cursor: pointer;
+  border: 2px solid white;
+  display: block;
 }
 
 .tag-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 6px;
-  min-height: 28px;
 }
 
 .tag {
@@ -295,6 +359,7 @@ $primary: #2ab59e;
   border-radius: 8px;
   padding: 0 16px;
   font-size: 0.88rem;
+  font-weight: 500;
   cursor: pointer;
   white-space: nowrap;
   transition: background 0.2s;
