@@ -90,7 +90,7 @@ $primary: #2ab59e;
   font-weight: 600;
   background: $primary;
   padding: 6px 14px;
-  border-radius: 20px;
+  border-radius: 7px;
   white-space: nowrap;
 }
 </style>

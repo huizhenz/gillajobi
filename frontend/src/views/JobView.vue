@@ -7,9 +7,12 @@
             </select>
             <SearchBox label="jobs" :extra-params="{ region: jobStore.selectedRegion }" @results="onResults" />
         </div>
-        <AiRecommend type="jobs" />
-        <Gillajobi_pick type="jobs" />
-        <job-list :search-results="searchResults" :searched-keyword="searchedKeyword" />
+        <template v-if="searchResults === null && !jobStore.selectedRegion">
+            <AiRecommend type="jobs" />
+            <Gillajobi_pick type="jobs" />
+        </template>
+        <job-list :search-results="searchResults" :searched-keyword="searchedKeyword" :selected-region="jobStore.selectedRegion" />
+        <TopButton />
     </div>
 </template>
 
@@ -22,6 +25,7 @@ import SearchBox from '@/components/common/SearchBox.vue'
 import axios from 'axios'
 import Gillajobi_pick from '@/components/common/gillajobi_pick.vue'
 import AiRecommend from '@/components/common/AiRecommend.vue'
+import TopButton from '@/components/common/TopButton.vue'
 
 const searchStore = useSearchStore()
 const jobStore = useJobStore()

@@ -1,15 +1,24 @@
 <script setup>
 import { ref } from 'vue';
 import { useUserStore } from '@/stores/userStore';
-import { useRouter } from 'vue-router';
+import { useRouter, useRoute } from 'vue-router';
 
 const userstore = useUserStore();
 const router = useRouter();
+const route = useRoute();
 const menuOpen = ref(false);
 
 const logOut = function () {
     userstore.logOut();
     menuOpen.value = false;
+}
+
+const navigateTo = (routeName) => {
+    if (route.name === routeName) {
+        router.go(0)
+    } else {
+        router.push({ name: routeName })
+    }
 }
 
 router.afterEach(() => {
@@ -24,11 +33,11 @@ router.afterEach(() => {
         <router-link :to="{ name: 'MainView' }" class="nav-logo">
           <img src="@/assets/logo.png" alt="LogoImg" class="logo-img">
         </router-link>
-        <router-link :to="{ name: 'JobView' }" class="nav-link desktop-only">채용공고</router-link>
-        <router-link :to="{ name: 'CertificationView' }" class="nav-link desktop-only">자격증</router-link>
-        <router-link :to="{ name: 'BootcampView' }" class="nav-link desktop-only">부트캠프</router-link>
-        <router-link :to="{ name: 'CompetitionView' }" class="nav-link desktop-only">공모전</router-link>
-        <router-link :to="{ name: 'CommunityView' }" class="nav-link desktop-only">커뮤니티</router-link>
+        <router-link :to="{ name: 'JobView' }" class="nav-link desktop-only" @click.prevent="navigateTo('JobView')">채용공고</router-link>
+        <router-link :to="{ name: 'CertificationView' }" class="nav-link desktop-only" @click.prevent="navigateTo('CertificationView')">자격증</router-link>
+        <router-link :to="{ name: 'BootcampView' }" class="nav-link desktop-only" @click.prevent="navigateTo('BootcampView')">부트캠프</router-link>
+        <router-link :to="{ name: 'CompetitionView' }" class="nav-link desktop-only" @click.prevent="navigateTo('CompetitionView')">공모전</router-link>
+        <router-link :to="{ name: 'CommunityView' }" class="nav-link desktop-only" @click.prevent="navigateTo('CommunityView')">커뮤니티</router-link>
       </div>
 
       <div class="nav-right">
@@ -61,11 +70,11 @@ router.afterEach(() => {
 
     <!-- 모바일 드롭다운 메뉴 -->
     <div class="mobile-menu mobile-only" :class="{ open: menuOpen }">
-      <router-link :to="{ name: 'JobView' }" class="mobile-link">채용공고</router-link>
-      <router-link :to="{ name: 'CertificationView' }" class="mobile-link">자격증</router-link>
-      <router-link :to="{ name: 'BootcampView' }" class="mobile-link">부트캠프</router-link>
-      <router-link :to="{ name: 'CompetitionView' }" class="mobile-link">공모전</router-link>
-      <router-link :to="{ name: 'CommunityView' }" class="mobile-link">커뮤니티</router-link>
+      <router-link :to="{ name: 'JobView' }" class="mobile-link" @click.prevent="navigateTo('JobView')">채용공고</router-link>
+      <router-link :to="{ name: 'CertificationView' }" class="mobile-link" @click.prevent="navigateTo('CertificationView')">자격증</router-link>
+      <router-link :to="{ name: 'BootcampView' }" class="mobile-link" @click.prevent="navigateTo('BootcampView')">부트캠프</router-link>
+      <router-link :to="{ name: 'CompetitionView' }" class="mobile-link" @click.prevent="navigateTo('CompetitionView')">공모전</router-link>
+      <router-link :to="{ name: 'CommunityView' }" class="mobile-link" @click.prevent="navigateTo('CommunityView')">커뮤니티</router-link>
 
       <hr class="mobile-divider" />
 

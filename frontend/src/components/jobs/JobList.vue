@@ -3,7 +3,7 @@
     <!-- 검색 -->
     <template v-if="searchResults !== null">
       <p class="search-status" v-if="searchResults.length">"{{ searchedKeyword }}" 검색 결과 {{ searchResults.length }}건</p>
-      <p v-else>키워드에 일치하는 정보가 없습니다.</p>
+      <p v-else class="no-result">"{{ searchedKeyword }}"에 일치하는 정보가 없습니다.</p>
       <div class="job-grid">
         <router-link
           v-for="job in searchResults"
@@ -26,8 +26,13 @@
 
     <!-- 목록  -->
     <template v-else>
-      <h2 class="section-title">전체 채용공고</h2>
-      <hr class="section-divider">
+      <template v-if="selectedRegion">
+        <p class="search-status">"{{ selectedRegion }}" 검색결과 {{ store.jobList.length }}건</p>
+      </template>
+      <template v-else>
+        <h2 class="section-title">전체 채용공고</h2>
+        <hr class="section-divider">
+      </template>
       <div class="job-grid">
         <JobDetail
           v-for="job in sortedList"
@@ -49,6 +54,7 @@ import { getSortKey } from '@/composables/useDday.js'
 defineProps({
   searchResults: { type: Array, default: null },
   searchedKeyword: { type: String, default: '' },
+  selectedRegion: { type: String, default: '' },
 })
 
 const store = useJobStore()
@@ -92,8 +98,15 @@ onUnmounted(() => { observer?.disconnect() })
   margin-top: 24px;
 }
 
+.no-result {
+  font-size: 0.95rem;
+  color: #888;
+  padding: 40px 0;
+  text-align: center;
+}
+
 .search-status {
-  font-size: 0.9rem;
+  font-size: 1rem;
   color: #666;
   margin: 0 0 12px;
   padding: 0 4px;

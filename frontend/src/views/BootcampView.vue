@@ -11,9 +11,12 @@
             </select>
             <SearchBox label="bootcamps" :extra-params="{ region: bootcampStore.selectedRegion, category: bootcampStore.selectedCategory }" @results="onResults" />
         </div>
-        <AiRecommend type="bootcamps" />
-        <GillajobiPick type="bootcamps" />
+        <template v-if="searchResults === null && !bootcampStore.selectedRegion && !bootcampStore.selectedCategory">
+            <AiRecommend type="bootcamps" />
+            <GillajobiPick type="bootcamps" />
+        </template>
         <bootcamp-list :search-results="searchResults" :searched-keyword="searchedKeyword" />
+        <TopButton />
     </div>
 </template>
 
@@ -25,6 +28,7 @@ import BootcampList from '@/components/bootcamps/BootcampList.vue'
 import SearchBox from '@/components/common/SearchBox.vue'
 import GillajobiPick from '@/components/common/gillajobi_pick.vue'
 import AiRecommend from '@/components/common/AiRecommend.vue'
+import TopButton from '@/components/common/TopButton.vue'
 import axios from 'axios'
 
 const searchStore = useSearchStore()

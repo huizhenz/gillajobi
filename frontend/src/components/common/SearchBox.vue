@@ -55,7 +55,7 @@ const clearSearch = () => {
     <input
       v-model="searchStore.keyword"
       type="text"
-      placeholder="관심 직무·기술·자격증을 검색하세요"
+      placeholder="관심 직무를 검색해보세요."
       class="search-input"
     />
     <button v-if="searchStore.keyword && label" type="button" class="clear-btn" @click="clearSearch">✕</button>
@@ -72,23 +72,18 @@ $primary: #2ab59e;
   display: flex;
   align-items: center;
   width: 100%;
-  max-width: 600px;
-  border: 2px solid #e0e0e0;
-  border-radius: 30px;
+  max-width: 400px;
+  border: 2px solid $primary;
+  border-radius: 50px;
   overflow: hidden;
-  transition: border-color 0.2s;
-
-  &:focus-within {
-    border-color: $primary;
-  }
 }
 
 .search-input {
   flex: 1;
   border: none;
   outline: none;
-  padding: 12px 20px;
-  font-size: 0.95rem;
+  padding: 7px 12px;
+  font-size: 0.9rem;
   background: transparent;
   color: #222;
 
@@ -102,7 +97,7 @@ $primary: #2ab59e;
   background: none;
   color: #aaa;
   font-size: 0.85rem;
-  padding: 0 8px;
+  padding: 0 6px;
   cursor: pointer;
   line-height: 1;
 
@@ -117,7 +112,7 @@ $primary: #2ab59e;
   color: white;
   font-size: 0.9rem;
   font-weight: 600;
-  padding: 12px 24px;
+  padding: 8px 16px;
   cursor: pointer;
   transition: background 0.2s;
   white-space: nowrap;

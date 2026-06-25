@@ -3,9 +3,12 @@
         <div class="search-filter-area">
             <SearchBox label="competitions" @results="onResults" />
         </div>
-        <AiRecommend type="competitions" />
-        <GillajobiPick type="competitions" />
+        <template v-if="searchResults === null">
+            <AiRecommend type="competitions" />
+            <GillajobiPick type="competitions" />
+        </template>
         <competition-list :search-results="searchResults" :searched-keyword="searchedKeyword" />
+        <TopButton />
     </div>
 </template>
 
@@ -16,6 +19,7 @@ import CompetitionList from '@/components/competitions/CompetitionList.vue'
 import SearchBox from '@/components/common/SearchBox.vue'
 import GillajobiPick from '@/components/common/gillajobi_pick.vue'
 import AiRecommend from '@/components/common/AiRecommend.vue'
+import TopButton from '@/components/common/TopButton.vue'
 
 const searchStore = useSearchStore()
 const searchResults = ref(null)

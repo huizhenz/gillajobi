@@ -3,7 +3,7 @@
     <!-- 검색 -->
     <template v-if="searchResults !== null">
       <p class="search-status" v-if="searchResults.length">"{{ searchedKeyword }}" 검색 결과 {{ searchResults.length }}건</p>
-      <p v-else>키워드에 일치하는 정보가 없습니다.</p>
+      <p v-else class="no-result">"{{ searchedKeyword }}"에 일치하는 정보가 없습니다.</p>
       <div class="bootcamp-grid">
         <router-link
           v-for="bootcamp in searchResults"
@@ -92,10 +92,17 @@ onUnmounted(() => { observer?.disconnect() })
 }
 
 .search-status {
-  font-size: 0.9rem;
+  font-size: 1rem;
   color: #666;
   margin: 0 0 12px;
   padding: 0 4px;
+}
+
+.no-result {
+  font-size: 0.95rem;
+  color: #888;
+  padding: 40px 0;
+  text-align: center;
 }
 
 .bootcamp-card {
