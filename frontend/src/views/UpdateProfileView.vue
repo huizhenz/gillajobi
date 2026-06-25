@@ -156,7 +156,6 @@ const updateProfile = () => {
 $primary: #2ab59e;
 
 .update-page {
-  background: #f4f6f9;
   min-height: 100vh;
   padding: 40px 24px;
 }
@@ -228,21 +227,28 @@ $primary: #2ab59e;
 .form-input {
   border: 1px solid #e0e0e0;
   border-radius: 8px;
-  padding: 9px 12px;
+  padding: 10px 14px;
   font-size: 0.9rem;
   outline: none;
   transition: border-color 0.2s;
   width: 100%;
   box-sizing: border-box;
+  background: #fafafa;
+
+  &::placeholder {
+    color: #bbb;
+  }
 
   &:focus {
     border-color: $primary;
+    background: white;
   }
 }
 
 .form-input-file {
   font-size: 0.88rem;
   color: #555;
+  padding: 8px 0;
 }
 
 .tag-list {
@@ -331,6 +337,44 @@ $primary: #2ab59e;
 
   &:hover {
     background: #239e8a;
+  }
+}
+
+@media (max-width: 768px) {
+  .update-page {
+    padding: 16px 12px;
+  }
+
+  .update-card {
+    border-radius: 12px;
+  }
+
+  .tab-bar {
+    padding: 0 16px;
+  }
+
+  .form-section {
+    padding: 16px;
+  }
+
+  .info-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-actions {
+    flex-direction: column-reverse;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .btn-submit {
+    width: 100%;
+    text-align: center;
+    padding: 14px;
+  }
+
+  .btn-skip {
+    text-align: center;
   }
 }
 </style>

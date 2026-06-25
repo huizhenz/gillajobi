@@ -79,7 +79,7 @@ router.afterEach(() => {
 
 <style lang="scss" scoped>
 $primary: #2ab59e;
-$breakpoint: 755px;
+$breakpoint: 768px;
 
 .nav-wrap {
   position: sticky;

@@ -164,7 +164,8 @@ Base URL: `http://127.0.0.1:8000/api/v1`
 |------|----------|------|
 | `/` | MainView | 완료 |
 | `/signup` | SignupView | 완료 |
-| `/login` | LoginView | 완료 |
+| `/login` | LoginView | 완료 — 중앙 정렬, 로고 이미지, SCSS 스타일링 |
+| `/signup` | SignupView | 완료 — 기본/추가 정보 섹션 구분, 실시간 유효성 검사, 생년월일 placeholder 숨김 |
 | `/profile/:username` | ProfileView | 완료 — 개인정보 탭 + 작성한 글 탭 (카드 레이아웃) |
 | `/profile/:username/update` | UpdateProfileView | 완료 — 성/이름/프로필이미지 + 배열 필드 태그 pill UI (추가·삭제), 기존 데이터 자동 pre-fill |
 | `/bootcamp` | BootcampView | 완료 |
@@ -179,7 +180,7 @@ Base URL: `http://127.0.0.1:8000/api/v1`
 | `/community/article` | CommunityFormView | 완료 — 카테고리 선택 포함 |
 | `/community/:pk` | CommunityDetailView | 완료 — 작성자 본인만 수정/삭제 |
 | `/community/:pk/update` | CommunityUpdateView | 완료 |
-| `/calendar` | CalendarView | 완료 |
+| `/calendar` | CalendarView | 완료 — 더미데이터 기반 마감일 배지, 호버 시 기간 하이라이트, TodoList 컴포넌트 분리 |
 
 ---
 
@@ -200,6 +201,14 @@ Base URL: `http://127.0.0.1:8000/api/v1`
 
 ---
 
+## 반응형 네비게이션
+
+- **768px 이하**: 기존 nav 링크 숨김, 우상단 햄버거 버튼(≡) 노출
+- **드롭다운 메뉴**: 클릭 시 상단에서 슬라이드다운 — 채용공고·자격증·부트캠프·공모전·커뮤니티 + 구분선 + 로그인/회원가입 (로그인 시 캘린더·프로필·로그아웃)
+- **자동 닫힘**: `router.afterEach` 훅으로 페이지 이동 시 메뉴 자동 닫힘
+
+---
+
 ## 주요 구현 패턴
 
 - **비로그인 게이트**: 커뮤니티 목록에서 `v-else` 블러 오버레이 — 가짜 카드 blur + 로그인 안내 모달 카드
@@ -211,19 +220,30 @@ Base URL: `http://127.0.0.1:8000/api/v1`
 - **실시간 유효성 검사**: SignupView에서 Vue `watch`로 각 필드 입력 즉시 검증 (형식·길이·일치 여부), 서버 에러는 catch에서 병합 표시
 - **로그인 에러 표시**: LoginView에서 `non_field_errors` 응답을 "아이디 또는 비밀번호가 잘못되었습니다." 고정 문구로 표시
 - **라우터 가드**: `beforeEach`에서 인증 필요 페이지 접근 시 LoginView로 리다이렉트
+- **라우터 name 통일**: 전체 프론트엔드에서 `to="/path"` 대신 `{ name: 'RouteName' }` 방식으로 통일 — 경로 변경 시 한 곳(router/index.js)만 수정하면 됨
+- **캘린더 이벤트 표시**: 더미데이터 기반 마감일 배지 + 호버 시 이벤트 기간 전체 하이라이트 (`isInRange` computed)
+- **TodoList 슬림 UI**: `height: 32px` 고정 + `white-space: nowrap`으로 버튼 텍스트 줄바꿈 방지, wrapper에 `display: flex; flex-direction: column`으로 `margin-top: auto` 정상 동작
 - **이탈 방지**: CommunityFormView에서 `onBeforeRouteLeave` + `watch([title, content])`로 작성 중 이탈 confirm (Vue Router 4 `return` 패턴)
 
 ---
 
 ## 픽스처 로드
 
-모든 앱의 fixture를 `backend/fixtures.json` 하나로 통합했습니다 (총 7,172개 레코드).
+모든 앱의 fixture를 `backend/fixtures/total.json` 하나로 통합했습니다.
 
 ```bash
-python manage.py loaddata fixtures.json
+# 통합 로드 (권장)
+python manage.py migrate
+python manage.py loaddata total.json
 ```
 
-로드 순서: category → label → region → skill → jobs → bootcamp → certifications → examinations → competitions
+외래 키 오류 발생 시 개별 순서대로 로드:
+
+```bash
+python manage.py loaddata category.json label.json region.json skill.json bootcamp.json jobs.json competitions.json certifications.json examinations.json
+```
+
+로드 순서: category → label → region → skill → bootcamp → jobs → competitions → certifications → examinations
 
 ---
 
