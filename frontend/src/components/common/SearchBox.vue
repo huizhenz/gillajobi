@@ -7,7 +7,11 @@ import axios from 'axios'
 const props = defineProps({
   label: {
     type: String,
-    default: null, // null = 전체 검색
+    default: null,
+  },
+  extraParams: {
+    type: Object,
+    default: () => ({}),
   },
 })
 
@@ -29,7 +33,7 @@ const goToSearch = async () => {
   isLoading.value = true
   try {
     const res = await axios.get('http://127.0.0.1:8000/api/v1/category/search/', {
-      params: { q: searchStore.keyword, label: props.label },
+      params: { q: searchStore.keyword, label: props.label, ...props.extraParams },
     })
     emit('results', res.data[props.label])
     searchStore.keyword = ''

@@ -31,13 +31,26 @@ def search(request):
     def should_query(name):
         return label is None or label == name
 
-    jobs = list(Recruitment.objects.filter(make_filter([
-        'title', 'company__name', 'detail__job_description', 'detail__qualification'
-    ])).distinct().values('id', 'title', 'company__name', 'close_date')[:(limit_label if label == 'jobs' else limit_all)]) if should_query('jobs') else []
+    region = request.GET.get('region', '').strip()
+    bc_category = request.GET.get('category', '').strip()
 
-    bootcamps = list(Bootcamp.objects.filter(make_filter([
+    jobs_qs = Recruitment.objects.filter(make_filter([
+        'title', 'company__name', 'detail__job_description', 'detail__qualification'
+    ])).distinct()
+    if region:
+        jobs_qs = jobs_qs.filter(region__startswith=region)
+    jobs = list(jobs_qs.values('id', 'title', 'company__name', 'close_date')[:(limit_label if label == 'jobs' else limit_all)]) if should_query('jobs') else []
+
+    bootcamps_qs = Bootcamp.objects.filter(make_filter([
         'title', 'program_process', 'skills__name'
-    ])).distinct().values('id', 'title', 'company', 'close_date')[:(limit_label if label == 'bootcamps' else limit_all)]) if should_query('bootcamps') else []
+    ])).distinct()
+    if region:
+        bootcamps_qs = bootcamps_qs.filter(region__name__icontains=region)
+    if bc_category:
+        bootcamps_qs = bootcamps_qs.filter(category__name__icontains=bc_category)
+    if region or bc_category:
+        bootcamps_qs = bootcamps_qs.distinct()
+    bootcamps = list(bootcamps_qs.values('id', 'title', 'company', 'close_date')[:(limit_label if label == 'bootcamps' else limit_all)]) if should_query('bootcamps') else []
 
     certifications = list(Certification.objects.filter(make_filter([
         'name', 'major_job_field', 'minor_job_field'

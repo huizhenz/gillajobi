@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="search-area">
-            <SearchBox label="jobs" @results="onResults" />
+            <SearchBox label="jobs" :extra-params="{ region: jobStore.selectedRegion }" @results="onResults" />
         </div>
         <div class="filter-area">
             <select class="filter-select" :value="jobStore.selectedRegion" @change="jobStore.setRegion($event.target.value)">
@@ -14,14 +14,17 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, watch } from 'vue'
 import { useSearchStore } from '@/stores/searchStore'
 import { useJobStore } from '@/stores/jobStore'
 import JobList from '@/components/jobs/JobList.vue'
 import SearchBox from '@/components/common/SearchBox.vue'
+import axios from 'axios'
 
 const searchStore = useSearchStore()
 const jobStore = useJobStore()
+jobStore.selectedRegion = ''  // setup 단계에서 초기화 → 자식 onMounted보다 먼저 실행
+
 const searchResults = ref(null)
 const searchedKeyword = ref('')
 
@@ -33,6 +36,19 @@ const onResults = (items) => {
   searchedKeyword.value = searchStore.keyword
   searchResults.value = items
 }
+
+// 검색 결과 모드일 때 region 변경 시 검색 재실행
+watch(() => jobStore.selectedRegion, async (newRegion) => {
+  if (searchResults.value === null || !searchedKeyword.value) return
+  try {
+    const res = await axios.get('http://127.0.0.1:8000/api/v1/category/search/', {
+      params: { q: searchedKeyword.value, label: 'jobs', region: newRegion },
+    })
+    searchResults.value = res.data.jobs
+  } catch (err) {
+    console.error(err)
+  }
+})
 </script>
 
 <style lang="scss" scoped>

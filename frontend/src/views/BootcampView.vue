@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="search-area">
-            <SearchBox label="bootcamps" @results="onResults" />
+            <SearchBox label="bootcamps" :extra-params="{ region: bootcampStore.selectedRegion, category: bootcampStore.selectedCategory }" @results="onResults" />
         </div>
         <div class="filter-area">
             <select class="filter-select" :value="bootcampStore.selectedRegion" @change="bootcampStore.setRegion($event.target.value)">
@@ -18,14 +18,18 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, watch } from 'vue'
 import { useSearchStore } from '@/stores/searchStore'
 import { useBootcampStore } from '@/stores/bootcampStore'
 import BootcampList from '@/components/bootcamps/BootcampList.vue'
 import SearchBox from '@/components/common/SearchBox.vue'
+import axios from 'axios'
 
 const searchStore = useSearchStore()
 const bootcampStore = useBootcampStore()
+bootcampStore.selectedRegion = ''      // setup 단계에서 초기화
+bootcampStore.selectedCategory = ''
+
 const searchResults = ref(null)
 const searchedKeyword = ref('')
 
@@ -38,6 +42,26 @@ const onResults = (items) => {
   searchedKeyword.value = searchStore.keyword
   searchResults.value = items
 }
+
+const rerunSearch = async () => {
+  if (searchResults.value === null || !searchedKeyword.value) return
+  try {
+    const res = await axios.get('http://127.0.0.1:8000/api/v1/category/search/', {
+      params: {
+        q: searchedKeyword.value,
+        label: 'bootcamps',
+        region: bootcampStore.selectedRegion,
+        category: bootcampStore.selectedCategory,
+      },
+    })
+    searchResults.value = res.data.bootcamps
+  } catch (err) {
+    console.error(err)
+  }
+}
+
+watch(() => bootcampStore.selectedRegion, rerunSearch)
+watch(() => bootcampStore.selectedCategory, rerunSearch)
 </script>
 
 <style lang="scss" scoped>
