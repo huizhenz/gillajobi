@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'ai_score',
     'rest_framework',
     'rest_framework.authtoken',
+    'drf_spectacular',
     'dj_rest_auth',
     'corsheaders',
     'django.contrib.sites',
@@ -74,6 +75,13 @@ REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.AllowAny',
     ],
+    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
+}
+
+SPECTACULAR_SETTINGS = {
+    'TITLE': '길라잡이 API 명세서',
+    'DESCRIPTION': 'Django REST Framework 기반 API 문서입니다.',
+    'VERSION': '1.0.0',
 }
 
 MIDDLEWARE = [
