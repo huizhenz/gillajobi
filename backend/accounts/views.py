@@ -21,7 +21,8 @@ def profile(request):
 
     if request.method == 'GET':
 
-        user_serializer = UserDetailSerializer(request.user, context={'request': request})
+        user_serializer = UserDetailSerializer(
+            request.user, context={'request': request})
         profile_serializer = ProfileSerializer(request.user.profile)
 
         return Response({
@@ -31,7 +32,6 @@ def profile(request):
 
     elif request.method == 'PATCH':
 
-        # User 필드 (first_name, last_name, profile_image)
         user_data = {}
         for field in ['first_name', 'last_name']:
             if field in request.data:
@@ -40,24 +40,27 @@ def profile(request):
             user_data['profile_image'] = request.FILES['profile_image']
 
         if user_data:
-            user_serializer = UserDetailSerializer(request.user, data=user_data, partial=True)
+            user_serializer = UserDetailSerializer(
+                request.user, data=user_data, partial=True)
             user_serializer.is_valid(raise_exception=True)
             user_serializer.save()
 
-        # Profile 필드 (FormData로 온 배열은 JSON 문자열로 전달되므로 파싱)
+        # Profile 필드 - JSON 문자열이므로 파싱 필요
         profile_data = {}
-        array_fields = ['education', 'certification', 'experience', 'language', 'preferred_location', 'preferred_position']
+        array_fields = ['education', 'certification', 'experience',
+                        'language', 'preferred_location', 'preferred_position']
         for field in array_fields:
             if field in request.data:
-                val = request.data[field]
+                value = request.data[field]
                 try:
-                    profile_data[field] = json.loads(val)
+                    profile_data[field] = json.loads(value)
                 except (json.JSONDecodeError, TypeError):
-                    profile_data[field] = val
+                    profile_data[field] = value
         if 'desired_salary' in request.data:
             profile_data['desired_salary'] = request.data['desired_salary']
 
-        profile_serializer = ProfileSerializer(request.user.profile, data=profile_data, partial=True)
+        profile_serializer = ProfileSerializer(
+            request.user.profile, data=profile_data, partial=True)
         profile_serializer.is_valid(raise_exception=True)
         profile_serializer.save()
 

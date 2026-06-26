@@ -35,7 +35,7 @@ gillajobi/
 │   └── ai_score/             # AI 적합도 점수 시스템
 │       ├── models.py         # FitScore 모델
 │       ├── services.py       # 3단계 파이프라인 (키워드 확장 → ORM 필터 → Claude 점수화)
-│       ├── views.py          # recommendations / single_score API
+│       ├── views.py          # recommendations / score_detail API
 │       └── ai_score.log      # 백그라운드 스레드 실행 로그
 │
 ├── fixtures/                 # 통합 픽스처 (total.json)
@@ -57,7 +57,6 @@ gillajobi/
 ```bash
 cd backend
 pip install -r requirements.txt
-pip install anthropic          # AI 검색 의존성
 python manage.py migrate
 python manage.py runserver     # http://127.0.0.1:8000
 ```
@@ -259,7 +258,7 @@ SQLite icontains 필터로 전체 DB(~2,000개)에서 관련 후보를 15개로 
 | 파일 | 역할 |
 |------|------|
 | `ai_score/models.py` | `FitScore` 모델: user + content_type + object_id 복합 유니크. score=-1은 "계산 완료, 결과 없음" sentinel |
-| `ai_score/services.py` | 3단계 파이프라인 전체. `compute_scores_for_user()`, `get_recommendations()`, `get_single_score()`, `invalidate_user_scores()` |
+| `ai_score/services.py` | 3단계 파이프라인 전체. `compute_scores_for_user()`, `get_recommendations()`, `get_score_detail()`, `invalidate_user_scores()` |
 | `ai_score/views.py` | `/recommendations/`, `/score/` 뷰 (IsAuthenticated) |
 | `ai_score/urls.py` | URL 라우팅 |
 | `accounts/views.py` | 프로필 PATCH 저장 후 `invalidate_user_scores()` + 백그라운드 스레드 시작 |
@@ -382,6 +381,7 @@ SQLite icontains 필터로 전체 DB(~2,000개)에서 관련 후보를 15개로 
 
 ## 주요 구현 패턴
 
+- **오류 방어 처리**: 외부 API 호출·데이터 파싱 등 실패 가능성이 있는 지점마다 try-except와 분기를 적용해 서비스 중단을 최소화했다. FormData 배열 필드는 `json.loads()` 실패 시 원본 값으로 fallback, GMS API 호출 실패 시 원본 키워드 그대로 사용, AI 점수화 실패 시 1회 재시도 후 sentinel 저장, Claude 응답 파싱은 코드블록 추출 → 직접 파싱 → 정규식 검색 순으로 3단계 fallback을 적용했다. 백그라운드 스레드에서는 카테고리별로 독립된 try-except를 두어 한 카테고리 실패가 나머지에 영향을 주지 않도록 했다.
 - **AI 키워드 확장 검색**: `category/services.py`에서 Claude Haiku로 검색어를 최대 10개 관련 키워드로 확장 → SQLite `icontains` OR 필터로 4개 모델 동시 검색. 결과는 24시간 캐시(LocMemCache)
 - **AI 적합도 Direct Prompting**: 임베딩/벡터DB 없이 ORM으로 후보 15개 추린 뒤 Claude에게 프로필 대비 점수·이유를 JSON으로 일괄 요청. GMS API가 동시 호출에 불안정하므로 4카테고리 순차 실행.
 - **백그라운드 점수 계산**: `threading.Thread(daemon=True)`로 프로필 저장 응답을 블로킹하지 않고 계산. Django `close_old_connections()`로 스레드 DB 연결 관리. 실패 시 재시도 1회(sleep 2s).

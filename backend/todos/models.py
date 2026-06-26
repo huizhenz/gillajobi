@@ -18,5 +18,3 @@ class Todo(models.Model):
     is_recommended = models.BooleanField(default=False)
     recommendation_score = models.IntegerField(blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
-    # start_date = models.DateField()
-    # end_date = models.DateField()

@@ -15,11 +15,12 @@ def get_certification_data():
     CER_API_URL = os.getenv('CER_API_URL')
 
     params = {'serviceKey': SERVICE_KEY, '_type': 'json'}
-    response = requests.get(CER_API_URL, params=params) 
+    response = requests.get(CER_API_URL, params=params)
     response.raise_for_status()
 
-    items = response.json().get('response', {}).get('body', {}).get('items', {}).get('item', [])
-    if isinstance(items, dict): # 결과가 1건일 때 dict로 오는 경우 처리
+    items = response.json().get('response', {}).get(
+        'body', {}).get('items', {}).get('item', [])
+    if isinstance(items, dict):  # 결과가 1건일 때 dict로 오는 경우 처리
         items = [items]
 
     for item in items:
@@ -100,17 +101,3 @@ def sync_all_examinations():
             get_examination_data(jm_cd)
         except Exception as e:
             print(f'{jm_cd} 동기화 실패: {e}')
-
-
-# 한국산업인력공단_기사 종목별 시험정보 현황_20241231
-# def get_gisa_data():
-#     SERVICE_KEY = os.getenv('SERVICE_KEY')
-#     # url = 'https://api.odcloud.kr/api/3073409/v1/uddi:1d82aa67-c306-4970-a870-bc18f6d31a9a'
-#     url = 'http://apis.data.go.kr/B490007/qualExamSchd/getQualExamSchdList'
-#     params ={'serviceKey' : SERVICE_KEY, '_type': 'json'}
-#     # params ={'serviceKey' : SERVICE_KEY, 'seriesCd' : '41', '_type': 'json'}
-
-#     response = requests.get(url, params=params)
-#     print(response.json())  # 실제 응답 원문으로 필드명 직접 확인
-
-# get_examination_data()

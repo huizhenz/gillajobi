@@ -13,7 +13,8 @@ from competitions.models import Competition
 @api_view(['GET'])
 def search(request):
     q = request.GET.get('q', '').strip()
-    label = request.GET.get('label', None)  # jobs | bootcamps | certifications | competitions
+    # jobs | bootcamps | certifications | competitions
+    label = request.GET.get('label', None)
     if not q:
         return Response({"jobs": [], "bootcamps": [], "certifications": [], "competitions": []})
 
@@ -25,7 +26,6 @@ def search(request):
             for field in fields:
                 q_filter |= Q(**{f"{field}__icontains": kw})
         return q_filter
-
 
     limit_all = 5
     limit_label = 50
@@ -41,7 +41,8 @@ def search(request):
     ])).distinct()
     if region:
         jobs_qs = jobs_qs.filter(region__startswith=region)
-    jobs = list(jobs_qs.values('id', 'title', 'company__name', 'close_date')[:(limit_label if label == 'jobs' else limit_all)]) if should_query('jobs') else []
+    jobs = list(jobs_qs.values('id', 'title', 'company__name', 'close_date')[
+                :(limit_label if label == 'jobs' else limit_all)]) if should_query('jobs') else []
 
     bootcamps_qs = Bootcamp.objects.filter(make_filter([
         'title', 'program_process', 'skills__name'
@@ -49,10 +50,12 @@ def search(request):
     if region:
         bootcamps_qs = bootcamps_qs.filter(region__name__icontains=region)
     if bc_category:
-        bootcamps_qs = bootcamps_qs.filter(category__name__icontains=bc_category)
+        bootcamps_qs = bootcamps_qs.filter(
+            category__name__icontains=bc_category)
     if region or bc_category:
         bootcamps_qs = bootcamps_qs.distinct()
-    bootcamps = list(bootcamps_qs.values('id', 'title', 'company', 'close_date')[:(limit_label if label == 'bootcamps' else limit_all)]) if should_query('bootcamps') else []
+    bootcamps = list(bootcamps_qs.values('id', 'title', 'company', 'close_date')[:(
+        limit_label if label == 'bootcamps' else limit_all)]) if should_query('bootcamps') else []
 
     exam_start_sub = Examination.objects.filter(
         certification=OuterRef('jm_cd')
@@ -87,7 +90,11 @@ def news(request):
     try:
         resp = http_requests.get(
             'https://api.kcisa.kr/openapi/service/rest/meta14/getKCPG051802',
-            params={'serviceKey': api_key, 'numOfRows': 12, 'pageNo': 1},
+            params={
+                'serviceKey': api_key,
+                'numOfRows': 12,
+                'pageNo': 1
+            },
             headers={'Accept': 'application/json'},
             timeout=8,
         )

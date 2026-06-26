@@ -7,6 +7,8 @@ GENDER_CHOICES = [
     ('F', '여성'),
 ]
 
+# dj-rest-auth 사용, 추가 컬럼만 지정
+
 class User(AbstractUser):
     nickname = models.CharField(
         max_length=125,

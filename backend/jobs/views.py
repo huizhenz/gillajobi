@@ -7,15 +7,10 @@ from rest_framework import status
 from rest_framework.pagination import PageNumberPagination
 
 from .models import (
-    Company,
     Recruitment,
     RecruitmentDetail,
-    HiringProcess,
 )
 from .serializers import (
-    CompanySerializer,
-    HiringProcessSerializer,
-    RecruitmentDetailSerializer,
     RecruitmentListSerializer,
     RecruitmentDetailReadSerializer
 )

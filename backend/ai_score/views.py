@@ -2,7 +2,7 @@ from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 
-from .services import get_recommendations, get_single_score
+from .services import get_recommendations, get_score_detail
 
 
 @api_view(['GET'])
@@ -18,7 +18,7 @@ def recommendations(request):
 
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])
-def single_score(request):
+def score_detail(request):
     content_type = request.query_params.get('type')
     object_id = request.query_params.get('id')
 
@@ -30,5 +30,5 @@ def single_score(request):
     except (ValueError, TypeError):
         return Response({'error': 'id는 정수여야 합니다.'}, status=400)
 
-    data = get_single_score(request.user, content_type, object_id)
+    data = get_score_detail(request.user, content_type, object_id)
     return Response(data)

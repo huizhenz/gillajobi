@@ -22,6 +22,7 @@ def _log(msg):
     except Exception:
         pass
 
+
 CONTENT_TYPES = ['bootcamp', 'job', 'certification', 'competition']
 
 
@@ -82,12 +83,13 @@ def get_recommendations(user, content_type):
     return {'type': content_type, 'status': 'computing', 'items': []}
 
 
-def get_single_score(user, content_type, object_id):
+def get_score_detail(user, content_type, object_id):
     """단건 점수 조회. 없으면 None 반환."""
     from .models import FitScore
 
     try:
-        fs = FitScore.objects.get(user=user, content_type=content_type, object_id=object_id)
+        fs = FitScore.objects.get(
+            user=user, content_type=content_type, object_id=object_id)
         return {'score': fs.score, 'reason': fs.reason}
     except FitScore.DoesNotExist:
         return {'score': None}
@@ -175,7 +177,8 @@ def _compute_single_category(user, profile_summary, keywords, content_type):
 
 def _prefetch_candidates(keywords, profile_summary, content_type):
     preferred_locations = profile_summary.get('preferred_location', [])
-    location_prefixes = [loc[:2] for loc in preferred_locations if len(loc) >= 2]
+    location_prefixes = [loc[:2]
+                         for loc in preferred_locations if len(loc) >= 2]
 
     if content_type == 'bootcamp':
         return _candidates_bootcamp(keywords)
@@ -194,7 +197,8 @@ def _candidates_bootcamp(keywords):
     if keywords:
         q = Q()
         for kw in keywords:
-            q |= Q(skills__name__icontains=kw) | Q(category__name__icontains=kw)
+            q |= Q(skills__name__icontains=kw) | Q(
+                category__name__icontains=kw)
         qs = Bootcamp.objects.filter(q).distinct()[:15]
     else:
         qs = Bootcamp.objects.order_by('-created_at')[:15]
@@ -220,7 +224,8 @@ def _candidates_job(keywords, location_prefixes):
     for kw in keywords:
         q |= Q(category__name__icontains=kw) | Q(title__icontains=kw)
 
-    base_qs = Recruitment.objects.select_related('company', 'category', 'detail')
+    base_qs = Recruitment.objects.select_related(
+        'company', 'category', 'detail')
 
     if q:
         if location_prefixes:
@@ -258,7 +263,8 @@ def _candidates_certification(keywords):
     if keywords:
         q = Q()
         for kw in keywords:
-            q |= Q(major_job_field__icontains=kw) | Q(minor_job_field__icontains=kw) | Q(name__icontains=kw)
+            q |= Q(major_job_field__icontains=kw) | Q(
+                minor_job_field__icontains=kw) | Q(name__icontains=kw)
         qs = Certification.objects.filter(q).distinct()[:15]
     else:
         qs = Certification.objects.order_by('-id')[:15]
@@ -332,14 +338,17 @@ JSON 배열만 반환. 다른 텍스트 없이.
             text = _call_claude(prompt)
             result = _parse_scores(text)
             if result:
-                _log(f"OK ({content_type}) attempt={attempt}: {len(result)} items")
+                _log(
+                    f"OK ({content_type}) attempt={attempt}: {len(result)} items")
                 return result
             # Claude가 빈 배열 또는 파싱 불가 응답을 반환한 경우
-            _log(f"PARSE_EMPTY ({content_type}) attempt={attempt}: raw={repr(text[:300])}")
+            _log(
+                f"PARSE_EMPTY ({content_type}) attempt={attempt}: raw={repr(text[:300])}")
             if attempt == 0:
                 time.sleep(2)
         except Exception as e:
-            _log(f"EXCEPTION ({content_type}) attempt={attempt}: {type(e).__name__}: {e}")
+            _log(
+                f"EXCEPTION ({content_type}) attempt={attempt}: {type(e).__name__}: {e}")
             if attempt == 0:
                 time.sleep(3)
     return []
@@ -368,7 +377,8 @@ def _parse_scores(text):
         if not isinstance(data, list):
             return []
         return [
-            {'id': item['id'], 'score': int(item['score']), 'reason': item.get('reason', '')}
+            {'id': item['id'], 'score': int(
+                item['score']), 'reason': item.get('reason', '')}
             for item in data
             if isinstance(item, dict) and 'id' in item and 'score' in item
         ]
@@ -421,7 +431,8 @@ def _enrich_score(fit_score):
                          'category': b.category.name if b.category else ''})
         elif ct == 'job':
             from jobs.models import Recruitment
-            r = Recruitment.objects.select_related('company', 'category').get(pk=oid)
+            r = Recruitment.objects.select_related(
+                'company', 'category').get(pk=oid)
             base.update({'title': r.title, 'company': r.company.name if r.company else '',
                          'close_date': str(r.close_date) if r.close_date else '',
                          'category': r.category.name if r.category else ''})

@@ -2,10 +2,13 @@ from rest_framework import serializers
 from .models import User, Profile
 from dj_rest_auth.registration.serializers import RegisterSerializer
 
+# dj-rest-auth 사용, 공식 문서 참고
+
 
 class UserSerializer(RegisterSerializer):
     nickname = serializers.CharField()
-    gender = serializers.ChoiceField(choices=User._meta.get_field('gender').choices)
+    gender = serializers.ChoiceField(
+        choices=User._meta.get_field('gender').choices)
     birth = serializers.DateField(required=False, allow_null=True)
     profile_image = serializers.ImageField(required=False, allow_null=True)
 
@@ -16,7 +19,7 @@ class UserSerializer(RegisterSerializer):
         data['birth'] = self.validated_data.get('birth')
         data['profile_image'] = self.validated_data.get('profile_image')
         return data
-    
+
     def save(self, request):
         user = super().save(request)
 
@@ -29,7 +32,8 @@ class UserSerializer(RegisterSerializer):
         Profile.objects.create(user=user)
 
         return user
-    
+
+
 class UserDetailSerializer(serializers.ModelSerializer):
 
     class Meta:
@@ -45,7 +49,8 @@ class UserDetailSerializer(serializers.ModelSerializer):
             'first_name',
             'last_name',
         )
-        read_only_fields = ('id', 'username', 'email', 'nickname', 'gender', 'birth')
+        read_only_fields = ('id', 'username', 'email',
+                            'nickname', 'gender', 'birth')
 
 
 class ProfileSerializer(serializers.ModelSerializer):

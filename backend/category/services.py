@@ -40,7 +40,7 @@ def expand_keywords(query: str) -> list[str]:
 예시:
 - "vite" → ["vite", "프론트엔드", "frontend", "FE", "React", "Vue", "JavaScript", "웹 개발"]
 - "SQLD" → ["SQLD", "SQL", "데이터베이스", "DBA", "백엔드", "데이터 엔지니어"]
-- "아트" → ["아트", "art", "디자이너", "UI", "UX", "그래픽", "시각디자인"]
+- "아트" → ["아트", "예술", "art", "디자이너", "UI", "UX", "그래픽", "시각디자인"]
 
 검색어: {query}
 
